@@ -1,0 +1,158 @@
+---
+import Base from "../../layouts/Base.astro";
+import GameCard from "../../components/GameCard.astro";
+import gamesData from "../../../data/games.json";
+import { LOCALES } from "../../i18n/locales.js";
+import { t } from "../../i18n/ui.js";
+import { fmtDate, cardHref, isExternalLink, displayTitle, translateGenres } from "../../lib/games.js";
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+const games = gamesData.games;
+const featured = games.find((g) => g.featured) || games[0];
+const upcoming = games.filter((g) => g.status === "upcoming");
+const trending = games.filter((g) => g.trending);
+
+const heroHref = cardHref(featured, locale);
+const heroExternal = isExternalLink(featured);
+const heroTitle = displayTitle(featured, locale);
+const heroGenres = translateGenres(featured.genres, locale);
+---
+<Base locale={locale} title={`GameRadar · ${t(locale, "tagline")}`} pathSuffix="">
+  <a id="top"></a>
+  <section class="hero">
+    <div class="hero-card">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow"><span class="dot"></span> {t(locale, "heroEyebrow")}</div>
+          <h1>{heroTitle}</h1>
+          {locale === "zh" && featured.titleEn && featured.titleEn !== heroTitle && <div class="sub">{featured.titleEn}</div>}
+          <div class="meta">
+            <span class="chip">{featured.developer || "—"}</span>
+            {heroGenres.map((g) => <span class="chip">{g}</span>)}
+            {featured.platforms?.length > 0 && <span class="chip">{featured.platforms.join(" · ")}</span>}
+          </div>
+          <a class="btn btn-primary" href={heroHref} target={heroExternal ? "_blank" : undefined} rel={heroExternal ? "noopener" : undefined}>
+            {featured.coverage === "owned" ? t(locale, "heroCtaWiki") : t(locale, "heroCtaInfo")}
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </a>
+        </div>
+        <div class="cd" aria-live="polite">
+          <div class="lbl">{t(locale, "countdownLabel")}</div>
+          <div class="cd-row">
+            <div class="cd-cell"><b id="cd-d">–</b><span>{t(locale, "unitDays")}</span></div>
+            <div class="cd-cell"><b id="cd-h">–</b><span>{t(locale, "unitHours")}</span></div>
+            <div class="cd-cell"><b id="cd-m">–</b><span>{t(locale, "unitMinutes")}</span></div>
+            <div class="cd-cell"><b id="cd-s">–</b><span>{t(locale, "unitSeconds")}</span></div>
+          </div>
+          <div class="rel">{fmtDate(featured.release, locale)}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="wrap">
+    <div class="tabs" id="tabs" role="tablist">
+      <button class="tab on" data-f="all" role="tab">{t(locale, "tabAll")}</button>
+      <button class="tab" data-f="upcoming" role="tab">{t(locale, "tabUpcoming")}</button>
+      <button class="tab" data-f="trending" role="tab">{t(locale, "tabTrending")}</button>
+      <button class="tab" data-f="owned" role="tab">{t(locale, "tabOwned")}</button>
+    </div>
+
+    <div id="stage">
+      <section class="rail" id="rail-upcoming">
+        <span id="upcoming"></span>
+        <div class="rail-head"><h2><span class="bar" style="background:var(--amber)"></span>{t(locale, "railUpcoming")}</h2><span class="count">{upcoming.length} {t(locale, "countSuffix")}</span></div>
+        <div class="grid">{upcoming.map((g) => <GameCard game={g} locale={locale} />)}</div>
+      </section>
+
+      <section class="rail" id="rail-trending">
+        <span id="trending"></span>
+        <div class="rail-head"><h2><span class="bar" style="background:var(--indigo)"></span>{t(locale, "railTrending")}</h2><span class="count">{trending.length} {t(locale, "countSuffix")}</span></div>
+        <div class="grid">{trending.map((g) => <GameCard game={g} locale={locale} />)}</div>
+      </section>
+
+      <section class="rail" id="rail-all" hidden>
+        <div class="rail-head"><h2><span class="bar" style="background:var(--teal)"></span><span id="all-label">{t(locale, "railAll")}</span></h2><span class="count" id="all-count">{games.length} {t(locale, "countSuffix")}</span></div>
+        <div class="grid">{games.map((g) => <GameCard game={g} locale={locale} />)}</div>
+      </section>
+
+      <div class="empty" id="empty-state" hidden>
+        <b>{t(locale, "emptyTitle")}</b>{t(locale, "emptyBody")}
+      </div>
+    </div>
+  </main>
+</Base>
+
+<script define:vars={{ releaseIso: featured.release }}>
+  function startCountdown(iso) {
+    const set = (k, v) => { const e = document.querySelector("#cd-" + k); if (e) e.textContent = String(v).padStart(2, "0"); };
+    if (!iso || iso === "TBA") { ["d","h","m","s"].forEach(k => set(k, "–")); return; }
+    const target = new Date(iso + "T00:00:00").getTime();
+    const tick = () => {
+      let diff = Math.max(0, target - Date.now());
+      const d = Math.floor(diff / 864e5); diff -= d * 864e5;
+      const h = Math.floor(diff / 36e5); diff -= h * 36e5;
+      const m = Math.floor(diff / 6e4); diff -= m * 6e4;
+      const s = Math.floor(diff / 1e3);
+      set("d", d); set("h", h); set("m", m); set("s", s);
+    };
+    tick();
+    setInterval(tick, 1000);
+  }
+  startCountdown(releaseIso);
+</script>
+
+<script define:vars={{ LABELS: { upcoming: t(locale, "railUpcoming"), trending: t(locale, "railTrending"), owned: t(locale, "tabOwned"), all: t(locale, "railAll") }, countSuffix: t(locale, "countSuffix"), resultsTemplate: t(locale, "searchResultsFor", "%s") }}>
+  const q = document.querySelector("#q");
+  const tabs = document.querySelectorAll(".tab");
+  const railUpcoming = document.querySelector("#rail-upcoming");
+  const railTrending = document.querySelector("#rail-trending");
+  const railAll = document.querySelector("#rail-all");
+  const allLabel = document.querySelector("#all-label");
+  const allCount = document.querySelector("#all-count");
+  const emptyState = document.querySelector("#empty-state");
+
+  let curFilter = "all";
+  let curQuery = "";
+
+  function apply() {
+    const filtering = curFilter !== "all" || curQuery.trim().length > 0;
+    railUpcoming.hidden = filtering;
+    railTrending.hidden = filtering;
+    railAll.hidden = !filtering;
+    if (!filtering) { emptyState.hidden = true; return; }
+
+    const cards = railAll.querySelectorAll(".card");
+    let shown = 0;
+    const needle = curQuery.trim().toLowerCase();
+    cards.forEach((c) => {
+      let ok = true;
+      if (curFilter === "upcoming") ok = c.dataset.status === "upcoming";
+      else if (curFilter === "trending") ok = c.dataset.trending === "true";
+      else if (curFilter === "owned") ok = c.dataset.coverage === "owned";
+      if (ok && needle) ok = c.dataset.search.includes(needle);
+      c.style.display = ok ? "" : "none";
+      if (ok) shown++;
+    });
+    allCount.textContent = `${shown} ${countSuffix}`;
+    allLabel.textContent = needle ? resultsTemplate.replace("%s", curQuery.trim()) : (LABELS[curFilter] || LABELS.all);
+    emptyState.hidden = shown > 0;
+  }
+
+  q.addEventListener("input", (e) => { curQuery = e.target.value; apply(); });
+  tabs.forEach((t) => {
+    t.addEventListener("click", () => {
+      tabs.forEach((x) => x.classList.remove("on"));
+      t.classList.add("on");
+      curFilter = t.dataset.f;
+      apply();
+    });
+  });
+
+  const preset = new URLSearchParams(location.search).get("q");
+  if (preset) { q.value = preset; curQuery = preset; apply(); }
+</script>

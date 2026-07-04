@@ -1,0 +1,109 @@
+---
+import "../styles/global.css";
+import { LOCALES, LOCALE_META, DEFAULT_LOCALE, buildAlternates } from "../i18n/locales.js";
+import { t } from "../i18n/ui.js";
+
+const {
+  locale = DEFAULT_LOCALE,
+  title,
+  description,
+  noindex = false,
+  pathSuffix = "", // 不带 locale 前缀的路径部分，比如 "/games/gta-6/"，用来拼 hreflang
+} = Astro.props;
+
+const desc = description || t(locale, "metaDescHome");
+const alternates = buildAlternates(pathSuffix);
+const canonical = new URL(alternates[locale], Astro.site).toString();
+---
+<!doctype html>
+<html lang={LOCALE_META[locale]?.htmlLang || "en"}>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={desc} />
+  {noindex && <meta name="robots" content="noindex,follow" />}
+  <link rel="canonical" href={canonical} />
+  {Astro.site && LOCALES.map((l) => (
+    <link rel="alternate" hreflang={LOCALE_META[l].htmlLang} href={new URL(alternates[l], Astro.site).toString()} />
+  ))}
+  {Astro.site && <link rel="alternate" hreflang="x-default" href={new URL(alternates[DEFAULT_LOCALE], Astro.site).toString()} />}
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="hdr">
+    <a class="brand" href={`/${locale}/`} aria-label={t(locale, "tagline")}>
+      <span class="glyph"><b>◈</b></span>
+      <span class="t"><b>GameRadar</b><span>{t(locale, "tagline")}</span></span>
+    </a>
+    <div class="search" role="search">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg>
+      <input id="q" type="search" placeholder={t(locale, "searchPlaceholder")} aria-label={t(locale, "searchAria")} />
+    </div>
+    <nav class="nav">
+      <a href={`/${locale}/#upcoming`}>{t(locale, "navUpcoming")}</a>
+      <a href={`/${locale}/#trending`}>{t(locale, "navTrending")}</a>
+    </nav>
+    <div class="lang-switch" role="group" aria-label="Language">
+      {LOCALES.map((l) => (
+        <a
+          href={alternates[l]}
+          class:list={["lang-opt", { on: l === locale }]}
+          hreflang={LOCALE_META[l].htmlLang}
+        >{l.toUpperCase()}</a>
+      ))}
+    </div>
+  </header>
+
+  <slot />
+
+  <footer id="foot">
+    <div class="foot-in">
+      <div>
+        <a class="brand" href={`/${locale}/`}><span class="glyph"><b>◈</b></span><span class="t"><b>GameRadar</b><span>{t(locale, "tagline")}</span></span></a>
+        <p>{t(locale, "footerDesc")}</p>
+      </div>
+      <div class="foot-cols">
+        <div class="foot-col">
+          <b>{t(locale, "footerBrowse")}</b>
+          <a href={`/${locale}/#upcoming`}>{t(locale, "navUpcoming")}</a>
+          <a href={`/${locale}/#trending`}>{t(locale, "navTrending")}</a>
+          <a href={`/${locale}/genres/`}>{t(locale, "footerGenres")}</a>
+          <a href={`/${locale}/platforms/`}>{t(locale, "footerPlatforms")}</a>
+        </div>
+        <div class="foot-col">
+          <b>{t(locale, "footerRules")}</b>
+          <a href="https://github.com" target="_blank" rel="noopener">{t(locale, "footerDataSource")}</a>
+          <a href={`/${locale}/games/draft/`}>{t(locale, "footerDraftRadar")}</a>
+        </div>
+        <div class="foot-col">
+          <b>{t(locale, "footerMyWikis")}</b>
+          <a href="https://starwarszerocompany.cc" target="_blank" rel="noopener">Star Wars: Zero Company</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-legal">
+      <span>© 2026 GameRadar · {t(locale, "footerLegal")}</span>
+    </div>
+  </footer>
+
+  <script>
+    // 非首页时，在搜索框按 Enter 会带着关键词跳转回当前语言的首页并触发筛选。
+    // 首页自己的脚本会接管 #q 的实时输入事件，这里只在「不是首页」时生效。
+    const q = document.querySelector("#q");
+    if (q && !document.querySelector("#rail-all")) {
+      const params = new URLSearchParams(location.search);
+      const preset = params.get("q");
+      if (preset) q.value = preset;
+      q.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" && q.value.trim()) {
+          const locale = location.pathname.split("/")[1] || "zh";
+          window.location.href = `/${locale}/?q=` + encodeURIComponent(q.value.trim());
+        }
+      });
+    }
+  </script>
+</body>
+</html>
