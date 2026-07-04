@@ -1,14 +1,46 @@
 ---
-// 这个文件的内容实际上不会被用到——Astro 的 i18n 配置（astro.config.mjs 里
-// prefixDefaultLocale:true）要求 src/pages 下必须存在一个根 index 页面，
-// 存在了之后 Astro 会自动生成它自己的、跳转到默认语言（/zh/）的静态页面，
-// 直接整个覆盖掉下面这份手写的 HTML（构建后可以去 dist/index.html 看实际内容，
-// 会发现是 Astro 自带的 meta-refresh 跳转页，带 noindex，不是这里写的样子）。
-// 生产环境实际生效的跳转来自 vercel.json 的 redirect 规则（发生在 Vercel 边缘节点，
-// 比这个静态兜底页更快、不会有内容闪烁）；这个文件留着只是为了满足上面那条构建要求。
+// 这个文件现在真的会生效（astro.config.mjs 里设了 redirectToDefaultLocale:false，
+// Astro 不会再用它自己生成的跳转页覆盖这里）。
+//
+// 逻辑：优先读上次手动选过的语言（localStorage），没有的话按浏览器语言列表
+// 依次匹配 en/es/zh，一个都不匹配就落到英文——对应"英文优先，其次西语、中文"的要求。
+// 2 秒的 meta refresh 是没启用 JS 时的兜底（正常情况下上面的 JS 几乎瞬间就跑完了，
+// 不会等到 2 秒），这个写法和 Astro 自己生成的跳转页是一个套路。
 ---
 <!doctype html>
-<html lang="zh-CN">
-<head><meta charset="UTF-8" /><meta http-equiv="refresh" content="0; url=/zh/" /><title>GameRadar</title></head>
-<body><script>window.location.replace("/zh/");</script></body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content="2; url=/en/" />
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="/en/" />
+  <title>GameRadar</title>
+</head>
+<body>
+  <p>Redirecting… <a href="/en/">Continue to GameRadar</a></p>
+  <script>
+    (function () {
+      var SUPPORTED = ["en", "es", "zh"];
+      function matchLocale(tag) {
+        var primary = String(tag || "").toLowerCase().split("-")[0];
+        return SUPPORTED.indexOf(primary) !== -1 ? primary : null;
+      }
+      function detect() {
+        try {
+          var saved = localStorage.getItem("gr_locale");
+          if (saved && SUPPORTED.indexOf(saved) !== -1) return saved;
+        } catch (e) {}
+        var prefs = (navigator.languages && navigator.languages.length)
+          ? navigator.languages
+          : [navigator.language || navigator.userLanguage || ""];
+        for (var i = 0; i < prefs.length; i++) {
+          var m = matchLocale(prefs[i]);
+          if (m) return m;
+        }
+        return "en"; // 英文优先兜底；探测到西语/中文的话上面的循环会先命中，走不到这一行
+      }
+      location.replace("/" + detect() + "/");
+    })();
+  </script>
+</body>
 </html>

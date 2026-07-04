@@ -64,12 +64,20 @@ scripts/
 
 ## 三语路由是怎么设计的
 
-- 三种语言**都带前缀**：`/zh/`、`/en/`、`/es/`，没有不带前缀的"默认语言"。
-  好处是路由规则统一、不用分两套逻辑维护；代价是根路径 `/` 本身不是一个真实页面，需要跳转。
-- 根路径的跳转由 **`vercel.json`** 的 redirect 规则负责（`/` → `/zh/`），发生在 Vercel 边缘节点，
-  没有内容闪烁。`src/pages/index.astro` 这个文件必须存在（Astro 的 i18n 配置要求 src/pages
-  下有一个根 index 页面），但它的实际内容会被 Astro 自动生成的跳转页整个覆盖掉——
-  这个文件与其说是"页面"，不如说是满足构建要求的占位符，改它的内容不会影响线上效果。
+- 三种语言**都带前缀**：`/en/`、`/es/`、`/zh/`，没有不带前缀的"默认语言"。
+- **根路径 `/` 是智能跳转**，不是固定跳去某一种语言：`src/pages/index.astro` 里有一段脚本，
+  先看有没有记住过的语言选择（上次手动切换过的话，存在 localStorage 里），没有的话看浏览器
+  语言列表，依次匹配英语/西语/中文，一个都不匹配就落到英文——对应"英文优先，其次西语、中文"
+  的要求。这段逻辑纯前端 JS 实现，不需要 Vercel Edge Middleware 之类的服务端能力，
+  站点依然是 100% 静态的，不会碰到 serverless function 额度问题。
+  2 秒的 `meta refresh` 是没启用 JS 时的兜底，正常情况下走不到（JS 几乎瞬间执行完）。
+- 这里有个 Astro 的坑记一下：`astro.config.mjs` 里如果只写 `prefixDefaultLocale: true`
+  不写 `redirectToDefaultLocale: false`，Astro 会自动用它自己生成的跳转页整个覆盖掉
+  `src/pages/index.astro` 的内容（我们上一版就是这样，所以当时改了文件内容也没用）。
+  这次显式加了 `redirectToDefaultLocale: false`，`index.astro` 的内容才是真正生效的。
+- `vercel.json` 之前那条 `/` → `/zh/` 的 redirect 规则**已经删掉**——留着的话它会在
+  Vercel 边缘节点直接拦截，用户根本收不到上面这段智能跳转的 JS，两边会打架。
+  现在 `vercel.json` 里没有实际内容了，纯粹是个占位。
 - 类型 / 平台专题页的 URL slug（比如 `/genre/role-playing-rpg/`）三种语言完全一样，
   只是页面里显示的类型名字翻译了——这样 hreflang 才能简单地"只换前缀，路径其余部分不变"，
   不用另外维护一张多语言 slug 对照表。
@@ -94,6 +102,19 @@ scripts/
 版本对不上导致连配置文件都读不出来。正确顺序永远是先 `npm install`（装出跟 `package.json`
 版本一致的本地依赖），再 `npm run build`。Vercel 自动部署走的就是这个正确顺序，不受影响，
 这条只是给以后本地/沙盒里手动验证时的提醒。
+
+## 游戏封面图
+
+真实抓取管线（`scripts/fetch-games.mjs`）已经会自动从 IGDB 官方的图片 CDN
+（`images.igdb.com`）拿封面图，这是 IGDB 官方 API 本来就支持、也是业内数据库类网站
+的标准做法——IGDB key 配好、Action 真的跑起来之后，每款游戏会自动带上封面，不用
+额外配置。
+
+`data/games.json` 里那 8 条手填的样例数据目前 `cover` 都是 `null`，展示成渐变色
++ 字母的占位样式。这次没有直接去网上搜图填进去——单独抓某个具体商业游戏的封面图
+拿去自己网站长期展示，版权边界不是完全清晰，比较谨慎的做法是要么等真实管线跑起来
+自动走 IGDB 官方图源，要么如果你手上有官方 press kit 或者自己有权使用的素材，
+把图片 URL 直接填进对应游戏的 `cover` 字段就行（格式：`"cover": "https://..."`）。
 
 ## 日常怎么维护
 

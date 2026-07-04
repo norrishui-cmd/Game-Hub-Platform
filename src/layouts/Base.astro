@@ -89,6 +89,11 @@ const canonical = new URL(alternates[locale], Astro.site).toString();
     </div>
   </footer>
 
+  <script define:vars={{ locale }}>
+    // 记住这次访问用的是哪个语言——根路径的自动跳转脚本会优先读这个，
+    // 而不是每次都重新猜浏览器语言。这样手动切换过语言的人不会被"猜"回去。
+    try { localStorage.setItem("gr_locale", locale); } catch (e) {}
+  </script>
   <script>
     // 非首页时，在搜索框按 Enter 会带着关键词跳转回当前语言的首页并触发筛选。
     // 首页自己的脚本会接管 #q 的实时输入事件，这里只在「不是首页」时生效。
@@ -99,7 +104,7 @@ const canonical = new URL(alternates[locale], Astro.site).toString();
       if (preset) q.value = preset;
       q.addEventListener("keydown", (e) => {
         if (e.key === "Enter" && q.value.trim()) {
-          const locale = location.pathname.split("/")[1] || "zh";
+          const locale = location.pathname.split("/")[1] || "en";
           window.location.href = `/${locale}/?q=` + encodeURIComponent(q.value.trim());
         }
       });
