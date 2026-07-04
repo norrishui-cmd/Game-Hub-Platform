@@ -1,0 +1,22 @@
+---
+import Base from "../../../../layouts/Base.astro";
+import GameDetail from "../../../../components/GameDetail.astro";
+import draftsData from "../../../../../data/drafts.json";
+import { LOCALES } from "../../../../i18n/locales.js";
+import { displayTitle } from "../../../../lib/games.js";
+
+export function getStaticPaths() {
+  return LOCALES.flatMap((locale) =>
+    draftsData.games.map((game) => ({ params: { locale, slug: game.slug }, props: { game } }))
+  );
+}
+
+const { locale } = Astro.params;
+const { game } = Astro.props;
+const site = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
+const title = displayTitle(game, locale);
+const pageUrl = `${site}/${locale}/games/draft/${game.slug}/`;
+---
+<Base locale={locale} title={`[draft] ${title} | GameRadar`} description="Internal draft page, not public." noindex={true} pathSuffix={`/games/draft/${game.slug}/`}>
+  <GameDetail game={game} pageUrl={pageUrl} locale={locale} isDraft={true} />
+</Base>

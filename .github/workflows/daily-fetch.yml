@@ -1,0 +1,39 @@
+name: 每日抓取游戏数据
+
+# 触发方式：
+#   1) 每天定时自动跑一次（下面的 cron 是 UTC 时间 20:00 = 北京时间次日 04:00）
+#   2) 也可以在 GitHub 网页的 Actions 标签页手动点 "Run workflow" 立即触发一次，方便测试
+on:
+  schedule:
+    - cron: "0 20 * * *"
+  workflow_dispatch: {}
+
+# 允许这个工作流把抓到的新数据提交回仓库
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 拉取仓库代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 运行抓取脚本
+        env:
+          IGDB_CLIENT_ID: ${{ secrets.IGDB_CLIENT_ID }}
+          IGDB_CLIENT_SECRET: ${{ secrets.IGDB_CLIENT_SECRET }}
+        run: node scripts/fetch-games.mjs
+
+      - name: 提交更新后的数据（如果有变化）
+        run: |
+          git config user.name "gameradar-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/games.json data/drafts.json
+          git diff --staged --quiet || git commit -m "chore: 自动更新游戏数据 $(date -u +'%Y-%m-%d')"
+          git push

@@ -1,0 +1,255 @@
+{
+  "generatedAt": "2026-07-04T00:00:00.000Z",
+  "count": 8,
+  "note": "这是手填的种子数据，结构和 scripts/fetch-games.mjs 的真实输出完全一致（genres 用的是真实 IGDB 英文分类值，跟真实抓取管线保持一致，供多语言翻译字典对照）。Action 第一次成功运行后会整体覆盖这个文件。",
+  "games": [
+    {
+      "slug": "star-wars-zero-company",
+      "titleZh": "星球大战：零号连队",
+      "titleEn": "Star Wars: Zero Company",
+      "developer": "Bit Reactor / Respawn",
+      "publisher": "EA / Lucasfilm Games",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox Series"
+      ],
+      "genres": [
+        "Turn-based strategy (TBS)",
+        "Strategy"
+      ],
+      "release": "2026-08-27",
+      "hype": 95,
+      "status": "upcoming",
+      "trending": true,
+      "featured": true,
+      "coverage": "owned",
+      "wikiUrl": "https://starwarszerocompany.cc",
+      "links": {},
+      "cover": null,
+      "grad": [
+        "#5b6cff",
+        "#9b4dff"
+      ],
+      "mono": "Z"
+    },
+    {
+      "slug": "planet-zoo-2",
+      "titleZh": "动物园之星 2",
+      "titleEn": "Planet Zoo 2",
+      "developer": "Frontier Developments",
+      "publisher": "Frontier",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Simulator"
+      ],
+      "release": "2026-10-15",
+      "hype": 78,
+      "status": "upcoming",
+      "trending": true,
+      "coverage": "owned",
+      "wikiUrl": "#",
+      "links": {},
+      "cover": null,
+      "grad": [
+        "#1fa87a",
+        "#3dd6a6"
+      ],
+      "mono": "P"
+    },
+    {
+      "slug": "gta-6",
+      "titleZh": "侠盗猎车手 VI",
+      "titleEn": "Grand Theft Auto VI",
+      "developer": "Rockstar Games",
+      "publisher": "Rockstar Games",
+      "platforms": [
+        "PS5",
+        "Xbox Series"
+      ],
+      "genres": [
+        "Adventure",
+        "Shooter"
+      ],
+      "release": "TBA",
+      "hype": 99,
+      "status": "upcoming",
+      "trending": true,
+      "coverage": "nav",
+      "cover": null,
+      "links": {
+        "official": "https://www.rockstargames.com/VI",
+        "reddit": "https://www.reddit.com/r/GTA6/",
+        "fanwiki": "https://gta.fandom.com"
+      },
+      "grad": [
+        "#e8624a",
+        "#f6b44c"
+      ],
+      "mono": "6"
+    },
+    {
+      "slug": "silksong",
+      "titleZh": "空洞骑士：丝之歌",
+      "titleEn": "Hollow Knight: Silksong",
+      "developer": "Team Cherry",
+      "publisher": "Team Cherry",
+      "platforms": [
+        "PC",
+        "Switch",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Platform",
+        "Adventure"
+      ],
+      "release": "TBA",
+      "hype": 92,
+      "status": "upcoming",
+      "trending": true,
+      "coverage": "nav",
+      "cover": null,
+      "links": {
+        "official": "https://www.hollowknightsilksong.com",
+        "steam": "https://store.steampowered.com",
+        "reddit": "https://www.reddit.com/r/Silksong/",
+        "fanwiki": "https://hollowknight.fandom.com"
+      },
+      "grad": [
+        "#b0453f",
+        "#d98a3d"
+      ],
+      "mono": "S"
+    },
+    {
+      "slug": "elder-scrolls-6",
+      "titleZh": "上古卷轴 VI",
+      "titleEn": "The Elder Scrolls VI",
+      "developer": "Bethesda Game Studios",
+      "publisher": "Bethesda",
+      "platforms": [
+        "PC",
+        "Xbox Series"
+      ],
+      "genres": [
+        "Role-playing (RPG)",
+        "Adventure"
+      ],
+      "release": "TBA",
+      "hype": 84,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "nav",
+      "cover": null,
+      "links": {
+        "official": "https://elderscrolls.bethesda.net",
+        "reddit": "https://www.reddit.com/r/ElderScrolls/",
+        "fanwiki": "https://elderscrolls.fandom.com"
+      },
+      "grad": [
+        "#3a6d8c",
+        "#4f9dbf"
+      ],
+      "mono": "6"
+    },
+    {
+      "slug": "monster-hunter-wilds",
+      "titleZh": "怪物猎人：荒野",
+      "titleEn": "Monster Hunter Wilds",
+      "developer": "Capcom",
+      "publisher": "Capcom",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox Series"
+      ],
+      "genres": [
+        "Role-playing (RPG)",
+        "Hack and slash/Beat 'em up"
+      ],
+      "release": "2025-02-28",
+      "hype": 88,
+      "status": "live",
+      "trending": true,
+      "coverage": "nav",
+      "cover": null,
+      "links": {
+        "official": "https://www.monsterhunter.com",
+        "steam": "https://store.steampowered.com",
+        "reddit": "https://www.reddit.com/r/MonsterHunter/",
+        "fanwiki": "https://monsterhunter.fandom.com"
+      },
+      "grad": [
+        "#7a5cff",
+        "#4f9dbf"
+      ],
+      "mono": "W"
+    },
+    {
+      "slug": "poe-2",
+      "titleZh": "流放之路 2",
+      "titleEn": "Path of Exile 2",
+      "developer": "Grinding Gear Games",
+      "publisher": "GGG",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox Series"
+      ],
+      "genres": [
+        "Role-playing (RPG)",
+        "Hack and slash/Beat 'em up"
+      ],
+      "release": "2024-12-06",
+      "hype": 81,
+      "status": "live",
+      "trending": false,
+      "coverage": "nav",
+      "cover": null,
+      "links": {
+        "official": "https://www.pathofexile2.com",
+        "steam": "https://store.steampowered.com",
+        "reddit": "https://www.reddit.com/r/PathOfExile2/",
+        "fanwiki": "https://pathofexile.fandom.com"
+      },
+      "grad": [
+        "#8a3d2f",
+        "#c25a3a"
+      ],
+      "mono": "E"
+    },
+    {
+      "slug": "light-no-fire",
+      "titleZh": "光·不灭",
+      "titleEn": "Light No Fire",
+      "developer": "Hello Games",
+      "publisher": "Hello Games",
+      "platforms": [
+        "PC",
+        "PS5"
+      ],
+      "genres": [
+        "Adventure",
+        "Simulator"
+      ],
+      "release": "TBA",
+      "hype": 73,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "nav",
+      "cover": null,
+      "links": {
+        "official": "https://lightnofire.com",
+        "reddit": "https://www.reddit.com/r/LightNoFire/"
+      },
+      "grad": [
+        "#1f8a7a",
+        "#4fbfa0"
+      ],
+      "mono": "L"
+    }
+  ]
+}

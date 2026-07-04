@@ -1,0 +1,14 @@
+---
+// 这个文件的内容实际上不会被用到——Astro 的 i18n 配置（astro.config.mjs 里
+// prefixDefaultLocale:true）要求 src/pages 下必须存在一个根 index 页面，
+// 存在了之后 Astro 会自动生成它自己的、跳转到默认语言（/zh/）的静态页面，
+// 直接整个覆盖掉下面这份手写的 HTML（构建后可以去 dist/index.html 看实际内容，
+// 会发现是 Astro 自带的 meta-refresh 跳转页，带 noindex，不是这里写的样子）。
+// 生产环境实际生效的跳转来自 vercel.json 的 redirect 规则（发生在 Vercel 边缘节点，
+// 比这个静态兜底页更快、不会有内容闪烁）；这个文件留着只是为了满足上面那条构建要求。
+---
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="UTF-8" /><meta http-equiv="refresh" content="0; url=/zh/" /><title>GameRadar</title></head>
+<body><script>window.location.replace("/zh/");</script></body>
+</html>

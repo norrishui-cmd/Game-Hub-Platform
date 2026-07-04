@@ -1,0 +1,46 @@
+---
+import { hasOwnPage, cardHref, isExternalLink, searchBlob, relText, displayTitle, translateGenres } from "../lib/games.js";
+import { t } from "../i18n/ui.js";
+
+const { game, locale } = Astro.props;
+const href = cardHref(game, locale);
+const external = isExternalLink(game);
+const owned = game.coverage === "owned";
+const title = displayTitle(game, locale);
+const genresLocalized = translateGenres(game.genres, locale);
+---
+<a
+  class="card"
+  href={href}
+  target={external ? "_blank" : undefined}
+  rel={external ? "noopener" : undefined}
+  data-status={game.status}
+  data-trending={String(!!game.trending)}
+  data-coverage={game.coverage}
+  data-search={searchBlob(game, locale)}
+>
+  <div class="cover" style={`background:linear-gradient(135deg, ${game.grad[0]}, ${game.grad[1]})`}>
+    {owned
+      ? <span class="pill owned"><span class="d"></span>{t(locale, "pillOwned")}</span>
+      : <span class="pill nav"><span class="d"></span>{t(locale, "pillNav")}</span>}
+    {game.status === "live" && <span class="pill live"><span class="d"></span>{t(locale, "pillLive")}</span>}
+    {game.cover
+      ? <img class="cover-img" src={game.cover} alt="" loading="lazy" />
+      : <div class="mono">{game.mono}</div>}
+    <span class="hype">🔥 {game.hype}</span>
+  </div>
+  <div class="card-body">
+    <div class="ti">{title}</div>
+    {locale === "zh" && game.titleEn && game.titleEn !== title && <div class="en">{game.titleEn}</div>}
+    <div class="dv">{game.developer || "—"}</div>
+    <div class="card-foot">
+      <span class="rel-tag">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>
+        {relText(game, locale)}
+      </span>
+      {owned
+        ? <span class="cta owned">{t(locale, "ctaOwned")} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        : <span class="cta nav">{t(locale, "ctaNav")} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>}
+    </div>
+  </div>
+</a>

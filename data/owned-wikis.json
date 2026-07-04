@@ -1,0 +1,14 @@
+[
+  {
+    "match": ["star wars zero company", "zero company"],
+    "titleZh": "星球大战：零号连队",
+    "wikiUrl": "https://starwarszerocompany.cc",
+    "featured": true
+  },
+  {
+    "match": ["planet zoo 2"],
+    "titleZh": "动物园之星 2",
+    "wikiUrl": "",
+    "featured": false
+  }
+]

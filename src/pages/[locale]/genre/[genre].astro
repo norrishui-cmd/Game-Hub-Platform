@@ -1,0 +1,37 @@
+---
+import Base from "../../../layouts/Base.astro";
+import GameCard from "../../../components/GameCard.astro";
+import gamesData from "../../../../data/games.json";
+import { LOCALES } from "../../../i18n/locales.js";
+import { t } from "../../../i18n/ui.js";
+import { slugify, collectTaxonomy, translateGenre } from "../../../lib/games.js";
+
+export function getStaticPaths() {
+  const genres = collectTaxonomy(gamesData.games, "genres");
+  return LOCALES.flatMap((locale) =>
+    genres.map(({ label, slug }) => ({
+      params: { locale, genre: slug },
+      props: { label, games: gamesData.games.filter((g) => (g.genres || []).some((x) => slugify(x) === slug)) },
+    }))
+  );
+}
+
+const { locale } = Astro.params;
+const { label, games } = Astro.props;
+const localizedLabel = translateGenre(label, locale);
+---
+<Base
+  locale={locale}
+  title={`${localizedLabel} | GameRadar`}
+  description={t(locale, "genreMetaDesc", localizedLabel, games.length)}
+  pathSuffix={`/genre/${slugify(label)}/`}
+>
+  <main class="wrap" style="padding-top:28px">
+    <div class="crumb"><a href={`/${locale}/`}>{t(locale, "breadcrumbBack")}</a></div>
+    <div class="rail-head">
+      <h2><span class="bar" style="background:var(--indigo)"></span>{localizedLabel}</h2>
+      <span class="count">{games.length} {t(locale, "countSuffix")}</span>
+    </div>
+    <div class="grid">{games.map((g) => <GameCard game={g} locale={locale} />)}</div>
+  </main>
+</Base>

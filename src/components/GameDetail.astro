@@ -1,0 +1,57 @@
+---
+import { fmtDate, relText, availableLinks, buildJsonLd, slugify, displayTitle, translateGenres } from "../lib/games.js";
+import { t } from "../i18n/ui.js";
+
+const { game, pageUrl, locale, isDraft = false } = Astro.props;
+const links = availableLinks(game, locale);
+const jsonLd = buildJsonLd(game, pageUrl, locale);
+const title = displayTitle(game, locale);
+const genresLocalized = translateGenres(game.genres, locale);
+---
+{!isDraft && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+
+<div class="detail-wrap">
+  <div class="crumb"><a href={`/${locale}/`}>{t(locale, "breadcrumbBack")}</a></div>
+
+  {isDraft && <div class="draft-banner">{t(locale, "draftBanner")}</div>}
+
+  <div class="detail-hero" style={`background:linear-gradient(135deg, ${game.grad[0]}, ${game.grad[1]})`}>
+    {game.cover
+      ? <img class="cover-img" src={game.cover} alt="" loading="lazy" />
+      : <div class="mono">{game.mono}</div>}
+  </div>
+
+  <h1 class="detail-title">{title}</h1>
+  {locale === "zh" && game.titleEn && game.titleEn !== title && <div class="detail-en">{game.titleEn}</div>}
+
+  <dl class="facts">
+    <dt>{t(locale, "factReleaseDate")}</dt>
+    <dd>{fmtDate(game.release, locale)}{(game.status === "upcoming" && game.release !== "TBA") ? `（${relText(game, locale)}）` : ""}</dd>
+    <dt>{t(locale, "factDeveloper")}</dt><dd>{game.developer || "—"}</dd>
+    <dt>{t(locale, "factPublisher")}</dt><dd>{game.publisher || "—"}</dd>
+    <dt>{t(locale, "factPlatforms")}</dt>
+    <dd>{game.platforms?.length
+      ? (isDraft ? game.platforms.join("、") : game.platforms.map((p, i) => <>{i > 0 && "、"}<a href={`/${locale}/platform/${slugify(p)}/`} style="color:inherit; text-decoration:underline; text-underline-offset:2px;">{p}</a></>))
+      : "—"}</dd>
+    <dt>{t(locale, "factGenres")}</dt>
+    <dd>{game.genres?.length
+      ? (isDraft ? genresLocalized.join("、") : game.genres.map((g, i) => <>{i > 0 && "、"}<a href={`/${locale}/genre/${slugify(g)}/`} style="color:inherit; text-decoration:underline; text-underline-offset:2px;">{genresLocalized[i]}</a></>))
+      : "—"}</dd>
+    <dt>{t(locale, "factHype")}</dt><dd>🔥 {game.hype} / 100</dd>
+  </dl>
+
+  <p class="detail-lbl">{t(locale, "relatedLinks")}</p>
+  <div class="links">
+    {links.length
+      ? links.map((l) => (
+          <a class="lk" href={l.url} target="_blank" rel="noopener">
+            <span class="ico">{l.icon}</span>
+            <span class="meta">{l.name}<small>{l.sub}</small></span>
+            <svg class="arr" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+        ))
+      : <div class="empty" style="padding:20px 0">{t(locale, "noLinks")}</div>}
+  </div>
+
+  <div class="note">{t(locale, "detailNote")}</div>
+</div>

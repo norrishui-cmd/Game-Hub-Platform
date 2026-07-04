@@ -1,0 +1,25 @@
+---
+import Base from "../../layouts/Base.astro";
+import gamesData from "../../../data/games.json";
+import { LOCALES } from "../../i18n/locales.js";
+import { t } from "../../i18n/ui.js";
+import { collectTaxonomy } from "../../lib/games.js";
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+const platforms = collectTaxonomy(gamesData.games, "platforms");
+---
+<Base locale={locale} title={`${t(locale, "platformsPageTitle")} | GameRadar`} pathSuffix="/platforms/">
+  <main class="wrap" style="padding-top:28px">
+    <div class="crumb"><a href={`/${locale}/`}>{t(locale, "breadcrumbBack")}</a></div>
+    <div class="rail-head"><h2><span class="bar" style="background:var(--teal)"></span>{t(locale, "platformsPageTitle")}</h2></div>
+    <div class="tabs" role="list">
+      {platforms.map((p) => (
+        <a class="tab" role="listitem" href={`/${locale}/platform/${p.slug}/`}>{p.label}<span style="opacity:.6"> · {p.count}</span></a>
+      ))}
+    </div>
+  </main>
+</Base>
