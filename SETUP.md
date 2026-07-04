@@ -49,8 +49,10 @@ scripts/
 .github/workflows/daily-fetch.yml
 ```
 
-**必须改一处**：`astro.config.mjs` 里的 `site`、`public/robots.txt` 里的 Sitemap 链接、
-`vercel.json` 用不到域名所以不用改。域名定了之后回来改前两处。
+**域名已经配好**：`astro.config.mjs` 的 `site` 和 `public/robots.txt` 的 Sitemap 链接
+都指向 `gameradar.wiki` 了。这两处只影响生成的链接内容，不代表域名已经接到 Vercel 上——
+域名解析/绑定还是要去 Vercel 项目的 **Settings → Domains** 里手动添加 `gameradar.wiki`，
+按提示在 NameSilo 那边加对应的 DNS 记录，这是两件独立的事。
 
 ## 第四步：直接 push，Vercel 自动识别 Astro
 

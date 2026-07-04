@@ -2,8 +2,8 @@ import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
 
 export default defineConfig({
-  // TODO(Norris): 换成正式域名后记得改这里——sitemap、hreflang、JSON-LD 里的绝对链接都靠这个字段拼出来。
-  site: "https://your-gameradar-domain.example",
+  // sitemap、hreflang、JSON-LD 里的绝对链接都靠这个字段拼出来。
+  site: "https://gameradar.wiki",
 
   // 三语路由：全部带前缀（/en/ /es/ /zh/），没有不带前缀的默认语言。
   // redirectToDefaultLocale:false 很关键——不加这个，Astro 会用它自己生成的跳转页
