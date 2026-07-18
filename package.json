@@ -7,7 +7,10 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "seo:audit": "node scripts/seo-audit.mjs"
+    "seo:audit": "node scripts/seo-audit.mjs",
+    "game:create": "node scripts/game-create.mjs",
+    "game:audit": "node scripts/game-audit.mjs",
+    "game:publish": "node scripts/game-publish.mjs"
   },
   "dependencies": {
     "astro": "^5.0.0",

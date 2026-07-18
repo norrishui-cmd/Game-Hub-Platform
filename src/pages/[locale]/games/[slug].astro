@@ -7,9 +7,15 @@ import { t } from "../../../i18n/ui.js";
 import { hasOwnPage, displayTitle, isGameIndexable } from "../../../lib/games.js";
 
 export function getStaticPaths() {
+  const wikiModules = import.meta.glob("../../../../data/wiki/*.json", { eager: true, import: "default" });
+  const wikiBySlug = Object.fromEntries(Object.entries(wikiModules).map(([file, value]) => [file.split("/").pop().replace(".json", ""), value]));
   const publishable = gamesData.games.filter(hasOwnPage);
   return LOCALES.flatMap((locale) =>
-    publishable.map((game) => ({ params: { locale, slug: game.slug }, props: { game } }))
+    publishable.map((baseGame) => {
+      const wiki = wikiBySlug[baseGame.slug] || {};
+      const game = { ...baseGame, publishStatus: wiki.publishStatus, content: wiki.content };
+      return { params: { locale, slug: game.slug }, props: { game } };
+    })
   );
 }
 

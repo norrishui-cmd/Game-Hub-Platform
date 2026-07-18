@@ -7,6 +7,7 @@ const links = availableLinks(game, locale);
 const jsonLd = buildJsonLd(game, pageUrl, locale);
 const title = displayTitle(game, locale);
 const genresLocalized = translateGenres(game.genres, locale);
+const editorial = game.content?.[locale] || {};
 const copy = {
   en: {
     overview: "Game overview", overviewText: `${title} is ${game.status === "upcoming" ? "an upcoming" : "a released"} ${genresLocalized.join(" and ") || "video game"}${game.developer ? ` developed by ${game.developer}` : ""}. This hub tracks confirmed release information, platforms, official resources, and new player guides as reliable details become available.`,
@@ -29,13 +30,14 @@ const copy = {
 }[locale] || {};
 const releaseAnswer = game.release === "TBA" ? t(locale, "relTBA") : fmtDate(game.release, locale);
 const platformAnswer = game.platforms?.length ? game.platforms.join(", ") : "—";
+const faqItems = editorial.faq?.length ? editorial.faq : [
+  { question: copy.releaseQ, answer: releaseAnswer },
+  { question: copy.platformQ, answer: platformAnswer },
+  ...(game.developer ? [{ question: copy.developerQ, answer: game.developer }] : []),
+];
 const faqJsonLd = {
   "@context": "https://schema.org", "@type": "FAQPage",
-  mainEntity: [
-    { "@type": "Question", name: copy.releaseQ, acceptedAnswer: { "@type": "Answer", text: releaseAnswer } },
-    { "@type": "Question", name: copy.platformQ, acceptedAnswer: { "@type": "Answer", text: platformAnswer } },
-    ...(game.developer ? [{ "@type": "Question", name: copy.developerQ, acceptedAnswer: { "@type": "Answer", text: game.developer } }] : []),
-  ],
+  mainEntity: faqItems.map((item) => ({ "@type": "Question", name: item.question, acceptedAnswer: { "@type": "Answer", text: item.answer } })),
 };
 ---
 {!isDraft && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
@@ -74,7 +76,7 @@ const faqJsonLd = {
   <section class="wiki-section" aria-labelledby="overview-title">
     <p class="section-kicker">{copy.verified}</p>
     <h2 id="overview-title">{copy.overview}</h2>
-    <p>{copy.overviewText}</p>
+    <p>{editorial.summary || copy.overviewText}</p>
   </section>
 
   {game.coverage === "owned" && game.wikiUrl && game.wikiUrl !== "#" && (
@@ -87,16 +89,27 @@ const faqJsonLd = {
   <section class="wiki-section" aria-labelledby="answers-title">
     <h2 id="answers-title">{copy.quick}</h2>
     <div class="answer-list">
-      <article><h3>{copy.releaseQ}</h3><p>{releaseAnswer}</p></article>
-      <article><h3>{copy.platformQ}</h3><p>{platformAnswer}</p></article>
-      {game.developer && <article><h3>{copy.developerQ}</h3><p>{game.developer}</p></article>}
+      {faqItems.map((item) => <article><h3>{item.question}</h3><p>{item.answer}</p></article>)}
     </div>
   </section>
 
   <section class="wiki-section" aria-labelledby="guides-title">
     <h2 id="guides-title">{copy.guides}</h2>
-    <p>{copy.guidesText}</p>
+    {editorial.guideSections?.length ? (
+      <div class="guide-section-grid">
+        {editorial.guideSections.map((section) => (
+          <article><h3>{section.title}</h3><p>{section.description}</p>{section.href && <a href={section.href}>{section.cta || "View guides"} →</a>}</article>
+        ))}
+      </div>
+    ) : <p>{copy.guidesText}</p>}
   </section>
+
+  {editorial.sources?.length > 0 && (
+    <section class="wiki-section source-section">
+      <h2>Sources</h2>
+      <ul>{editorial.sources.map((source) => <li><a href={source.url} target="_blank" rel="noopener">{source.label}</a></li>)}</ul>
+    </section>
+  )}
 
   <p class="detail-lbl">{t(locale, "relatedLinks")}</p>
   <div class="links">

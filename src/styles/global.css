@@ -200,7 +200,11 @@ section.rail{margin:38px 0}
 .answer-list h3{font-size:15px;margin:0 0 6px}.answer-list p{margin:0;color:var(--muted)}
 .owned-wiki-cta{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:24px 0 0;padding:20px 22px;border:1px solid rgba(91,108,255,.45);border-radius:16px;background:linear-gradient(135deg,rgba(91,108,255,.13),rgba(155,77,255,.08))}
 .owned-wiki-cta div{display:grid;gap:4px}.owned-wiki-cta span{font-size:13px;color:var(--muted)}.owned-wiki-cta a{flex:none;padding:11px 14px;border-radius:10px;background:var(--indigo);color:white;font-weight:700;font-size:13px}
+.guide-section-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.guide-section-grid article{padding:16px;border-radius:12px;background:var(--bg);border:1px solid var(--line-soft)}
+.guide-section-grid h3{margin:0 0 7px;font-size:16px}.guide-section-grid p{margin:0 0 10px;color:var(--muted);line-height:1.6}.guide-section-grid a,.source-section a{color:var(--indigo);font-weight:700}
+.source-section ul{margin:0;padding-left:20px}.source-section li+li{margin-top:8px}
 @media(max-width:640px){.wiki-section{padding:18px}.owned-wiki-cta{align-items:flex-start;flex-direction:column}.owned-wiki-cta a{width:100%;text-align:center}}
+@media(max-width:640px){.guide-section-grid{grid-template-columns:1fr}}
 
 /* ---------- footer ---------- */
 footer{margin-top:56px; border-top:1px solid var(--line-soft); background:var(--bg-2)}

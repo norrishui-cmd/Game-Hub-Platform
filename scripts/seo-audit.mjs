@@ -1,5 +1,6 @@
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
+import { auditWiki, readJson } from "./wiki-quality.mjs";
 
 const root = path.resolve("dist");
 async function walk(dir) {
@@ -11,6 +12,14 @@ async function walk(dir) {
 
 const files = (await walk(root)).filter((f) => f.endsWith(".html"));
 const failures = [];
+const wikiDir = path.resolve("data/wiki");
+for (const file of await walk(wikiDir)) {
+  if (!file.endsWith(".json")) continue;
+  const wiki = await readJson(file);
+  if (wiki.publishStatus === "published") {
+    for (const error of auditWiki(wiki)) failures.push(`${path.relative(process.cwd(), file)}: ${error}`);
+  }
+}
 for (const file of files) {
   const html = await readFile(file, "utf8");
   const rel = path.relative(root, file);
