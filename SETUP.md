@@ -168,6 +168,18 @@ npm run seo:audit
 索引；游戏详情、类型和平台叶子页只有在对应语言拥有独立且通过质量门的内容后才进入
 sitemap。不要为了扩大 URL 数量而直接解除这些页面的 `noindex`。
 
+## AdSense 全站配置
+
+发布商账号为 `ca-pub-9505220977121599`。全局布局和根跳转页的 `<head>` 均包含
+AdSense异步加载脚本及 `google-adsense-account` 元标记；`public/ads.txt` 包含：
+
+```text
+google.com, pub-9505220977121599, DIRECT, f08c47fec0942fa0
+```
+
+部署后应能直接访问 `https://gameradar.wiki/ads.txt`。`npm run seo:audit` 会逐页检查
+账户标记、加载脚本和ads.txt，任何一项缺失都会阻止审核通过。
+
 ## 已知的下一步
 
 - `category = 0`（只要主游戏）用的是 IGDB 已标记 deprecated 但目前仍可用的字段，
