@@ -12,10 +12,10 @@ export function getStaticPaths() {
 const { locale } = Astro.params;
 const genres = collectTaxonomy(gamesData.games, "genres");
 ---
-<Base locale={locale} title={`${t(locale, "genresPageTitle")} | GameRadar`} pathSuffix="/genres/">
+<Base locale={locale} title={`${t(locale, "genresPageTitle")} | GameRadar`} pathSuffix="/genres/" noindex={locale !== "en"} indexableLocales={["en"]}>
   <main class="wrap" style="padding-top:28px">
     <div class="crumb"><a href={`/${locale}/`}>{t(locale, "breadcrumbBack")}</a></div>
-    <div class="rail-head"><h2><span class="bar" style="background:var(--indigo)"></span>{t(locale, "genresPageTitle")}</h2></div>
+    <div class="rail-head"><h1><span class="bar" style="background:var(--indigo)"></span>{t(locale, "genresPageTitle")}</h1></div>
     <div class="tabs" role="list">
       {genres.map((g) => (
         <a class="tab" role="listitem" href={`/${locale}/genre/${g.slug}/`}>{translateGenre(g.label, locale)}<span style="opacity:.6"> · {g.count}</span></a>

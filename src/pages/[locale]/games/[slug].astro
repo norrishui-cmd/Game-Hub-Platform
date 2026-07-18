@@ -4,7 +4,7 @@ import GameDetail from "../../../components/GameDetail.astro";
 import gamesData from "../../../../data/games.json";
 import { LOCALES } from "../../../i18n/locales.js";
 import { t } from "../../../i18n/ui.js";
-import { hasOwnPage, displayTitle } from "../../../lib/games.js";
+import { hasOwnPage, displayTitle, isGameIndexable } from "../../../lib/games.js";
 
 export function getStaticPaths() {
   const publishable = gamesData.games.filter(hasOwnPage);
@@ -18,12 +18,16 @@ const { game } = Astro.props;
 const site = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
 const title = displayTitle(game, locale);
 const pageUrl = `${site}/${locale}/games/${game.slug}/`;
+const indexable = isGameIndexable(game, locale);
+const indexableLocales = LOCALES.filter((l) => isGameIndexable(game, l));
 ---
 <Base
   locale={locale}
   title={t(locale, "gameMetaTitle", title)}
   description={t(locale, "gameMetaDesc", title, game.developer || "—", game.publisher)}
   pathSuffix={`/games/${game.slug}/`}
+  noindex={!indexable}
+  indexableLocales={indexableLocales}
 >
   <GameDetail game={game} pageUrl={pageUrl} locale={locale} isDraft={false} />
 </Base>

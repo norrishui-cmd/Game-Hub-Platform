@@ -1,10 +1,9 @@
 ---
-import { hasOwnPage, cardHref, isExternalLink, searchBlob, relText, displayTitle, translateGenres } from "../lib/games.js";
+import { cardHref, searchBlob, relText, displayTitle, translateGenres } from "../lib/games.js";
 import { t } from "../i18n/ui.js";
 
 const { game, locale } = Astro.props;
 const href = cardHref(game, locale);
-const external = isExternalLink(game);
 const owned = game.coverage === "owned";
 const title = displayTitle(game, locale);
 const genresLocalized = translateGenres(game.genres, locale);
@@ -12,8 +11,6 @@ const genresLocalized = translateGenres(game.genres, locale);
 <a
   class="card"
   href={href}
-  target={external ? "_blank" : undefined}
-  rel={external ? "noopener" : undefined}
   data-status={game.status}
   data-trending={String(!!game.trending)}
   data-coverage={game.coverage}

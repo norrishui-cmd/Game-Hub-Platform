@@ -8,11 +8,13 @@ const {
   title,
   description,
   noindex = false,
+  indexableLocales = LOCALES,
   pathSuffix = "", // 不带 locale 前缀的路径部分，比如 "/games/gta-6/"，用来拼 hreflang
 } = Astro.props;
 
 const desc = description || t(locale, "metaDescHome");
 const alternates = buildAlternates(pathSuffix);
+const visibleAlternates = LOCALES.filter((l) => indexableLocales.includes(l));
 const canonical = new URL(alternates[locale], Astro.site).toString();
 ---
 <!doctype html>
@@ -24,10 +26,10 @@ const canonical = new URL(alternates[locale], Astro.site).toString();
   <meta name="description" content={desc} />
   {noindex && <meta name="robots" content="noindex,follow" />}
   <link rel="canonical" href={canonical} />
-  {Astro.site && LOCALES.map((l) => (
+  {Astro.site && visibleAlternates.map((l) => (
     <link rel="alternate" hreflang={LOCALE_META[l].htmlLang} href={new URL(alternates[l], Astro.site).toString()} />
   ))}
-  {Astro.site && <link rel="alternate" hreflang="x-default" href={new URL(alternates[DEFAULT_LOCALE], Astro.site).toString()} />}
+  {Astro.site && visibleAlternates.includes(DEFAULT_LOCALE) && <link rel="alternate" hreflang="x-default" href={new URL(alternates[DEFAULT_LOCALE], Astro.site).toString()} />}
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
@@ -76,7 +78,7 @@ const canonical = new URL(alternates[locale], Astro.site).toString();
         <div class="foot-col">
           <b>{t(locale, "footerRules")}</b>
           <a href="https://github.com" target="_blank" rel="noopener">{t(locale, "footerDataSource")}</a>
-          <a href={`/${locale}/games/draft/`}>{t(locale, "footerDraftRadar")}</a>
+          <span>{t(locale, "footerDataSource")}</span>
         </div>
         <div class="foot-col">
           <b>{t(locale, "footerMyWikis")}</b>

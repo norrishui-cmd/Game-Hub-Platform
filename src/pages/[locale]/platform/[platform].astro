@@ -18,17 +18,20 @@ export function getStaticPaths() {
 
 const { locale } = Astro.params;
 const { label, games } = Astro.props;
+const indexable = locale === "en" && games.length >= 3;
 ---
 <Base
   locale={locale}
   title={`${label} | GameRadar`}
   description={t(locale, "platformMetaDesc", label, games.length)}
   pathSuffix={`/platform/${slugify(label)}/`}
+  noindex={!indexable}
+  indexableLocales={indexable ? ["en"] : []}
 >
   <main class="wrap" style="padding-top:28px">
     <div class="crumb"><a href={`/${locale}/`}>{t(locale, "breadcrumbBack")}</a></div>
     <div class="rail-head">
-      <h2><span class="bar" style="background:var(--teal)"></span>{label}</h2>
+      <h1><span class="bar" style="background:var(--teal)"></span>{label}</h1>
       <span class="count">{games.length} {t(locale, "countSuffix")}</span>
     </div>
     <div class="grid">{games.map((g) => <GameCard game={g} locale={locale} />)}</div>

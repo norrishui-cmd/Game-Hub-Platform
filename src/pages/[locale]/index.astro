@@ -4,7 +4,7 @@ import GameCard from "../../components/GameCard.astro";
 import gamesData from "../../../data/games.json";
 import { LOCALES } from "../../i18n/locales.js";
 import { t } from "../../i18n/ui.js";
-import { fmtDate, cardHref, isExternalLink, displayTitle, translateGenres } from "../../lib/games.js";
+import { fmtDate, cardHref, displayTitle, translateGenres } from "../../lib/games.js";
 
 export function getStaticPaths() {
   return LOCALES.map((locale) => ({ params: { locale } }));
@@ -17,7 +17,6 @@ const upcoming = games.filter((g) => g.status === "upcoming");
 const trending = games.filter((g) => g.trending);
 
 const heroHref = cardHref(featured, locale);
-const heroExternal = isExternalLink(featured);
 const heroTitle = displayTitle(featured, locale);
 const heroGenres = translateGenres(featured.genres, locale);
 ---
@@ -35,7 +34,7 @@ const heroGenres = translateGenres(featured.genres, locale);
             {heroGenres.map((g) => <span class="chip">{g}</span>)}
             {featured.platforms?.length > 0 && <span class="chip">{featured.platforms.join(" · ")}</span>}
           </div>
-          <a class="btn btn-primary" href={heroHref} target={heroExternal ? "_blank" : undefined} rel={heroExternal ? "noopener" : undefined}>
+          <a class="btn btn-primary" href={heroHref}>
             {featured.coverage === "owned" ? t(locale, "heroCtaWiki") : t(locale, "heroCtaInfo")}
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
           </a>

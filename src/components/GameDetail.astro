@@ -7,8 +7,39 @@ const links = availableLinks(game, locale);
 const jsonLd = buildJsonLd(game, pageUrl, locale);
 const title = displayTitle(game, locale);
 const genresLocalized = translateGenres(game.genres, locale);
+const copy = {
+  en: {
+    overview: "Game overview", overviewText: `${title} is ${game.status === "upcoming" ? "an upcoming" : "a released"} ${genresLocalized.join(" and ") || "video game"}${game.developer ? ` developed by ${game.developer}` : ""}. This hub tracks confirmed release information, platforms, official resources, and new player guides as reliable details become available.`,
+    quick: "Quick answers", guides: "Guide coverage", guidesText: "Guide sections are published only when they contain a concrete, source-supported answer. Planned coverage may include beginner help, quests, characters, items, builds, locations, and troubleshooting where relevant to this game.",
+    releaseQ: `When does ${title} release?`, platformQ: `What platforms is ${title} on?`, developerQ: `Who is making ${title}?`,
+    fullWiki: "Open the complete independent wiki", fullWikiSub: "Walkthroughs, databases, builds, and deeper player help", verified: "Confirmed information", updated: "This page is refreshed from structured game data and reviewed resources. Unconfirmed details are not presented as facts."
+  },
+  es: {
+    overview: "Resumen del juego", overviewText: `${title} es un videojuego ${genresLocalized.join(" y ") || ""}${game.developer ? ` desarrollado por ${game.developer}` : ""}. Este centro reúne la fecha, plataformas y recursos confirmados.`,
+    quick: "Respuestas rápidas", guides: "Cobertura de guías", guidesText: "Las guías se publican cuando contienen respuestas concretas y respaldadas por fuentes.",
+    releaseQ: `¿Cuándo se lanza ${title}?`, platformQ: `¿En qué plataformas estará ${title}?`, developerQ: `¿Quién desarrolla ${title}?`,
+    fullWiki: "Abrir la wiki independiente completa", fullWikiSub: "Guías y recursos detallados para jugadores", verified: "Información confirmada", updated: "Los datos no confirmados no se presentan como hechos."
+  },
+  zh: {
+    overview: "游戏概览", overviewText: `${title}是一款${genresLocalized.join("、") || "电子游戏"}${game.developer ? `，由 ${game.developer} 开发` : ""}。本页汇总已经确认的发行日期、平台和官方资源。`,
+    quick: "快速解答", guides: "攻略覆盖", guidesText: "只有能提供明确答案并有可靠来源的攻略栏目才会公开发布。后续可按游戏实际内容扩展任务、角色、物品、Build、地点及故障排查。",
+    releaseQ: `${title}什么时候发行？`, platformQ: `${title}登陆哪些平台？`, developerQ: `${title}由谁开发？`,
+    fullWiki: "进入完整独立攻略 Wiki", fullWikiSub: "查看任务、数据库、Build 与深度攻略", verified: "已确认信息", updated: "页面根据结构化游戏资料和可靠来源更新，不把未确认消息当作事实。"
+  }
+}[locale] || {};
+const releaseAnswer = game.release === "TBA" ? t(locale, "relTBA") : fmtDate(game.release, locale);
+const platformAnswer = game.platforms?.length ? game.platforms.join(", ") : "—";
+const faqJsonLd = {
+  "@context": "https://schema.org", "@type": "FAQPage",
+  mainEntity: [
+    { "@type": "Question", name: copy.releaseQ, acceptedAnswer: { "@type": "Answer", text: releaseAnswer } },
+    { "@type": "Question", name: copy.platformQ, acceptedAnswer: { "@type": "Answer", text: platformAnswer } },
+    ...(game.developer ? [{ "@type": "Question", name: copy.developerQ, acceptedAnswer: { "@type": "Answer", text: game.developer } }] : []),
+  ],
+};
 ---
 {!isDraft && <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />}
+{!isDraft && <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />}
 
 <div class="detail-wrap">
   <div class="crumb"><a href={`/${locale}/`}>{t(locale, "breadcrumbBack")}</a></div>
@@ -40,6 +71,33 @@ const genresLocalized = translateGenres(game.genres, locale);
     <dt>{t(locale, "factHype")}</dt><dd>🔥 {game.hype} / 100</dd>
   </dl>
 
+  <section class="wiki-section" aria-labelledby="overview-title">
+    <p class="section-kicker">{copy.verified}</p>
+    <h2 id="overview-title">{copy.overview}</h2>
+    <p>{copy.overviewText}</p>
+  </section>
+
+  {game.coverage === "owned" && game.wikiUrl && game.wikiUrl !== "#" && (
+    <aside class="owned-wiki-cta">
+      <div><b>{copy.fullWiki}</b><span>{copy.fullWikiSub}</span></div>
+      <a href={game.wikiUrl} target="_blank" rel="noopener">{copy.fullWiki} →</a>
+    </aside>
+  )}
+
+  <section class="wiki-section" aria-labelledby="answers-title">
+    <h2 id="answers-title">{copy.quick}</h2>
+    <div class="answer-list">
+      <article><h3>{copy.releaseQ}</h3><p>{releaseAnswer}</p></article>
+      <article><h3>{copy.platformQ}</h3><p>{platformAnswer}</p></article>
+      {game.developer && <article><h3>{copy.developerQ}</h3><p>{game.developer}</p></article>}
+    </div>
+  </section>
+
+  <section class="wiki-section" aria-labelledby="guides-title">
+    <h2 id="guides-title">{copy.guides}</h2>
+    <p>{copy.guidesText}</p>
+  </section>
+
   <p class="detail-lbl">{t(locale, "relatedLinks")}</p>
   <div class="links">
     {links.length
@@ -53,5 +111,5 @@ const genresLocalized = translateGenres(game.genres, locale);
       : <div class="empty" style="padding:20px 0">{t(locale, "noLinks")}</div>}
   </div>
 
-  <div class="note">{t(locale, "detailNote")}</div>
+  <div class="note">{copy.updated}</div>
 </div>

@@ -1,5 +1,17 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
+import gamesData from "./data/games.json";
+
+const taxonomyCounts = (field) => {
+  const counts = new Map();
+  for (const game of gamesData.games) for (const value of game[field] || []) {
+    const slug = String(value).toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "-").replace(/^-|-$/g, "");
+    counts.set(slug, (counts.get(slug) || 0) + 1);
+  }
+  return counts;
+};
+const genreCounts = taxonomyCounts("genres");
+const platformCounts = taxonomyCounts("platforms");
 
 export default defineConfig({
   // sitemap、hreflang、JSON-LD 里的绝对链接都靠这个字段拼出来。
@@ -26,7 +38,17 @@ export default defineConfig({
       // 注意：不要额外去 robots.txt 里 disallow 这些草稿页，
       // 那样 Googlebot 反而看不到页面上的 noindex 标签，效果适得其反。
       serialize(item) {
-        return item.url.includes("/games/draft/") ? undefined : item;
+        const path = new URL(item.url).pathname;
+        if (path.includes("/games/draft/")) return undefined;
+        if (/\/(es|zh)\/games\//.test(path)) return undefined;
+        if (/\/(es|zh)\/(genres|platforms)\/$/.test(path)) return undefined;
+        const taxonomy = path.match(/^\/(en|es|zh)\/(genre|platform)\/([^/]+)\/$/);
+        if (taxonomy) {
+          const [, locale, type, slug] = taxonomy;
+          const count = (type === "genre" ? genreCounts : platformCounts).get(slug) || 0;
+          if (locale !== "en" || count < 3) return undefined;
+        }
+        return item;
       },
     }),
   ],

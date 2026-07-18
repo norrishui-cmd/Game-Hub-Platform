@@ -18,7 +18,9 @@ export function slugify(text) {
 }
 
 export function hasOwnPage(game) {
-  return game.coverage === "nav" || !game.wikiUrl || game.wikiUrl === "#";
+  // Every game keeps a local hub. Owned wikis are promoted from that hub instead
+  // of replacing it, so this domain can build topical authority and useful paths.
+  return Boolean(game?.slug);
 }
 
 export function localePath(locale, path = "") {
@@ -26,11 +28,33 @@ export function localePath(locale, path = "") {
 }
 
 export function cardHref(game, locale) {
-  return hasOwnPage(game) ? `/${locale}/games/${game.slug}/` : game.wikiUrl;
+  return `/${locale}/games/${game.slug}/`;
 }
 
 export function isExternalLink(game) {
-  return !hasOwnPage(game);
+  return false;
+}
+
+export function dataScore(game) {
+  return [game.cover, game.platforms?.length, game.genres?.length,
+    Object.keys(game.links || {}).length, game.developer].filter(Boolean).length;
+}
+
+export function contentScore(game, locale = DEFAULT_LOCALE) {
+  const content = game.content?.[locale];
+  let score = 0;
+  if (content?.summary?.trim()) score += 2;
+  if (content?.faq?.length) score += Math.min(2, content.faq.length);
+  if (content?.guideSections?.length) score += 2;
+  if (content?.sources?.length) score += 1;
+  // English fact hubs are the reviewed fallback in phase one. Translated pages
+  // require explicit localized content before they can be indexed.
+  if (locale === DEFAULT_LOCALE && dataScore(game) >= 3) score += 3;
+  return score;
+}
+
+export function isGameIndexable(game, locale = DEFAULT_LOCALE) {
+  return game.publishStatus !== "draft" && contentScore(game, locale) >= 3;
 }
 
 // 中文有自己的中文名（titleZh，主要给 owned-wikis 手动配置用）；
