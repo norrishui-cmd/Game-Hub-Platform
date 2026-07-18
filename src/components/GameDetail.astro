@@ -13,19 +13,31 @@ const copy = {
     overview: "Game overview", overviewText: `${title} is ${game.status === "upcoming" ? "an upcoming" : "a released"} ${genresLocalized.join(" and ") || "video game"}${game.developer ? ` developed by ${game.developer}` : ""}. This hub tracks confirmed release information, platforms, official resources, and new player guides as reliable details become available.`,
     quick: "Quick answers", guides: "Guide coverage", guidesText: "Guide sections are published only when they contain a concrete, source-supported answer. Planned coverage may include beginner help, quests, characters, items, builds, locations, and troubleshooting where relevant to this game.",
     releaseQ: `When does ${title} release?`, platformQ: `What platforms is ${title} on?`, developerQ: `Who is making ${title}?`,
-    fullWiki: "Open the complete independent wiki", fullWikiSub: "Walkthroughs, databases, builds, and deeper player help", verified: "Confirmed information", updated: "This page is refreshed from structured game data and reviewed resources. Unconfirmed details are not presented as facts."
+    fullWiki: "Open the complete independent wiki", fullWikiSub: "Walkthroughs, databases, builds, and deeper player help", verified: "Confirmed information", updated: "This page is refreshed from structured game data and reviewed resources. Unconfirmed details are not presented as facts.", sources: "Sources", guidesCta: "View guides"
   },
   es: {
     overview: "Resumen del juego", overviewText: `${title} es un videojuego ${genresLocalized.join(" y ") || ""}${game.developer ? ` desarrollado por ${game.developer}` : ""}. Este centro reúne la fecha, plataformas y recursos confirmados.`,
     quick: "Respuestas rápidas", guides: "Cobertura de guías", guidesText: "Las guías se publican cuando contienen respuestas concretas y respaldadas por fuentes.",
     releaseQ: `¿Cuándo se lanza ${title}?`, platformQ: `¿En qué plataformas estará ${title}?`, developerQ: `¿Quién desarrolla ${title}?`,
-    fullWiki: "Abrir la wiki independiente completa", fullWikiSub: "Guías y recursos detallados para jugadores", verified: "Información confirmada", updated: "Los datos no confirmados no se presentan como hechos."
+    fullWiki: "Abrir la wiki independiente completa", fullWikiSub: "Guías y recursos detallados para jugadores", verified: "Información confirmada", updated: "Los datos no confirmados no se presentan como hechos.", sources: "Fuentes", guidesCta: "Ver guías"
   },
   zh: {
     overview: "游戏概览", overviewText: `${title}是一款${genresLocalized.join("、") || "电子游戏"}${game.developer ? `，由 ${game.developer} 开发` : ""}。本页汇总已经确认的发行日期、平台和官方资源。`,
     quick: "快速解答", guides: "攻略覆盖", guidesText: "只有能提供明确答案并有可靠来源的攻略栏目才会公开发布。后续可按游戏实际内容扩展任务、角色、物品、Build、地点及故障排查。",
     releaseQ: `${title}什么时候发行？`, platformQ: `${title}登陆哪些平台？`, developerQ: `${title}由谁开发？`,
-    fullWiki: "进入完整独立攻略 Wiki", fullWikiSub: "查看任务、数据库、Build 与深度攻略", verified: "已确认信息", updated: "页面根据结构化游戏资料和可靠来源更新，不把未确认消息当作事实。"
+    fullWiki: "进入完整独立攻略 Wiki", fullWikiSub: "查看任务、数据库、Build 与深度攻略", verified: "已确认信息", updated: "页面根据结构化游戏资料和可靠来源更新，不把未确认消息当作事实。", sources: "信息来源", guidesCta: "查看攻略"
+  },
+  de: {
+    overview: "Spielübersicht", overviewText: `${title} ist ${game.status === "upcoming" ? "ein kommendes" : "ein veröffentlichtes"} ${genresLocalized.join("- und ") || "Videospiel"}${game.developer ? ` von ${game.developer}` : ""}. Dieser Hub bündelt bestätigte Angaben zu Veröffentlichung, Plattformen, offiziellen Quellen und Spielerhilfen.`,
+    quick: "Kurzantworten", guides: "Guide-Abdeckung", guidesText: "Guides werden nur veröffentlicht, wenn sie eine konkrete und durch Quellen belegte Antwort liefern. Je nach Spiel folgen Einsteigerhilfen, Quests, Charaktere, Gegenstände, Builds, Orte und Fehlerbehebung.",
+    releaseQ: `Wann erscheint ${title}?`, platformQ: `Für welche Plattformen erscheint ${title}?`, developerQ: `Wer entwickelt ${title}?`,
+    fullWiki: "Vollständiges unabhängiges Wiki öffnen", fullWikiSub: "Walkthroughs, Datenbanken, Builds und ausführliche Spielerhilfen", verified: "Bestätigte Informationen", updated: "Diese Seite wird anhand strukturierter Spieldaten und geprüfter Quellen aktualisiert. Unbestätigte Angaben werden nicht als Tatsachen dargestellt.", sources: "Quellen", guidesCta: "Guides ansehen"
+  },
+  ja: {
+    overview: "ゲーム概要", overviewText: `${title}は${genresLocalized.join("・") || "ゲーム"}${game.developer ? `で、${game.developer}が開発しています` : "です"}。このハブでは、発売日、対応プラットフォーム、公式情報、プレイヤー向けガイドを確認済み情報に基づいてまとめています。`,
+    quick: "クイック回答", guides: "攻略ガイド", guidesText: "具体的な回答と信頼できる根拠があるガイドのみ公開します。ゲーム内容に応じて初心者向け情報、クエスト、キャラクター、アイテム、ビルド、ロケーション、不具合対策を追加します。",
+    releaseQ: `${title}の発売日はいつですか？`, platformQ: `${title}の対応プラットフォームは？`, developerQ: `${title}の開発会社は？`,
+    fullWiki: "完全版の独立Wikiを開く", fullWikiSub: "攻略、データベース、ビルド、詳しいプレイヤー向け情報", verified: "確認済み情報", updated: "構造化されたゲームデータと確認済みの情報源を基に更新しています。未確認情報を事実として掲載しません。", sources: "情報源", guidesCta: "攻略を見る"
   }
 }[locale] || {};
 const releaseAnswer = game.release === "TBA" ? t(locale, "relTBA") : fmtDate(game.release, locale);
@@ -98,7 +110,7 @@ const faqJsonLd = {
     {editorial.guideSections?.length ? (
       <div class="guide-section-grid">
         {editorial.guideSections.map((section) => (
-          <article><h3>{section.title}</h3><p>{section.description}</p>{section.href && <a href={section.href}>{section.cta || "View guides"} →</a>}</article>
+          <article><h3>{section.title}</h3><p>{section.description}</p>{section.href && <a href={section.href}>{section.cta || copy.guidesCta} →</a>}</article>
         ))}
       </div>
     ) : <p>{copy.guidesText}</p>}
@@ -106,7 +118,7 @@ const faqJsonLd = {
 
   {editorial.sources?.length > 0 && (
     <section class="wiki-section source-section">
-      <h2>Sources</h2>
+      <h2>{copy.sources}</h2>
       <ul>{editorial.sources.map((source) => <li><a href={source.url} target="_blank" rel="noopener">{source.label}</a></li>)}</ul>
     </section>
   )}

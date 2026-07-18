@@ -1,12 +1,14 @@
 // 三语配置的唯一真源。加第四种语言时，理论上只用改这一个文件 + ui.js 里补一份翻译。
 // 顺序 = 语言切换器按钮从左到右的顺序 = 探测不到浏览器语言时的兜底优先级。
-export const LOCALES = ["en", "es", "zh"];
+export const LOCALES = ["en", "de", "ja", "es", "zh"];
 export const DEFAULT_LOCALE = "en";
 
 export const LOCALE_META = {
   zh: { label: "中文", htmlLang: "zh-CN" },
   en: { label: "English", htmlLang: "en" },
   es: { label: "Español", htmlLang: "es" },
+  de: { label: "Deutsch", htmlLang: "de" },
+  ja: { label: "日本語", htmlLang: "ja" },
 };
 
 export function isValidLocale(locale) {

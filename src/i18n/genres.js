@@ -28,8 +28,18 @@ const GENRE_MAP = {
   "Indie": { zh: "独立游戏", es: "Independiente" },
 };
 
+const GENRE_DE = {
+  "Point-and-click": "Point-and-Click", Fighting: "Kampfspiel", Shooter: "Shooter", Music: "Musik", Platform: "Plattformer", Puzzle: "Puzzle", Racing: "Rennspiel", "Real Time Strategy (RTS)": "Echtzeitstrategie", "Role-playing (RPG)": "Rollenspiel (RPG)", Simulator: "Simulation", Sport: "Sport", Strategy: "Strategie", "Turn-based strategy (TBS)": "Rundenstrategie", Tactical: "Taktik", "Quiz/Trivia": "Quiz", "Hack and slash/Beat 'em up": "Hack and Slash / Beat 'em up", Pinball: "Flipper", Adventure: "Abenteuer", Arcade: "Arcade", "Visual Novel": "Visual Novel", "Card & Board Game": "Karten- und Brettspiel", MOBA: "MOBA", Indie: "Indie",
+};
+
+const GENRE_JA = {
+  "Point-and-click": "ポイント＆クリック", Fighting: "格闘", Shooter: "シューティング", Music: "音楽", Platform: "プラットフォーム", Puzzle: "パズル", Racing: "レース", "Real Time Strategy (RTS)": "リアルタイムストラテジー", "Role-playing (RPG)": "ロールプレイング（RPG）", Simulator: "シミュレーション", Sport: "スポーツ", Strategy: "ストラテジー", "Turn-based strategy (TBS)": "ターン制ストラテジー", Tactical: "タクティカル", "Quiz/Trivia": "クイズ", "Hack and slash/Beat 'em up": "ハック＆スラッシュ／ベルトスクロール", Pinball: "ピンボール", Adventure: "アドベンチャー", Arcade: "アーケード", "Visual Novel": "ビジュアルノベル", "Card & Board Game": "カード・ボードゲーム", MOBA: "MOBA", Indie: "インディー",
+};
+
 export function translateGenre(englishName, locale) {
   if (locale === "en" || !englishName) return englishName;
+  if (locale === "de") return GENRE_DE[englishName] || englishName;
+  if (locale === "ja") return GENRE_JA[englishName] || englishName;
   const hit = GENRE_MAP[englishName];
   if (!hit) return englishName; // 没收录就显示英文原名，不猜、不崩
   return hit[locale] || englishName;

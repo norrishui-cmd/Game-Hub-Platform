@@ -73,7 +73,7 @@ export function searchBlob(game, locale) {
     .toLowerCase();
 }
 
-const LOCALE_DATE_TAG = { zh: "zh-CN", en: "en-US", es: "es-ES" };
+const LOCALE_DATE_TAG = { zh: "zh-CN", en: "en-US", es: "es-ES", de: "de-DE", ja: "ja-JP" };
 
 export function fmtDate(iso, locale = DEFAULT_LOCALE) {
   if (!iso || iso === "TBA") return t(locale, "relTBA");

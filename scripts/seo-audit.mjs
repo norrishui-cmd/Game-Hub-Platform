@@ -1,6 +1,8 @@
 import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import { auditWiki, readJson } from "./wiki-quality.mjs";
+import { UI } from "../src/i18n/ui.js";
+import { LOCALES } from "../src/i18n/locales.js";
 
 const root = path.resolve("dist");
 async function walk(dir) {
@@ -12,6 +14,13 @@ async function walk(dir) {
 
 const files = (await walk(root)).filter((f) => f.endsWith(".html"));
 const failures = [];
+const referenceKeys = Object.keys(UI.en).sort();
+for (const locale of LOCALES) {
+  const missing = referenceKeys.filter((key) => !(key in (UI[locale] || {})));
+  const extra = Object.keys(UI[locale] || {}).filter((key) => !referenceKeys.includes(key));
+  if (missing.length) failures.push(`UI ${locale}: missing keys ${missing.join(", ")}`);
+  if (extra.length) failures.push(`UI ${locale}: unexpected keys ${extra.join(", ")}`);
+}
 const wikiDir = path.resolve("data/wiki");
 for (const file of await walk(wikiDir)) {
   if (!file.endsWith(".json")) continue;
