@@ -22,7 +22,7 @@ const genresLocalized = translateGenres(game.genres, locale);
       : <span class="pill nav"><span class="d"></span>{t(locale, "pillNav")}</span>}
     {game.status === "live" && <span class="pill live"><span class="d"></span>{t(locale, "pillLive")}</span>}
     {game.cover
-      ? <img class="cover-img" src={game.cover} alt="" loading="lazy" />
+      ? <img class="cover-img" src={game.cover} alt={`${title} banner`} loading="lazy" decoding="async" style={`object-position:${game.coverPosition || "center"}`} />
       : <div class="mono">{game.mono}</div>}
     <span class="hype">🔥 {game.hype}</span>
   </div>

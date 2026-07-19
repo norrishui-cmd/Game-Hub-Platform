@@ -62,7 +62,7 @@ const faqJsonLd = {
 
   <div class="detail-hero" style={`background:linear-gradient(135deg, ${game.grad[0]}, ${game.grad[1]})`}>
     {game.cover
-      ? <img class="cover-img" src={game.cover} alt="" loading="lazy" />
+      ? <img class="cover-img" src={game.cover} alt={`${title} banner`} decoding="async" style={`object-position:${game.coverPosition || "center"}`} />
       : <div class="mono">{game.mono}</div>}
   </div>
 

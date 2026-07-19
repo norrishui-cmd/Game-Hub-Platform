@@ -209,9 +209,35 @@ function applyOwnedWiki(game, ownedList) {
     game.coverage = "owned";
     game.wikiUrl = hit.wikiUrl || "#";
     if (hit.titleZh) game.titleZh = hit.titleZh;
+    if (hit.banner) game.cover = hit.banner;
+    if (hit.coverPosition) game.coverPosition = hit.coverPosition;
     if (hit.featured) game.featured = true;
   }
   return game;
+}
+
+function ownedFallback(owned) {
+  const title = owned.titleEn || owned.match[0];
+  return applyOwnedWiki({
+    slug: owned.slug || title.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "-").replace(/^-|-$/g, ""),
+    titleZh: owned.titleZh || title,
+    titleEn: title,
+    developer: null,
+    publisher: "",
+    platforms: [],
+    genres: [],
+    release: "TBA",
+    hype: 0,
+    status: "upcoming",
+    trending: false,
+    coverage: "owned",
+    wikiUrl: owned.wikiUrl || "#",
+    links: {},
+    cover: owned.banner || null,
+    coverPosition: owned.coverPosition || "center",
+    grad: pickGradient(owned.slug || title),
+    mono: title.trim().charAt(0).toUpperCase(),
+  }, [owned]);
 }
 
 // ---------------------------------------------------------------------------
@@ -270,9 +296,15 @@ async function main() {
         console.log(`  + 补充收录「${g.titleZh}」`);
       } else {
         console.warn(`  ⚠ IGDB 未找到「${primaryName}」，请检查拼写或该游戏是否已被 IGDB 收录。`);
+        const fallback = ownedFallback(owned);
+        bySlug.set(fallback.slug, fallback);
+        console.log(`  + 使用本地配置保留「${fallback.titleEn}」`);
       }
     } catch (e) {
       console.warn(`  ⚠ 查询「${primaryName}」时出错: ${e.message}`);
+      const fallback = ownedFallback(owned);
+      bySlug.set(fallback.slug, fallback);
+      console.log(`  + 使用本地配置保留「${fallback.titleEn}」`);
     }
   }
 
@@ -317,4 +349,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   });
 }
 
-export { normalize, completenessScore, applyOwnedWiki, pickGradient, main };
+export { normalize, completenessScore, applyOwnedWiki, ownedFallback, pickGradient, main };

@@ -3,12 +3,104 @@
     "match": ["star wars zero company", "zero company"],
     "titleZh": "星球大战：零号连队",
     "wikiUrl": "https://starwarszerocompany.cc",
+    "banner": "/images/games/star-wars-zero-company-banner.webp",
+    "coverPosition": "center",
     "featured": true
   },
   {
     "match": ["planet zoo 2"],
     "titleZh": "动物园之星 2",
     "wikiUrl": "",
+    "featured": false
+  },
+  {
+    "match": ["nivalis nights", "nivalis"],
+    "slug": "nivalis-nights",
+    "titleEn": "Nivalis Nights",
+    "titleZh": "Nivalis Nights",
+    "wikiUrl": "",
+    "banner": "/images/games/nivalis-nights-banner.webp",
+    "coverPosition": "center",
+    "featured": false
+  },
+  {
+    "match": ["neverway"],
+    "slug": "neverway",
+    "titleEn": "Neverway",
+    "titleZh": "Neverway",
+    "wikiUrl": "",
+    "banner": "/images/games/neverway-banner.webp",
+    "coverPosition": "center",
+    "featured": false
+  },
+  {
+    "match": ["runescape dragonwilds", "dragonwilds"],
+    "slug": "runescape-dragonwilds",
+    "titleEn": "RuneScape: Dragonwilds",
+    "titleZh": "RuneScape: Dragonwilds",
+    "wikiUrl": "",
+    "banner": "/images/games/runescape-dragonwilds-banner.webp",
+    "coverPosition": "center",
+    "featured": false
+  },
+  {
+    "match": ["control resonant", "resonant"],
+    "slug": "control-resonant",
+    "titleEn": "CONTROL Resonant",
+    "titleZh": "CONTROL Resonant",
+    "wikiUrl": "",
+    "banner": "/images/games/control-resonant-banner.webp",
+    "coverPosition": "center",
+    "featured": false
+  },
+  {
+    "match": ["harvest moon echoes of teradea", "echoes of teradea"],
+    "slug": "harvest-moon-echoes-of-teradea",
+    "titleEn": "Harvest Moon: Echoes of Teradea",
+    "titleZh": "Harvest Moon: Echoes of Teradea",
+    "wikiUrl": "",
+    "banner": "/images/games/harvest-moon-echoes-of-teradea-banner.webp",
+    "coverPosition": "center",
+    "featured": false
+  },
+  {
+    "match": ["ace combat 8 wings of theve", "ace combat 8"],
+    "slug": "ace-combat-8-wings-of-theve",
+    "titleEn": "Ace Combat 8: Wings of Theve",
+    "titleZh": "Ace Combat 8: Wings of Theve",
+    "wikiUrl": "",
+    "banner": "/images/games/ace-combat-8-banner.webp",
+    "coverPosition": "center",
+    "featured": false
+  },
+  {
+    "match": ["grave seasons"],
+    "slug": "grave-seasons",
+    "titleEn": "Grave Seasons",
+    "titleZh": "Grave Seasons",
+    "wikiUrl": "",
+    "banner": "/images/games/grave-seasons-banner.webp",
+    "coverPosition": "center",
+    "featured": false
+  },
+  {
+    "match": ["the blood of dawnwalker", "blood of dawnwalker", "dawnwalker"],
+    "slug": "the-blood-of-dawnwalker",
+    "titleEn": "The Blood of Dawnwalker",
+    "titleZh": "The Blood of Dawnwalker",
+    "wikiUrl": "",
+    "banner": "/images/games/the-blood-of-dawnwalker-banner.webp",
+    "coverPosition": "center",
+    "featured": false
+  },
+  {
+    "match": ["phantom blade zero", "phantom blade 0"],
+    "slug": "phantom-blade-zero",
+    "titleEn": "Phantom Blade Zero",
+    "titleZh": "Phantom Blade Zero",
+    "wikiUrl": "",
+    "banner": "/images/games/phantom-blade-zero-banner.webp",
+    "coverPosition": "center 38%",
     "featured": false
   }
 ]

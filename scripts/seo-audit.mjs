@@ -16,6 +16,15 @@ async function walk(dir) {
 
 const files = (await walk(root)).filter((f) => f.endsWith(".html"));
 const failures = [];
+const gamesData = await readJson(path.resolve("data/games.json"));
+for (const game of gamesData.games || []) {
+  if (!game.cover?.startsWith("/")) continue;
+  try {
+    await readFile(path.resolve("public", game.cover.replace(/^\//, "")));
+  } catch {
+    failures.push(`game ${game.slug}: local cover not found (${game.cover})`);
+  }
+}
 const referenceKeys = Object.keys(UI.en).sort();
 for (const locale of LOCALES) {
   const missing = referenceKeys.filter((key) => !(key in (UI[locale] || {})));

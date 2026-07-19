@@ -180,6 +180,13 @@ google.com, pub-9505220977121599, DIRECT, f08c47fec0942fa0
 部署后应能直接访问 `https://gameradar.wiki/ads.txt`。`npm run seo:audit` 会逐页检查
 账户标记、加载脚本和ads.txt，任何一项缺失都会阻止审核通过。
 
+## 自有游戏 Banner
+
+自有游戏图片存放于 `public/images/games/`，具体匹配规则保存在
+`data/owned-wikis.json` 的 `banner` 和 `coverPosition` 字段。抓取任务命中游戏后会强制使用
+本地Banner覆盖IGDB封面；即使IGDB暂时搜索不到游戏，也会保留本地配置的游戏卡片。
+`npm run seo:audit` 会检查每个本地图片路径是否真实存在。
+
 ## 已知的下一步
 
 - `category = 0`（只要主游戏）用的是 IGDB 已标记 deprecated 但目前仍可用的字段，

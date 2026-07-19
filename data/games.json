@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-07-04T00:00:00.000Z",
-  "count": 8,
+  "count": 17,
   "note": "这是手填的种子数据，结构和 scripts/fetch-games.mjs 的真实输出完全一致（genres 用的是真实 IGDB 英文分类值，跟真实抓取管线保持一致，供多语言翻译字典对照）。Action 第一次成功运行后会整体覆盖这个文件。",
   "games": [
     {
@@ -26,7 +26,8 @@
       "coverage": "owned",
       "wikiUrl": "https://starwarszerocompany.cc",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/star-wars-zero-company-banner.webp",
+      "coverPosition": "center",
       "grad": [
         "#5b6cff",
         "#9b4dff"
@@ -250,6 +251,60 @@
         "#4fbfa0"
       ],
       "mono": "L"
+    },
+    {
+      "slug": "nivalis-nights", "titleZh": "Nivalis Nights", "titleEn": "Nivalis Nights",
+      "developer": null, "publisher": "", "platforms": [], "genres": [], "release": "TBA",
+      "hype": 0, "status": "upcoming", "trending": false, "coverage": "owned", "wikiUrl": "#", "links": {},
+      "cover": "/images/games/nivalis-nights-banner.webp", "coverPosition": "center", "grad": ["#1f5f7a", "#f08a3c"], "mono": "N"
+    },
+    {
+      "slug": "neverway", "titleZh": "Neverway", "titleEn": "Neverway",
+      "developer": null, "publisher": "", "platforms": [], "genres": [], "release": "TBA",
+      "hype": 0, "status": "upcoming", "trending": false, "coverage": "owned", "wikiUrl": "#", "links": {},
+      "cover": "/images/games/neverway-banner.webp", "coverPosition": "center", "grad": ["#43386f", "#61dfe0"], "mono": "N"
+    },
+    {
+      "slug": "runescape-dragonwilds", "titleZh": "RuneScape: Dragonwilds", "titleEn": "RuneScape: Dragonwilds",
+      "developer": null, "publisher": "", "platforms": [], "genres": [], "release": "TBA",
+      "hype": 0, "status": "upcoming", "trending": false, "coverage": "owned", "wikiUrl": "#", "links": {},
+      "cover": "/images/games/runescape-dragonwilds-banner.webp", "coverPosition": "center", "grad": ["#24150b", "#d18a2e"], "mono": "R"
+    },
+    {
+      "slug": "control-resonant", "titleZh": "CONTROL Resonant", "titleEn": "CONTROL Resonant",
+      "developer": null, "publisher": "", "platforms": [], "genres": [], "release": "TBA",
+      "hype": 0, "status": "upcoming", "trending": false, "coverage": "owned", "wikiUrl": "#", "links": {},
+      "cover": "/images/games/control-resonant-banner.webp", "coverPosition": "center", "grad": ["#241a1a", "#a31c23"], "mono": "C"
+    },
+    {
+      "slug": "harvest-moon-echoes-of-teradea", "titleZh": "Harvest Moon: Echoes of Teradea", "titleEn": "Harvest Moon: Echoes of Teradea",
+      "developer": null, "publisher": "", "platforms": [], "genres": [], "release": "TBA",
+      "hype": 0, "status": "upcoming", "trending": false, "coverage": "owned", "wikiUrl": "#", "links": {},
+      "cover": "/images/games/harvest-moon-echoes-of-teradea-banner.webp", "coverPosition": "center", "grad": ["#57a6d7", "#76bd62"], "mono": "H"
+    },
+    {
+      "slug": "ace-combat-8-wings-of-theve", "titleZh": "Ace Combat 8: Wings of Theve", "titleEn": "Ace Combat 8: Wings of Theve",
+      "developer": null, "publisher": "", "platforms": [], "genres": [], "release": "TBA",
+      "hype": 0, "status": "upcoming", "trending": false, "coverage": "owned", "wikiUrl": "#", "links": {},
+      "cover": "/images/games/ace-combat-8-banner.webp", "coverPosition": "center", "grad": ["#455866", "#a5b4bd"], "mono": "A"
+    },
+    {
+      "slug": "grave-seasons", "titleZh": "Grave Seasons", "titleEn": "Grave Seasons",
+      "developer": null, "publisher": "", "platforms": [], "genres": [], "release": "TBA",
+      "hype": 0, "status": "upcoming", "trending": false, "coverage": "owned", "wikiUrl": "#", "links": {},
+      "cover": "/images/games/grave-seasons-banner.webp", "coverPosition": "center", "grad": ["#143e2d", "#aacb6c"], "mono": "G"
+    },
+    {
+      "slug": "the-blood-of-dawnwalker", "titleZh": "The Blood of Dawnwalker", "titleEn": "The Blood of Dawnwalker",
+      "developer": null, "publisher": "", "platforms": [], "genres": [], "release": "TBA",
+      "hype": 0, "status": "upcoming", "trending": false, "coverage": "owned", "wikiUrl": "#", "links": {},
+      "cover": "/images/games/the-blood-of-dawnwalker-banner.webp", "coverPosition": "center", "grad": ["#7b160c", "#f08028"], "mono": "D"
+    },
+    {
+      "slug": "phantom-blade-zero", "titleZh": "Phantom Blade Zero", "titleEn": "Phantom Blade Zero",
+      "developer": null, "publisher": "", "platforms": [], "genres": [], "release": "TBA",
+      "hype": 0, "status": "upcoming", "trending": false, "coverage": "owned", "wikiUrl": "#", "links": {},
+      "cover": "/images/games/phantom-blade-zero-banner.webp", "coverPosition": "center 38%", "grad": ["#34414a", "#9aa8af"], "mono": "P"
     }
   ]
 }
