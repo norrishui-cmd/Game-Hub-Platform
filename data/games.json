@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-28T06:32:57.420Z",
+  "generatedAt": "2026-07-28T08:10:47.495Z",
   "count": 105,
   "games": [
     {
@@ -804,7 +804,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/dragon-s-dogma-2-dark-arisen-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#1f8a7a",
@@ -830,7 +830,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/warhammer-40-000-dawn-of-war-iv-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#8a3d2f",
@@ -857,7 +857,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/dune-awakening-console-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#8a3d2f",
@@ -886,7 +886,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/ratatan-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#7a5cff",
@@ -940,7 +940,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/beautiful-light-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#e8624a",
@@ -966,7 +966,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/chronicles-medieval-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#e8624a",
@@ -993,7 +993,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/mortal-shell-ii-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#b0453f",
@@ -1019,7 +1019,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/the-bustling-world-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#b0453f",

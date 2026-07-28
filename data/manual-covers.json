@@ -15,5 +15,13 @@
   "mistfall-hunter": { "cover": "/images/games/mistfall-hunter-banner.webp", "coverPosition": "center" },
   "enshrouded-1-0": { "cover": "/images/games/enshrouded-1-0-banner.webp", "coverPosition": "center" },
   "onimusha-way-of-the-sword": { "cover": "/images/games/onimusha-way-of-the-sword-banner.webp", "coverPosition": "center" },
-  "silent-hill-townfall": { "cover": "/images/games/silent-hill-townfall-banner.webp", "coverPosition": "center" }
+  "silent-hill-townfall": { "cover": "/images/games/silent-hill-townfall-banner.webp", "coverPosition": "center" },
+  "the-bustling-world": { "cover": "/images/games/the-bustling-world-banner.webp", "coverPosition": "center" },
+  "dragon-s-dogma-2-dark-arisen": { "cover": "/images/games/dragon-s-dogma-2-dark-arisen-banner.webp", "coverPosition": "center" },
+  "warhammer-40-000-dawn-of-war-iv": { "cover": "/images/games/warhammer-40-000-dawn-of-war-iv-banner.webp", "coverPosition": "center" },
+  "dune-awakening-console": { "cover": "/images/games/dune-awakening-console-banner.webp", "coverPosition": "center" },
+  "ratatan": { "cover": "/images/games/ratatan-banner.webp", "coverPosition": "center" },
+  "beautiful-light": { "cover": "/images/games/beautiful-light-banner.webp", "coverPosition": "center" },
+  "chronicles-medieval": { "cover": "/images/games/chronicles-medieval-banner.webp", "coverPosition": "center" },
+  "mortal-shell-ii": { "cover": "/images/games/mortal-shell-ii-banner.webp", "coverPosition": "center" }
 }
