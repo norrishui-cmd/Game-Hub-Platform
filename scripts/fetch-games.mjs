@@ -15,6 +15,11 @@
  * 收录规则（越靠前优先级越高，都在下面 RULES 里，调参只改这一处）：
  *   1. data/owned-wikis.json 里配置的游戏——不管热度多低、资料多单薄，一定收录，且强制标记为
  *      coverage:"owned"，直链到对应的 wikiUrl（这是本站存在的核心目的：把流量导给自己的深度 wiki）。
+ *   1.5 data/game-atlas.json 里配置的游戏（Norris 的 2026-2027 选题库，目前 100 款）——同样不管
+ *      IGDB 热度阈值，一定收录，标记为 coverage:"atlas"（除非同时命中 owned-wikis，那就升级成
+ *      "owned"）。这批数据是人工做过 SEO 选型研究的结果，比 IGDB 当天的热度信号更可信，没理由被
+ *      资料完整度关卡卡掉。改这批游戏的范围/排期改 data/game-atlas.json，改 wiki 直链改
+ *      data/owned-wikis.json，两个文件职责分开，不要混在一起改。
  *   2. 其余「即将发行」游戏——hypes（预发行热度）达到阈值才进入候选池，且只要主游戏（category=0），
  *      过滤掉 DLC / 资料片 / 合集 / 移植版这类噪音。热度进一步达到 upcomingTrendingHypeMin 的，
  *      额外打上「本周热门」标签（即将发行 ≠ 不能热门，一款没上线但话题度爆炸的游戏应该两边都算）。
@@ -216,6 +221,50 @@ function applyOwnedWiki(game, ownedList) {
   return game;
 }
 
+// ---------------------------------------------------------------------------
+// game-atlas 映射：Norris 的 2026-2027 选题库，不管 IGDB 热度阈值，一定收录。
+// 逻辑跟 owned-wikis 的 fallback 很像，但数据来源不同（Excel 人工研究 vs. 手填 wiki 配置），
+// 所以拆成独立的函数，别混在一起，以后两边任何一边调整都不用担心影响另一边。
+// ---------------------------------------------------------------------------
+async function loadGameAtlas() {
+  const p = path.join(process.cwd(), "data", "game-atlas.json");
+  try {
+    const parsed = JSON.parse(await readFile(p, "utf-8"));
+    return parsed.games || [];
+  } catch {
+    console.warn("⚠ 未找到或无法解析 data/game-atlas.json，本次跳过选题库强制收录。");
+    return [];
+  }
+}
+
+function isReleased(release) {
+  if (!release || release === "TBA") return false;
+  return new Date(release + "T00:00:00").getTime() <= Date.now();
+}
+
+function atlasFallback(entry, ownedList) {
+  const title = entry.titleEn;
+  return applyOwnedWiki({
+    slug: entry.slug || title.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, "-").replace(/^-|-$/g, ""),
+    titleZh: title,
+    titleEn: title,
+    developer: null,
+    publisher: "",
+    platforms: entry.platforms || [],
+    genres: entry.genres || [],
+    release: entry.release || "TBA",
+    hype: entry.hype ?? 40,
+    status: isReleased(entry.release) ? "live" : "upcoming",
+    trending: Boolean(entry.trending),
+    coverage: "atlas",
+    links: {},
+    cover: null,
+    coverPosition: "center",
+    grad: pickGradient(entry.slug || title),
+    mono: title.trim().charAt(0).toUpperCase(),
+  }, ownedList);
+}
+
 function ownedFallback(owned) {
   const title = owned.titleEn || owned.match[0];
   return applyOwnedWiki({
@@ -308,14 +357,50 @@ async function main() {
     }
   }
 
+  // 保底：game-atlas.json 里的 100 款选题库游戏，不管有没有挤进 IGDB 榜单排名，也不管 IGDB
+  // 搜不搜得到，都必须出现——跟上面 owned-wikis 那段的思路一致，只是数据来源换成了 Excel 选题库。
+  console.log("→ 正在核对选题库游戏是否已覆盖...");
+  const atlasEntries = await loadGameAtlas();
+  for (const entry of atlasEntries) {
+    const alreadyIn = bySlug.has(entry.slug);
+    if (alreadyIn) {
+      // 已经被 IGDB 榜单或 owned-wikis 收录了，只需要确认 owned-wiki 覆盖生效（以防万一），不重复搜索。
+      bySlug.set(entry.slug, applyOwnedWiki(bySlug.get(entry.slug), ownedWikis));
+      continue;
+    }
+    try {
+      const found = await searchGameByName(token, entry.titleEn);
+      if (found) {
+        const g = applyOwnedWiki(normalize(found), ownedWikis);
+        // IGDB 搜到了同名游戏，但选题库里的排期/平台/类型是人工核实过的，比 IGDB 当天数据更准，
+        // 只借用 IGDB 的封面图和公司信息，其余字段仍以选题库为准。
+        g.slug = entry.slug;
+        g.platforms = entry.platforms?.length ? entry.platforms : g.platforms;
+        g.genres = entry.genres?.length ? entry.genres : g.genres;
+        g.release = entry.release && entry.release !== "TBA" ? entry.release : g.release;
+        g.status = isReleased(g.release) ? "live" : "upcoming";
+        if (g.coverage !== "owned") g.coverage = "atlas";
+        bySlug.set(g.slug, g);
+        console.log(`  + 选题库补充「${g.titleEn}」（已用 IGDB 封面/公司信息增强）`);
+      } else {
+        bySlug.set(entry.slug, atlasFallback(entry, ownedWikis));
+        console.log(`  + 选题库补充「${entry.titleEn}」（IGDB 未收录，使用选题库数据）`);
+      }
+    } catch (e) {
+      console.warn(`  ⚠ 查询「${entry.titleEn}」时出错: ${e.message}`);
+      bySlug.set(entry.slug, atlasFallback(entry, ownedWikis));
+    }
+  }
+
   const games = [...bySlug.values()];
 
-  // 资料完整度关卡：owned 的游戏永远放行（自家 wiki 兜底内容，不靠 IGDB 那点资料展示）；
-  // 其余的必须达到 minCompletenessScore 才公开，没达到的进 drafts，不进公开的 games.json。
+  // 资料完整度关卡：owned / atlas 的游戏永远放行（owned 有自家 wiki 兜底内容，atlas 是人工做过
+  // SEO 选型研究的选题库，两者都不靠 IGDB 那点资料完整度打分）；其余的必须达到
+  // minCompletenessScore 才公开，没达到的进 drafts，不进公开的 games.json。
   const publicGames = [];
   const draftGames = [];
   for (const g of games) {
-    if (g.coverage === "owned" || completenessScore(g) >= RULES.minCompletenessScore) {
+    if (g.coverage === "owned" || g.coverage === "atlas" || completenessScore(g) >= RULES.minCompletenessScore) {
       publicGames.push(g);
     } else {
       draftGames.push(g);
@@ -349,4 +434,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   });
 }
 
-export { normalize, completenessScore, applyOwnedWiki, ownedFallback, pickGradient, main };
+export { normalize, completenessScore, applyOwnedWiki, ownedFallback, atlasFallback, loadGameAtlas, isReleased, pickGradient, main };

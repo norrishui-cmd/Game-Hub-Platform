@@ -1,39 +1,7 @@
 {
-  "generatedAt": "2026-07-04T00:00:00.000Z",
-  "count": 17,
-  "note": "这是手填的种子数据，结构和 scripts/fetch-games.mjs 的真实输出完全一致（genres 用的是真实 IGDB 英文分类值，跟真实抓取管线保持一致，供多语言翻译字典对照）。Action 第一次成功运行后会整体覆盖这个文件。",
+  "generatedAt": "2026-07-28T02:28:35.535Z",
+  "count": 105,
   "games": [
-    {
-      "slug": "star-wars-zero-company",
-      "titleZh": "星球大战：零号连队",
-      "titleEn": "Star Wars: Zero Company",
-      "developer": "Bit Reactor / Respawn",
-      "publisher": "EA / Lucasfilm Games",
-      "platforms": [
-        "PC",
-        "PS5",
-        "Xbox Series"
-      ],
-      "genres": [
-        "Turn-based strategy (TBS)",
-        "Strategy"
-      ],
-      "release": "2026-08-27",
-      "hype": 95,
-      "status": "upcoming",
-      "trending": true,
-      "featured": true,
-      "coverage": "owned",
-      "wikiUrl": "https://starwarszerocompany.cc",
-      "links": {},
-      "cover": "/images/games/star-wars-zero-company-banner.webp",
-      "coverPosition": "center",
-      "grad": [
-        "#5b6cff",
-        "#9b4dff"
-      ],
-      "mono": "Z"
-    },
     {
       "slug": "planet-zoo-2",
       "titleZh": "动物园之星 2",
@@ -41,55 +9,453 @@
       "developer": "Frontier Developments",
       "publisher": "Frontier",
       "platforms": [
-        "PC"
+        "PC",
+        "PS5",
+        "Xbox"
       ],
       "genres": [
-        "Simulator"
+        "Zoo management",
+        "simulation"
       ],
-      "release": "2026-10-15",
-      "hype": 78,
+      "release": "2026-10-13",
+      "hype": 95,
       "status": "upcoming",
       "trending": true,
       "coverage": "owned",
-      "wikiUrl": "#",
       "links": {},
       "cover": null,
+      "coverPosition": "center",
       "grad": [
         "#1fa87a",
         "#3dd6a6"
       ],
-      "mono": "P"
+      "mono": "P",
+      "wikiUrl": "https://planetzoo2.wiki",
+      "featured": true
     },
     {
-      "slug": "gta-6",
-      "titleZh": "侠盗猎车手 VI",
-      "titleEn": "Grand Theft Auto VI",
-      "developer": "Rockstar Games",
-      "publisher": "Rockstar Games",
+      "slug": "the-blood-of-dawnwalker",
+      "titleZh": "The Blood of Dawnwalker",
+      "titleEn": "The Blood of Dawnwalker",
+      "developer": null,
+      "publisher": "",
       "platforms": [
+        "PC",
         "PS5",
-        "Xbox Series"
+        "Xbox"
       ],
       "genres": [
-        "Adventure",
-        "Shooter"
+        "Dark fantasy RPG"
       ],
-      "release": "TBA",
-      "hype": 99,
+      "release": "2026-09-02",
+      "hype": 95,
       "status": "upcoming",
       "trending": true,
-      "coverage": "nav",
-      "cover": null,
-      "links": {
-        "official": "https://www.rockstargames.com/VI",
-        "reddit": "https://www.reddit.com/r/GTA6/",
-        "fanwiki": "https://gta.fandom.com"
-      },
+      "coverage": "owned",
+      "links": {},
+      "cover": "/images/games/the-blood-of-dawnwalker-banner.webp",
+      "coverPosition": "center",
       "grad": [
-        "#e8624a",
-        "#f6b44c"
+        "#7b160c",
+        "#f08028"
       ],
-      "mono": "6"
+      "mono": "T",
+      "wikiUrl": "https://bloodofdawnwalker.cc"
+    },
+    {
+      "slug": "star-wars-zero-company",
+      "titleZh": "星球大战：零号连队",
+      "titleEn": "Star Wars Zero Company",
+      "developer": "Bit Reactor / Respawn",
+      "publisher": "EA / Lucasfilm Games",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Tactical strategy"
+      ],
+      "release": "2026-08-27",
+      "hype": 95,
+      "status": "upcoming",
+      "trending": true,
+      "coverage": "owned",
+      "links": {},
+      "cover": "/images/games/star-wars-zero-company-banner.webp",
+      "coverPosition": "center",
+      "grad": [
+        "#5b6cff",
+        "#9b4dff"
+      ],
+      "mono": "S",
+      "wikiUrl": "https://starwarszerocompany.cc",
+      "featured": true
+    },
+    {
+      "slug": "moonlight-peaks",
+      "titleZh": "Moonlight Peaks",
+      "titleEn": "Moonlight Peaks",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "Switch",
+        "Mobile"
+      ],
+      "genres": [
+        "Cozy farming life sim"
+      ],
+      "release": "2026-07-06",
+      "hype": 95,
+      "status": "live",
+      "trending": true,
+      "coverage": "owned",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#3a6d8c",
+        "#4f9dbf"
+      ],
+      "mono": "M",
+      "wikiUrl": "https://moonlightpeakswiki.com",
+      "featured": true
+    },
+    {
+      "slug": "grave-seasons",
+      "titleZh": "Grave Seasons",
+      "titleEn": "Grave Seasons",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Farming horror sim"
+      ],
+      "release": "2026-08-14",
+      "hype": 82,
+      "status": "upcoming",
+      "trending": true,
+      "coverage": "owned",
+      "links": {},
+      "cover": "/images/games/grave-seasons-banner.webp",
+      "coverPosition": "center",
+      "grad": [
+        "#143e2d",
+        "#aacb6c"
+      ],
+      "mono": "G",
+      "wikiUrl": "https://graveseasons.wiki"
+    },
+    {
+      "slug": "beast-of-reincarnation",
+      "titleZh": "Beast of Reincarnation",
+      "titleEn": "Beast of Reincarnation",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Action RPG"
+      ],
+      "release": "2026-08-04",
+      "hype": 82,
+      "status": "upcoming",
+      "trending": true,
+      "coverage": "owned",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#b0453f",
+        "#d98a3d"
+      ],
+      "mono": "B",
+      "wikiUrl": "https://beast-of-reincarnation.vercel.app"
+    },
+    {
+      "slug": "runescape-dragonwilds",
+      "titleZh": "RuneScape: Dragonwilds",
+      "titleEn": "RuneScape: Dragonwilds",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Survival crafting RPG"
+      ],
+      "release": "2026-09-15",
+      "hype": 82,
+      "status": "upcoming",
+      "trending": true,
+      "coverage": "owned",
+      "links": {},
+      "cover": "/images/games/runescape-dragonwilds-banner.webp",
+      "coverPosition": "center",
+      "grad": [
+        "#24150b",
+        "#d18a2e"
+      ],
+      "mono": "R",
+      "wikiUrl": "https://runescapedragonwilds.wiki"
+    },
+    {
+      "slug": "reka",
+      "titleZh": "REKA",
+      "titleEn": "REKA",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Witch adventure",
+        "crafting"
+      ],
+      "release": "2026-08-18",
+      "hype": 82,
+      "status": "upcoming",
+      "trending": true,
+      "coverage": "owned",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#1fa87a",
+        "#3dd6a6"
+      ],
+      "mono": "R",
+      "wikiUrl": "https://reka-six.vercel.app"
+    },
+    {
+      "slug": "phantom-blade-zero",
+      "titleZh": "Phantom Blade Zero",
+      "titleEn": "Phantom Blade Zero",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5"
+      ],
+      "genres": [
+        "Action RPG",
+        "wuxia"
+      ],
+      "release": "2026-10-28",
+      "hype": 82,
+      "status": "upcoming",
+      "trending": true,
+      "coverage": "owned",
+      "links": {},
+      "cover": "/images/games/phantom-blade-zero-banner.webp",
+      "coverPosition": "center 38%",
+      "grad": [
+        "#34414a",
+        "#9aa8af"
+      ],
+      "mono": "P",
+      "wikiUrl": "https://phantombladezerowiki.wiki"
+    },
+    {
+      "slug": "harvest-moon-echoes-of-teradea",
+      "titleZh": "Harvest Moon: Echoes of Teradea",
+      "titleEn": "Harvest Moon: Echoes of Teradea",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Switch"
+      ],
+      "genres": [
+        "Farming sim"
+      ],
+      "release": "2026-09-24",
+      "hype": 82,
+      "status": "upcoming",
+      "trending": true,
+      "coverage": "owned",
+      "links": {},
+      "cover": "/images/games/harvest-moon-echoes-of-teradea-banner.webp",
+      "coverPosition": "center",
+      "grad": [
+        "#57a6d7",
+        "#76bd62"
+      ],
+      "mono": "H",
+      "wikiUrl": "#"
+    },
+    {
+      "slug": "valheim-1-0",
+      "titleZh": "Valheim 1.0",
+      "titleEn": "Valheim 1.0",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Survival crafting"
+      ],
+      "release": "2026-09-09",
+      "hype": 65,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "owned",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#1fa87a",
+        "#3dd6a6"
+      ],
+      "mono": "V",
+      "wikiUrl": "https://valheim-1-0.vercel.app"
+    },
+    {
+      "slug": "control-resonant",
+      "titleZh": "CONTROL Resonant",
+      "titleEn": "CONTROL Resonant",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Action adventure"
+      ],
+      "release": "2026-09-24",
+      "hype": 65,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "owned",
+      "links": {},
+      "cover": "/images/games/control-resonant-banner.webp",
+      "coverPosition": "center",
+      "grad": [
+        "#241a1a",
+        "#a31c23"
+      ],
+      "mono": "C",
+      "wikiUrl": "https://controlresonant.wiki"
+    },
+    {
+      "slug": "mistfall-hunter",
+      "titleZh": "Mistfall Hunter",
+      "titleEn": "Mistfall Hunter",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Extraction action RPG"
+      ],
+      "release": "2026-07-29",
+      "hype": 65,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "owned",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#7a5cff",
+        "#4f9dbf"
+      ],
+      "mono": "M",
+      "wikiUrl": "https://mistfallhunter.me"
+    },
+    {
+      "slug": "nivalis-nights",
+      "titleZh": "Nivalis Nights",
+      "titleEn": "Nivalis Nights",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Life sim",
+        "cyberpunk"
+      ],
+      "release": "2026-09-29",
+      "hype": 65,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "owned",
+      "links": {},
+      "cover": "/images/games/nivalis-nights-banner.webp",
+      "coverPosition": "center",
+      "grad": [
+        "#1f5f7a",
+        "#f08a3c"
+      ],
+      "mono": "N",
+      "wikiUrl": "https://nivalisnights.wiki"
+    },
+    {
+      "slug": "ace-combat-8-wings-of-theve",
+      "titleZh": "Ace Combat 8: Wings of Theve",
+      "titleEn": "ACE COMBAT 8: WINGS OF THEVE",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Flight action"
+      ],
+      "release": "2026-10-01",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "owned",
+      "links": {},
+      "cover": "/images/games/ace-combat-8-banner.webp",
+      "coverPosition": "center",
+      "grad": [
+        "#455866",
+        "#a5b4bd"
+      ],
+      "mono": "A",
+      "wikiUrl": "https://acecombat8.wiki"
+    },
+    {
+      "slug": "neverway",
+      "titleZh": "Neverway",
+      "titleEn": "Neverway",
+      "developer": null,
+      "publisher": "",
+      "platforms": [],
+      "genres": [],
+      "release": "TBA",
+      "hype": 0,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "owned",
+      "wikiUrl": "#",
+      "links": {},
+      "cover": "/images/games/neverway-banner.webp",
+      "coverPosition": "center",
+      "grad": [
+        "#43386f",
+        "#61dfe0"
+      ],
+      "mono": "N"
     },
     {
       "slug": "silksong",
@@ -126,37 +492,6 @@
       "mono": "S"
     },
     {
-      "slug": "elder-scrolls-6",
-      "titleZh": "上古卷轴 VI",
-      "titleEn": "The Elder Scrolls VI",
-      "developer": "Bethesda Game Studios",
-      "publisher": "Bethesda",
-      "platforms": [
-        "PC",
-        "Xbox Series"
-      ],
-      "genres": [
-        "Role-playing (RPG)",
-        "Adventure"
-      ],
-      "release": "TBA",
-      "hype": 84,
-      "status": "upcoming",
-      "trending": false,
-      "coverage": "nav",
-      "cover": null,
-      "links": {
-        "official": "https://elderscrolls.bethesda.net",
-        "reddit": "https://www.reddit.com/r/ElderScrolls/",
-        "fanwiki": "https://elderscrolls.fandom.com"
-      },
-      "grad": [
-        "#3a6d8c",
-        "#4f9dbf"
-      ],
-      "mono": "6"
-    },
-    {
       "slug": "monster-hunter-wilds",
       "titleZh": "怪物猎人：荒野",
       "titleEn": "Monster Hunter Wilds",
@@ -188,6 +523,95 @@
         "#4f9dbf"
       ],
       "mono": "W"
+    },
+    {
+      "slug": "elder-scrolls-6",
+      "titleZh": "上古卷轴 VI",
+      "titleEn": "The Elder Scrolls VI",
+      "developer": "Bethesda Game Studios",
+      "publisher": "Bethesda",
+      "platforms": [
+        "PC",
+        "Xbox Series"
+      ],
+      "genres": [
+        "Role-playing (RPG)",
+        "Adventure"
+      ],
+      "release": "TBA",
+      "hype": 84,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "nav",
+      "cover": null,
+      "links": {
+        "official": "https://elderscrolls.bethesda.net",
+        "reddit": "https://www.reddit.com/r/ElderScrolls/",
+        "fanwiki": "https://elderscrolls.fandom.com"
+      },
+      "grad": [
+        "#3a6d8c",
+        "#4f9dbf"
+      ],
+      "mono": "6"
+    },
+    {
+      "slug": "witchbrook",
+      "titleZh": "Witchbrook",
+      "titleEn": "Witchbrook",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Cozy life sim",
+        "magic school"
+      ],
+      "release": "TBA",
+      "hype": 82,
+      "status": "upcoming",
+      "trending": true,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#3a6d8c",
+        "#4f9dbf"
+      ],
+      "mono": "W"
+    },
+    {
+      "slug": "light-no-fire",
+      "titleZh": "Light No Fire",
+      "titleEn": "Light No Fire",
+      "developer": "Hello Games",
+      "publisher": "Hello Games",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Open world exploration",
+        "survival"
+      ],
+      "release": "TBA",
+      "hype": 82,
+      "status": "upcoming",
+      "trending": true,
+      "coverage": "atlas",
+      "links": {
+        "official": "https://lightnofire.com",
+        "reddit": "https://www.reddit.com/r/LightNoFire/"
+      },
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#1f8a7a",
+        "#4fbfa0"
+      ],
+      "mono": "L"
     },
     {
       "slug": "poe-2",
@@ -223,88 +647,2228 @@
       "mono": "E"
     },
     {
-      "slug": "light-no-fire",
-      "titleZh": "光·不灭",
-      "titleEn": "Light No Fire",
-      "developer": "Hello Games",
-      "publisher": "Hello Games",
+      "slug": "lou-s-lagoon",
+      "titleZh": "Lou's Lagoon",
+      "titleEn": "Lou's Lagoon",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Cozy adventure"
+      ],
+      "release": "2026-08-27",
+      "hype": 65,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#1fa87a",
+        "#3dd6a6"
+      ],
+      "mono": "L"
+    },
+    {
+      "slug": "big-walk",
+      "titleZh": "Big Walk",
+      "titleEn": "Big Walk",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Switch 2"
+      ],
+      "genres": [
+        "Co-op exploration"
+      ],
+      "release": "2026-08-04",
+      "hype": 65,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#8a3d2f",
+        "#c25a3a"
+      ],
+      "mono": "B"
+    },
+    {
+      "slug": "silent-hill-townfall",
+      "titleZh": "Silent Hill: Townfall",
+      "titleEn": "Silent Hill: Townfall",
+      "developer": null,
+      "publisher": "",
       "platforms": [
         "PC",
         "PS5"
       ],
       "genres": [
-        "Adventure",
-        "Simulator"
+        "Horror"
       ],
-      "release": "TBA",
-      "hype": 73,
+      "release": "2026-09-24",
+      "hype": 65,
       "status": "upcoming",
       "trending": false,
-      "coverage": "nav",
+      "coverage": "atlas",
+      "links": {},
       "cover": null,
-      "links": {
-        "official": "https://lightnofire.com",
-        "reddit": "https://www.reddit.com/r/LightNoFire/"
-      },
+      "coverPosition": "center",
+      "grad": [
+        "#1fa87a",
+        "#3dd6a6"
+      ],
+      "mono": "S"
+    },
+    {
+      "slug": "onimusha-way-of-the-sword",
+      "titleZh": "Onimusha: Way of the Sword",
+      "titleEn": "Onimusha: Way of the Sword",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Action adventure"
+      ],
+      "release": "2026-09-03",
+      "hype": 65,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#3a6d8c",
+        "#4f9dbf"
+      ],
+      "mono": "O"
+    },
+    {
+      "slug": "enshrouded-1-0",
+      "titleZh": "Enshrouded 1.0",
+      "titleEn": "Enshrouded 1.0",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Survival crafting RPG"
+      ],
+      "release": "2026-10-15",
+      "hype": 65,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#5b6cff",
+        "#9b4dff"
+      ],
+      "mono": "E"
+    },
+    {
+      "slug": "dragon-s-dogma-2-dark-arisen",
+      "titleZh": "Dragon's Dogma 2: Dark Arisen",
+      "titleEn": "Dragon's Dogma 2: Dark Arisen",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Action RPG expansion"
+      ],
+      "release": "2026-10-08",
+      "hype": 65,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
       "grad": [
         "#1f8a7a",
         "#4fbfa0"
       ],
+      "mono": "D"
+    },
+    {
+      "slug": "warhammer-40-000-dawn-of-war-iv",
+      "titleZh": "Warhammer 40,000: Dawn of War IV",
+      "titleEn": "Warhammer 40,000: Dawn of War IV",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "RTS"
+      ],
+      "release": "2026-09-17",
+      "hype": 65,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#8a3d2f",
+        "#c25a3a"
+      ],
+      "mono": "W"
+    },
+    {
+      "slug": "dune-awakening-console",
+      "titleZh": "Dune: Awakening Console",
+      "titleEn": "Dune: Awakening Console",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Survival MMO"
+      ],
+      "release": "2026-09-22",
+      "hype": 65,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#8a3d2f",
+        "#c25a3a"
+      ],
+      "mono": "D"
+    },
+    {
+      "slug": "ratatan",
+      "titleZh": "Ratatan",
+      "titleEn": "Ratatan",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Switch 2"
+      ],
+      "genres": [
+        "Rhythm strategy"
+      ],
+      "release": "2026-10-15",
+      "hype": 65,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#7a5cff",
+        "#4f9dbf"
+      ],
+      "mono": "R"
+    },
+    {
+      "slug": "digimon-story-time-stranger",
+      "titleZh": "Digimon Story Time Stranger",
+      "titleEn": "Digimon Story Time Stranger",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "Switch",
+        "Switch 2"
+      ],
+      "genres": [
+        "JRPG",
+        "monster collecting"
+      ],
+      "release": "2026-07-10",
+      "hype": 65,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#8a3d2f",
+        "#c25a3a"
+      ],
+      "mono": "D"
+    },
+    {
+      "slug": "beautiful-light",
+      "titleZh": "Beautiful Light",
+      "titleEn": "Beautiful Light",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Tactical horror FPS"
+      ],
+      "release": "TBA",
+      "hype": 65,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#e8624a",
+        "#f6b44c"
+      ],
+      "mono": "B"
+    },
+    {
+      "slug": "chronicles-medieval",
+      "titleZh": "Chronicles: Medieval",
+      "titleEn": "Chronicles: Medieval",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Medieval sandbox"
+      ],
+      "release": "TBA",
+      "hype": 65,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#e8624a",
+        "#f6b44c"
+      ],
+      "mono": "C"
+    },
+    {
+      "slug": "mortal-shell-ii",
+      "titleZh": "Mortal Shell II",
+      "titleEn": "Mortal Shell II",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Soulslike RPG"
+      ],
+      "release": "TBA",
+      "hype": 65,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#b0453f",
+        "#d98a3d"
+      ],
+      "mono": "M"
+    },
+    {
+      "slug": "the-bustling-world",
+      "titleZh": "The Bustling World",
+      "titleEn": "The Bustling World",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Open world life sim"
+      ],
+      "release": "TBA",
+      "hype": 65,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#b0453f",
+        "#d98a3d"
+      ],
+      "mono": "T"
+    },
+    {
+      "slug": "echoes-of-aincrad",
+      "titleZh": "Echoes of Aincrad",
+      "titleEn": "Echoes of Aincrad",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Anime action JRPG"
+      ],
+      "release": "2026-07-09",
+      "hype": 65,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#3a6d8c",
+        "#4f9dbf"
+      ],
+      "mono": "E"
+    },
+    {
+      "slug": "assassin-s-creed-black-flag-resynced",
+      "titleZh": "Assassin's Creed Black Flag Resynced",
+      "titleEn": "Assassin's Creed Black Flag Resynced",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Open world action"
+      ],
+      "release": "2026-07-09",
+      "hype": 45,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#8a3d2f",
+        "#c25a3a"
+      ],
+      "mono": "A"
+    },
+    {
+      "slug": "gta-6",
+      "titleZh": "GTA VI",
+      "titleEn": "GTA VI",
+      "developer": "Rockstar Games",
+      "publisher": "Rockstar Games",
+      "platforms": [
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Open world action"
+      ],
+      "release": "2026-11-19",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {
+        "official": "https://www.rockstargames.com/VI",
+        "reddit": "https://www.reddit.com/r/GTA6/",
+        "fanwiki": "https://gta.fandom.com"
+      },
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#e8624a",
+        "#f6b44c"
+      ],
+      "mono": "G"
+    },
+    {
+      "slug": "marvel-s-wolverine",
+      "titleZh": "Marvel's Wolverine",
+      "titleEn": "Marvel's Wolverine",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PS5"
+      ],
+      "genres": [
+        "Action adventure"
+      ],
+      "release": "2026-09-15",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#1fa87a",
+        "#3dd6a6"
+      ],
+      "mono": "M"
+    },
+    {
+      "slug": "call-of-duty-modern-warfare-4",
+      "titleZh": "Call of Duty: Modern Warfare 4",
+      "titleEn": "Call of Duty: Modern Warfare 4",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "FPS"
+      ],
+      "release": "2026-10-23",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#1f8a7a",
+        "#4fbfa0"
+      ],
+      "mono": "C"
+    },
+    {
+      "slug": "gears-of-war-e-day",
+      "titleZh": "Gears of War: E-Day",
+      "titleEn": "Gears of War: E-Day",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "Xbox"
+      ],
+      "genres": [
+        "Shooter"
+      ],
+      "release": "2026-10-06",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#e8624a",
+        "#f6b44c"
+      ],
+      "mono": "G"
+    },
+    {
+      "slug": "halo-campaign-evolved",
+      "titleZh": "Halo: Campaign Evolved",
+      "titleEn": "Halo: Campaign Evolved",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "FPS remaster"
+      ],
+      "release": "2026-07-28",
+      "hype": 45,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#b0453f",
+        "#d98a3d"
+      ],
+      "mono": "H"
+    },
+    {
+      "slug": "fire-emblem-fortune-s-weave",
+      "titleZh": "Fire Emblem: Fortune's Weave",
+      "titleEn": "Fire Emblem: Fortune's Weave",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "Switch 2"
+      ],
+      "genres": [
+        "Tactical RPG"
+      ],
+      "release": "2026-09-17",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#5b6cff",
+        "#9b4dff"
+      ],
+      "mono": "F"
+    },
+    {
+      "slug": "lego-batman-legacy-of-the-dark-knight",
+      "titleZh": "LEGO Batman: Legacy of the Dark Knight",
+      "titleEn": "LEGO Batman: Legacy of the Dark Knight",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "Switch 2"
+      ],
+      "genres": [
+        "Action adventure"
+      ],
+      "release": "2026-09-18",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#e8624a",
+        "#f6b44c"
+      ],
       "mono": "L"
     },
     {
-      "slug": "nivalis-nights", "titleZh": "Nivalis Nights", "titleEn": "Nivalis Nights",
-      "developer": null, "publisher": "", "platforms": [], "genres": [], "release": "TBA",
-      "hype": 0, "status": "upcoming", "trending": false, "coverage": "owned", "wikiUrl": "#", "links": {},
-      "cover": "/images/games/nivalis-nights-banner.webp", "coverPosition": "center", "grad": ["#1f5f7a", "#f08a3c"], "mono": "N"
+      "slug": "metaphor-refantazio-switch-2",
+      "titleZh": "Metaphor: ReFantazio Switch 2",
+      "titleEn": "Metaphor: ReFantazio Switch 2",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "Switch 2"
+      ],
+      "genres": [
+        "JRPG port"
+      ],
+      "release": "2026-11-12",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#8a3d2f",
+        "#c25a3a"
+      ],
+      "mono": "M"
     },
     {
-      "slug": "neverway", "titleZh": "Neverway", "titleEn": "Neverway",
-      "developer": null, "publisher": "", "platforms": [], "genres": [], "release": "TBA",
-      "hype": 0, "status": "upcoming", "trending": false, "coverage": "owned", "wikiUrl": "#", "links": {},
-      "cover": "/images/games/neverway-banner.webp", "coverPosition": "center", "grad": ["#43386f", "#61dfe0"], "mono": "N"
+      "slug": "dragon-quest-11-s-switch-2-edition",
+      "titleZh": "Dragon Quest 11 S Switch 2 Edition",
+      "titleEn": "Dragon Quest 11 S Switch 2 Edition",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "Switch 2"
+      ],
+      "genres": [
+        "JRPG port"
+      ],
+      "release": "2026-09-24",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#3a6d8c",
+        "#4f9dbf"
+      ],
+      "mono": "D"
     },
     {
-      "slug": "runescape-dragonwilds", "titleZh": "RuneScape: Dragonwilds", "titleEn": "RuneScape: Dragonwilds",
-      "developer": null, "publisher": "", "platforms": [], "genres": [], "release": "TBA",
-      "hype": 0, "status": "upcoming", "trending": false, "coverage": "owned", "wikiUrl": "#", "links": {},
-      "cover": "/images/games/runescape-dragonwilds-banner.webp", "coverPosition": "center", "grad": ["#24150b", "#d18a2e"], "mono": "R"
+      "slug": "hell-let-loose-vietnam",
+      "titleZh": "Hell Let Loose: Vietnam",
+      "titleEn": "Hell Let Loose: Vietnam",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Tactical FPS"
+      ],
+      "release": "2026-08-13",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#1f8a7a",
+        "#4fbfa0"
+      ],
+      "mono": "H"
     },
     {
-      "slug": "control-resonant", "titleZh": "CONTROL Resonant", "titleEn": "CONTROL Resonant",
-      "developer": null, "publisher": "", "platforms": [], "genres": [], "release": "TBA",
-      "hype": 0, "status": "upcoming", "trending": false, "coverage": "owned", "wikiUrl": "#", "links": {},
-      "cover": "/images/games/control-resonant-banner.webp", "coverPosition": "center", "grad": ["#241a1a", "#a31c23"], "mono": "C"
+      "slug": "the-mound-omen-of-cthulhu",
+      "titleZh": "The Mound: Omen of Cthulhu",
+      "titleEn": "The Mound: Omen of Cthulhu",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Co-op Lovecraftian action"
+      ],
+      "release": "2026-07-15",
+      "hype": 45,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#b0453f",
+        "#d98a3d"
+      ],
+      "mono": "T"
     },
     {
-      "slug": "harvest-moon-echoes-of-teradea", "titleZh": "Harvest Moon: Echoes of Teradea", "titleEn": "Harvest Moon: Echoes of Teradea",
-      "developer": null, "publisher": "", "platforms": [], "genres": [], "release": "TBA",
-      "hype": 0, "status": "upcoming", "trending": false, "coverage": "owned", "wikiUrl": "#", "links": {},
-      "cover": "/images/games/harvest-moon-echoes-of-teradea-banner.webp", "coverPosition": "center", "grad": ["#57a6d7", "#76bd62"], "mono": "H"
+      "slug": "iron-nest-heavy-turret-simulator",
+      "titleZh": "IRON NEST: Heavy Turret Simulator",
+      "titleEn": "IRON NEST: Heavy Turret Simulator",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Military simulation"
+      ],
+      "release": "2026-08-06",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#7a5cff",
+        "#4f9dbf"
+      ],
+      "mono": "I"
     },
     {
-      "slug": "ace-combat-8-wings-of-theve", "titleZh": "Ace Combat 8: Wings of Theve", "titleEn": "Ace Combat 8: Wings of Theve",
-      "developer": null, "publisher": "", "platforms": [], "genres": [], "release": "TBA",
-      "hype": 0, "status": "upcoming", "trending": false, "coverage": "owned", "wikiUrl": "#", "links": {},
-      "cover": "/images/games/ace-combat-8-banner.webp", "coverPosition": "center", "grad": ["#455866", "#a5b4bd"], "mono": "A"
+      "slug": "nte-neverness-to-everness",
+      "titleZh": "NTE: Neverness to Everness",
+      "titleEn": "NTE: Neverness to Everness",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Open world anime RPG"
+      ],
+      "release": "2026-07-07",
+      "hype": 45,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#1f8a7a",
+        "#4fbfa0"
+      ],
+      "mono": "N"
     },
     {
-      "slug": "grave-seasons", "titleZh": "Grave Seasons", "titleEn": "Grave Seasons",
-      "developer": null, "publisher": "", "platforms": [], "genres": [], "release": "TBA",
-      "hype": 0, "status": "upcoming", "trending": false, "coverage": "owned", "wikiUrl": "#", "links": {},
-      "cover": "/images/games/grave-seasons-banner.webp", "coverPosition": "center", "grad": ["#143e2d", "#aacb6c"], "mono": "G"
+      "slug": "dragonsword-awakening",
+      "titleZh": "DragonSword: Awakening",
+      "titleEn": "DragonSword: Awakening",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Open world action RPG"
+      ],
+      "release": "2026-07-22",
+      "hype": 45,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#8a3d2f",
+        "#c25a3a"
+      ],
+      "mono": "D"
     },
     {
-      "slug": "the-blood-of-dawnwalker", "titleZh": "The Blood of Dawnwalker", "titleEn": "The Blood of Dawnwalker",
-      "developer": null, "publisher": "", "platforms": [], "genres": [], "release": "TBA",
-      "hype": 0, "status": "upcoming", "trending": false, "coverage": "owned", "wikiUrl": "#", "links": {},
-      "cover": "/images/games/the-blood-of-dawnwalker-banner.webp", "coverPosition": "center", "grad": ["#7b160c", "#f08028"], "mono": "D"
+      "slug": "zerospace",
+      "titleZh": "ZeroSpace",
+      "titleEn": "ZeroSpace",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "RTS"
+      ],
+      "release": "2026-07-20",
+      "hype": 45,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#8a3d2f",
+        "#c25a3a"
+      ],
+      "mono": "Z"
     },
     {
-      "slug": "phantom-blade-zero", "titleZh": "Phantom Blade Zero", "titleEn": "Phantom Blade Zero",
-      "developer": null, "publisher": "", "platforms": [], "genres": [], "release": "TBA",
-      "hype": 0, "status": "upcoming", "trending": false, "coverage": "owned", "wikiUrl": "#", "links": {},
-      "cover": "/images/games/phantom-blade-zero-banner.webp", "coverPosition": "center 38%", "grad": ["#34414a", "#9aa8af"], "mono": "P"
+      "slug": "corsair-cove",
+      "titleZh": "Corsair Cove",
+      "titleEn": "Corsair Cove",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "City builder",
+        "strategy"
+      ],
+      "release": "2026-07-31",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#b0453f",
+        "#d98a3d"
+      ],
+      "mono": "C"
+    },
+    {
+      "slug": "stronghold-4-early-access",
+      "titleZh": "Stronghold 4 Early Access",
+      "titleEn": "Stronghold 4 Early Access",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Castle sim",
+        "strategy"
+      ],
+      "release": "TBA",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#8a3d2f",
+        "#c25a3a"
+      ],
+      "mono": "S"
+    },
+    {
+      "slug": "cat-mail-co",
+      "titleZh": "Cat Mail Co.",
+      "titleEn": "Cat Mail Co.",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Cozy management sim"
+      ],
+      "release": "2026-07-09",
+      "hype": 45,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#b0453f",
+        "#d98a3d"
+      ],
+      "mono": "C"
+    },
+    {
+      "slug": "forensics-crime-scene-detective",
+      "titleZh": "Forensics: Crime Scene Detective",
+      "titleEn": "Forensics: Crime Scene Detective",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Investigation sim"
+      ],
+      "release": "2026-07-13",
+      "hype": 45,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#3a6d8c",
+        "#4f9dbf"
+      ],
+      "mono": "F"
+    },
+    {
+      "slug": "denshattack",
+      "titleZh": "Denshattack",
+      "titleEn": "Denshattack",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Switch 2"
+      ],
+      "genres": [
+        "Action",
+        "skating train game"
+      ],
+      "release": "2026-07-15",
+      "hype": 45,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#e8624a",
+        "#f6b44c"
+      ],
+      "mono": "D"
+    },
+    {
+      "slug": "splatoon-raiders",
+      "titleZh": "Splatoon Raiders",
+      "titleEn": "Splatoon Raiders",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "Switch 2"
+      ],
+      "genres": [
+        "Shooter",
+        "adventure"
+      ],
+      "release": "2026-07-23",
+      "hype": 45,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#b0453f",
+        "#d98a3d"
+      ],
+      "mono": "S"
+    },
+    {
+      "slug": "madden-nfl-27",
+      "titleZh": "Madden NFL 27",
+      "titleEn": "Madden NFL 27",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Sports"
+      ],
+      "release": "2026-08-13",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#8a3d2f",
+        "#c25a3a"
+      ],
+      "mono": "M"
+    },
+    {
+      "slug": "ea-sports-college-football-27",
+      "titleZh": "EA Sports College Football 27",
+      "titleEn": "EA Sports College Football 27",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Sports"
+      ],
+      "release": "2026-07-09",
+      "hype": 45,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#e8624a",
+        "#f6b44c"
+      ],
+      "mono": "E"
+    },
+    {
+      "slug": "the-guild-europa-1410",
+      "titleZh": "The Guild - Europa 1410",
+      "titleEn": "The Guild - Europa 1410",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Sandbox strategy sim"
+      ],
+      "release": "2026-07-16",
+      "hype": 45,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#b0453f",
+        "#d98a3d"
+      ],
+      "mono": "T"
+    },
+    {
+      "slug": "soulbound-online",
+      "titleZh": "Soulbound: Online",
+      "titleEn": "Soulbound: Online",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "MMORPG"
+      ],
+      "release": "2026-07-21",
+      "hype": 45,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#7a5cff",
+        "#4f9dbf"
+      ],
+      "mono": "S"
+    },
+    {
+      "slug": "dinoblade",
+      "titleZh": "Dinoblade",
+      "titleEn": "Dinoblade",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Dinosaur soulslike"
+      ],
+      "release": "2026-07-23",
+      "hype": 45,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#e8624a",
+        "#f6b44c"
+      ],
+      "mono": "D"
+    },
+    {
+      "slug": "survive-the-apocalypse",
+      "titleZh": "Survive the Apocalypse",
+      "titleEn": "Survive the Apocalypse",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Survival RPG"
+      ],
+      "release": "2026-11-02",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#8a3d2f",
+        "#c25a3a"
+      ],
+      "mono": "S"
+    },
+    {
+      "slug": "final-fantasy-resonance",
+      "titleZh": "Final Fantasy Resonance",
+      "titleEn": "Final Fantasy Resonance",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Switch"
+      ],
+      "genres": [
+        "JRPG"
+      ],
+      "release": "2026-10-22",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#5b6cff",
+        "#9b4dff"
+      ],
+      "mono": "F"
+    },
+    {
+      "slug": "minecraft-dungeons-ii",
+      "titleZh": "Minecraft Dungeons II",
+      "titleEn": "Minecraft Dungeons II",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Switch"
+      ],
+      "genres": [
+        "Action RPG"
+      ],
+      "release": "2026-09-29",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#3a6d8c",
+        "#4f9dbf"
+      ],
+      "mono": "M"
+    },
+    {
+      "slug": "castlevania-belmont-s-curse",
+      "titleZh": "Castlevania: Belmont's Curse",
+      "titleEn": "Castlevania: Belmont's Curse",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Metroidvania"
+      ],
+      "release": "2026-10-15",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#e8624a",
+        "#f6b44c"
+      ],
+      "mono": "C"
+    },
+    {
+      "slug": "clive-barker-s-hellraiser-revival",
+      "titleZh": "Clive Barker's Hellraiser: Revival",
+      "titleEn": "Clive Barker's Hellraiser: Revival",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Horror"
+      ],
+      "release": "2026-10-08",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#7a5cff",
+        "#4f9dbf"
+      ],
+      "mono": "C"
+    },
+    {
+      "slug": "halloween",
+      "titleZh": "Halloween",
+      "titleEn": "Halloween",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Horror"
+      ],
+      "release": "2026-09-08",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#7a5cff",
+        "#4f9dbf"
+      ],
+      "mono": "H"
+    },
+    {
+      "slug": "valor-mortis",
+      "titleZh": "Valor Mortis",
+      "titleEn": "Valor Mortis",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Soulslike action"
+      ],
+      "release": "2026-10-13",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#1f8a7a",
+        "#4fbfa0"
+      ],
+      "mono": "V"
+    },
+    {
+      "slug": "the-witch-s-bakery",
+      "titleZh": "The Witch's Bakery",
+      "titleEn": "The Witch's Bakery",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Cozy management"
+      ],
+      "release": "2026-08-20",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#3a6d8c",
+        "#4f9dbf"
+      ],
+      "mono": "T"
+    },
+    {
+      "slug": "falling-frontier",
+      "titleZh": "Falling Frontier",
+      "titleEn": "Falling Frontier",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Space strategy"
+      ],
+      "release": "TBA",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#b0453f",
+        "#d98a3d"
+      ],
+      "mono": "F"
+    },
+    {
+      "slug": "alkahest",
+      "titleZh": "Alkahest",
+      "titleEn": "Alkahest",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Action RPG"
+      ],
+      "release": "TBA",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#1f8a7a",
+        "#4fbfa0"
+      ],
+      "mono": "A"
+    },
+    {
+      "slug": "tides-of-annihilation",
+      "titleZh": "Tides of Annihilation",
+      "titleEn": "Tides of Annihilation",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Action adventure"
+      ],
+      "release": "TBA",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#5b6cff",
+        "#9b4dff"
+      ],
+      "mono": "T"
+    },
+    {
+      "slug": "state-of-decay-3",
+      "titleZh": "State of Decay 3",
+      "titleEn": "State of Decay 3",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "Xbox"
+      ],
+      "genres": [
+        "Survival horror"
+      ],
+      "release": "TBA",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#8a3d2f",
+        "#c25a3a"
+      ],
+      "mono": "S"
+    },
+    {
+      "slug": "ark-2",
+      "titleZh": "ARK 2",
+      "titleEn": "ARK 2",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "Xbox"
+      ],
+      "genres": [
+        "Survival crafting"
+      ],
+      "release": "TBA",
+      "hype": 45,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#1f8a7a",
+        "#4fbfa0"
+      ],
+      "mono": "A"
+    },
+    {
+      "slug": "backyard-baseball",
+      "titleZh": "Backyard Baseball",
+      "titleEn": "Backyard Baseball",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Sports arcade"
+      ],
+      "release": "2026-07-09",
+      "hype": 25,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#3a6d8c",
+        "#4f9dbf"
+      ],
+      "mono": "B"
+    },
+    {
+      "slug": "esports-manager-2026",
+      "titleZh": "Esports Manager 2026",
+      "titleEn": "Esports Manager 2026",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Management sim"
+      ],
+      "release": "2026-07-06",
+      "hype": 25,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#b0453f",
+        "#d98a3d"
+      ],
+      "mono": "E"
+    },
+    {
+      "slug": "bombanana",
+      "titleZh": "BOMBANANA!",
+      "titleEn": "BOMBANANA!",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Co-op puzzle"
+      ],
+      "release": "TBA",
+      "hype": 25,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#7a5cff",
+        "#4f9dbf"
+      ],
+      "mono": "B"
+    },
+    {
+      "slug": "wind-runners",
+      "titleZh": "Wind Runners",
+      "titleEn": "Wind Runners",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Action adventure"
+      ],
+      "release": "2026-09-23",
+      "hype": 25,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#8a3d2f",
+        "#c25a3a"
+      ],
+      "mono": "W"
+    },
+    {
+      "slug": "another-eden-begins",
+      "titleZh": "Another Eden Begins",
+      "titleEn": "Another Eden Begins",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "Switch 2"
+      ],
+      "genres": [
+        "JRPG"
+      ],
+      "release": "2026-09-16",
+      "hype": 25,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#7a5cff",
+        "#4f9dbf"
+      ],
+      "mono": "A"
+    },
+    {
+      "slug": "trails-in-the-sky-2nd-chapter",
+      "titleZh": "Trails in the Sky 2nd Chapter",
+      "titleEn": "Trails in the Sky 2nd Chapter",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Switch"
+      ],
+      "genres": [
+        "JRPG"
+      ],
+      "release": "2026-09-17",
+      "hype": 25,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#5b6cff",
+        "#9b4dff"
+      ],
+      "mono": "T"
+    },
+    {
+      "slug": "crymelight",
+      "titleZh": "Crymelight",
+      "titleEn": "Crymelight",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Switch 2"
+      ],
+      "genres": [
+        "Action adventure"
+      ],
+      "release": "2026-11-04",
+      "hype": 25,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#3a6d8c",
+        "#4f9dbf"
+      ],
+      "mono": "C"
+    },
+    {
+      "slug": "wielders-of-the-essence",
+      "titleZh": "Wielders of the Essence",
+      "titleEn": "Wielders of the Essence",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "RPG"
+      ],
+      "release": "2026-11-05",
+      "hype": 25,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#5b6cff",
+        "#9b4dff"
+      ],
+      "mono": "W"
+    },
+    {
+      "slug": "magic-kingdom",
+      "titleZh": "Magic Kingdom",
+      "titleEn": "Magic Kingdom",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Simulator",
+        "strategy"
+      ],
+      "release": "2026-11-01",
+      "hype": 25,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#b0453f",
+        "#d98a3d"
+      ],
+      "mono": "M"
+    },
+    {
+      "slug": "jigenro",
+      "titleZh": "Jigenro",
+      "titleEn": "Jigenro",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Puzzle"
+      ],
+      "release": "2026-11-01",
+      "hype": 25,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#8a3d2f",
+        "#c25a3a"
+      ],
+      "mono": "J"
+    },
+    {
+      "slug": "moss-the-forgotten-relic",
+      "titleZh": "Moss: The Forgotten Relic",
+      "titleEn": "Moss: The Forgotten Relic",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Exploration platformer"
+      ],
+      "release": "2026-07-16",
+      "hype": 25,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#1fa87a",
+        "#3dd6a6"
+      ],
+      "mono": "M"
+    },
+    {
+      "slug": "forest-escape-last-train",
+      "titleZh": "Forest Escape: Last Train",
+      "titleEn": "Forest Escape: Last Train",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Co-op horror"
+      ],
+      "release": "2026-07-10",
+      "hype": 25,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#7a5cff",
+        "#4f9dbf"
+      ],
+      "mono": "F"
+    },
+    {
+      "slug": "desktop-explorer",
+      "titleZh": "Desktop Explorer",
+      "titleEn": "Desktop Explorer",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Puzzle investigation horror"
+      ],
+      "release": "2026-07-17",
+      "hype": 25,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#5b6cff",
+        "#9b4dff"
+      ],
+      "mono": "D"
+    },
+    {
+      "slug": "american-revolutionary-war",
+      "titleZh": "American Revolutionary War",
+      "titleEn": "American Revolutionary War",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Strategy simulation"
+      ],
+      "release": "2026-07-03",
+      "hype": 25,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#7a5cff",
+        "#4f9dbf"
+      ],
+      "mono": "A"
+    },
+    {
+      "slug": "tokyo-valkyries",
+      "titleZh": "Tokyo Valkyries",
+      "titleEn": "Tokyo Valkyries",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Roguelike deckbuilder"
+      ],
+      "release": "2026-07-08",
+      "hype": 25,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#7a5cff",
+        "#4f9dbf"
+      ],
+      "mono": "T"
+    },
+    {
+      "slug": "cat-chess",
+      "titleZh": "Cat Chess",
+      "titleEn": "Cat Chess",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Strategy puzzle"
+      ],
+      "release": "2026-07-14",
+      "hype": 25,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#1fa87a",
+        "#3dd6a6"
+      ],
+      "mono": "C"
+    },
+    {
+      "slug": "scribble-hunt",
+      "titleZh": "SCRIBBLE HUNT",
+      "titleEn": "SCRIBBLE HUNT",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Hidden object PvP"
+      ],
+      "release": "2026-07-11",
+      "hype": 25,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#5b6cff",
+        "#9b4dff"
+      ],
+      "mono": "S"
+    },
+    {
+      "slug": "battle-for-embolia",
+      "titleZh": "Battle For Embolia",
+      "titleEn": "Battle For Embolia",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "MMORPG"
+      ],
+      "release": "2026-07-03",
+      "hype": 25,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#8a3d2f",
+        "#c25a3a"
+      ],
+      "mono": "B"
+    },
+    {
+      "slug": "master-healer-kale-with-useless-party",
+      "titleZh": "Master Healer Kale with useless party",
+      "titleEn": "Master Healer Kale with useless party",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Party RPG"
+      ],
+      "release": "2026-07-02",
+      "hype": 25,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#b0453f",
+        "#d98a3d"
+      ],
+      "mono": "M"
+    },
+    {
+      "slug": "ice-cream-man",
+      "titleZh": "Ice Cream Man",
+      "titleEn": "Ice Cream Man",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Horror adventure"
+      ],
+      "release": "2026-07-03",
+      "hype": 25,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#7a5cff",
+        "#4f9dbf"
+      ],
+      "mono": "I"
+    },
+    {
+      "slug": "conqueror-s-stage",
+      "titleZh": "Conqueror's Stage",
+      "titleEn": "Conqueror's Stage",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Grand strategy",
+        "4X"
+      ],
+      "release": "2026-07-03",
+      "hype": 25,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#7a5cff",
+        "#4f9dbf"
+      ],
+      "mono": "C"
+    },
+    {
+      "slug": "fascist-fps",
+      "titleZh": "Fascist FPS",
+      "titleEn": "Fascist FPS",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Action roguelike"
+      ],
+      "release": "2026-07-03",
+      "hype": 25,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#b0453f",
+        "#d98a3d"
+      ],
+      "mono": "F"
+    },
+    {
+      "slug": "olga-doesn-t-die",
+      "titleZh": "Olga Doesn't Die",
+      "titleEn": "Olga Doesn't Die",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Visual novel"
+      ],
+      "release": "2026-07-03",
+      "hype": 25,
+      "status": "live",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#1fa87a",
+        "#3dd6a6"
+      ],
+      "mono": "O"
+    },
+    {
+      "slug": "xenofeels",
+      "titleZh": "XenoFeels",
+      "titleEn": "XenoFeels",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Comedy first-person adventure"
+      ],
+      "release": "TBA",
+      "hype": 25,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#1f8a7a",
+        "#4fbfa0"
+      ],
+      "mono": "X"
+    },
+    {
+      "slug": "over-the-hill",
+      "titleZh": "over the hill",
+      "titleEn": "over the hill",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Driving",
+        "exploration"
+      ],
+      "release": "TBA",
+      "hype": 25,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#8a3d2f",
+        "#c25a3a"
+      ],
+      "mono": "O"
+    },
+    {
+      "slug": "wardogs",
+      "titleZh": "WARDOGS",
+      "titleEn": "WARDOGS",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Action",
+        "shooter"
+      ],
+      "release": "TBA",
+      "hype": 25,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#1f8a7a",
+        "#4fbfa0"
+      ],
+      "mono": "W"
+    },
+    {
+      "slug": "rules-of-engagement-the-grey-state",
+      "titleZh": "Rules of Engagement: The Grey State",
+      "titleEn": "Rules of Engagement: The Grey State",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Free tactical shooter"
+      ],
+      "release": "TBA",
+      "hype": 25,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#7a5cff",
+        "#4f9dbf"
+      ],
+      "mono": "R"
+    },
+    {
+      "slug": "railborn",
+      "titleZh": "Railborn",
+      "titleEn": "Railborn",
+      "developer": null,
+      "publisher": "",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Rail",
+        "sim"
+      ],
+      "release": "TBA",
+      "hype": 25,
+      "status": "upcoming",
+      "trending": false,
+      "coverage": "atlas",
+      "links": {},
+      "cover": null,
+      "coverPosition": "center",
+      "grad": [
+        "#b0453f",
+        "#d98a3d"
+      ],
+      "mono": "R"
     }
   ]
 }

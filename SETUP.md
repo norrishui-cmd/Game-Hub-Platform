@@ -118,6 +118,44 @@ scripts/
 自动走 IGDB 官方图源，要么如果你手上有官方 press kit 或者自己有权使用的素材，
 把图片 URL 直接填进对应游戏的 `cover` 字段就行（格式：`"cover": "https://..."`）。
 
+## 2026-07-28 更新：Top100 选题库导入
+
+新增了 `data/game-atlas.json`，来自 Norris 的 `game_seo_atlas_top100_2026_2027.xlsx`（Top100 sheet），
+100 款游戏一次性导入。这批数据和 `data/owned-wikis.json` 是两个独立文件，职责分开：
+
+- **改游戏范围/排期/平台/类型**：编辑 `data/game-atlas.json`。
+- **新建了独立 wiki，想让某款游戏直链过去**：还是编辑 `data/owned-wikis.json`（跟以前一样，
+  `match` 数组填游戏英文名的小写关键词，`wikiUrl` 填完整域名，比如 `https://xxx.wiki`）。
+  只要 `owned-wikis.json` 里配置了，`fetch-games.mjs` 和 `build-from-atlas.mjs` 都会自动
+  把对应游戏的 `coverage` 升级成 `"owned"`，游戏详情页就会出现「进入完整独立攻略 Wiki →」的
+  跳转按钮（`src/components/GameDetail.astro` 里 `coverage==="owned" && wikiUrl!=="#"` 那段）。
+
+`scripts/fetch-games.mjs`（每天定时跑、需要 IGDB 密钥）现在会强制收录 `game-atlas.json` 里的全部
+100 款游戏，不管 IGDB 热度阈值，标记成 `coverage:"atlas"`（命中 owned-wikis 的会再升级成
+`"owned"`）。也就是说：以后每天自动更新不会把这 100 款游戏挤掉。
+
+如果不想等明天的定时任务，改完 `game-atlas.json` 或 `owned-wikis.json` 想立刻在本地看效果，
+跑一次（不需要 IGDB 密钥，纯离线）：
+
+```bash
+node scripts/build-from-atlas.mjs
+```
+
+会直接重写 `data/games.json`，然后 `npm run build` 预览。
+
+**当前已经配好直链的 wiki（16 个）**：Star Wars Zero Company、Planet Zoo 2、Moonlight Peaks、
+Nivalis Nights、Neverway、RuneScape: Dragonwilds、CONTROL Resonant、Ace Combat 8、
+Grave Seasons、The Blood of Dawnwalker、Phantom Blade Zero、Mistfall Hunter、
+Beast of Reincarnation、REKA、Valheim 1.0。
+
+**还差 1 个待确认**：Harvest Moon: Echoes of Teradea 的域名在截图里被截断成
+`harvestmoonechoesofter...`，`data/owned-wikis.json` 里先留空（不会变成死链接，只是详情页
+暂时不显示跳转按钮），把完整域名发过来就能立刻补上。
+
+另外 Beast of Reincarnation 目前填的是 `https://beast-of-reincarnation.vercel.app`——截图里
+域名同样被截断成 `.ver...`，这是按 Vercel 默认项目域名规则推断的，如果实际域名不一样（比如后来
+换了自定义域名）请告诉我更新。
+
 ## 日常怎么维护
 
 - **新建了独立 wiki，想让门户直链过去**：编辑 `data/owned-wikis.json`。

@@ -1,0 +1,1897 @@
+{
+  "generatedAt": "2026-07-28T00:00:00.000Z",
+  "source": "game_seo_atlas_top100_2026_2027.xlsx (Top100 sheet)",
+  "note": "这是 Norris 的 2026-2027 游戏 SEO 选题库（100 款），由 scripts/build-from-atlas.mjs 和 scripts/fetch-games.mjs 共同读取，force-include 进 data/games.json，不受 IGDB 热度阈值影响。改游戏范围/排期改这里；改 wiki 直链改 data/owned-wikis.json。",
+  "count": 100,
+  "games": [
+    {
+      "rank": 1,
+      "slug": "planet-zoo-2",
+      "titleEn": "Planet Zoo 2",
+      "release": "2026-10-13",
+      "releaseWindow": "Oct 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Zoo management",
+        "simulation"
+      ],
+      "tier": "SSS",
+      "priority": "Must build",
+      "recommendedAction": "Build core vertical site now",
+      "hype": 95,
+      "trending": true
+    },
+    {
+      "rank": 2,
+      "slug": "the-blood-of-dawnwalker",
+      "titleEn": "The Blood of Dawnwalker",
+      "release": "2026-09-02",
+      "releaseWindow": "Sep 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Dark fantasy RPG"
+      ],
+      "tier": "SSS",
+      "priority": "Must build",
+      "recommendedAction": "Build full RPG database + quest/build pages",
+      "hype": 95,
+      "trending": true
+    },
+    {
+      "rank": 3,
+      "slug": "star-wars-zero-company",
+      "titleEn": "Star Wars Zero Company",
+      "release": "2026-08-27",
+      "releaseWindow": "Aug 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Tactical strategy"
+      ],
+      "tier": "SSS",
+      "priority": "Must build",
+      "recommendedAction": "Build unit/tactics/campaign guide",
+      "hype": 95,
+      "trending": true
+    },
+    {
+      "rank": 4,
+      "slug": "moonlight-peaks",
+      "titleEn": "Moonlight Peaks",
+      "release": "2026-07-06",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC",
+        "Switch",
+        "Mobile"
+      ],
+      "genres": [
+        "Cozy farming life sim"
+      ],
+      "tier": "SSS",
+      "priority": "Must build",
+      "recommendedAction": "Expand existing site aggressively",
+      "hype": 95,
+      "trending": true
+    },
+    {
+      "rank": 5,
+      "slug": "grave-seasons",
+      "titleEn": "Grave Seasons",
+      "release": "2026-08-14",
+      "releaseWindow": "Aug 2026",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Farming horror sim"
+      ],
+      "tier": "SS",
+      "priority": "Strong build",
+      "recommendedAction": "Build pre-release long-tail pages",
+      "hype": 82,
+      "trending": true
+    },
+    {
+      "rank": 6,
+      "slug": "beast-of-reincarnation",
+      "titleEn": "Beast of Reincarnation",
+      "release": "2026-08-04",
+      "releaseWindow": "Aug 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Action RPG"
+      ],
+      "tier": "SS",
+      "priority": "Strong build",
+      "recommendedAction": "Build boss/build/item guide",
+      "hype": 82,
+      "trending": true
+    },
+    {
+      "rank": 7,
+      "slug": "runescape-dragonwilds",
+      "titleEn": "RuneScape: Dragonwilds",
+      "release": "2026-09-15",
+      "releaseWindow": "Sep 2026",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Survival crafting RPG"
+      ],
+      "tier": "SS",
+      "priority": "Strong build",
+      "recommendedAction": "Build survival database + calculators",
+      "hype": 82,
+      "trending": true
+    },
+    {
+      "rank": 8,
+      "slug": "reka",
+      "titleEn": "REKA",
+      "release": "2026-08-18",
+      "releaseWindow": "Aug 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Witch adventure",
+        "crafting"
+      ],
+      "tier": "SS",
+      "priority": "Strong build",
+      "recommendedAction": "Build quests, crafting, NPC pages",
+      "hype": 82,
+      "trending": true
+    },
+    {
+      "rank": 9,
+      "slug": "phantom-blade-zero",
+      "titleEn": "Phantom Blade Zero",
+      "release": "2026-10-28",
+      "releaseWindow": "Oct 2026",
+      "platforms": [
+        "PC",
+        "PS5"
+      ],
+      "genres": [
+        "Action RPG",
+        "wuxia"
+      ],
+      "tier": "SS",
+      "priority": "Strong build",
+      "recommendedAction": "Build only if content quality is high",
+      "hype": 82,
+      "trending": true
+    },
+    {
+      "rank": 10,
+      "slug": "harvest-moon-echoes-of-teradea",
+      "titleEn": "Harvest Moon: Echoes of Teradea",
+      "release": "2026-09-24",
+      "releaseWindow": "Sep 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Switch"
+      ],
+      "genres": [
+        "Farming sim"
+      ],
+      "tier": "SS",
+      "priority": "Strong build",
+      "recommendedAction": "Build crop/NPC/festival database",
+      "hype": 82,
+      "trending": true
+    },
+    {
+      "rank": 11,
+      "slug": "lou-s-lagoon",
+      "titleEn": "Lou's Lagoon",
+      "release": "2026-08-27",
+      "releaseWindow": "Aug 2026",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Cozy adventure"
+      ],
+      "tier": "S",
+      "priority": "Build",
+      "recommendedAction": "Lightweight wiki + walkthrough",
+      "hype": 65,
+      "trending": false
+    },
+    {
+      "rank": 12,
+      "slug": "big-walk",
+      "titleEn": "Big Walk",
+      "release": "2026-08-04",
+      "releaseWindow": "Aug 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Switch 2"
+      ],
+      "genres": [
+        "Co-op exploration"
+      ],
+      "tier": "S",
+      "priority": "Build",
+      "recommendedAction": "Build social/co-op puzzle guides",
+      "hype": 65,
+      "trending": false
+    },
+    {
+      "rank": 13,
+      "slug": "silent-hill-townfall",
+      "titleEn": "Silent Hill: Townfall",
+      "release": "2026-09-24",
+      "releaseWindow": "Sep 2026",
+      "platforms": [
+        "PC",
+        "PS5"
+      ],
+      "genres": [
+        "Horror"
+      ],
+      "tier": "S",
+      "priority": "Selective",
+      "recommendedAction": "Selective walkthrough + endings only",
+      "hype": 65,
+      "trending": false
+    },
+    {
+      "rank": 14,
+      "slug": "onimusha-way-of-the-sword",
+      "titleEn": "Onimusha: Way of the Sword",
+      "release": "2026-09-03",
+      "releaseWindow": "Sep 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Action adventure"
+      ],
+      "tier": "S",
+      "priority": "Selective",
+      "recommendedAction": "Boss/weapon/collectibles pages",
+      "hype": 65,
+      "trending": false
+    },
+    {
+      "rank": 15,
+      "slug": "valheim-1-0",
+      "titleEn": "Valheim 1.0",
+      "release": "2026-09-09",
+      "releaseWindow": "Sep 2026",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Survival crafting"
+      ],
+      "tier": "S",
+      "priority": "Selective",
+      "recommendedAction": "Only if differentiated calculators/tools",
+      "hype": 65,
+      "trending": false
+    },
+    {
+      "rank": 16,
+      "slug": "enshrouded-1-0",
+      "titleEn": "Enshrouded 1.0",
+      "release": "2026-10-15",
+      "releaseWindow": "Oct 2026",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Survival crafting RPG"
+      ],
+      "tier": "S",
+      "priority": "Selective",
+      "recommendedAction": "Only if strong tool pages",
+      "hype": 65,
+      "trending": false
+    },
+    {
+      "rank": 17,
+      "slug": "dragon-s-dogma-2-dark-arisen",
+      "titleEn": "Dragon's Dogma 2: Dark Arisen",
+      "release": "2026-10-08",
+      "releaseWindow": "Oct 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Action RPG expansion"
+      ],
+      "tier": "S",
+      "priority": "Selective",
+      "recommendedAction": "Expansion guide hub only",
+      "hype": 65,
+      "trending": false
+    },
+    {
+      "rank": 18,
+      "slug": "warhammer-40-000-dawn-of-war-iv",
+      "titleEn": "Warhammer 40,000: Dawn of War IV",
+      "release": "2026-09-17",
+      "releaseWindow": "Sep 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "RTS"
+      ],
+      "tier": "S",
+      "priority": "Build",
+      "recommendedAction": "Faction/unit/build order guide",
+      "hype": 65,
+      "trending": false
+    },
+    {
+      "rank": 19,
+      "slug": "control-resonant",
+      "titleEn": "CONTROL Resonant",
+      "release": "2026-09-24",
+      "releaseWindow": "Sep 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Action adventure"
+      ],
+      "tier": "S",
+      "priority": "Build",
+      "recommendedAction": "Walkthrough + collectibles",
+      "hype": 65,
+      "trending": false
+    },
+    {
+      "rank": 20,
+      "slug": "mistfall-hunter",
+      "titleEn": "Mistfall Hunter",
+      "release": "2026-07-29",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Extraction action RPG"
+      ],
+      "tier": "S",
+      "priority": "Build",
+      "recommendedAction": "Build build/loot/map guide",
+      "hype": 65,
+      "trending": false
+    },
+    {
+      "rank": 21,
+      "slug": "dune-awakening-console",
+      "titleEn": "Dune: Awakening Console",
+      "release": "2026-09-22",
+      "releaseWindow": "Sep 2026",
+      "platforms": [
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Survival MMO"
+      ],
+      "tier": "S",
+      "priority": "Selective",
+      "recommendedAction": "Avoid unless tool/data differentiation",
+      "hype": 65,
+      "trending": false
+    },
+    {
+      "rank": 22,
+      "slug": "ratatan",
+      "titleEn": "Ratatan",
+      "release": "2026-10-15",
+      "releaseWindow": "Oct 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Switch 2"
+      ],
+      "genres": [
+        "Rhythm strategy"
+      ],
+      "tier": "S",
+      "priority": "Build",
+      "recommendedAction": "Compact guide site",
+      "hype": 65,
+      "trending": false
+    },
+    {
+      "rank": 23,
+      "slug": "digimon-story-time-stranger",
+      "titleEn": "Digimon Story Time Stranger",
+      "release": "2026-07-10",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "Switch",
+        "Switch 2"
+      ],
+      "genres": [
+        "JRPG",
+        "monster collecting"
+      ],
+      "tier": "S",
+      "priority": "Selective",
+      "recommendedAction": "Monster database possible",
+      "hype": 65,
+      "trending": false
+    },
+    {
+      "rank": 24,
+      "slug": "nivalis-nights",
+      "titleEn": "Nivalis Nights",
+      "release": "2026-09-29",
+      "releaseWindow": "Sep 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Life sim",
+        "cyberpunk"
+      ],
+      "tier": "S",
+      "priority": "Build",
+      "recommendedAction": "Build jobs, housing, money guides",
+      "hype": 65,
+      "trending": false
+    },
+    {
+      "rank": 25,
+      "slug": "beautiful-light",
+      "titleEn": "Beautiful Light",
+      "release": "TBA",
+      "releaseWindow": "Dec 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Tactical horror FPS"
+      ],
+      "tier": "S",
+      "priority": "Build",
+      "recommendedAction": "Build faction/map/weapon guide",
+      "hype": 65,
+      "trending": false
+    },
+    {
+      "rank": 26,
+      "slug": "witchbrook",
+      "titleEn": "Witchbrook",
+      "release": "TBA",
+      "releaseWindow": "2026 TBC",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Cozy life sim",
+        "magic school"
+      ],
+      "tier": "SS",
+      "priority": "Watch/prepare",
+      "recommendedAction": "Reserve domain; build once date fixed",
+      "hype": 82,
+      "trending": true
+    },
+    {
+      "rank": 27,
+      "slug": "chronicles-medieval",
+      "titleEn": "Chronicles: Medieval",
+      "release": "TBA",
+      "releaseWindow": "2026 TBC",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Medieval sandbox"
+      ],
+      "tier": "S",
+      "priority": "Watch/prepare",
+      "recommendedAction": "Good low-competition sandbox bet",
+      "hype": 65,
+      "trending": false
+    },
+    {
+      "rank": 28,
+      "slug": "mortal-shell-ii",
+      "titleEn": "Mortal Shell II",
+      "release": "TBA",
+      "releaseWindow": "2026 TBC",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Soulslike RPG"
+      ],
+      "tier": "S",
+      "priority": "Watch",
+      "recommendedAction": "Boss/build guide if date confirms",
+      "hype": 65,
+      "trending": false
+    },
+    {
+      "rank": 29,
+      "slug": "the-bustling-world",
+      "titleEn": "The Bustling World",
+      "release": "TBA",
+      "releaseWindow": "TBA",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Open world life sim"
+      ],
+      "tier": "S",
+      "priority": "Watch/prepare",
+      "recommendedAction": "High URL potential; wait for date",
+      "hype": 65,
+      "trending": false
+    },
+    {
+      "rank": 30,
+      "slug": "echoes-of-aincrad",
+      "titleEn": "Echoes of Aincrad",
+      "release": "2026-07-09",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Anime action JRPG"
+      ],
+      "tier": "S",
+      "priority": "Selective",
+      "recommendedAction": "Build anime RPG database if traction",
+      "hype": 65,
+      "trending": false
+    },
+    {
+      "rank": 31,
+      "slug": "assassin-s-creed-black-flag-resynced",
+      "titleEn": "Assassin's Creed Black Flag Resynced",
+      "release": "2026-07-09",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Open world action"
+      ],
+      "tier": "A",
+      "priority": "Avoid",
+      "recommendedAction": "Do not prioritize; authority wall",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 32,
+      "slug": "gta-6",
+      "titleEn": "GTA VI",
+      "release": "2026-11-19",
+      "releaseWindow": "Nov 2026",
+      "platforms": [
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Open world action"
+      ],
+      "tier": "A",
+      "priority": "Avoid",
+      "recommendedAction": "Only media/affiliate angle; not wiki",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 33,
+      "slug": "marvel-s-wolverine",
+      "titleEn": "Marvel's Wolverine",
+      "release": "2026-09-15",
+      "releaseWindow": "Sep 2026",
+      "platforms": [
+        "PS5"
+      ],
+      "genres": [
+        "Action adventure"
+      ],
+      "tier": "A",
+      "priority": "Avoid",
+      "recommendedAction": "Avoid as standalone wiki",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 34,
+      "slug": "call-of-duty-modern-warfare-4",
+      "titleEn": "Call of Duty: Modern Warfare 4",
+      "release": "2026-10-23",
+      "releaseWindow": "Oct 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "FPS"
+      ],
+      "tier": "A",
+      "priority": "Avoid",
+      "recommendedAction": "Avoid unless tools/loadouts niche",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 35,
+      "slug": "gears-of-war-e-day",
+      "titleEn": "Gears of War: E-Day",
+      "release": "2026-10-06",
+      "releaseWindow": "Oct 2026",
+      "platforms": [
+        "PC",
+        "Xbox"
+      ],
+      "genres": [
+        "Shooter"
+      ],
+      "tier": "A",
+      "priority": "Avoid",
+      "recommendedAction": "Avoid for indie SEO",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 36,
+      "slug": "halo-campaign-evolved",
+      "titleEn": "Halo: Campaign Evolved",
+      "release": "2026-07-28",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "FPS remaster"
+      ],
+      "tier": "A",
+      "priority": "Avoid",
+      "recommendedAction": "Avoid remaster authority wall",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 37,
+      "slug": "fire-emblem-fortune-s-weave",
+      "titleEn": "Fire Emblem: Fortune's Weave",
+      "release": "2026-09-17",
+      "releaseWindow": "Sep 2026",
+      "platforms": [
+        "Switch 2"
+      ],
+      "genres": [
+        "Tactical RPG"
+      ],
+      "tier": "A",
+      "priority": "Selective",
+      "recommendedAction": "Competition high but long-tail rich",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 38,
+      "slug": "lego-batman-legacy-of-the-dark-knight",
+      "titleEn": "LEGO Batman: Legacy of the Dark Knight",
+      "release": "2026-09-18",
+      "releaseWindow": "Sep 2026",
+      "platforms": [
+        "Switch 2"
+      ],
+      "genres": [
+        "Action adventure"
+      ],
+      "tier": "A",
+      "priority": "Selective",
+      "recommendedAction": "Kids/family search; selective",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 39,
+      "slug": "metaphor-refantazio-switch-2",
+      "titleEn": "Metaphor: ReFantazio Switch 2",
+      "release": "2026-11-12",
+      "releaseWindow": "Nov 2026",
+      "platforms": [
+        "Switch 2"
+      ],
+      "genres": [
+        "JRPG port"
+      ],
+      "tier": "A",
+      "priority": "Avoid",
+      "recommendedAction": "Port traffic; low priority",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 40,
+      "slug": "dragon-quest-11-s-switch-2-edition",
+      "titleEn": "Dragon Quest 11 S Switch 2 Edition",
+      "release": "2026-09-24",
+      "releaseWindow": "Sep 2026",
+      "platforms": [
+        "Switch 2"
+      ],
+      "genres": [
+        "JRPG port"
+      ],
+      "tier": "A",
+      "priority": "Avoid",
+      "recommendedAction": "Existing guides dominate",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 41,
+      "slug": "ace-combat-8-wings-of-theve",
+      "titleEn": "ACE COMBAT 8: WINGS OF THEVE",
+      "release": "2026-10-01",
+      "releaseWindow": "Oct 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Flight action"
+      ],
+      "tier": "A",
+      "priority": "Selective",
+      "recommendedAction": "Mission/aircraft guides only",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 42,
+      "slug": "hell-let-loose-vietnam",
+      "titleEn": "Hell Let Loose: Vietnam",
+      "release": "2026-08-13",
+      "releaseWindow": "Aug 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Tactical FPS"
+      ],
+      "tier": "A",
+      "priority": "Selective",
+      "recommendedAction": "Map/class guides; niche audience",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 43,
+      "slug": "the-mound-omen-of-cthulhu",
+      "titleEn": "The Mound: Omen of Cthulhu",
+      "release": "2026-07-15",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Co-op Lovecraftian action"
+      ],
+      "tier": "A",
+      "priority": "Build small",
+      "recommendedAction": "Good small site if reviews strong",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 44,
+      "slug": "iron-nest-heavy-turret-simulator",
+      "titleEn": "IRON NEST: Heavy Turret Simulator",
+      "release": "2026-08-06",
+      "releaseWindow": "Aug 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Military simulation"
+      ],
+      "tier": "A",
+      "priority": "Build small",
+      "recommendedAction": "Niche simulator; low competition",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 45,
+      "slug": "nte-neverness-to-everness",
+      "titleEn": "NTE: Neverness to Everness",
+      "release": "2026-07-07",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Open world anime RPG"
+      ],
+      "tier": "A",
+      "priority": "Selective",
+      "recommendedAction": "Gacha-style competition; selective",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 46,
+      "slug": "dragonsword-awakening",
+      "titleEn": "DragonSword: Awakening",
+      "release": "2026-07-22",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Open world action RPG"
+      ],
+      "tier": "A",
+      "priority": "Build small",
+      "recommendedAction": "Potential if Western traction appears",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 47,
+      "slug": "zerospace",
+      "titleEn": "ZeroSpace",
+      "release": "2026-07-20",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "RTS"
+      ],
+      "tier": "A",
+      "priority": "Build small",
+      "recommendedAction": "RTS long-tail; build light",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 48,
+      "slug": "corsair-cove",
+      "titleEn": "Corsair Cove",
+      "release": "2026-07-31",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "City builder",
+        "strategy"
+      ],
+      "tier": "A",
+      "priority": "Build small",
+      "recommendedAction": "Strong low-comp long-tail",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 49,
+      "slug": "stronghold-4-early-access",
+      "titleEn": "Stronghold 4 Early Access",
+      "release": "TBA",
+      "releaseWindow": "2026 TBC",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Castle sim",
+        "strategy"
+      ],
+      "tier": "A",
+      "priority": "Watch",
+      "recommendedAction": "Prepare, wait for concrete date",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 50,
+      "slug": "cat-mail-co",
+      "titleEn": "Cat Mail Co.",
+      "release": "2026-07-09",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Cozy management sim"
+      ],
+      "tier": "A",
+      "priority": "Build small",
+      "recommendedAction": "Tiny but easy low-competition site",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 51,
+      "slug": "forensics-crime-scene-detective",
+      "titleEn": "Forensics: Crime Scene Detective",
+      "release": "2026-07-13",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Investigation sim"
+      ],
+      "tier": "A",
+      "priority": "Build small",
+      "recommendedAction": "Case walkthrough pages",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 52,
+      "slug": "denshattack",
+      "titleEn": "Denshattack",
+      "release": "2026-07-15",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Switch 2"
+      ],
+      "genres": [
+        "Action",
+        "skating train game"
+      ],
+      "tier": "A",
+      "priority": "Build small",
+      "recommendedAction": "Limited URL depth but launch interest",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 53,
+      "slug": "splatoon-raiders",
+      "titleEn": "Splatoon Raiders",
+      "release": "2026-07-23",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "Switch 2"
+      ],
+      "genres": [
+        "Shooter",
+        "adventure"
+      ],
+      "tier": "A",
+      "priority": "Selective",
+      "recommendedAction": "Nintendo authority heavy",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 54,
+      "slug": "madden-nfl-27",
+      "titleEn": "Madden NFL 27",
+      "release": "2026-08-13",
+      "releaseWindow": "Aug 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Sports"
+      ],
+      "tier": "A",
+      "priority": "Avoid",
+      "recommendedAction": "High search, low evergreen SEO moat",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 55,
+      "slug": "ea-sports-college-football-27",
+      "titleEn": "EA Sports College Football 27",
+      "release": "2026-07-09",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Sports"
+      ],
+      "tier": "A",
+      "priority": "Avoid",
+      "recommendedAction": "Avoid unless roster/tools niche",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 56,
+      "slug": "backyard-baseball",
+      "titleEn": "Backyard Baseball",
+      "release": "2026-07-09",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Sports arcade"
+      ],
+      "tier": "B",
+      "priority": "Low priority",
+      "recommendedAction": "Small nostalgia traffic",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 57,
+      "slug": "the-guild-europa-1410",
+      "titleEn": "The Guild - Europa 1410",
+      "release": "2026-07-16",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Sandbox strategy sim"
+      ],
+      "tier": "A",
+      "priority": "Build",
+      "recommendedAction": "Excellent systems-guide potential",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 58,
+      "slug": "soulbound-online",
+      "titleEn": "Soulbound: Online",
+      "release": "2026-07-21",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "MMORPG"
+      ],
+      "tier": "A",
+      "priority": "Build small",
+      "recommendedAction": "MMO pages; watch player retention",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 59,
+      "slug": "dinoblade",
+      "titleEn": "Dinoblade",
+      "release": "2026-07-23",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Dinosaur soulslike"
+      ],
+      "tier": "A",
+      "priority": "Build small",
+      "recommendedAction": "Boss/weapon guide opportunity",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 60,
+      "slug": "esports-manager-2026",
+      "titleEn": "Esports Manager 2026",
+      "release": "2026-07-06",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Management sim"
+      ],
+      "tier": "B",
+      "priority": "Low priority",
+      "recommendedAction": "Small but easy programmatic pages",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 61,
+      "slug": "bombanana",
+      "titleEn": "BOMBANANA!",
+      "release": "TBA",
+      "releaseWindow": "Aug 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Co-op puzzle"
+      ],
+      "tier": "B",
+      "priority": "Low priority",
+      "recommendedAction": "Low search; optional",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 62,
+      "slug": "wind-runners",
+      "titleEn": "Wind Runners",
+      "release": "2026-09-23",
+      "releaseWindow": "Sep 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Action adventure"
+      ],
+      "tier": "B",
+      "priority": "Watch",
+      "recommendedAction": "Watch only",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 63,
+      "slug": "another-eden-begins",
+      "titleEn": "Another Eden Begins",
+      "release": "2026-09-16",
+      "releaseWindow": "Sep 2026",
+      "platforms": [
+        "PC",
+        "Switch 2"
+      ],
+      "genres": [
+        "JRPG"
+      ],
+      "tier": "B",
+      "priority": "Low priority",
+      "recommendedAction": "Fan/wiki competition likely",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 64,
+      "slug": "trails-in-the-sky-2nd-chapter",
+      "titleEn": "Trails in the Sky 2nd Chapter",
+      "release": "2026-09-17",
+      "releaseWindow": "Sep 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Switch"
+      ],
+      "genres": [
+        "JRPG"
+      ],
+      "tier": "B",
+      "priority": "Low priority",
+      "recommendedAction": "Existing fandom dominates",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 65,
+      "slug": "crymelight",
+      "titleEn": "Crymelight",
+      "release": "2026-11-04",
+      "releaseWindow": "Nov 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Switch 2"
+      ],
+      "genres": [
+        "Action adventure"
+      ],
+      "tier": "B",
+      "priority": "Watch",
+      "recommendedAction": "Monitor reviews and traction",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 66,
+      "slug": "wielders-of-the-essence",
+      "titleEn": "Wielders of the Essence",
+      "release": "2026-11-05",
+      "releaseWindow": "Nov 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "RPG"
+      ],
+      "tier": "B",
+      "priority": "Watch",
+      "recommendedAction": "Small RPG long-tail possible",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 67,
+      "slug": "magic-kingdom",
+      "titleEn": "Magic Kingdom",
+      "release": "2026-11-01",
+      "releaseWindow": "Nov 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Simulator",
+        "strategy"
+      ],
+      "tier": "B",
+      "priority": "Watch",
+      "recommendedAction": "Low confidence",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 68,
+      "slug": "survive-the-apocalypse",
+      "titleEn": "Survive the Apocalypse",
+      "release": "2026-11-02",
+      "releaseWindow": "Nov 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Survival RPG"
+      ],
+      "tier": "A",
+      "priority": "Build small",
+      "recommendedAction": "Good generic survival demand",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 69,
+      "slug": "jigenro",
+      "titleEn": "Jigenro",
+      "release": "2026-11-01",
+      "releaseWindow": "Nov 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Puzzle"
+      ],
+      "tier": "B",
+      "priority": "Avoid",
+      "recommendedAction": "Too small for matrix",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 70,
+      "slug": "final-fantasy-resonance",
+      "titleEn": "Final Fantasy Resonance",
+      "release": "2026-10-22",
+      "releaseWindow": "Oct 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Switch"
+      ],
+      "genres": [
+        "JRPG"
+      ],
+      "tier": "A",
+      "priority": "Avoid",
+      "recommendedAction": "Authority competition too high",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 71,
+      "slug": "minecraft-dungeons-ii",
+      "titleEn": "Minecraft Dungeons II",
+      "release": "2026-09-29",
+      "releaseWindow": "Sep 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox",
+        "Switch"
+      ],
+      "genres": [
+        "Action RPG"
+      ],
+      "tier": "A",
+      "priority": "Avoid",
+      "recommendedAction": "Avoid unless very niche builds",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 72,
+      "slug": "castlevania-belmont-s-curse",
+      "titleEn": "Castlevania: Belmont's Curse",
+      "release": "2026-10-15",
+      "releaseWindow": "Oct 2026",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Metroidvania"
+      ],
+      "tier": "A",
+      "priority": "Selective",
+      "recommendedAction": "Boss/map guides; selective",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 73,
+      "slug": "clive-barker-s-hellraiser-revival",
+      "titleEn": "Clive Barker's Hellraiser: Revival",
+      "release": "2026-10-08",
+      "releaseWindow": "Oct 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Horror"
+      ],
+      "tier": "A",
+      "priority": "Selective",
+      "recommendedAction": "Short lifecycle; selective",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 74,
+      "slug": "halloween",
+      "titleEn": "Halloween",
+      "release": "2026-09-08",
+      "releaseWindow": "Sep 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Horror"
+      ],
+      "tier": "A",
+      "priority": "Selective",
+      "recommendedAction": "Movie IP search noise; selective",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 75,
+      "slug": "valor-mortis",
+      "titleEn": "Valor Mortis",
+      "release": "2026-10-13",
+      "releaseWindow": "Oct 2026",
+      "platforms": [
+        "PC",
+        "PS5",
+        "Xbox"
+      ],
+      "genres": [
+        "Soulslike action"
+      ],
+      "tier": "A",
+      "priority": "Build small",
+      "recommendedAction": "Boss/build guide opportunity",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 76,
+      "slug": "the-witch-s-bakery",
+      "titleEn": "The Witch's Bakery",
+      "release": "2026-08-20",
+      "releaseWindow": "Aug 2026",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Cozy management"
+      ],
+      "tier": "A",
+      "priority": "Build small",
+      "recommendedAction": "Strong cozy long-tail",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 77,
+      "slug": "moss-the-forgotten-relic",
+      "titleEn": "Moss: The Forgotten Relic",
+      "release": "2026-07-16",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Exploration platformer"
+      ],
+      "tier": "B",
+      "priority": "Avoid",
+      "recommendedAction": "Limited guide depth",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 78,
+      "slug": "forest-escape-last-train",
+      "titleEn": "Forest Escape: Last Train",
+      "release": "2026-07-10",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Co-op horror"
+      ],
+      "tier": "B",
+      "priority": "Watch",
+      "recommendedAction": "Only if viral on Twitch",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 79,
+      "slug": "desktop-explorer",
+      "titleEn": "Desktop Explorer",
+      "release": "2026-07-17",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Puzzle investigation horror"
+      ],
+      "tier": "B",
+      "priority": "Low priority",
+      "recommendedAction": "Walkthrough demand, limited scale",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 80,
+      "slug": "american-revolutionary-war",
+      "titleEn": "American Revolutionary War",
+      "release": "2026-07-03",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Strategy simulation"
+      ],
+      "tier": "B",
+      "priority": "Low priority",
+      "recommendedAction": "Niche strategy",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 81,
+      "slug": "tokyo-valkyries",
+      "titleEn": "Tokyo Valkyries",
+      "release": "2026-07-08",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Roguelike deckbuilder"
+      ],
+      "tier": "B",
+      "priority": "Low priority",
+      "recommendedAction": "Deck lists possible but small",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 82,
+      "slug": "cat-chess",
+      "titleEn": "Cat Chess",
+      "release": "2026-07-14",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Strategy puzzle"
+      ],
+      "tier": "B",
+      "priority": "Avoid",
+      "recommendedAction": "Too small",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 83,
+      "slug": "scribble-hunt",
+      "titleEn": "SCRIBBLE HUNT",
+      "release": "2026-07-11",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Hidden object PvP"
+      ],
+      "tier": "B",
+      "priority": "Avoid",
+      "recommendedAction": "Too small",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 84,
+      "slug": "battle-for-embolia",
+      "titleEn": "Battle For Embolia",
+      "release": "2026-07-03",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "MMORPG"
+      ],
+      "tier": "B",
+      "priority": "Watch",
+      "recommendedAction": "Watch retention",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 85,
+      "slug": "master-healer-kale-with-useless-party",
+      "titleEn": "Master Healer Kale with useless party",
+      "release": "2026-07-02",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Party RPG"
+      ],
+      "tier": "B",
+      "priority": "Avoid",
+      "recommendedAction": "Too small",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 86,
+      "slug": "ice-cream-man",
+      "titleEn": "Ice Cream Man",
+      "release": "2026-07-03",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Horror adventure"
+      ],
+      "tier": "B",
+      "priority": "Low priority",
+      "recommendedAction": "Short viral potential only",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 87,
+      "slug": "conqueror-s-stage",
+      "titleEn": "Conqueror's Stage",
+      "release": "2026-07-03",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Grand strategy",
+        "4X"
+      ],
+      "tier": "B",
+      "priority": "Low priority",
+      "recommendedAction": "Strategy long-tail but low demand",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 88,
+      "slug": "fascist-fps",
+      "titleEn": "Fascist FPS",
+      "release": "2026-07-03",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Action roguelike"
+      ],
+      "tier": "B",
+      "priority": "Avoid",
+      "recommendedAction": "Avoid for brand safety",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 89,
+      "slug": "olga-doesn-t-die",
+      "titleEn": "Olga Doesn't Die",
+      "release": "2026-07-03",
+      "releaseWindow": "Jul 2026",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Visual novel"
+      ],
+      "tier": "B",
+      "priority": "Avoid",
+      "recommendedAction": "Not guide-site suitable",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 90,
+      "slug": "xenofeels",
+      "titleEn": "XenoFeels",
+      "release": "TBA",
+      "releaseWindow": "2026 TBC",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Comedy first-person adventure"
+      ],
+      "tier": "B",
+      "priority": "Avoid",
+      "recommendedAction": "Low guide depth",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 91,
+      "slug": "over-the-hill",
+      "titleEn": "over the hill",
+      "release": "TBA",
+      "releaseWindow": "2026 TBC",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Driving",
+        "exploration"
+      ],
+      "tier": "B",
+      "priority": "Watch",
+      "recommendedAction": "Watch for niche traction",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 92,
+      "slug": "wardogs",
+      "titleEn": "WARDOGS",
+      "release": "TBA",
+      "releaseWindow": "2026 TBC",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Action",
+        "shooter"
+      ],
+      "tier": "B",
+      "priority": "Watch",
+      "recommendedAction": "Unclear demand",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 93,
+      "slug": "rules-of-engagement-the-grey-state",
+      "titleEn": "Rules of Engagement: The Grey State",
+      "release": "TBA",
+      "releaseWindow": "TBA",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Free tactical shooter"
+      ],
+      "tier": "B",
+      "priority": "Watch",
+      "recommendedAction": "Competitive/live-service risk",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 94,
+      "slug": "falling-frontier",
+      "titleEn": "Falling Frontier",
+      "release": "TBA",
+      "releaseWindow": "TBA",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Space strategy"
+      ],
+      "tier": "A",
+      "priority": "Watch/prepare",
+      "recommendedAction": "Good strategy-guide potential",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 95,
+      "slug": "railborn",
+      "titleEn": "Railborn",
+      "release": "TBA",
+      "releaseWindow": "TBA",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Rail",
+        "sim"
+      ],
+      "tier": "B",
+      "priority": "Watch",
+      "recommendedAction": "Potential if Steam interest rises",
+      "hype": 25,
+      "trending": false
+    },
+    {
+      "rank": 96,
+      "slug": "alkahest",
+      "titleEn": "Alkahest",
+      "release": "TBA",
+      "releaseWindow": "TBA",
+      "platforms": [
+        "PC"
+      ],
+      "genres": [
+        "Action RPG"
+      ],
+      "tier": "A",
+      "priority": "Watch/prepare",
+      "recommendedAction": "Watch release date",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 97,
+      "slug": "tides-of-annihilation",
+      "titleEn": "Tides of Annihilation",
+      "release": "TBA",
+      "releaseWindow": "TBA",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Action adventure"
+      ],
+      "tier": "A",
+      "priority": "Watch/prepare",
+      "recommendedAction": "Good but date uncertain",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 98,
+      "slug": "state-of-decay-3",
+      "titleEn": "State of Decay 3",
+      "release": "TBA",
+      "releaseWindow": "TBA",
+      "platforms": [
+        "PC",
+        "Xbox"
+      ],
+      "genres": [
+        "Survival horror"
+      ],
+      "tier": "A",
+      "priority": "Selective",
+      "recommendedAction": "Great search but likely crowded",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 99,
+      "slug": "ark-2",
+      "titleEn": "ARK 2",
+      "release": "TBA",
+      "releaseWindow": "TBA",
+      "platforms": [
+        "PC",
+        "Xbox"
+      ],
+      "genres": [
+        "Survival crafting"
+      ],
+      "tier": "A",
+      "priority": "Selective",
+      "recommendedAction": "Huge, but high competition",
+      "hype": 45,
+      "trending": false
+    },
+    {
+      "rank": 100,
+      "slug": "light-no-fire",
+      "titleEn": "Light No Fire",
+      "release": "TBA",
+      "releaseWindow": "TBA",
+      "platforms": [
+        "PC",
+        "Console"
+      ],
+      "genres": [
+        "Open world exploration",
+        "survival"
+      ],
+      "tier": "SS",
+      "priority": "Watch/prepare",
+      "recommendedAction": "Reserve; likely major 2027+ opportunity",
+      "hype": 82,
+      "trending": true
+    }
+  ]
+}

@@ -1,6 +1,8 @@
 [
   {
     "match": ["star wars zero company", "zero company"],
+    "slug": "star-wars-zero-company",
+    "titleEn": "Star Wars Zero Company",
     "titleZh": "星球大战：零号连队",
     "wikiUrl": "https://starwarszerocompany.cc",
     "banner": "/images/games/star-wars-zero-company-banner.webp",
@@ -9,16 +11,26 @@
   },
   {
     "match": ["planet zoo 2"],
+    "slug": "planet-zoo-2",
+    "titleEn": "Planet Zoo 2",
     "titleZh": "动物园之星 2",
-    "wikiUrl": "",
-    "featured": false
+    "wikiUrl": "https://planetzoo2.wiki",
+    "featured": true
+  },
+  {
+    "match": ["moonlight peaks"],
+    "slug": "moonlight-peaks",
+    "titleEn": "Moonlight Peaks",
+    "titleZh": "Moonlight Peaks",
+    "wikiUrl": "https://moonlightpeakswiki.com",
+    "featured": true
   },
   {
     "match": ["nivalis nights", "nivalis"],
     "slug": "nivalis-nights",
     "titleEn": "Nivalis Nights",
     "titleZh": "Nivalis Nights",
-    "wikiUrl": "",
+    "wikiUrl": "https://nivalisnights.wiki",
     "banner": "/images/games/nivalis-nights-banner.webp",
     "coverPosition": "center",
     "featured": false
@@ -28,7 +40,7 @@
     "slug": "neverway",
     "titleEn": "Neverway",
     "titleZh": "Neverway",
-    "wikiUrl": "",
+    "wikiUrl": "https://neverway.wiki",
     "banner": "/images/games/neverway-banner.webp",
     "coverPosition": "center",
     "featured": false
@@ -38,7 +50,7 @@
     "slug": "runescape-dragonwilds",
     "titleEn": "RuneScape: Dragonwilds",
     "titleZh": "RuneScape: Dragonwilds",
-    "wikiUrl": "",
+    "wikiUrl": "https://runescapedragonwilds.wiki",
     "banner": "/images/games/runescape-dragonwilds-banner.webp",
     "coverPosition": "center",
     "featured": false
@@ -48,7 +60,7 @@
     "slug": "control-resonant",
     "titleEn": "CONTROL Resonant",
     "titleZh": "CONTROL Resonant",
-    "wikiUrl": "",
+    "wikiUrl": "https://controlresonant.wiki",
     "banner": "/images/games/control-resonant-banner.webp",
     "coverPosition": "center",
     "featured": false
@@ -61,14 +73,15 @@
     "wikiUrl": "",
     "banner": "/images/games/harvest-moon-echoes-of-teradea-banner.webp",
     "coverPosition": "center",
-    "featured": false
+    "featured": false,
+    "_todo": "域名在截图里被截断成 'harvestmoonechoesofter...'，请把完整域名发给我，我马上补上"
   },
   {
     "match": ["ace combat 8 wings of theve", "ace combat 8"],
     "slug": "ace-combat-8-wings-of-theve",
     "titleEn": "Ace Combat 8: Wings of Theve",
     "titleZh": "Ace Combat 8: Wings of Theve",
-    "wikiUrl": "",
+    "wikiUrl": "https://acecombat8.wiki",
     "banner": "/images/games/ace-combat-8-banner.webp",
     "coverPosition": "center",
     "featured": false
@@ -78,7 +91,7 @@
     "slug": "grave-seasons",
     "titleEn": "Grave Seasons",
     "titleZh": "Grave Seasons",
-    "wikiUrl": "",
+    "wikiUrl": "https://graveseasons.wiki",
     "banner": "/images/games/grave-seasons-banner.webp",
     "coverPosition": "center",
     "featured": false
@@ -88,7 +101,7 @@
     "slug": "the-blood-of-dawnwalker",
     "titleEn": "The Blood of Dawnwalker",
     "titleZh": "The Blood of Dawnwalker",
-    "wikiUrl": "",
+    "wikiUrl": "https://bloodofdawnwalker.cc",
     "banner": "/images/games/the-blood-of-dawnwalker-banner.webp",
     "coverPosition": "center",
     "featured": false
@@ -98,9 +111,42 @@
     "slug": "phantom-blade-zero",
     "titleEn": "Phantom Blade Zero",
     "titleZh": "Phantom Blade Zero",
-    "wikiUrl": "",
+    "wikiUrl": "https://phantombladezerowiki.wiki",
     "banner": "/images/games/phantom-blade-zero-banner.webp",
     "coverPosition": "center 38%",
+    "featured": false
+  },
+  {
+    "match": ["mistfall hunter"],
+    "slug": "mistfall-hunter",
+    "titleEn": "Mistfall Hunter",
+    "titleZh": "Mistfall Hunter",
+    "wikiUrl": "https://mistfallhunter.me",
+    "featured": false
+  },
+  {
+    "match": ["beast of reincarnation"],
+    "slug": "beast-of-reincarnation",
+    "titleEn": "Beast of Reincarnation",
+    "titleZh": "Beast of Reincarnation",
+    "wikiUrl": "https://beast-of-reincarnation.vercel.app",
+    "featured": false,
+    "_todo": "截图域名被截断成 'beast-of-reincarnation.ver...'，已按 Vercel 默认命名规则推断为 .vercel.app，如果你换了自定义域名请告诉我更新"
+  },
+  {
+    "match": ["reka"],
+    "slug": "reka",
+    "titleEn": "REKA",
+    "titleZh": "REKA",
+    "wikiUrl": "https://reka-six.vercel.app",
+    "featured": false
+  },
+  {
+    "match": ["valheim 1.0", "valheim"],
+    "slug": "valheim-1-0",
+    "titleEn": "Valheim 1.0",
+    "titleZh": "Valheim 1.0",
+    "wikiUrl": "https://valheim-1-0.vercel.app",
     "featured": false
   }
 ]
