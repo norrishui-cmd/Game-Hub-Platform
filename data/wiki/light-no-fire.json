@@ -1,33 +1,58 @@
 {
   "content": {
     "en": {
-      "summary": "",
+      "summary": "Light No Fire is an upcoming Open world exploration, survival game for PC, Console, developed by Hello Games. An official release date has not been confirmed yet.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Platforms & release status",
+          "description": "Light No Fire is confirmed for PC, Console. No release date has been locked in yet — this page will be updated as soon as one is confirmed. Check the official links below for the latest word directly from the developer."
+        }
+      ],
       "sources": []
     },
     "de": {
-      "summary": "",
+      "summary": "Light No Fire ist ein kommendes Open world exploration, survival-Spiel für PC, Console, entwickelt von Hello Games. Ein offizielles Erscheinungsdatum steht noch nicht fest.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Plattformen & Release-Status",
+          "description": "Light No Fire ist für PC, Console bestätigt. Ein Release-Termin steht noch nicht fest — diese Seite wird aktualisiert, sobald einer bestätigt ist. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
+        }
+      ],
       "sources": []
     },
     "ja": {
-      "summary": "",
+      "summary": "Light No Fireは発売予定のOpen world exploration・survivalゲームで、対応プラットフォームはPC・Console、開発はHello Games。公式の発売日はまだ発表されていません。",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "対応プラットフォームと発売状況",
+          "description": "Light No FireはPC・Consoleでの発売が確認されています。公式の発売日はまだ確定していません。確定次第このページを更新します。最新情報は下記の公式リンクからご確認いただけます。"
+        }
+      ],
       "sources": []
     },
     "es": {
-      "summary": "",
+      "summary": "Light No Fire es un próximo juego de Open world exploration, survival para PC, Console, desarrollado por Hello Games. Aún no se ha confirmado una fecha de lanzamiento oficial.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Plataformas y estado del lanzamiento",
+          "description": "Light No Fire está confirmado para PC, Console. Todavía no hay una fecha de lanzamiento confirmada — esta página se actualizará en cuanto se anuncie una. Consulta los enlaces oficiales de abajo para las últimas novedades."
+        }
+      ],
       "sources": []
     },
     "zh": {
-      "summary": "",
+      "summary": "Light No Fire 是一款即将发行的Open world exploration、survival游戏，登陆 PC、Console，由 Hello Games 开发。官方发行日期暂未确认。",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "平台与发行进度",
+          "description": "Light No Fire 目前确认登陆 PC、Console。官方还没有锁定具体发行日期，这里会在确认后第一时间更新。想看最新的第一手消息，可以点开下方官方链接。"
+        }
+      ],
       "sources": []
     }
   }

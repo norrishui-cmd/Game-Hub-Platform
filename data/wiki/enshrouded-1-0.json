@@ -1,33 +1,58 @@
 {
   "content": {
     "en": {
-      "summary": "",
+      "summary": "Enshrouded 1.0 is an upcoming Survival crafting RPG game for PC, Console. It is scheduled to release on October 15, 2026.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Platforms & release status",
+          "description": "Enshrouded 1.0 is confirmed for PC, Console. The current release target is October 15, 2026, though release dates for smaller studios can still shift. Check the official links below for the latest word directly from the developer."
+        }
+      ],
       "sources": []
     },
     "de": {
-      "summary": "",
+      "summary": "Enshrouded 1.0 ist ein kommendes Survival crafting RPG-Spiel für PC, Console. Der Release ist für den 15. Oktober 2026 geplant.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Plattformen & Release-Status",
+          "description": "Enshrouded 1.0 ist für PC, Console bestätigt. Aktuell wird der 15. Oktober 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
+        }
+      ],
       "sources": []
     },
     "ja": {
-      "summary": "",
+      "summary": "Enshrouded 1.0は発売予定のSurvival crafting RPGゲームで、対応プラットフォームはPC・Console。発売日は2026年10月15日を予定しています。",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "対応プラットフォームと発売状況",
+          "description": "Enshrouded 1.0はPC・Consoleでの発売が確認されています。現時点では2026年10月15日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
+        }
+      ],
       "sources": []
     },
     "es": {
-      "summary": "",
+      "summary": "Enshrouded 1.0 es un próximo juego de Survival crafting RPG para PC, Console. Su lanzamiento está previsto para el 15 de octubre de 2026.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Plataformas y estado del lanzamiento",
+          "description": "Enshrouded 1.0 está confirmado para PC, Console. La fecha prevista es el 15 de octubre de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
+        }
+      ],
       "sources": []
     },
     "zh": {
-      "summary": "",
+      "summary": "Enshrouded 1.0 是一款即将发行的Survival crafting RPG游戏，登陆 PC、Console。目前定档 2026年10月15日 发行。",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "平台与发行进度",
+          "description": "Enshrouded 1.0 目前确认登陆 PC、Console。目前定档 2026年10月15日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
+        }
+      ],
       "sources": []
     }
   }

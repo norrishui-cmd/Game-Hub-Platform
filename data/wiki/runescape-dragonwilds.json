@@ -5,17 +5,69 @@
       "summary": "RuneScape: Dragonwilds is Jagex's open-world survival crafting spin-off set on Ashenfall, a previously unexplored continent of Gielinor where dragons have awoken. Built in Unreal Engine 5, it supports 1–4 player co-op and blends familiar RuneScape lore and skilling progression with a modern gather-craft-build survival loop, tasking players with mastering the land and uncovering ancient secrets in order to challenge the Dragon Queen.",
       "faq": [],
       "guideSections": [
-        { "title": "Anima Magic: Survival Crafting with a RuneScape Twist", "description": "How Anima, a magical force drawn from RuneScape lore, lets players cast spells that speed up resource gathering (like summoning spectral axes to fell trees) and repair gear — softening the genre's usual grind." },
-        { "title": "Skills, Crafting & Repair", "description": "How the skill-leveling and crafting recipe system carries over classic RuneScape skilling identity, and how the repair system keeps buildings and gear from permanently degrading with use." }
+        {
+          "title": "Anima Magic: Survival Crafting with a RuneScape Twist",
+          "description": "How Anima, a magical force drawn from RuneScape lore, lets players cast spells that speed up resource gathering (like summoning spectral axes to fell trees) and repair gear — softening the genre's usual grind."
+        },
+        {
+          "title": "Skills, Crafting & Repair",
+          "description": "How the skill-leveling and crafting recipe system carries over classic RuneScape skilling identity, and how the repair system keeps buildings and gear from permanently degrading with use."
+        }
       ],
       "sources": [
-        { "label": "Jagex — official Dragonwilds announcement", "url": "https://www.jagex.com/news/jagex-announces-new-open-world-survival-game-runescape-dragonwilds" },
-        { "label": "RuneScape: Dragonwilds Wiki — setting, platforms and Sixth Age lore placement", "url": "https://dragonwilds.runescape.wiki/w/RuneScape:_Dragonwilds" }
+        {
+          "label": "Jagex — official Dragonwilds announcement",
+          "url": "https://www.jagex.com/news/jagex-announces-new-open-world-survival-game-runescape-dragonwilds"
+        },
+        {
+          "label": "RuneScape: Dragonwilds Wiki — setting, platforms and Sixth Age lore placement",
+          "url": "https://dragonwilds.runescape.wiki/w/RuneScape:_Dragonwilds"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "RuneScape: Dragonwilds ist ein kommendes Survival crafting RPG-Spiel für PC, Console. Der Release ist für den 15. September 2026 geplant.",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "Plattformen & Release-Status",
+          "description": "RuneScape: Dragonwilds ist für PC, Console bestätigt. Aktuell wird der 15. September 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
+        }
+      ],
+      "sources": []
+    },
+    "ja": {
+      "summary": "RuneScape: Dragonwildsは発売予定のSurvival crafting RPGゲームで、対応プラットフォームはPC・Console。発売日は2026年9月15日を予定しています。",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "対応プラットフォームと発売状況",
+          "description": "RuneScape: DragonwildsはPC・Consoleでの発売が確認されています。現時点では2026年9月15日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
+        }
+      ],
+      "sources": []
+    },
+    "es": {
+      "summary": "RuneScape: Dragonwilds es un próximo juego de Survival crafting RPG para PC, Console. Su lanzamiento está previsto para el 15 de septiembre de 2026.",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "Plataformas y estado del lanzamiento",
+          "description": "RuneScape: Dragonwilds está confirmado para PC, Console. La fecha prevista es el 15 de septiembre de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
+        }
+      ],
+      "sources": []
+    },
+    "zh": {
+      "summary": "RuneScape: Dragonwilds 是一款即将发行的Survival crafting RPG游戏，登陆 PC、Console。目前定档 2026年9月15日 发行。",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "平台与发行进度",
+          "description": "RuneScape: Dragonwilds 目前确认登陆 PC、Console。目前定档 2026年9月15日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
+        }
+      ],
+      "sources": []
+    }
   }
 }

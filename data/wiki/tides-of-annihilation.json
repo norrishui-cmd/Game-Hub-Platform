@@ -1,33 +1,58 @@
 {
   "content": {
     "en": {
-      "summary": "",
+      "summary": "Tides of Annihilation is an upcoming Action adventure game for PC, Console. An official release date has not been confirmed yet.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Platforms & release status",
+          "description": "Tides of Annihilation is confirmed for PC, Console. No release date has been locked in yet — this page will be updated as soon as one is confirmed. Check the official links below for the latest word directly from the developer."
+        }
+      ],
       "sources": []
     },
     "de": {
-      "summary": "",
+      "summary": "Tides of Annihilation ist ein kommendes Action adventure-Spiel für PC, Console. Ein offizielles Erscheinungsdatum steht noch nicht fest.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Plattformen & Release-Status",
+          "description": "Tides of Annihilation ist für PC, Console bestätigt. Ein Release-Termin steht noch nicht fest — diese Seite wird aktualisiert, sobald einer bestätigt ist. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
+        }
+      ],
       "sources": []
     },
     "ja": {
-      "summary": "",
+      "summary": "Tides of Annihilationは発売予定のAction adventureゲームで、対応プラットフォームはPC・Console。公式の発売日はまだ発表されていません。",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "対応プラットフォームと発売状況",
+          "description": "Tides of AnnihilationはPC・Consoleでの発売が確認されています。公式の発売日はまだ確定していません。確定次第このページを更新します。最新情報は下記の公式リンクからご確認いただけます。"
+        }
+      ],
       "sources": []
     },
     "es": {
-      "summary": "",
+      "summary": "Tides of Annihilation es un próximo juego de Action adventure para PC, Console. Aún no se ha confirmado una fecha de lanzamiento oficial.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Plataformas y estado del lanzamiento",
+          "description": "Tides of Annihilation está confirmado para PC, Console. Todavía no hay una fecha de lanzamiento confirmada — esta página se actualizará en cuanto se anuncie una. Consulta los enlaces oficiales de abajo para las últimas novedades."
+        }
+      ],
       "sources": []
     },
     "zh": {
-      "summary": "",
+      "summary": "Tides of Annihilation 是一款即将发行的Action adventure游戏，登陆 PC、Console。官方发行日期暂未确认。",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "平台与发行进度",
+          "description": "Tides of Annihilation 目前确认登陆 PC、Console。官方还没有锁定具体发行日期，这里会在确认后第一时间更新。想看最新的第一手消息，可以点开下方官方链接。"
+        }
+      ],
       "sources": []
     }
   }

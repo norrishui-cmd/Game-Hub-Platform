@@ -5,17 +5,69 @@
       "summary": "Harvest Moon: Echoes of Teradea is Natsume's next mainline entry in the long-running farming-sim series, releasing September 24, 2026 on Nintendo Switch, Switch 2, PlayStation 5, Xbox Series X/S, and PC — the franchise's first appearance on Switch 2. Raised in Bloomfield Village, the player investigates a mysterious mist spreading from the Forest of Echoes alongside a childhood friend, restoring farms and communities across the wider region of Teradea while taming the wild wolves the mist has unleashed.",
       "faq": [],
       "guideSections": [
-        { "title": "Animal Companions & Expanded Movement", "description": "Beyond traditional farming, players travel with animal companions that each grant unique traversal abilities (breaking obstacles, reaching hidden ledges), combined with an expanded moveset that adds jumping, ladder-climbing, and vine-scaling to the usual Harvest Moon toolkit." },
-        { "title": "Romance & Guardian Spirits", "description": "Echoes of Teradea offers ten romanceable villagers (five bachelors, five bachelorettes) alongside a main story built around helping the region's Guardian Spirits and the Harvest Goddess restore balance to Teradea." }
+        {
+          "title": "Animal Companions & Expanded Movement",
+          "description": "Beyond traditional farming, players travel with animal companions that each grant unique traversal abilities (breaking obstacles, reaching hidden ledges), combined with an expanded moveset that adds jumping, ladder-climbing, and vine-scaling to the usual Harvest Moon toolkit."
+        },
+        {
+          "title": "Romance & Guardian Spirits",
+          "description": "Echoes of Teradea offers ten romanceable villagers (five bachelors, five bachelorettes) alongside a main story built around helping the region's Guardian Spirits and the Harvest Goddess restore balance to Teradea."
+        }
       ],
       "sources": [
-        { "label": "Gematsu — debut trailer and key features breakdown", "url": "https://www.gematsu.com/2026/06/harvest-moon-echoes-of-teradea-debut-trailer" },
-        { "label": "Nintendo Everything — Switch/Switch 2 release date confirmation", "url": "https://nintendoeverything.com/harvest-moon-echoes-of-teradea-gets-nintendo-switch-and-switch-2-release-date/" }
+        {
+          "label": "Gematsu — debut trailer and key features breakdown",
+          "url": "https://www.gematsu.com/2026/06/harvest-moon-echoes-of-teradea-debut-trailer"
+        },
+        {
+          "label": "Nintendo Everything — Switch/Switch 2 release date confirmation",
+          "url": "https://nintendoeverything.com/harvest-moon-echoes-of-teradea-gets-nintendo-switch-and-switch-2-release-date/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "Harvest Moon: Echoes of Teradea ist ein kommendes Farming sim-Spiel für PC, PS5, Xbox, Switch. Der Release ist für den 24. September 2026 geplant.",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "Plattformen & Release-Status",
+          "description": "Harvest Moon: Echoes of Teradea ist für PC, PS5, Xbox, Switch bestätigt. Aktuell wird der 24. September 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
+        }
+      ],
+      "sources": []
+    },
+    "ja": {
+      "summary": "Harvest Moon: Echoes of Teradeaは発売予定のFarming simゲームで、対応プラットフォームはPC・PS5・Xbox・Switch。発売日は2026年9月24日を予定しています。",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "対応プラットフォームと発売状況",
+          "description": "Harvest Moon: Echoes of TeradeaはPC・PS5・Xbox・Switchでの発売が確認されています。現時点では2026年9月24日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
+        }
+      ],
+      "sources": []
+    },
+    "es": {
+      "summary": "Harvest Moon: Echoes of Teradea es un próximo juego de Farming sim para PC, PS5, Xbox, Switch. Su lanzamiento está previsto para el 24 de septiembre de 2026.",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "Plataformas y estado del lanzamiento",
+          "description": "Harvest Moon: Echoes of Teradea está confirmado para PC, PS5, Xbox, Switch. La fecha prevista es el 24 de septiembre de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
+        }
+      ],
+      "sources": []
+    },
+    "zh": {
+      "summary": "Harvest Moon: Echoes of Teradea 是一款即将发行的Farming sim游戏，登陆 PC、PS5、Xbox、Switch。目前定档 2026年9月24日 发行。",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "平台与发行进度",
+          "description": "Harvest Moon: Echoes of Teradea 目前确认登陆 PC、PS5、Xbox、Switch。目前定档 2026年9月24日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
+        }
+      ],
+      "sources": []
+    }
   }
 }

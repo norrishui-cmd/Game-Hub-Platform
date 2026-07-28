@@ -1,33 +1,58 @@
 {
   "content": {
     "en": {
-      "summary": "",
+      "summary": "Trails in the Sky 2nd Chapter is an upcoming JRPG game for PC, PS5, Switch. It is scheduled to release on September 17, 2026.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Platforms & release status",
+          "description": "Trails in the Sky 2nd Chapter is confirmed for PC, PS5, Switch. The current release target is September 17, 2026, though release dates for smaller studios can still shift. Check the official links below for the latest word directly from the developer."
+        }
+      ],
       "sources": []
     },
     "de": {
-      "summary": "",
+      "summary": "Trails in the Sky 2nd Chapter ist ein kommendes JRPG-Spiel für PC, PS5, Switch. Der Release ist für den 17. September 2026 geplant.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Plattformen & Release-Status",
+          "description": "Trails in the Sky 2nd Chapter ist für PC, PS5, Switch bestätigt. Aktuell wird der 17. September 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
+        }
+      ],
       "sources": []
     },
     "ja": {
-      "summary": "",
+      "summary": "Trails in the Sky 2nd Chapterは発売予定のJRPGゲームで、対応プラットフォームはPC・PS5・Switch。発売日は2026年9月17日を予定しています。",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "対応プラットフォームと発売状況",
+          "description": "Trails in the Sky 2nd ChapterはPC・PS5・Switchでの発売が確認されています。現時点では2026年9月17日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
+        }
+      ],
       "sources": []
     },
     "es": {
-      "summary": "",
+      "summary": "Trails in the Sky 2nd Chapter es un próximo juego de JRPG para PC, PS5, Switch. Su lanzamiento está previsto para el 17 de septiembre de 2026.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Plataformas y estado del lanzamiento",
+          "description": "Trails in the Sky 2nd Chapter está confirmado para PC, PS5, Switch. La fecha prevista es el 17 de septiembre de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
+        }
+      ],
       "sources": []
     },
     "zh": {
-      "summary": "",
+      "summary": "Trails in the Sky 2nd Chapter 是一款即将发行的JRPG游戏，登陆 PC、PS5、Switch。目前定档 2026年9月17日 发行。",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "平台与发行进度",
+          "description": "Trails in the Sky 2nd Chapter 目前确认登陆 PC、PS5、Switch。目前定档 2026年9月17日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
+        }
+      ],
       "sources": []
     }
   }

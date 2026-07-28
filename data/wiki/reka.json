@@ -5,17 +5,69 @@
       "summary": "REKA is a cozy-but-eerie exploration and house-building game from German studio Emberstorm Entertainment, published by Fireshine Games and grounded in Slavic folklore (drawing especially on the traditions of eastern Germany's Slavic communities). Players take the role of Reka, apprentice to the legendary forest witch Baba Jaga (Baba Yaga), who inherits her mentor's iconic chicken-legged walking hut and travels the land fulfilling contracts that can help or curse the people and mythological creatures she meets.",
       "faq": [],
       "guideSections": [
-        { "title": "The Chicken-Legged Hut & Base Building", "description": "How to customize and decorate the walking izbushka hut with furniture and accessories earned through side quests, and how the hut itself doubles as your mobile base as you explore procedurally arranged woodland." },
-        { "title": "Witchcraft, Contracts & Moral Choice", "description": "How gathering ingredients and brewing potions ties into fulfilling contracts for villagers and forest spirits — and how choosing to help or hinder them shapes the world around Reka." }
+        {
+          "title": "The Chicken-Legged Hut & Base Building",
+          "description": "How to customize and decorate the walking izbushka hut with furniture and accessories earned through side quests, and how the hut itself doubles as your mobile base as you explore procedurally arranged woodland."
+        },
+        {
+          "title": "Witchcraft, Contracts & Moral Choice",
+          "description": "How gathering ingredients and brewing potions ties into fulfilling contracts for villagers and forest spirits — and how choosing to help or hinder them shapes the world around Reka."
+        }
       ],
       "sources": [
-        { "label": "PC Gamer — early access announcement and developer interview", "url": "https://www.pcgamer.com/games/survival-crafting/slavic-witchcrafting-game-reka-is-equal-parts-cozy-and-creepy-and-its-coming-to-early-access-in-august/" },
-        { "label": "GamesRadar+ — hands-on preview of Slavic folklore setting", "url": "https://www.gamesradar.com/games/adventure/i-feel-like-im-living-and-breathing-slavic-folklore-in-this-mystical-adventure-game-and-i-never-want-to-leave-it/" }
+        {
+          "label": "PC Gamer — early access announcement and developer interview",
+          "url": "https://www.pcgamer.com/games/survival-crafting/slavic-witchcrafting-game-reka-is-equal-parts-cozy-and-creepy-and-its-coming-to-early-access-in-august/"
+        },
+        {
+          "label": "GamesRadar+ — hands-on preview of Slavic folklore setting",
+          "url": "https://www.gamesradar.com/games/adventure/i-feel-like-im-living-and-breathing-slavic-folklore-in-this-mystical-adventure-game-and-i-never-want-to-leave-it/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "REKA ist ein kommendes Witch adventure, crafting-Spiel für PC. Der Release ist für den 18. August 2026 geplant.",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "Plattformen & Release-Status",
+          "description": "REKA ist für PC bestätigt. Aktuell wird der 18. August 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
+        }
+      ],
+      "sources": []
+    },
+    "ja": {
+      "summary": "REKAは発売予定のWitch adventure・craftingゲームで、対応プラットフォームはPC。発売日は2026年8月18日を予定しています。",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "対応プラットフォームと発売状況",
+          "description": "REKAはPCでの発売が確認されています。現時点では2026年8月18日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
+        }
+      ],
+      "sources": []
+    },
+    "es": {
+      "summary": "REKA es un próximo juego de Witch adventure, crafting para PC. Su lanzamiento está previsto para el 18 de agosto de 2026.",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "Plataformas y estado del lanzamiento",
+          "description": "REKA está confirmado para PC. La fecha prevista es el 18 de agosto de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
+        }
+      ],
+      "sources": []
+    },
+    "zh": {
+      "summary": "REKA 是一款即将发行的Witch adventure、crafting游戏，登陆 PC。目前定档 2026年8月18日 发行。",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "平台与发行进度",
+          "description": "REKA 目前确认登陆 PC。目前定档 2026年8月18日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
+        }
+      ],
+      "sources": []
+    }
   }
 }

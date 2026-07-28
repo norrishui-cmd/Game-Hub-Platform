@@ -1,33 +1,58 @@
 {
   "content": {
     "en": {
-      "summary": "",
+      "summary": "Digimon Story Time Stranger is a released JRPG, monster collecting game for Switch, Switch 2. It is available now.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Platforms & release status",
+          "description": "Digimon Story Time Stranger is confirmed for Switch, Switch 2. The game has already launched, so platform availability is confirmed. Check the official links below for the latest word directly from the developer."
+        }
+      ],
       "sources": []
     },
     "de": {
-      "summary": "",
+      "summary": "Digimon Story Time Stranger ist ein veröffentlichtes JRPG, monster collecting-Spiel für Switch, Switch 2. Es ist bereits erhältlich.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Plattformen & Release-Status",
+          "description": "Digimon Story Time Stranger ist für Switch, Switch 2 bestätigt. Das Spiel ist bereits erschienen, die Plattformverfügbarkeit ist damit bestätigt. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
+        }
+      ],
       "sources": []
     },
     "ja": {
-      "summary": "",
+      "summary": "Digimon Story Time StrangerはJRPG・monster collectingゲームで、対応プラットフォームはSwitch・Switch 2。現在すでに発売中です。",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "対応プラットフォームと発売状況",
+          "description": "Digimon Story Time StrangerはSwitch・Switch 2での発売が確認されています。すでに発売済みのため、対応プラットフォームは確定情報です。最新情報は下記の公式リンクからご確認いただけます。"
+        }
+      ],
       "sources": []
     },
     "es": {
-      "summary": "",
+      "summary": "Digimon Story Time Stranger es un juego de JRPG, monster collecting para Switch, Switch 2. Ya está disponible.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Plataformas y estado del lanzamiento",
+          "description": "Digimon Story Time Stranger está confirmado para Switch, Switch 2. El juego ya se ha lanzado, por lo que la disponibilidad de plataformas está confirmada. Consulta los enlaces oficiales de abajo para las últimas novedades."
+        }
+      ],
       "sources": []
     },
     "zh": {
-      "summary": "",
+      "summary": "Digimon Story Time Stranger 是一款已经发行的JRPG、monster collecting游戏，登陆 Switch、Switch 2。目前已经上线。",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "平台与发行进度",
+          "description": "Digimon Story Time Stranger 目前确认登陆 Switch、Switch 2。游戏已经正式上线，平台信息已经确认。想看最新的第一手消息，可以点开下方官方链接。"
+        }
+      ],
       "sources": []
     }
   }

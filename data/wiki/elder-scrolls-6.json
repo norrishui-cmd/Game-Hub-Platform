@@ -1,33 +1,58 @@
 {
   "content": {
     "en": {
-      "summary": "",
+      "summary": "The Elder Scrolls VI is an upcoming Role-playing (RPG), Adventure game for PC, Xbox Series, developed by Bethesda Game Studios and published by Bethesda. An official release date has not been confirmed yet.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Platforms & release status",
+          "description": "The Elder Scrolls VI is confirmed for PC, Xbox Series. No release date has been locked in yet — this page will be updated as soon as one is confirmed. Check the official links below for the latest word directly from the developer."
+        }
+      ],
       "sources": []
     },
     "de": {
-      "summary": "",
+      "summary": "The Elder Scrolls VI ist ein kommendes Rollenspiel (RPG), Abenteuer-Spiel für PC, Xbox Series, entwickelt von Bethesda Game Studios und veröffentlicht von Bethesda. Ein offizielles Erscheinungsdatum steht noch nicht fest.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Plattformen & Release-Status",
+          "description": "The Elder Scrolls VI ist für PC, Xbox Series bestätigt. Ein Release-Termin steht noch nicht fest — diese Seite wird aktualisiert, sobald einer bestätigt ist. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
+        }
+      ],
       "sources": []
     },
     "ja": {
-      "summary": "",
+      "summary": "The Elder Scrolls VIは発売予定のロールプレイング（RPG）・アドベンチャーゲームで、対応プラットフォームはPC・Xbox Series、開発はBethesda Game Studios、販売はBethesdaが担当しています。公式の発売日はまだ発表されていません。",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "対応プラットフォームと発売状況",
+          "description": "The Elder Scrolls VIはPC・Xbox Seriesでの発売が確認されています。公式の発売日はまだ確定していません。確定次第このページを更新します。最新情報は下記の公式リンクからご確認いただけます。"
+        }
+      ],
       "sources": []
     },
     "es": {
-      "summary": "",
+      "summary": "The Elder Scrolls VI es un próximo juego de Rol (RPG), Aventura para PC, Xbox Series, desarrollado por Bethesda Game Studios y publicado por Bethesda. Aún no se ha confirmado una fecha de lanzamiento oficial.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Plataformas y estado del lanzamiento",
+          "description": "The Elder Scrolls VI está confirmado para PC, Xbox Series. Todavía no hay una fecha de lanzamiento confirmada — esta página se actualizará en cuanto se anuncie una. Consulta los enlaces oficiales de abajo para las últimas novedades."
+        }
+      ],
       "sources": []
     },
     "zh": {
-      "summary": "",
+      "summary": "上古卷轴 VI 是一款即将发行的角色扮演、冒险游戏，登陆 PC、Xbox Series，由 Bethesda Game Studios 开发、Bethesda 发行。官方发行日期暂未确认。",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "平台与发行进度",
+          "description": "上古卷轴 VI 目前确认登陆 PC、Xbox Series。官方还没有锁定具体发行日期，这里会在确认后第一时间更新。想看最新的第一手消息，可以点开下方官方链接。"
+        }
+      ],
       "sources": []
     }
   }

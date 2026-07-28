@@ -4,24 +4,91 @@
     "en": {
       "summary": "Star Wars Zero Company is a single-player, turn-based tactics game set in the twilight of the Clone Wars. Developed by Bit Reactor — a studio founded by veterans of the XCOM series — in collaboration with Electronic Arts and Lucasfilm Games, it puts players in command of Hawks, a disgraced former Republic officer who forms an unconventional squad of operatives known as Zero Company. The team operates in the shadows of the war, hunting Kundri Fathom and the Infinite Coil, a Separatist-aligned cult spreading a deadly shadow plague across the galaxy.",
       "faq": [
-        { "question": "When does Star Wars Zero Company release?", "answer": "August 27, 2026, on PC, PlayStation 5, and Xbox Series X/S." },
-        { "question": "Who is developing Star Wars Zero Company?", "answer": "Bit Reactor, a studio founded by former XCOM developers, in collaboration with Electronic Arts and Lucasfilm Games." },
-        { "question": "What kind of game is Star Wars Zero Company?", "answer": "A single-player, turn-based tactics game — similar in structure to XCOM — set during the Clone Wars era." },
-        { "question": "Who are the main characters?", "answer": "The player controls Hawks, a customizable former Republic officer, alongside a squad of Operators including Trick, Kundri Fathom (as an antagonist), and M-3VO/Meevo. The cast features returning Clone Wars voice actors including Dee Bradley Baker and Matt Lanter as Anakin Skywalker." }
+        {
+          "question": "When does Star Wars Zero Company release?",
+          "answer": "August 27, 2026, on PC, PlayStation 5, and Xbox Series X/S."
+        },
+        {
+          "question": "Who is developing Star Wars Zero Company?",
+          "answer": "Bit Reactor, a studio founded by former XCOM developers, in collaboration with Electronic Arts and Lucasfilm Games."
+        },
+        {
+          "question": "What kind of game is Star Wars Zero Company?",
+          "answer": "A single-player, turn-based tactics game — similar in structure to XCOM — set during the Clone Wars era."
+        },
+        {
+          "question": "Who are the main characters?",
+          "answer": "The player controls Hawks, a customizable former Republic officer, alongside a squad of Operators including Trick, Kundri Fathom (as an antagonist), and M-3VO/Meevo. The cast features returning Clone Wars voice actors including Dee Bradley Baker and Matt Lanter as Anakin Skywalker."
+        }
       ],
       "guideSections": [
-        { "title": "Squad Building & Bond Synergies", "description": "How Operator bonds, class combinations, and Advantage/Overwatch mechanics interact — the foundation of building an effective squad before mission select." },
-        { "title": "Operators & Classes Overview", "description": "A breakdown of the twelve confirmed classes, their roles in combat, and which Operators pair well together based on known synergy and friction mechanics." }
+        {
+          "title": "Squad Building & Bond Synergies",
+          "description": "How Operator bonds, class combinations, and Advantage/Overwatch mechanics interact — the foundation of building an effective squad before mission select."
+        },
+        {
+          "title": "Operators & Classes Overview",
+          "description": "A breakdown of the twelve confirmed classes, their roles in combat, and which Operators pair well together based on known synergy and friction mechanics."
+        }
       ],
       "sources": [
-        { "label": "EA — Star Wars Zero Company official news", "url": "https://www.ea.com/games/starwars/zero-company/news" },
-        { "label": "Game Informer — cast reveal coverage", "url": "https://gameinformer.com/2026/07/23/star-wars-zero-company-cast-includes-actors-from-clone-wars-hades-ii-resident-evil-and" },
-        { "label": "Star Wars News Net — Collector's Edition & SDCC coverage", "url": "https://www.starwarsnewsnet.com/2026/07/star-wars-zero-company-collectors-edition-revealed-at-san-diego-comic-con-first-single-from-soundtrack-available-now.html" }
+        {
+          "label": "EA — Star Wars Zero Company official news",
+          "url": "https://www.ea.com/games/starwars/zero-company/news"
+        },
+        {
+          "label": "Game Informer — cast reveal coverage",
+          "url": "https://gameinformer.com/2026/07/23/star-wars-zero-company-cast-includes-actors-from-clone-wars-hades-ii-resident-evil-and"
+        },
+        {
+          "label": "Star Wars News Net — Collector's Edition & SDCC coverage",
+          "url": "https://www.starwarsnewsnet.com/2026/07/star-wars-zero-company-collectors-edition-revealed-at-san-diego-comic-con-first-single-from-soundtrack-available-now.html"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "Star Wars Zero Company ist ein kommendes Tactical strategy-Spiel für PC, PS5, Xbox, entwickelt von Bit Reactor / Respawn und veröffentlicht von EA / Lucasfilm Games. Der Release ist für den 27. August 2026 geplant.",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "Plattformen & Release-Status",
+          "description": "Star Wars Zero Company ist für PC, PS5, Xbox bestätigt. Aktuell wird der 27. August 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
+        }
+      ],
+      "sources": []
+    },
+    "ja": {
+      "summary": "Star Wars Zero Companyは発売予定のTactical strategyゲームで、対応プラットフォームはPC・PS5・Xbox、開発はBit Reactor / Respawn、販売はEA / Lucasfilm Gamesが担当しています。発売日は2026年8月27日を予定しています。",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "対応プラットフォームと発売状況",
+          "description": "Star Wars Zero CompanyはPC・PS5・Xboxでの発売が確認されています。現時点では2026年8月27日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
+        }
+      ],
+      "sources": []
+    },
+    "es": {
+      "summary": "Star Wars Zero Company es un próximo juego de Tactical strategy para PC, PS5, Xbox, desarrollado por Bit Reactor / Respawn y publicado por EA / Lucasfilm Games. Su lanzamiento está previsto para el 27 de agosto de 2026.",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "Plataformas y estado del lanzamiento",
+          "description": "Star Wars Zero Company está confirmado para PC, PS5, Xbox. La fecha prevista es el 27 de agosto de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
+        }
+      ],
+      "sources": []
+    },
+    "zh": {
+      "summary": "星球大战：零号连队 是一款即将发行的Tactical strategy游戏，登陆 PC、PS5、Xbox，由 Bit Reactor / Respawn 开发、EA / Lucasfilm Games 发行。目前定档 2026年8月27日 发行。",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "平台与发行进度",
+          "description": "星球大战：零号连队 目前确认登陆 PC、PS5、Xbox。目前定档 2026年8月27日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
+        }
+      ],
+      "sources": []
+    }
   }
 }

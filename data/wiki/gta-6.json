@@ -1,33 +1,58 @@
 {
   "content": {
     "en": {
-      "summary": "",
+      "summary": "GTA VI is an upcoming Open world action game for PS5, Xbox, developed by Rockstar Games. It is scheduled to release on November 19, 2026.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Platforms & release status",
+          "description": "GTA VI is confirmed for PS5, Xbox. The current release target is November 19, 2026, though release dates for smaller studios can still shift. Check the official links below for the latest word directly from the developer."
+        }
+      ],
       "sources": []
     },
     "de": {
-      "summary": "",
+      "summary": "GTA VI ist ein kommendes Open world action-Spiel für PS5, Xbox, entwickelt von Rockstar Games. Der Release ist für den 19. November 2026 geplant.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Plattformen & Release-Status",
+          "description": "GTA VI ist für PS5, Xbox bestätigt. Aktuell wird der 19. November 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
+        }
+      ],
       "sources": []
     },
     "ja": {
-      "summary": "",
+      "summary": "GTA VIは発売予定のOpen world actionゲームで、対応プラットフォームはPS5・Xbox、開発はRockstar Games。発売日は2026年11月19日を予定しています。",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "対応プラットフォームと発売状況",
+          "description": "GTA VIはPS5・Xboxでの発売が確認されています。現時点では2026年11月19日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
+        }
+      ],
       "sources": []
     },
     "es": {
-      "summary": "",
+      "summary": "GTA VI es un próximo juego de Open world action para PS5, Xbox, desarrollado por Rockstar Games. Su lanzamiento está previsto para el 19 de noviembre de 2026.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Plataformas y estado del lanzamiento",
+          "description": "GTA VI está confirmado para PS5, Xbox. La fecha prevista es el 19 de noviembre de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
+        }
+      ],
       "sources": []
     },
     "zh": {
-      "summary": "",
+      "summary": "GTA VI 是一款即将发行的Open world action游戏，登陆 PS5、Xbox，由 Rockstar Games 开发。目前定档 2026年11月19日 发行。",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "平台与发行进度",
+          "description": "GTA VI 目前确认登陆 PS5、Xbox。目前定档 2026年11月19日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
+        }
+      ],
       "sources": []
     }
   }

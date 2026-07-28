@@ -1,33 +1,58 @@
 {
   "content": {
     "en": {
-      "summary": "",
+      "summary": "Monster Hunter Wilds is a released Role-playing (RPG), Hack and slash/Beat 'em up game for PC, PS5, Xbox Series, developed by Capcom. It is available now.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Platforms & release status",
+          "description": "Monster Hunter Wilds is confirmed for PC, PS5, Xbox Series. The game has already launched, so platform availability is confirmed. Check the official links below for the latest word directly from the developer."
+        }
+      ],
       "sources": []
     },
     "de": {
-      "summary": "",
+      "summary": "Monster Hunter Wilds ist ein veröffentlichtes Rollenspiel (RPG), Hack and Slash / Beat 'em up-Spiel für PC, PS5, Xbox Series, entwickelt von Capcom. Es ist bereits erhältlich.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Plattformen & Release-Status",
+          "description": "Monster Hunter Wilds ist für PC, PS5, Xbox Series bestätigt. Das Spiel ist bereits erschienen, die Plattformverfügbarkeit ist damit bestätigt. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
+        }
+      ],
       "sources": []
     },
     "ja": {
-      "summary": "",
+      "summary": "Monster Hunter Wildsはロールプレイング（RPG）・ハック＆スラッシュ／ベルトスクロールゲームで、対応プラットフォームはPC・PS5・Xbox Series、開発はCapcom。現在すでに発売中です。",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "対応プラットフォームと発売状況",
+          "description": "Monster Hunter WildsはPC・PS5・Xbox Seriesでの発売が確認されています。すでに発売済みのため、対応プラットフォームは確定情報です。最新情報は下記の公式リンクからご確認いただけます。"
+        }
+      ],
       "sources": []
     },
     "es": {
-      "summary": "",
+      "summary": "Monster Hunter Wilds es un juego de Rol (RPG), Beat 'em up para PC, PS5, Xbox Series, desarrollado por Capcom. Ya está disponible.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Plataformas y estado del lanzamiento",
+          "description": "Monster Hunter Wilds está confirmado para PC, PS5, Xbox Series. El juego ya se ha lanzado, por lo que la disponibilidad de plataformas está confirmada. Consulta los enlaces oficiales de abajo para las últimas novedades."
+        }
+      ],
       "sources": []
     },
     "zh": {
-      "summary": "",
+      "summary": "怪物猎人：荒野 是一款已经发行的角色扮演、砍杀游戏，登陆 PC、PS5、Xbox Series，由 Capcom 开发。目前已经上线。",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "平台与发行进度",
+          "description": "怪物猎人：荒野 目前确认登陆 PC、PS5、Xbox Series。游戏已经正式上线，平台信息已经确认。想看最新的第一手消息，可以点开下方官方链接。"
+        }
+      ],
       "sources": []
     }
   }

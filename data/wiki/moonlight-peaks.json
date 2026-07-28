@@ -5,17 +5,69 @@
       "summary": "Moonlight Peaks is a cozy farming sim from Little Chicken, published by Marvelous Europe and XSEED Games, that released July 6, 2026. Instead of the usual sunlit village, players take on the role of Count Dracula's child, kicked out after a family argument, who builds a new farm life in a gothic town shared with witches, werewolves, and mermaids — running entirely on a nocturnal schedule.",
       "faq": [],
       "guideSections": [
-        { "title": "Nocturnal Schedule & Sun-Shield Potions", "description": "Your character wakes at 6 PM and must be home by 6 AM or take sunlight damage; a craftable Sun-Shield Potion later in the game allows limited safe daytime exploration." },
-        { "title": "Farming, Potion-Brewing & Romance", "description": "How Cursed Soil farming, cauldron potion-brewing, and the town's romance and marriage options with its supernatural cast fit together across the game's day-to-day loop." }
+        {
+          "title": "Nocturnal Schedule & Sun-Shield Potions",
+          "description": "Your character wakes at 6 PM and must be home by 6 AM or take sunlight damage; a craftable Sun-Shield Potion later in the game allows limited safe daytime exploration."
+        },
+        {
+          "title": "Farming, Potion-Brewing & Romance",
+          "description": "How Cursed Soil farming, cauldron potion-brewing, and the town's romance and marriage options with its supernatural cast fit together across the game's day-to-day loop."
+        }
       ],
       "sources": [
-        { "label": "SimsCommunity — first impressions and developer/publisher details", "url": "https://simscommunity.info/2026/07/24/first-impressions-of-moonlight-peaks/" },
-        { "label": "Bonus Action — complete walkthrough and mechanics guide", "url": "https://bonus-action.com/guides/moonlight-peaks-walkthrough-guide/" }
+        {
+          "label": "SimsCommunity — first impressions and developer/publisher details",
+          "url": "https://simscommunity.info/2026/07/24/first-impressions-of-moonlight-peaks/"
+        },
+        {
+          "label": "Bonus Action — complete walkthrough and mechanics guide",
+          "url": "https://bonus-action.com/guides/moonlight-peaks-walkthrough-guide/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "Moonlight Peaks ist ein veröffentlichtes Cozy farming life sim-Spiel für PC, Switch, Mobile. Es ist bereits erhältlich.",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "Plattformen & Release-Status",
+          "description": "Moonlight Peaks ist für PC, Switch, Mobile bestätigt. Das Spiel ist bereits erschienen, die Plattformverfügbarkeit ist damit bestätigt. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
+        }
+      ],
+      "sources": []
+    },
+    "ja": {
+      "summary": "Moonlight PeaksはCozy farming life simゲームで、対応プラットフォームはPC・Switch・Mobile。現在すでに発売中です。",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "対応プラットフォームと発売状況",
+          "description": "Moonlight PeaksはPC・Switch・Mobileでの発売が確認されています。すでに発売済みのため、対応プラットフォームは確定情報です。最新情報は下記の公式リンクからご確認いただけます。"
+        }
+      ],
+      "sources": []
+    },
+    "es": {
+      "summary": "Moonlight Peaks es un juego de Cozy farming life sim para PC, Switch, Mobile. Ya está disponible.",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "Plataformas y estado del lanzamiento",
+          "description": "Moonlight Peaks está confirmado para PC, Switch, Mobile. El juego ya se ha lanzado, por lo que la disponibilidad de plataformas está confirmada. Consulta los enlaces oficiales de abajo para las últimas novedades."
+        }
+      ],
+      "sources": []
+    },
+    "zh": {
+      "summary": "Moonlight Peaks 是一款已经发行的Cozy farming life sim游戏，登陆 PC、Switch、Mobile。目前已经上线。",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "平台与发行进度",
+          "description": "Moonlight Peaks 目前确认登陆 PC、Switch、Mobile。游戏已经正式上线，平台信息已经确认。想看最新的第一手消息，可以点开下方官方链接。"
+        }
+      ],
+      "sources": []
+    }
   }
 }

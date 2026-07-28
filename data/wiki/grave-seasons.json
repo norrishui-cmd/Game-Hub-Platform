@@ -5,17 +5,69 @@
       "summary": "Grave Seasons is a farming sim with a murder-mystery twist, developed by Perfect Garbage and published by Blumhouse Games (the interactive arm of Jason Blum's horror production company). Releasing August 14, 2026 on PC, PlayStation 5, Xbox Series X/S, and Nintendo Switch (day one on Xbox Game Pass), it casts the player as an escaped convict starting a new farm life in the small mountain town of Ashenridge — only for a supernatural serial killer to start targeting the neighbors.",
       "faq": [],
       "guideSections": [
-        { "title": "Farming Meets Murder Investigation", "description": "How day-to-day farming, foraging, and crafting interweave with gathering clues, tracking suspects, and warding off monsters across the game's one-year story clock." },
-        { "title": "Choices, Consequences & Variable Killer", "description": "Grave Seasons autosaves player choices as they're made, and the killer's identity can change between playthroughs — a structural reason to avoid treating any single walkthrough as a universal spoiler-free answer." }
+        {
+          "title": "Farming Meets Murder Investigation",
+          "description": "How day-to-day farming, foraging, and crafting interweave with gathering clues, tracking suspects, and warding off monsters across the game's one-year story clock."
+        },
+        {
+          "title": "Choices, Consequences & Variable Killer",
+          "description": "Grave Seasons autosaves player choices as they're made, and the killer's identity can change between playthroughs — a structural reason to avoid treating any single walkthrough as a universal spoiler-free answer."
+        }
       ],
       "sources": [
-        { "label": "IGN — release date and demo plans", "url": "https://www.aol.com/articles/grave-seasons-digs-august-2026-173744665.html" },
-        { "label": "Grave Seasons Wiki (Fandom) — developer, publisher, and premise", "url": "https://graveseasons.fandom.com/wiki/Grave_Seasons" }
+        {
+          "label": "IGN — release date and demo plans",
+          "url": "https://www.aol.com/articles/grave-seasons-digs-august-2026-173744665.html"
+        },
+        {
+          "label": "Grave Seasons Wiki (Fandom) — developer, publisher, and premise",
+          "url": "https://graveseasons.fandom.com/wiki/Grave_Seasons"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "Grave Seasons ist ein kommendes Farming horror sim-Spiel für PC, Console. Der Release ist für den 14. August 2026 geplant.",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "Plattformen & Release-Status",
+          "description": "Grave Seasons ist für PC, Console bestätigt. Aktuell wird der 14. August 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
+        }
+      ],
+      "sources": []
+    },
+    "ja": {
+      "summary": "Grave Seasonsは発売予定のFarming horror simゲームで、対応プラットフォームはPC・Console。発売日は2026年8月14日を予定しています。",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "対応プラットフォームと発売状況",
+          "description": "Grave SeasonsはPC・Consoleでの発売が確認されています。現時点では2026年8月14日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
+        }
+      ],
+      "sources": []
+    },
+    "es": {
+      "summary": "Grave Seasons es un próximo juego de Farming horror sim para PC, Console. Su lanzamiento está previsto para el 14 de agosto de 2026.",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "Plataformas y estado del lanzamiento",
+          "description": "Grave Seasons está confirmado para PC, Console. La fecha prevista es el 14 de agosto de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
+        }
+      ],
+      "sources": []
+    },
+    "zh": {
+      "summary": "Grave Seasons 是一款即将发行的Farming horror sim游戏，登陆 PC、Console。目前定档 2026年8月14日 发行。",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "平台与发行进度",
+          "description": "Grave Seasons 目前确认登陆 PC、Console。目前定档 2026年8月14日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
+        }
+      ],
+      "sources": []
+    }
   }
 }

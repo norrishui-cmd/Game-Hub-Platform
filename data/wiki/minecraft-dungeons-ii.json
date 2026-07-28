@@ -1,33 +1,58 @@
 {
   "content": {
     "en": {
-      "summary": "",
+      "summary": "Minecraft Dungeons II is an upcoming Action RPG game for PC, PS5, Xbox, Switch. It is scheduled to release on September 29, 2026.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Platforms & release status",
+          "description": "Minecraft Dungeons II is confirmed for PC, PS5, Xbox, Switch. The current release target is September 29, 2026, though release dates for smaller studios can still shift. Check the official links below for the latest word directly from the developer."
+        }
+      ],
       "sources": []
     },
     "de": {
-      "summary": "",
+      "summary": "Minecraft Dungeons II ist ein kommendes Action RPG-Spiel für PC, PS5, Xbox, Switch. Der Release ist für den 29. September 2026 geplant.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Plattformen & Release-Status",
+          "description": "Minecraft Dungeons II ist für PC, PS5, Xbox, Switch bestätigt. Aktuell wird der 29. September 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
+        }
+      ],
       "sources": []
     },
     "ja": {
-      "summary": "",
+      "summary": "Minecraft Dungeons IIは発売予定のAction RPGゲームで、対応プラットフォームはPC・PS5・Xbox・Switch。発売日は2026年9月29日を予定しています。",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "対応プラットフォームと発売状況",
+          "description": "Minecraft Dungeons IIはPC・PS5・Xbox・Switchでの発売が確認されています。現時点では2026年9月29日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
+        }
+      ],
       "sources": []
     },
     "es": {
-      "summary": "",
+      "summary": "Minecraft Dungeons II es un próximo juego de Action RPG para PC, PS5, Xbox, Switch. Su lanzamiento está previsto para el 29 de septiembre de 2026.",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "Plataformas y estado del lanzamiento",
+          "description": "Minecraft Dungeons II está confirmado para PC, PS5, Xbox, Switch. La fecha prevista es el 29 de septiembre de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
+        }
+      ],
       "sources": []
     },
     "zh": {
-      "summary": "",
+      "summary": "Minecraft Dungeons II 是一款即将发行的Action RPG游戏，登陆 PC、PS5、Xbox、Switch。目前定档 2026年9月29日 发行。",
       "faq": [],
-      "guideSections": [],
+      "guideSections": [
+        {
+          "title": "平台与发行进度",
+          "description": "Minecraft Dungeons II 目前确认登陆 PC、PS5、Xbox、Switch。目前定档 2026年9月29日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
+        }
+      ],
       "sources": []
     }
   }

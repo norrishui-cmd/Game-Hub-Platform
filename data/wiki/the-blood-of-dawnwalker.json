@@ -5,18 +5,73 @@
       "summary": "The Blood of Dawnwalker is the debut game from Rebel Wolves, a studio co-founded by former Witcher 3 director Konrad Tomaszkiewicz and Cyberpunk 2077 quest design director Mateusz Tomaszkiewicz. Set in 14th-century Europe during the Black Death, it follows Coen, a young man turned into a half-vampire \"Dawnwalker\" who must save his family from the vampire lord Brencis within a strict 30 in-game day-and-night window. Time only advances when the player chooses to advance it, giving the story a resource-management rhythm rather than a hard countdown.",
       "faq": [],
       "guideSections": [
-        { "title": "Day vs. Night: Two Playstyles", "description": "By day Coen fights as a human swordsman with witchcraft support and no natural health regeneration; by night he gains vampiric powers like Shadow Step, but must manage a bloodthirst meter that can trigger forced, story-altering attacks on NPCs if it runs too low." },
-        { "title": "The Infamy System & Time Budget", "description": "How the Infamy meter tracks Brencis's attention and unlocks assassination windows against his generals, and how the game's hourglass-tracked activities (quests, leveling, some side content) spend your limited 30-day timeline." }
+        {
+          "title": "Day vs. Night: Two Playstyles",
+          "description": "By day Coen fights as a human swordsman with witchcraft support and no natural health regeneration; by night he gains vampiric powers like Shadow Step, but must manage a bloodthirst meter that can trigger forced, story-altering attacks on NPCs if it runs too low."
+        },
+        {
+          "title": "The Infamy System & Time Budget",
+          "description": "How the Infamy meter tracks Brencis's attention and unlocks assassination windows against his generals, and how the game's hourglass-tracked activities (quests, leveling, some side content) spend your limited 30-day timeline."
+        }
       ],
       "sources": [
-        { "label": "GamesRadar+ — 4-hour hands-on preview", "url": "https://www.gamesradar.com/games/rpg/the-blood-of-dawnwalker-big-preview-july-2026/" },
-        { "label": "AllKeyShop — Infamy system and bloodthirst mechanic details", "url": "https://www.allkeyshop.com/blog/blood-dawnwalker-preview-gameplay-details-los-angeles-news-r/" },
-        { "label": "Rebel Wolves / Bandai Namco — official site", "url": "https://www.bandainamcoent.com/games/dawnwalker" }
+        {
+          "label": "GamesRadar+ — 4-hour hands-on preview",
+          "url": "https://www.gamesradar.com/games/rpg/the-blood-of-dawnwalker-big-preview-july-2026/"
+        },
+        {
+          "label": "AllKeyShop — Infamy system and bloodthirst mechanic details",
+          "url": "https://www.allkeyshop.com/blog/blood-dawnwalker-preview-gameplay-details-los-angeles-news-r/"
+        },
+        {
+          "label": "Rebel Wolves / Bandai Namco — official site",
+          "url": "https://www.bandainamcoent.com/games/dawnwalker"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "The Blood of Dawnwalker ist ein kommendes Dark fantasy RPG-Spiel für PC, PS5, Xbox. Der Release ist für den 2. September 2026 geplant.",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "Plattformen & Release-Status",
+          "description": "The Blood of Dawnwalker ist für PC, PS5, Xbox bestätigt. Aktuell wird der 2. September 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
+        }
+      ],
+      "sources": []
+    },
+    "ja": {
+      "summary": "The Blood of Dawnwalkerは発売予定のDark fantasy RPGゲームで、対応プラットフォームはPC・PS5・Xbox。発売日は2026年9月2日を予定しています。",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "対応プラットフォームと発売状況",
+          "description": "The Blood of DawnwalkerはPC・PS5・Xboxでの発売が確認されています。現時点では2026年9月2日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
+        }
+      ],
+      "sources": []
+    },
+    "es": {
+      "summary": "The Blood of Dawnwalker es un próximo juego de Dark fantasy RPG para PC, PS5, Xbox. Su lanzamiento está previsto para el 2 de septiembre de 2026.",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "Plataformas y estado del lanzamiento",
+          "description": "The Blood of Dawnwalker está confirmado para PC, PS5, Xbox. La fecha prevista es el 2 de septiembre de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
+        }
+      ],
+      "sources": []
+    },
+    "zh": {
+      "summary": "The Blood of Dawnwalker 是一款即将发行的Dark fantasy RPG游戏，登陆 PC、PS5、Xbox。目前定档 2026年9月2日 发行。",
+      "faq": [],
+      "guideSections": [
+        {
+          "title": "平台与发行进度",
+          "description": "The Blood of Dawnwalker 目前确认登陆 PC、PS5、Xbox。目前定档 2026年9月2日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
+        }
+      ],
+      "sources": []
+    }
   }
 }
