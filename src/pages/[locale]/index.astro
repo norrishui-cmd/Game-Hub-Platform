@@ -6,7 +6,7 @@ import gamesData from "../../../data/games.json";
 import trendingData from "../../../data/monthly-trending.json";
 import { LOCALES } from "../../i18n/locales.js";
 import { t } from "../../i18n/ui.js";
-import { fmtDate, fmtMonth, cardHref, displayTitle, translateGenres } from "../../lib/games.js";
+import { fmtDate, fmtMonth, cardHref, displayTitle, translateGenres, translateGenre, collectTaxonomy } from "../../lib/games.js";
 
 export function getStaticPaths() {
   return LOCALES.map((locale) => ({ params: { locale } }));
@@ -17,6 +17,7 @@ const games = gamesData.games;
 const featured = games.find((g) => g.featured) || games[0];
 const upcoming = games.filter((g) => g.status === "upcoming");
 const trending = games.filter((g) => g.trending);
+const genreOptions = collectTaxonomy(games, "genres");
 
 const heroHref = cardHref(featured, locale);
 const heroTitle = displayTitle(featured, locale);
@@ -57,11 +58,19 @@ const monthLabel = fmtMonth(trendingData.month, locale);
   </section>
 
   <main class="wrap">
-    <div class="tabs" id="tabs" role="tablist">
-      <button class="tab on" data-f="all" role="tab">{t(locale, "tabAll")}</button>
-      <button class="tab" data-f="upcoming" role="tab">{t(locale, "tabUpcoming")}</button>
-      <button class="tab" data-f="trending" role="tab">{t(locale, "tabTrending")}</button>
-      <button class="tab" data-f="owned" role="tab">{t(locale, "tabOwned")}</button>
+    <div class="toolbar" id="toolbar">
+      <div class="tabs" id="tabs" role="tablist">
+        <button class="tab on" data-f="all" role="tab">{t(locale, "tabAll")}</button>
+        <button class="tab" data-f="upcoming" role="tab">{t(locale, "tabUpcoming")}</button>
+        <button class="tab" data-f="trending" role="tab">{t(locale, "tabTrending")}</button>
+        <button class="tab" data-f="owned" role="tab">{t(locale, "tabOwned")}</button>
+      </div>
+      <select id="genre-select" class="genre-select" aria-label={t(locale, "genreFilterLabel")}>
+        <option value="all">{t(locale, "genreFilterAll")}</option>
+        {genreOptions.map((g) => (
+          <option value={g.slug}>{translateGenre(g.label, locale)} · {g.count}</option>
+        ))}
+      </select>
     </div>
 
     <div id="stage">
@@ -120,6 +129,7 @@ const monthLabel = fmtMonth(trendingData.month, locale);
 <script define:vars={{ LABELS: { upcoming: t(locale, "railUpcoming"), trending: t(locale, "railTrending"), owned: t(locale, "tabOwned"), all: t(locale, "railAll") }, countSuffix: t(locale, "countSuffix"), resultsTemplate: t(locale, "searchResultsFor", "%s") }}>
   const q = document.querySelector("#q");
   const tabs = document.querySelectorAll(".tab");
+  const genreSelect = document.querySelector("#genre-select");
   const railUpcoming = document.querySelector("#rail-upcoming");
   const railTrending = document.querySelector("#rail-trending");
   const railAll = document.querySelector("#rail-all");
@@ -129,9 +139,10 @@ const monthLabel = fmtMonth(trendingData.month, locale);
 
   let curFilter = "all";
   let curQuery = "";
+  let curGenre = "all";
 
   function apply() {
-    const filtering = curFilter !== "all" || curQuery.trim().length > 0;
+    const filtering = curFilter !== "all" || curQuery.trim().length > 0 || curGenre !== "all";
     railUpcoming.hidden = filtering;
     railTrending.hidden = filtering;
     railAll.hidden = !filtering;
@@ -145,6 +156,7 @@ const monthLabel = fmtMonth(trendingData.month, locale);
       if (curFilter === "upcoming") ok = c.dataset.status === "upcoming";
       else if (curFilter === "trending") ok = c.dataset.trending === "true";
       else if (curFilter === "owned") ok = c.dataset.coverage === "owned";
+      if (ok && curGenre !== "all") ok = (c.dataset.genres || "").split(" ").includes(curGenre);
       if (ok && needle) ok = c.dataset.search.includes(needle);
       c.style.display = ok ? "" : "none";
       if (ok) shown++;
@@ -155,6 +167,7 @@ const monthLabel = fmtMonth(trendingData.month, locale);
   }
 
   q.addEventListener("input", (e) => { curQuery = e.target.value; apply(); });
+  genreSelect.addEventListener("change", (e) => { curGenre = e.target.value; apply(); });
   tabs.forEach((t) => {
     t.addEventListener("click", () => {
       tabs.forEach((x) => x.classList.remove("on"));
