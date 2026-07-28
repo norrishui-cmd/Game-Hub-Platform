@@ -1,59 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Hollow Knight: Silksong is an upcoming Platform, Adventure game for PC, Switch, PS5, Xbox, developed by Team Cherry. An official release date has not been confirmed yet.",
+      "summary": "Hollow Knight: Silksong is Team Cherry's sequel to 2017's Hollow Knight, released September 4, 2025 on PC, Nintendo Switch, Switch 2, Xbox (Game Pass), PS4, and PS5 after more than six years of anticipation since its 2019 announcement. The Metroidvania follows Hornet, the princess-protector of Hallownest from the first game, as she explores the new haunted kingdom of Pharloom, ruled by silk and song, across a map Team Cherry has said is bigger than the original with roughly 200 enemy types and 40 boss encounters.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Hollow Knight: Silksong is confirmed for PC, Switch, PS5, Xbox. No release date has been locked in yet — this page will be updated as soon as one is confirmed. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "Post-Launch: Sea of Sorrow Expansion", "description": "Team Cherry has confirmed a free first major expansion, Hollow Knight: Silksong – Sea of Sorrow, adding new areas, bosses, and tools, alongside a Nintendo Switch 2 Edition of the original Hollow Knight bringing higher frame rates and resolution — both announced for 2026." },
+        { "title": "Physical Edition", "description": "A physical release of Silksong (32-page manual, 9x12 poster) arrives October 16, 2026 for PS5, Xbox One, Xbox Series X/S, and Nintendo Switch, alongside a physical edition of the original Hollow Knight for PS5 and Switch 2." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "Team Cherry — official 2026 roadmap blog post", "url": "https://www.teamcherry.com.au/blog/holiday2025" },
+        { "label": "Nintendo Life — Sea of Sorrow expansion and Switch 2 Edition announcement", "url": "https://www.nintendolife.com/news/2025/12/hollow-knight-silksong-expansion-coming-2026-hollow-knight-switch-2-edition-also-announced" }
+      ]
     },
-    "de": {
-      "summary": "Hollow Knight: Silksong ist ein kommendes Plattformer, Abenteuer-Spiel für PC, Switch, PS5, Xbox, entwickelt von Team Cherry. Ein offizielles Erscheinungsdatum steht noch nicht fest.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Hollow Knight: Silksong ist für PC, Switch, PS5, Xbox bestätigt. Ein Release-Termin steht noch nicht fest — diese Seite wird aktualisiert, sobald einer bestätigt ist. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Hollow Knight: Silksongは発売予定のプラットフォーム・アドベンチャーゲームで、対応プラットフォームはPC・Switch・PS5・Xbox、開発はTeam Cherry。公式の発売日はまだ発表されていません。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "Hollow Knight: SilksongはPC・Switch・PS5・Xboxでの発売が確認されています。公式の発売日はまだ確定していません。確定次第このページを更新します。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Hollow Knight: Silksong es un próximo juego de Plataformas, Aventura para PC, Switch, PS5, Xbox, desarrollado por Team Cherry. Aún no se ha confirmado una fecha de lanzamiento oficial.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Hollow Knight: Silksong está confirmado para PC, Switch, PS5, Xbox. Todavía no hay una fecha de lanzamiento confirmada — esta página se actualizará en cuanto se anuncie una. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "空洞骑士：丝之歌 是一款即将发行的平台跳跃、冒险游戏，登陆 PC、Switch、PS5、Xbox，由 Team Cherry 开发。官方发行日期暂未确认。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "空洞骑士：丝之歌 目前确认登陆 PC、Switch、PS5、Xbox。官方还没有锁定具体发行日期，这里会在确认后第一时间更新。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

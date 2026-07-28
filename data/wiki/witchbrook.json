@@ -1,59 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Witchbrook is an upcoming Cozy life sim, magic school game for PC. An official release date has not been confirmed yet.",
+      "summary": "Witchbrook is a life-sim and social RPG co-developed by Chucklefish and Robotality, published by Chucklefish, casting players as a new student at Witchbrook College — a magical academy in the pixel-art seaside city of Mossport. Originally slated for winter 2025, the game has been delayed multiple times and is now targeting a 2026 release on PC (Steam), Xbox, Nintendo Switch, and Nintendo Switch 2, with players attending classes, mastering spells and potion-making, and building relationships with fellow students and townsfolk who follow their own daily schedules through the changing seasons.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Witchbrook is confirmed for PC. No release date has been locked in yet — this page will be updated as soon as one is confirmed. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "School Life & Beyond", "description": "Gameplay balances magical study (classes, assignments, spellcasting, potion-making, divination) with everyday town life in Mossport — running a business, renovating a home, foraging, fishing, and forming friendships or romances with residents who have fully fleshed-out schedules across a full school year." },
+        { "title": "Delays & Platform Expansion", "description": "Chucklefish, a self-described zero-crunch studio, has pushed the release from winter 2025 into 2026 to polish the game, using the extra time to confirm Nintendo Switch and Switch 2 support alongside the originally planned PC and Xbox versions and to explore additional language support." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "Game Informer — delay announcement and world map reveal", "url": "https://gameinformer.com/2025/10/15/wizarding-life-sim-witchbrook-delayed-to-2026" },
+        { "label": "GamesRadar+ — comprehensive status roundup", "url": "https://www.gamesradar.com/games/simulation/witchbrook-guide/" }
+      ]
     },
-    "de": {
-      "summary": "Witchbrook ist ein kommendes Cozy life sim, magic school-Spiel für PC. Ein offizielles Erscheinungsdatum steht noch nicht fest.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Witchbrook ist für PC bestätigt. Ein Release-Termin steht noch nicht fest — diese Seite wird aktualisiert, sobald einer bestätigt ist. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Witchbrookは発売予定のCozy life sim・magic schoolゲームで、対応プラットフォームはPC。公式の発売日はまだ発表されていません。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "WitchbrookはPCでの発売が確認されています。公式の発売日はまだ確定していません。確定次第このページを更新します。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Witchbrook es un próximo juego de Cozy life sim, magic school para PC. Aún no se ha confirmado una fecha de lanzamiento oficial.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Witchbrook está confirmado para PC. Todavía no hay una fecha de lanzamiento confirmada — esta página se actualizará en cuanto se anuncie una. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "Witchbrook 是一款即将发行的Cozy life sim、magic school游戏，登陆 PC。官方发行日期暂未确认。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "Witchbrook 目前确认登陆 PC。官方还没有锁定具体发行日期，这里会在确认后第一时间更新。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

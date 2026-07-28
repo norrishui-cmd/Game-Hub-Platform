@@ -1,59 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Path of Exile 2 is a released Role-playing (RPG), Hack and slash/Beat 'em up game for PC, PS5, Xbox Series, developed by Grinding Gear Games and published by GGG. It is available now.",
+      "summary": "Path of Exile 2 is Grinding Gear Games' sequel to 2013's Path of Exile, launched as a paid Early Access title on December 6, 2024 for PC, PlayStation 5, and Xbox Series X/S, with its full 1.0 release targeted for later in 2026. The action RPG has spent roughly a year and a half in Early Access, with Grinding Gear Games shipping progressively larger content updates and an overhauled endgame ahead of leaving Early Access.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Path of Exile 2 is confirmed for PC, PS5, Xbox Series. The game has already launched, so platform availability is confirmed. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "Return of the Ancients & the Road to 1.0", "description": "The Return of the Ancients update (patch 0.5.0, May 29, 2026) delivered a complete endgame overhaul — a reworked Atlas Tree and Waystone progression, plus nearly 200 new skill gems — and was positioned by Grinding Gear Games as the last major Early Access update, serving as a direct bridge into the 1.0 launch." },
+        { "title": "ExileCon 2026 & 1.0 Timing", "description": "Grinding Gear Games has said the full 1.0 release is targeted for 2026 following ExileCon 2026 (November 7–8 in Auckland), though the studio has not committed to an exact date and has previously slipped its own internal targets, so any specific month should be treated as unconfirmed until officially announced." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "PC Gamer — Return of the Ancients coverage and road to 1.0", "url": "https://www.pcgamer.com/games/rpg/a-series-of-surprise-updates-has-polished-path-of-exile-2-into-a-juggernaut-thats-about-to-shake-up-the-action-rpg-genre-later-this-year/" },
+        { "label": "SeasonTimer — full league history and 0.5.0 details", "url": "https://seasontimer.live/blog/path-of-exile-2-all-leagues-dates/" }
+      ]
     },
-    "de": {
-      "summary": "Path of Exile 2 ist ein veröffentlichtes Rollenspiel (RPG), Hack and Slash / Beat 'em up-Spiel für PC, PS5, Xbox Series, entwickelt von Grinding Gear Games und veröffentlicht von GGG. Es ist bereits erhältlich.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Path of Exile 2 ist für PC, PS5, Xbox Series bestätigt. Das Spiel ist bereits erschienen, die Plattformverfügbarkeit ist damit bestätigt. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Path of Exile 2はロールプレイング（RPG）・ハック＆スラッシュ／ベルトスクロールゲームで、対応プラットフォームはPC・PS5・Xbox Series、開発はGrinding Gear Games、販売はGGGが担当しています。現在すでに発売中です。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "Path of Exile 2はPC・PS5・Xbox Seriesでの発売が確認されています。すでに発売済みのため、対応プラットフォームは確定情報です。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Path of Exile 2 es un juego de Rol (RPG), Beat 'em up para PC, PS5, Xbox Series, desarrollado por Grinding Gear Games y publicado por GGG. Ya está disponible.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Path of Exile 2 está confirmado para PC, PS5, Xbox Series. El juego ya se ha lanzado, por lo que la disponibilidad de plataformas está confirmada. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "流放之路 2 是一款已经发行的角色扮演、砍杀游戏，登陆 PC、PS5、Xbox Series，由 Grinding Gear Games 开发、GGG 发行。目前已经上线。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "流放之路 2 目前确认登陆 PC、PS5、Xbox Series。游戏已经正式上线，平台信息已经确认。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }
