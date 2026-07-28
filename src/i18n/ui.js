@@ -8,6 +8,7 @@ export const UI = {
     searchAria: "搜索游戏",
     navUpcoming: "即将发行",
     navTrending: "本周热门",
+    navMonthlyChart: "本月热门榜单",
     navRules: "收录规则",
 
     footerDesc: "每天自动收录待发行与热门游戏，套用固定模版。有深度 Wiki 的直达站点，其余生成结构化资料页 + 精选真实外链。发现优先，不做规模化薄内容。",
@@ -86,6 +87,16 @@ export const UI = {
     gameMetaDesc: (t, dev, pub) => `${t}发行日期、平台、类型与官方链接汇总——${dev} 开发${pub ? `，${pub} 发行` : ""}。`,
     genreMetaDesc: (label, n) => `收录 ${n} 款${label}类型游戏，涵盖即将发行与近期热门作品，附平台、开发商与官方链接。`,
     platformMetaDesc: (label, n) => `收录 ${n} 款 ${label} 平台游戏，涵盖即将发行与近期热门作品，附类型、开发商与官方链接。`,
+
+    monthlyChartHeading: "本月热门榜单",
+    monthlyChartSubtitle: "综合 Steam 畅销榜与 Twitch 观看热度，持续追踪本月最热门的游戏",
+    monthlyChartUpdatedLabel: "更新于",
+    monthlyChartSourceSteam: "Steam 畅销榜",
+    monthlyChartSourceTwitch: "Twitch 观看热度",
+    monthlyChartViewGame: "查看攻略",
+    monthlyChartViewExternal: "查看 Steam 页面",
+    monthlyChartViewFull: "查看完整榜单 →",
+    monthlyChartMethodology: "榜单综合 Steam 官方每周畅销榜（Valve 收入数据）与 Twitch 近 7 日平均同时观看人数榜，两个榜单各自按名次给分后相加排序，每天自动更新一次。已经收录进本站选题库的游戏可以直接查看攻略页；其余长青大作会外链到对应的 Steam 商店页。",
   },
 
   en: {
@@ -94,6 +105,7 @@ export const UI = {
     searchAria: "Search games",
     navUpcoming: "Upcoming",
     navTrending: "Trending",
+    navMonthlyChart: "Monthly Chart",
     navRules: "How we index",
 
     footerDesc: "Automatically tracks upcoming and trending games every day using a fixed template. Games with a deep wiki link straight there; everything else gets a structured reference page with hand-picked real links. Discovery first — no scaled thin content.",
@@ -172,6 +184,16 @@ export const UI = {
     gameMetaDesc: (t, dev, pub) => `${t} release date, platforms, genres and official links — developed by ${dev}${pub ? `, published by ${pub}` : ""}.`,
     genreMetaDesc: (label, n) => `${n} ${label} games, covering upcoming releases and current trending titles, with platforms, developers and official links.`,
     platformMetaDesc: (label, n) => `${n} games on ${label}, covering upcoming releases and current trending titles, with genres, developers and official links.`,
+
+    monthlyChartHeading: "This Month's Hot Games Chart",
+    monthlyChartSubtitle: "Combining Steam's best-seller chart with Twitch viewership to track the most popular games this month",
+    monthlyChartUpdatedLabel: "Updated",
+    monthlyChartSourceSteam: "Steam best sellers",
+    monthlyChartSourceTwitch: "Twitch viewership",
+    monthlyChartViewGame: "View guide",
+    monthlyChartViewExternal: "View on Steam",
+    monthlyChartViewFull: "View full chart →",
+    monthlyChartMethodology: "This chart combines Valve's official weekly best-seller chart with Twitch's 7-day average concurrent viewership ranking, scoring each game by its position on both lists and refreshing automatically every day. Games already covered in our hub link straight to their guide page; other evergreen titles link out to their Steam store page.",
   },
 
   es: {
@@ -180,6 +202,7 @@ export const UI = {
     searchAria: "Buscar juegos",
     navUpcoming: "Próximamente",
     navTrending: "Tendencias",
+    navMonthlyChart: "Ranking mensual",
     navRules: "Cómo indexamos",
 
     footerDesc: "Rastrea automáticamente cada día los juegos próximos y en tendencia con una plantilla fija. Los juegos con wiki propia enlazan directo allí; el resto recibe una ficha estructurada con enlaces reales seleccionados a mano. Prioridad al descubrimiento, sin contenido superficial a escala.",
@@ -258,10 +281,20 @@ export const UI = {
     gameMetaDesc: (t, dev, pub) => `${t}: fecha de lanzamiento, plataformas, géneros y enlaces oficiales — desarrollado por ${dev}${pub ? `, distribuido por ${pub}` : ""}.`,
     genreMetaDesc: (label, n) => `${n} juegos de ${label}, entre próximos lanzamientos y títulos en tendencia, con plataformas, desarrolladores y enlaces oficiales.`,
     platformMetaDesc: (label, n) => `${n} juegos en ${label}, entre próximos lanzamientos y títulos en tendencia, con géneros, desarrolladores y enlaces oficiales.`,
+
+    monthlyChartHeading: "Ranking mensual de juegos populares",
+    monthlyChartSubtitle: "Combina el ranking de más vendidos de Steam con la audiencia de Twitch para seguir los juegos más populares del mes",
+    monthlyChartUpdatedLabel: "Actualizado el",
+    monthlyChartSourceSteam: "Más vendidos en Steam",
+    monthlyChartSourceTwitch: "Audiencia en Twitch",
+    monthlyChartViewGame: "Ver ficha",
+    monthlyChartViewExternal: "Ver en Steam",
+    monthlyChartViewFull: "Ver ranking completo →",
+    monthlyChartMethodology: "Este ranking combina el listado oficial semanal de más vendidos de Steam (datos de ingresos de Valve) con el ranking de espectadores promedio simultáneos de Twitch de los últimos 7 días, puntuando cada juego según su posición en ambas listas y actualizándose automáticamente cada día. Los juegos ya cubiertos en nuestro portal enlazan directo a su ficha; el resto de títulos enlaza a su página de Steam.",
   },
 
   de: {
-    tagline: "Radar für Spiele-Guides", searchPlaceholder: "Spiele, Entwickler, Genres suchen…", searchAria: "Spiele suchen", navUpcoming: "Demnächst", navTrending: "Im Trend", navRules: "Indexierungsregeln",
+    tagline: "Radar für Spiele-Guides", searchPlaceholder: "Spiele, Entwickler, Genres suchen…", searchAria: "Spiele suchen", navUpcoming: "Demnächst", navTrending: "Im Trend", navMonthlyChart: "Monatscharts", navRules: "Indexierungsregeln",
     footerDesc: "Verfolgt täglich kommende und aktuelle Spiele. Spiele mit eigenem Wiki führen zu ausführlichen Guides; alle anderen erhalten eine strukturierte Übersichtsseite mit ausgewählten echten Quellen.", footerBrowse: "Entdecken", footerAllGames: "Alle Spiele", footerGenres: "Nach Genre", footerPlatforms: "Nach Plattform", footerRules: "Indexierung", footerDataSource: "Datenquelle · IGDB", footerDraftRadar: "Entwürfe (intern)", footerMyWikis: "Meine Wikis", footerLegal: "Unabhängiges Portal für Spieleinformationen und Guides",
     heroEyebrow: "Nächste Veröffentlichung · Empfehlung", heroCtaWiki: "Zum ausführlichen Wiki", heroCtaInfo: "Details ansehen", countdownLabel: "Zeit bis zur Veröffentlichung", unitDays: "Tage", unitHours: "Std.", unitMinutes: "Min.", unitSeconds: "Sek.",
     tabAll: "Alle", tabUpcoming: "Demnächst", tabTrending: "Im Trend", tabOwned: "Meine Wikis", railUpcoming: "Kommende Spiele", railTrending: "Diese Woche im Trend", railAll: "Alle Spiele", countSuffix: "Spiele", emptyTitle: "Keine passenden Spiele", emptyBody: "Versuche einen anderen Suchbegriff oder sieh dir kommende Spiele an.", searchResultsFor: (q) => `Ergebnisse für „${q}“`,
@@ -271,10 +304,11 @@ export const UI = {
     linkOfficial: "Offizielle Website", linkOfficialSub: "Primärquelle zum Spiel", linkSteam: "Steam-Seite", linkSteamSub: "Systemanforderungen · Preis · Bewertungen", linkReddit: "Reddit-Community", linkRedditSub: "Diskussionen und Spielerwissen", linkDiscord: "Offizieller Discord", linkDiscordSub: "Live-Community", linkFanwiki: "Fan-Wiki", linkFanwikiSub: "Von der Community gepflegt", linkEpicgames: "Epic Games Store", linkEpicgamesSub: "Anforderungen · Preis", linkGog: "GOG-Seite", linkGogSub: "DRM-freie Version",
     genresPageTitle: "Nach Genre durchsuchen", platformsPageTitle: "Nach Plattform durchsuchen", draftRadarTitle: "Entwurfsradar", draftRadarDesc: (n) => `${n} Spielentwürfe haben die Veröffentlichungsprüfung noch nicht bestanden.`, draftRadarEmptyTitle: "Keine Entwürfe", draftRadarEmptyBody: "Neue unvollständige Kandidaten erscheinen nach dem nächsten Datenabruf hier.",
     metaDescHome: "Täglich aktualisierter Index für kommende und beliebte Spiele mit ausführlichen Wikis, bestätigten Daten und ausgewählten Quellen.", gameMetaTitle: (t) => `${t} – Release, Plattformen & Guides | GameRadar`, gameMetaDesc: (t, dev, pub) => `${t}: Veröffentlichung, Plattformen, Genres und offizielle Links – entwickelt von ${dev}${pub ? `, veröffentlicht von ${pub}` : ""}.`, genreMetaDesc: (label, n) => `${n} ${label}-Spiele mit kommenden Veröffentlichungen, aktuellen Titeln, Plattformen, Entwicklern und offiziellen Links.`, platformMetaDesc: (label, n) => `${n} Spiele für ${label} mit Genres, Entwicklern, Veröffentlichungsterminen und offiziellen Links.`,
+    monthlyChartHeading: "Monatliche Hitliste", monthlyChartSubtitle: "Kombiniert Steams Bestsellerliste mit der Twitch-Zuschauerzahl, um die beliebtesten Spiele des Monats zu verfolgen", monthlyChartUpdatedLabel: "Aktualisiert am", monthlyChartSourceSteam: "Steam-Bestseller", monthlyChartSourceTwitch: "Twitch-Zuschauerzahl", monthlyChartViewGame: "Guide ansehen", monthlyChartViewExternal: "Auf Steam ansehen", monthlyChartViewFull: "Vollständige Liste ansehen →", monthlyChartMethodology: "Diese Liste kombiniert Valves offizielle wöchentliche Bestsellerliste (Umsatzdaten) mit dem 7-Tage-Durchschnitt der gleichzeitigen Twitch-Zuschauer. Jedes Spiel erhält Punkte nach seiner Platzierung in beiden Listen; die Liste wird täglich automatisch aktualisiert. Spiele, die bereits auf unserem Portal geführt werden, verlinken direkt zum Guide; alle anderen Titel verlinken zur Steam-Seite.",
   },
 
   ja: {
-    tagline: "ゲーム攻略レーダー", searchPlaceholder: "ゲーム、開発会社、ジャンルを検索…", searchAria: "ゲームを検索", navUpcoming: "発売予定", navTrending: "注目作", navRules: "掲載基準",
+    tagline: "ゲーム攻略レーダー", searchPlaceholder: "ゲーム、開発会社、ジャンルを検索…", searchAria: "ゲームを検索", navUpcoming: "発売予定", navTrending: "注目作", navMonthlyChart: "月間ランキング", navRules: "掲載基準",
     footerDesc: "発売予定作と注目作を毎日追跡します。独立Wikiがあるゲームは詳しい攻略へ案内し、それ以外は確認済みデータと厳選した公式・コミュニティ情報を掲載します。", footerBrowse: "探す", footerAllGames: "すべてのゲーム", footerGenres: "ジャンルから探す", footerPlatforms: "プラットフォームから探す", footerRules: "掲載基準", footerDataSource: "データ提供 · IGDB", footerDraftRadar: "下書きレーダー（内部）", footerMyWikis: "運営Wiki", footerLegal: "独立運営のゲーム情報・攻略ポータル",
     heroEyebrow: "次の発売 · 注目タイトル", heroCtaWiki: "完全攻略Wikiへ", heroCtaInfo: "詳細を見る", countdownLabel: "発売まで", unitDays: "日", unitHours: "時間", unitMinutes: "分", unitSeconds: "秒",
     tabAll: "すべて", tabUpcoming: "発売予定", tabTrending: "注目作", tabOwned: "運営Wiki", railUpcoming: "発売予定のゲーム", railTrending: "今週の注目作", railAll: "すべてのゲーム", countSuffix: "本", emptyTitle: "該当するゲームがありません", emptyBody: "別のキーワードを試すか、発売予定作をご覧ください。", searchResultsFor: (q) => `「${q}」の検索結果`,
@@ -284,6 +318,7 @@ export const UI = {
     linkOfficial: "公式サイト", linkOfficialSub: "ゲームの一次情報", linkSteam: "Steamストア", linkSteamSub: "動作環境・価格・レビュー", linkReddit: "Redditコミュニティ", linkRedditSub: "プレイヤーの議論と情報", linkDiscord: "公式Discord", linkDiscordSub: "リアルタイムコミュニティ", linkFanwiki: "ファンWiki", linkFanwikiSub: "コミュニティ運営のデータベース", linkEpicgames: "Epic Gamesストア", linkEpicgamesSub: "動作環境・価格", linkGog: "GOGストア", linkGogSub: "DRMフリー版",
     genresPageTitle: "ジャンルから探す", platformsPageTitle: "プラットフォームから探す", draftRadarTitle: "下書きレーダー", draftRadarDesc: (n) => `公開品質基準を満たしていない候補ゲームは${n}本です。`, draftRadarEmptyTitle: "下書きはありません", draftRadarEmptyBody: "データ取得後、情報が不足している候補がここに表示されます。",
     metaDescHome: "発売予定作と注目作を毎日更新するゲーム攻略インデックス。完全攻略Wiki、確認済みデータ、厳選した関連情報を掲載。", gameMetaTitle: (t) => `${t} 攻略・発売日・対応機種 | GameRadar`, gameMetaDesc: (t, dev, pub) => `${t}の発売日、対応機種、ジャンル、公式リンクを掲載。開発：${dev}${pub ? `、販売：${pub}` : ""}。`, genreMetaDesc: (label, n) => `${label}ゲーム${n}本を掲載。発売予定作と注目作の対応機種、開発会社、公式リンクを確認できます。`, platformMetaDesc: (label, n) => `${label}対応ゲーム${n}本を掲載。ジャンル、開発会社、発売日、公式リンクを確認できます。`,
+    monthlyChartHeading: "今月の人気ランキング", monthlyChartSubtitle: "Steamのベストセラーランキングと Twitch の視聴データを組み合わせて、今月最も人気のゲームを追跡します", monthlyChartUpdatedLabel: "更新日", monthlyChartSourceSteam: "Steamベストセラー", monthlyChartSourceTwitch: "Twitch視聴数", monthlyChartViewGame: "攻略を見る", monthlyChartViewExternal: "Steamで見る", monthlyChartViewFull: "ランキング全体を見る →", monthlyChartMethodology: "このランキングは、Valve公式の週間ベストセラーランキング（売上データ）と、Twitchの過去7日間の平均同時視聴者数ランキングを組み合わせ、両方の順位に応じてスコアを付けて算出し、毎日自動更新しています。当サイトで既に取り上げているゲームは攻略ページへ直接リンクし、それ以外の定番タイトルはSteamストアページへリンクします。",
   },
 };
 

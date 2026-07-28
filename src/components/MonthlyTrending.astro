@@ -1,0 +1,40 @@
+---
+import MonthlyTrendingRow from "./MonthlyTrendingRow.astro";
+
+// game.slug 命中平台已有 hub 页的，卡片整体可点，跳转到本站的 /{locale}/games/{slug}/；
+// 没有 hub 页的（大多是 CS2、Dota2、LoL 这类不在咱们 2026-2027 选题库范围内的长青大作），
+// 卡片不整体可点，只给一个「查看 Steam 页」的小外链，不硬凑一个内部页面出来。
+const { games, locale, limit } = Astro.props;
+const list = limit ? games.slice(0, limit) : games;
+---
+<ol class="mt-list">
+  {list.map((g) => <MonthlyTrendingRow game={g} locale={locale} />)}
+</ol>
+
+<style>
+  .mt-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .mt-list :global(.mt-row) {
+    display: flex; align-items: center; gap: 14px; padding: 12px 16px;
+    border-radius: var(--r-sm); background: var(--panel); text-decoration: none;
+    color: inherit; transition: background 0.15s ease; border: 1px solid var(--line-soft);
+  }
+  .mt-list :global(a.mt-row:hover) { background: var(--panel-2); }
+  .mt-list :global(.mt-row.static) { cursor: default; }
+  .mt-list :global(.mt-rank) {
+    flex: 0 0 30px; height: 30px; display: flex; align-items: center; justify-content: center;
+    border-radius: 8px; font-weight: 700; font-size: 14px; background: var(--raise); color: var(--muted);
+  }
+  .mt-list :global(.mt-rank.r1) { background: linear-gradient(135deg, #ffd76a, #ff9d3d); color: #1a1200; }
+  .mt-list :global(.mt-rank.r2) { background: linear-gradient(135deg, #d9dee8, #a9b2c3); color: #1a1200; }
+  .mt-list :global(.mt-rank.r3) { background: linear-gradient(135deg, #d99a5b, #8c5a2d); color: #1a1200; }
+  .mt-list :global(.mt-name) { flex: 1; display: flex; flex-direction: column; gap: 2px; font-weight: 600; min-width: 0; color: var(--ink); }
+  .mt-list :global(.mt-src) { display: flex; gap: 6px; font-weight: 500; }
+  .mt-list :global(.mt-src b) {
+    font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.03em;
+    color: var(--muted); background: var(--raise); border-radius: 5px;
+    padding: 1px 6px;
+  }
+  .mt-list :global(.mt-cta) { flex: 0 0 auto; display: flex; align-items: center; gap: 4px; font-size: 13px; font-weight: 600; color: var(--indigo); white-space: nowrap; }
+  .mt-list :global(.mt-cta svg) { width: 15px; height: 15px; }
+  .mt-list :global(.mt-cta.ext) { color: var(--muted); }
+</style>

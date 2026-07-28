@@ -1,10 +1,12 @@
 ---
 import Base from "../../layouts/Base.astro";
 import GameCard from "../../components/GameCard.astro";
+import MonthlyTrending from "../../components/MonthlyTrending.astro";
 import gamesData from "../../../data/games.json";
+import trendingData from "../../../data/monthly-trending.json";
 import { LOCALES } from "../../i18n/locales.js";
 import { t } from "../../i18n/ui.js";
-import { fmtDate, cardHref, displayTitle, translateGenres } from "../../lib/games.js";
+import { fmtDate, fmtMonth, cardHref, displayTitle, translateGenres } from "../../lib/games.js";
 
 export function getStaticPaths() {
   return LOCALES.map((locale) => ({ params: { locale } }));
@@ -19,6 +21,7 @@ const trending = games.filter((g) => g.trending);
 const heroHref = cardHref(featured, locale);
 const heroTitle = displayTitle(featured, locale);
 const heroGenres = translateGenres(featured.genres, locale);
+const monthLabel = fmtMonth(trendingData.month, locale);
 ---
 <Base locale={locale} title={`GameRadar · ${t(locale, "tagline")}`} pathSuffix="">
   <a id="top"></a>
@@ -72,6 +75,15 @@ const heroGenres = translateGenres(featured.genres, locale);
         <span id="trending"></span>
         <div class="rail-head"><h2><span class="bar" style="background:var(--indigo)"></span>{t(locale, "railTrending")}</h2><span class="count">{trending.length} {t(locale, "countSuffix")}</span></div>
         <div class="grid">{trending.map((g) => <GameCard game={g} locale={locale} />)}</div>
+      </section>
+
+      <section class="rail" id="rail-monthly-chart">
+        <div class="rail-head">
+          <h2><span class="bar" style="background:var(--amber)"></span>{t(locale, "monthlyChartHeading")}</h2>
+          <a class="count" href={`/${locale}/monthly-chart/`} style="text-decoration:underline; text-underline-offset:2px">{t(locale, "monthlyChartViewFull")}</a>
+        </div>
+        <p style="margin:-6px 0 14px; color:var(--muted); font-size:14px">{t(locale, "monthlyChartSubtitle")} · {monthLabel}</p>
+        <MonthlyTrending games={trendingData.games} locale={locale} limit={8} />
       </section>
 
       <section class="rail" id="rail-all" hidden>

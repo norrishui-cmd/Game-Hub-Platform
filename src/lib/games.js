@@ -89,6 +89,14 @@ export function daysUntil(iso) {
   return Math.ceil((new Date(iso + "T00:00:00").getTime() - Date.now()) / 86400000);
 }
 
+export function fmtMonth(monthIso, locale = DEFAULT_LOCALE) {
+  if (!monthIso) return "";
+  return new Date(monthIso + "-01T00:00:00").toLocaleDateString(LOCALE_DATE_TAG[locale] || "en-US", {
+    year: "numeric",
+    month: "long",
+  });
+}
+
 export function relText(game, locale = DEFAULT_LOCALE) {
   if (game.status === "live") return t(locale, "relLive");
   const d = daysUntil(game.release);

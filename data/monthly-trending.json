@@ -1,0 +1,236 @@
+{
+  "month": "2026-07",
+  "updatedAt": "2026-07-28T00:00:00.000Z",
+  "daysTracked": 1,
+  "_note": "内部说明，不在页面上直接渲染（页面文案走 i18n/ui.js 的 monthlyChartMethodology）：这一版是人工研究种子数据（综合 Steam 官方每周畅销榜与 Twitch 近 7 日观看热度榜，来源 GameGrin 与 TwitchTracker）。scripts/fetch-trending.mjs 第一次成功运行后，这个文件会被每日自动抓取的滚动榜单整体覆盖，schema 保持一致。",
+  "sources": [
+    "steam_top_sellers",
+    "twitch_top_games"
+  ],
+  "count": 20,
+  "games": [
+    {
+      "rank": 1,
+      "titleEn": "Counter-Strike 2",
+      "slug": null,
+      "hasHub": false,
+      "externalUrl": "https://store.steampowered.com/app/730/CounterStrike_2",
+      "sources": [
+        "steam",
+        "twitch"
+      ],
+      "score": 24.2
+    },
+    {
+      "rank": 2,
+      "titleEn": "Palworld",
+      "slug": null,
+      "hasHub": false,
+      "externalUrl": "https://store.steampowered.com/app/1623730/Palworld/",
+      "sources": [
+        "steam",
+        "twitch"
+      ],
+      "score": 20.0
+    },
+    {
+      "rank": 3,
+      "titleEn": "Assassin's Creed Black Flag Resynced",
+      "slug": "assassin-s-creed-black-flag-resynced",
+      "hasHub": true,
+      "externalUrl": null,
+      "sources": [
+        "steam"
+      ],
+      "score": 16.8
+    },
+    {
+      "rank": 4,
+      "titleEn": "Dota 2",
+      "slug": null,
+      "hasHub": false,
+      "externalUrl": "https://store.steampowered.com/app/570/Dota_2",
+      "sources": [
+        "steam"
+      ],
+      "score": 15.6
+    },
+    {
+      "rank": 5,
+      "titleEn": "Grand Theft Auto V Enhanced",
+      "slug": null,
+      "hasHub": false,
+      "externalUrl": "https://store.steampowered.com/app/3240220/Grand_Theft_Auto_V_Enhanced",
+      "sources": [
+        "steam",
+        "twitch"
+      ],
+      "score": 15.6
+    },
+    {
+      "rank": 6,
+      "titleEn": "Apex Legends",
+      "slug": null,
+      "hasHub": false,
+      "externalUrl": "https://store.steampowered.com/app/1172470/Apex_Legends",
+      "sources": [
+        "steam"
+      ],
+      "score": 14.4
+    },
+    {
+      "rank": 7,
+      "titleEn": "PUBG: BATTLEGROUNDS",
+      "slug": null,
+      "hasHub": false,
+      "externalUrl": "https://store.steampowered.com/app/578080/PUBG_BATTLEGROUNDS",
+      "sources": [
+        "steam"
+      ],
+      "score": 13.2
+    },
+    {
+      "rank": 8,
+      "titleEn": "Marvel Rivals",
+      "slug": null,
+      "hasHub": false,
+      "externalUrl": "https://store.steampowered.com/app/2767030/Marvel_Rivals",
+      "sources": [
+        "steam"
+      ],
+      "score": 12.0
+    },
+    {
+      "rank": 9,
+      "titleEn": "Warframe",
+      "slug": null,
+      "hasHub": false,
+      "externalUrl": "https://store.steampowered.com/app/230410/Warframe",
+      "sources": [
+        "steam"
+      ],
+      "score": 10.8
+    },
+    {
+      "rank": 10,
+      "titleEn": "Halo: Campaign Evolved",
+      "slug": "halo-campaign-evolved",
+      "hasHub": true,
+      "externalUrl": null,
+      "sources": [
+        "steam"
+      ],
+      "score": 8.4
+    },
+    {
+      "rank": 11,
+      "titleEn": "Forza Horizon 6",
+      "slug": null,
+      "hasHub": false,
+      "externalUrl": "https://store.steampowered.com/app/2483190/Forza_Horizon_6",
+      "sources": [
+        "steam"
+      ],
+      "score": 7.2
+    },
+    {
+      "rank": 12,
+      "titleEn": "League of Legends",
+      "slug": null,
+      "hasHub": false,
+      "externalUrl": null,
+      "sources": [
+        "twitch"
+      ],
+      "score": 7.0
+    },
+    {
+      "rank": 13,
+      "titleEn": "Dead by Daylight",
+      "slug": null,
+      "hasHub": false,
+      "externalUrl": "https://store.steampowered.com/app/381210/Dead_by_Daylight",
+      "sources": [
+        "steam"
+      ],
+      "score": 6.0
+    },
+    {
+      "rank": 14,
+      "titleEn": "Torchlight: Infinite",
+      "slug": null,
+      "hasHub": false,
+      "externalUrl": "https://store.steampowered.com/app/1974050/Torchlight_Infinite",
+      "sources": [
+        "steam"
+      ],
+      "score": 4.8
+    },
+    {
+      "rank": 15,
+      "titleEn": "VALORANT",
+      "slug": null,
+      "hasHub": false,
+      "externalUrl": null,
+      "sources": [
+        "twitch"
+      ],
+      "score": 4.0
+    },
+    {
+      "rank": 16,
+      "titleEn": "Red Dead Redemption 2",
+      "slug": null,
+      "hasHub": false,
+      "externalUrl": "https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2",
+      "sources": [
+        "steam"
+      ],
+      "score": 3.6
+    },
+    {
+      "rank": 17,
+      "titleEn": "Fortnite",
+      "slug": null,
+      "hasHub": false,
+      "externalUrl": null,
+      "sources": [
+        "twitch"
+      ],
+      "score": 3.0
+    },
+    {
+      "rank": 18,
+      "titleEn": "The Mound: Omen of Cthulhu",
+      "slug": "the-mound-omen-of-cthulhu",
+      "hasHub": true,
+      "externalUrl": null,
+      "sources": [
+        "steam"
+      ],
+      "score": 2.4
+    },
+    {
+      "rank": 19,
+      "titleEn": "EA Sports FC 26",
+      "slug": null,
+      "hasHub": false,
+      "externalUrl": "https://store.steampowered.com/app/3405690/EA_SPORTS_FC_26",
+      "sources": [
+        "steam"
+      ],
+      "score": 1.2
+    },
+    {
+      "rank": 20,
+      "titleEn": "Rust",
+      "slug": null,
+      "hasHub": false,
+      "externalUrl": null,
+      "sources": [
+        "twitch"
+      ],
+      "score": 1.0
+    }
+  ]
+}

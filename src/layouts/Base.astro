@@ -49,6 +49,7 @@ const canonical = new URL(alternates[locale], Astro.site).toString();
     <nav class="nav">
       <a href={`/${locale}/#upcoming`}>{t(locale, "navUpcoming")}</a>
       <a href={`/${locale}/#trending`}>{t(locale, "navTrending")}</a>
+      <a href={`/${locale}/monthly-chart/`}>{t(locale, "navMonthlyChart")}</a>
     </nav>
     <div class="lang-switch" role="group" aria-label="Language">
       {LOCALES.map((l) => (
@@ -74,6 +75,7 @@ const canonical = new URL(alternates[locale], Astro.site).toString();
           <b>{t(locale, "footerBrowse")}</b>
           <a href={`/${locale}/#upcoming`}>{t(locale, "navUpcoming")}</a>
           <a href={`/${locale}/#trending`}>{t(locale, "navTrending")}</a>
+          <a href={`/${locale}/monthly-chart/`}>{t(locale, "navMonthlyChart")}</a>
           <a href={`/${locale}/genres/`}>{t(locale, "footerGenres")}</a>
           <a href={`/${locale}/platforms/`}>{t(locale, "footerPlatforms")}</a>
         </div>

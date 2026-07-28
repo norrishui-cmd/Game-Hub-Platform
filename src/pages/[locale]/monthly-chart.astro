@@ -1,0 +1,57 @@
+---
+import Base from "../../layouts/Base.astro";
+import MonthlyTrending from "../../components/MonthlyTrending.astro";
+import trendingData from "../../../data/monthly-trending.json";
+import { LOCALES } from "../../i18n/locales.js";
+import { t } from "../../i18n/ui.js";
+import { fmtMonth } from "../../lib/games.js";
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+const monthLabel = fmtMonth(trendingData.month, locale);
+const updatedLabel = new Date(trendingData.updatedAt).toLocaleDateString(
+  locale === "zh" ? "zh-CN" : locale === "es" ? "es-ES" : locale === "de" ? "de-DE" : locale === "ja" ? "ja-JP" : "en-US",
+  { year: "numeric", month: "long", day: "numeric" }
+);
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: t(locale, "monthlyChartHeading"),
+  itemListOrder: "https://schema.org/ItemListOrderDescending",
+  numberOfItems: trendingData.games.length,
+  itemListElement: trendingData.games.map((g) => ({
+    "@type": "ListItem",
+    position: g.rank,
+    name: g.titleEn,
+    url: g.hasHub ? new URL(`/${locale}/games/${g.slug}/`, Astro.site).toString() : (g.externalUrl || undefined),
+  })),
+};
+---
+<Base
+  locale={locale}
+  title={`${t(locale, "monthlyChartHeading")} · ${monthLabel} | GameRadar`}
+  description={t(locale, "monthlyChartSubtitle")}
+  pathSuffix="/monthly-chart/"
+  noindex={locale !== "en"}
+  indexableLocales={["en"]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <main class="wrap" style="padding-top:28px; max-width:760px">
+    <div class="crumb"><a href={`/${locale}/`}>{t(locale, "breadcrumbBack")}</a></div>
+    <div class="rail-head" style="flex-direction:column; align-items:flex-start; gap:6px">
+      <h1><span class="bar" style="background:var(--amber)"></span>{t(locale, "monthlyChartHeading")}</h1>
+      <p style="margin:0; color:var(--muted); font-size:15px">{t(locale, "monthlyChartSubtitle")}</p>
+    </div>
+    <p style="color:var(--faint); font-size:13px; margin:0 0 22px">
+      {t(locale, "monthlyChartUpdatedLabel")} {updatedLabel} · {monthLabel}
+    </p>
+
+    <MonthlyTrending games={trendingData.games} locale={locale} />
+
+    <p class="note" style="margin-top:24px">{t(locale, "monthlyChartMethodology")}</p>
+  </main>
+</Base>

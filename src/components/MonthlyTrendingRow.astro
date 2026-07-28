@@ -1,0 +1,38 @@
+---
+import { t } from "../i18n/ui.js";
+
+const { game: g, locale } = Astro.props;
+const rankClass = g.rank <= 3 ? `mt-rank r${g.rank}` : "mt-rank";
+
+const SOURCE_LABEL = {
+  steam: t(locale, "monthlyChartSourceSteam"),
+  twitch: t(locale, "monthlyChartSourceTwitch"),
+};
+const sourceLabels = g.sources.map((s) => SOURCE_LABEL[s] || s);
+---
+{g.hasHub && (
+  <li>
+    <a class="mt-row" href={`/${locale}/games/${g.slug}/`}>
+      <span class={rankClass}>{g.rank}</span>
+      <span class="mt-name">{g.titleEn}<span class="mt-src">{sourceLabels.map((label) => <b>{label}</b>)}</span></span>
+      <span class="mt-cta">{t(locale, "monthlyChartViewGame")} <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+    </a>
+  </li>
+)}
+{!g.hasHub && g.externalUrl && (
+  <li>
+    <a class="mt-row" href={g.externalUrl} target="_blank" rel="noopener nofollow">
+      <span class={rankClass}>{g.rank}</span>
+      <span class="mt-name">{g.titleEn}<span class="mt-src">{sourceLabels.map((label) => <b>{label}</b>)}</span></span>
+      <span class="mt-cta ext">{t(locale, "monthlyChartViewExternal")} ↗</span>
+    </a>
+  </li>
+)}
+{!g.hasHub && !g.externalUrl && (
+  <li>
+    <span class="mt-row static">
+      <span class={rankClass}>{g.rank}</span>
+      <span class="mt-name">{g.titleEn}<span class="mt-src">{sourceLabels.map((label) => <b>{label}</b>)}</span></span>
+    </span>
+  </li>
+)}

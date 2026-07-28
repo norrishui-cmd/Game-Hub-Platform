@@ -156,6 +156,40 @@ Beast of Reincarnation、REKA、Valheim 1.0。
 域名同样被截断成 `.ver...`，这是按 Vercel 默认项目域名规则推断的，如果实际域名不一样（比如后来
 换了自定义域名）请告诉我更新。
 
+## 2026-07-28 更新（二）：本月热门榜单
+
+新增了一个独立于选题库的功能：**本月热门榜单**（`/{locale}/monthly-chart/`，首页也有一个 Top 8 的
+小组件）。这个榜单跟踪的是"现在全网都在玩/在看什么"（Counter-Strike 2、GTA、League of Legends
+这类长青大作），跟选题库那 100 款"2026-2027 待发行新游"是两个完全不同的范畴，不要混淆。
+
+**数据来源（两个独立信号，互不依赖）：**
+- Twitch Helix `games/top`——当前观看人数最高的游戏分类。**不需要新申请密钥**，直接复用已经
+  配置好的 `IGDB_CLIENT_ID` / `IGDB_CLIENT_SECRET`（IGDB 鉴权本来就是走 Twitch 开发者账号的
+  OAuth，这两个值本身就是一个 Twitch App 的凭据）。
+- SteamSpy `top100in2weeks`——近两周玩家数最高的 Steam 游戏。完全公开的接口，不需要任何密钥。
+
+**「本月」怎么滚动更新**：`scripts/fetch-trending.mjs` 现在跟 `fetch-games.mjs` 一起，被
+`.github/workflows/daily-fetch.yml` 每天自动调用一次。每天的原始排名快照存进
+`data/trending-history/<日期>.json`（永久保留，不覆盖），然后把当前自然月的全部快照按名次加权
+累计打分，重新生成 `data/monthly-trending.json`。这样榜单反映的是"这个月持续保持热度"，而不是
+"今天恰好冲榜一次"；到了下个月，日期前缀自动变了，榜单也就自然重新开始计算，不需要手动清空任何东西。
+
+**内链 vs 外链**：榜单里的游戏，如果 slug 命中了平台自己的选题库/自有 wiki（比如这次正好命中的
+Halo: Campaign Evolved、Assassin's Creed Black Flag Resynced、The Mound: Omen of Cthulhu），
+点击直接跳转到本站的攻略页；其余不在咱们范围内的长青大作（CS2、Dota2、LoL 等）会外链到对应的
+Steam 商店页或 Twitch 分类页，不会为了凑数硬建一个空页面。
+
+**如果想立刻手动跑一次（不想等明天的定时任务）**：
+```bash
+node scripts/fetch-trending.mjs
+```
+跟 `build-from-atlas.mjs` 一样，改动只影响 `data/monthly-trending.json` 和
+`data/trending-history/`，跟 `games.json` 完全独立，互不干扰。
+
+**当前 `data/monthly-trending.json` 里的 20 款游戏是人工研究种子数据**（2026-07-28，综合
+GameGrin 整理的 Steam 官方畅销榜与 TwitchTracker 的观看数据），第一次 `fetch-trending.mjs`
+成功跑起来之后会被自动榜单整体覆盖，字段结构完全一致，不需要额外处理。
+
 ## 日常怎么维护
 
 - **新建了独立 wiki，想让门户直链过去**：编辑 `data/owned-wikis.json`。

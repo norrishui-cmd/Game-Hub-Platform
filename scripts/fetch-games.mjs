@@ -434,4 +434,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   });
 }
 
-export { normalize, completenessScore, applyOwnedWiki, ownedFallback, atlasFallback, loadGameAtlas, isReleased, pickGradient, main };
+export { normalize, completenessScore, applyOwnedWiki, ownedFallback, atlasFallback, loadGameAtlas, isReleased, pickGradient, getAccessToken, main };
