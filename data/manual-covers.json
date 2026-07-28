@@ -1,0 +1,10 @@
+{
+  "_note": "手动上传的游戏封面图（covers），跟 owned-wikis.json 的 banner 字段是同一个用途，只是拆成单独一个文件——这样不管这款游戏是 owned（有自有 wiki）、atlas（选题库）还是历史手填的 nav 占位游戏，都能用同一套机制盖上自定义封面图，不用管它原本走哪条数据来源。fetch-games.mjs 和 build-from-atlas.mjs 都会读这个文件，在所有其他逻辑跑完之后最后套用一次，保证优先级最高，不会被 IGDB 抓到的封面图覆盖掉。图片文件放在 public/images/games/ 下。",
+  "light-no-fire": { "cover": "/images/games/light-no-fire-banner.webp", "coverPosition": "center 30%" },
+  "witchbrook": { "cover": "/images/games/witchbrook-banner.webp", "coverPosition": "center" },
+  "monster-hunter-wilds": { "cover": "/images/games/monster-hunter-wilds-banner.webp", "coverPosition": "center 25%" },
+  "reka": { "cover": "/images/games/reka-banner.webp", "coverPosition": "center" },
+  "beast-of-reincarnation": { "cover": "/images/games/beast-of-reincarnation-banner.webp", "coverPosition": "center" },
+  "planet-zoo-2": { "cover": "/images/games/planet-zoo-2-banner.webp", "coverPosition": "center" },
+  "moonlight-peaks": { "cover": "/images/games/moonlight-peaks-banner.webp", "coverPosition": "center" }
+}

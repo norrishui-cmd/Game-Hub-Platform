@@ -226,6 +226,34 @@ function applyOwnedWiki(game, ownedList) {
 // 逻辑跟 owned-wikis 的 fallback 很像，但数据来源不同（Excel 人工研究 vs. 手填 wiki 配置），
 // 所以拆成独立的函数，别混在一起，以后两边任何一边调整都不用担心影响另一边。
 // ---------------------------------------------------------------------------
+// ---------------------------------------------------------------------------
+// manual-covers 映射：人工上传的自定义封面图，不管游戏是 owned / atlas / 历史手填的 nav
+// 占位游戏，都能用同一套机制盖图。放在 owned-wikis / game-atlas 之外单独一个文件，
+// 因为"配了一张好看的封面图"跟"有没有自有 wiki"、"在不在选题库里"是两件不相关的事，
+// 混在一起改容易搞乱职责边界。永远在其他逻辑跑完之后最后套用一次，优先级最高。
+// ---------------------------------------------------------------------------
+async function loadManualCovers() {
+  const p = path.join(process.cwd(), "data", "manual-covers.json");
+  try {
+    const parsed = JSON.parse(await readFile(p, "utf-8"));
+    delete parsed._note;
+    return parsed;
+  } catch {
+    return {};
+  }
+}
+
+function applyManualCovers(games, manualCovers) {
+  for (const g of games) {
+    const hit = manualCovers[g.slug];
+    if (hit?.cover) {
+      g.cover = hit.cover;
+      g.coverPosition = hit.coverPosition || "center";
+    }
+  }
+  return games;
+}
+
 async function loadGameAtlas() {
   const p = path.join(process.cwd(), "data", "game-atlas.json");
   try {
@@ -392,7 +420,7 @@ async function main() {
     }
   }
 
-  const games = [...bySlug.values()];
+  const games = applyManualCovers([...bySlug.values()], await loadManualCovers());
 
   // 资料完整度关卡：owned / atlas 的游戏永远放行（owned 有自家 wiki 兜底内容，atlas 是人工做过
   // SEO 选型研究的选题库，两者都不靠 IGDB 那点资料完整度打分）；其余的必须达到
@@ -434,4 +462,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   });
 }
 
-export { normalize, completenessScore, applyOwnedWiki, ownedFallback, atlasFallback, loadGameAtlas, isReleased, pickGradient, getAccessToken, main };
+export { normalize, completenessScore, applyOwnedWiki, ownedFallback, atlasFallback, loadGameAtlas, isReleased, pickGradient, getAccessToken, loadManualCovers, applyManualCovers, main };

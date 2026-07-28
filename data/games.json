@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-28T02:28:35.535Z",
+  "generatedAt": "2026-07-28T06:07:20.462Z",
   "count": 105,
   "games": [
     {
@@ -23,7 +23,7 @@
       "trending": true,
       "coverage": "owned",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/planet-zoo-2-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#1fa87a",
@@ -112,7 +112,7 @@
       "trending": true,
       "coverage": "owned",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/moonlight-peaks-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#3a6d8c",
@@ -170,7 +170,7 @@
       "trending": true,
       "coverage": "owned",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/beast-of-reincarnation-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#b0453f",
@@ -226,7 +226,7 @@
       "trending": true,
       "coverage": "owned",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/reka-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#1fa87a",
@@ -511,7 +511,7 @@
       "status": "live",
       "trending": true,
       "coverage": "nav",
-      "cover": null,
+      "cover": "/images/games/monster-hunter-wilds-banner.webp",
       "links": {
         "official": "https://www.monsterhunter.com",
         "steam": "https://store.steampowered.com",
@@ -522,7 +522,8 @@
         "#7a5cff",
         "#4f9dbf"
       ],
-      "mono": "W"
+      "mono": "W",
+      "coverPosition": "center 25%"
     },
     {
       "slug": "elder-scrolls-6",
@@ -574,7 +575,7 @@
       "trending": true,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/witchbrook-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#3a6d8c",
@@ -605,8 +606,8 @@
         "official": "https://lightnofire.com",
         "reddit": "https://www.reddit.com/r/LightNoFire/"
       },
-      "cover": null,
-      "coverPosition": "center",
+      "cover": "/images/games/light-no-fire-banner.webp",
+      "coverPosition": "center 30%",
       "grad": [
         "#1f8a7a",
         "#4fbfa0"

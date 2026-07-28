@@ -23,7 +23,7 @@
 
 import { readFile, writeFile } from "node:fs/promises";
 import path from "node:path";
-import { applyOwnedWiki, atlasFallback } from "./fetch-games.mjs";
+import { applyOwnedWiki, atlasFallback, loadManualCovers, applyManualCovers } from "./fetch-games.mjs";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 
@@ -76,6 +76,7 @@ async function main() {
     if ((a.coverage === "owned") !== (b.coverage === "owned")) return a.coverage === "owned" ? -1 : 1;
     return (b.hype ?? 0) - (a.hype ?? 0);
   });
+  applyManualCovers(games, await loadManualCovers());
 
   const output = { generatedAt: new Date().toISOString(), count: games.length, games };
   await writeFile(path.join(DATA_DIR, "games.json"), JSON.stringify(output, null, 2));
