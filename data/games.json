@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-28T06:07:20.462Z",
+  "generatedAt": "2026-07-28T06:32:57.420Z",
   "count": 105,
   "games": [
     {
@@ -313,7 +313,7 @@
       "trending": false,
       "coverage": "owned",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/valheim-1-0-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#1fa87a",
@@ -370,7 +370,7 @@
       "trending": false,
       "coverage": "owned",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/mistfall-hunter-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#7a5cff",
@@ -478,7 +478,7 @@
       "status": "upcoming",
       "trending": true,
       "coverage": "nav",
-      "cover": null,
+      "cover": "/images/games/silksong-banner.webp",
       "links": {
         "official": "https://www.hollowknightsilksong.com",
         "steam": "https://store.steampowered.com",
@@ -489,7 +489,8 @@
         "#b0453f",
         "#d98a3d"
       ],
-      "mono": "S"
+      "mono": "S",
+      "coverPosition": "center"
     },
     {
       "slug": "monster-hunter-wilds",
@@ -544,7 +545,7 @@
       "status": "upcoming",
       "trending": false,
       "coverage": "nav",
-      "cover": null,
+      "cover": "/images/games/elder-scrolls-6-banner.webp",
       "links": {
         "official": "https://elderscrolls.bethesda.net",
         "reddit": "https://www.reddit.com/r/ElderScrolls/",
@@ -554,7 +555,8 @@
         "#3a6d8c",
         "#4f9dbf"
       ],
-      "mono": "6"
+      "mono": "6",
+      "coverPosition": "center"
     },
     {
       "slug": "witchbrook",
@@ -666,7 +668,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/lou-s-lagoon-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#1fa87a",
@@ -694,7 +696,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/big-walk-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#8a3d2f",
@@ -721,7 +723,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/silent-hill-townfall-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#1fa87a",
@@ -749,7 +751,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/onimusha-way-of-the-sword-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#3a6d8c",
@@ -776,7 +778,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/enshrouded-1-0-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#5b6cff",
