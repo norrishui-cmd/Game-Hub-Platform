@@ -68,6 +68,7 @@ export const UI = {
     factGenres: "类型",
     factHype: "热度",
     relatedLinks: "相关链接",
+    relatedGames: "同类型游戏",
     noLinks: "暂无外链",
     detailNote: "这是聚合导航页：结构化事实 + 人工精选的真实外链。当这款游戏热度足够、值得投入原创内容时，会为它建立独立深度 Wiki，届时这里会替换成直链。",
 
@@ -188,6 +189,7 @@ export const UI = {
     factGenres: "Genres",
     factHype: "Hype",
     relatedLinks: "Related links",
+    relatedGames: "Similar games",
     noLinks: "No links available yet",
     detailNote: "This is an aggregated reference page: structured facts plus hand-picked real links. Once this game is popular enough to justify original coverage, it'll get its own deep wiki and this link will point straight there.",
 
@@ -308,6 +310,7 @@ export const UI = {
     factGenres: "Géneros",
     factHype: "Expectativa",
     relatedLinks: "Enlaces relacionados",
+    relatedGames: "Juegos similares",
     noLinks: "Todavía no hay enlaces disponibles",
     detailNote: "Esta es una ficha de referencia agregada: datos estructurados más enlaces reales seleccionados a mano. Cuando este juego tenga suficiente relevancia para justificar contenido original, tendrá su propia wiki y este enlace apuntará directamente allí.",
 
@@ -369,7 +372,7 @@ export const UI = {
     tabAll: "Alle", tabUpcoming: "Demnächst", tabTrending: "Im Trend", tabOwned: "Meine Wikis", genreFilterLabel: "Nach Genre filtern", genreFilterAll: "Alle Genres", railUpcoming: "Kommende Spiele", railTrending: "Diese Woche im Trend", railAll: "Alle Spiele", countSuffix: "Spiele", emptyTitle: "Keine passenden Spiele", emptyBody: "Versuche einen anderen Suchbegriff oder sieh dir kommende Spiele an.", searchResultsFor: (q) => `Ergebnisse für „${q}“`,
     pillOwned: "Mein Wiki", pillNav: "Übersicht", pillLive: "Verfügbar", ctaOwned: "Zum Wiki", ctaNav: "Details",
     relLive: "Jetzt verfügbar", relTBA: "Noch offen", relReleased: "Veröffentlicht", relToday: "Erscheint heute", relDaysUntil: (d) => `Noch ${d} Tage`,
-    breadcrumbBack: "← Zurück zu GameRadar", draftBanner: "⚠ Diese Entwurfsseite erfüllt die Qualitätsanforderungen noch nicht. Sie dient nur der internen Vorschau und wird nicht indexiert.", factReleaseDate: "Veröffentlichung", factDeveloper: "Entwickler", factPublisher: "Publisher", factPlatforms: "Plattformen", factGenres: "Genres", factHype: "Interesse", relatedLinks: "Weiterführende Links", noLinks: "Noch keine Links verfügbar", detailNote: "Diese Übersichtsseite kombiniert strukturierte Fakten mit sorgfältig ausgewählten Quellen. Ausführliche Guides werden erst veröffentlicht, wenn verlässliche Informationen vorliegen.",
+    breadcrumbBack: "← Zurück zu GameRadar", draftBanner: "⚠ Diese Entwurfsseite erfüllt die Qualitätsanforderungen noch nicht. Sie dient nur der internen Vorschau und wird nicht indexiert.", factReleaseDate: "Veröffentlichung", factDeveloper: "Entwickler", factPublisher: "Publisher", factPlatforms: "Plattformen", factGenres: "Genres", factHype: "Interesse", relatedLinks: "Weiterführende Links", relatedGames: "Ähnliche Spiele", noLinks: "Noch keine Links verfügbar", detailNote: "Diese Übersichtsseite kombiniert strukturierte Fakten mit sorgfältig ausgewählten Quellen. Ausführliche Guides werden erst veröffentlicht, wenn verlässliche Informationen vorliegen.",
     linkOfficial: "Offizielle Website", linkOfficialSub: "Primärquelle zum Spiel", linkSteam: "Steam-Seite", linkSteamSub: "Systemanforderungen · Preis · Bewertungen", linkReddit: "Reddit-Community", linkRedditSub: "Diskussionen und Spielerwissen", linkDiscord: "Offizieller Discord", linkDiscordSub: "Live-Community", linkFanwiki: "Fan-Wiki", linkFanwikiSub: "Von der Community gepflegt", linkEpicgames: "Epic Games Store", linkEpicgamesSub: "Anforderungen · Preis", linkGog: "GOG-Seite", linkGogSub: "DRM-freie Version",
     genresPageTitle: "Nach Genre durchsuchen", platformsPageTitle: "Nach Plattform durchsuchen", draftRadarTitle: "Entwurfsradar", draftRadarDesc: (n) => `${n} Spielentwürfe haben die Veröffentlichungsprüfung noch nicht bestanden.`, draftRadarEmptyTitle: "Keine Entwürfe", draftRadarEmptyBody: "Neue unvollständige Kandidaten erscheinen nach dem nächsten Datenabruf hier.",
     metaDescHome: "Täglich aktualisierter Index für kommende und beliebte Spiele mit ausführlichen Wikis, bestätigten Daten und ausgewählten Quellen.", gameMetaTitle: (t) => `${t} – Release, Plattformen & Guides | GameRadar`, gameMetaDesc: (t, dev, pub) => `${t}: Veröffentlichung, Plattformen, Genres und offizielle Links – entwickelt von ${dev}${pub ? `, veröffentlicht von ${pub}` : ""}.`, genreMetaDesc: (label, n) => `${n} ${label}-Spiele mit kommenden Veröffentlichungen, aktuellen Titeln, Plattformen, Entwicklern und offiziellen Links.`, platformMetaDesc: (label, n) => `${n} Spiele für ${label} mit Genres, Entwicklern, Veröffentlichungsterminen und offiziellen Links.`,
@@ -386,7 +389,7 @@ export const UI = {
     tabAll: "すべて", tabUpcoming: "発売予定", tabTrending: "注目作", tabOwned: "運営Wiki", genreFilterLabel: "ジャンルで絞り込む", genreFilterAll: "すべてのジャンル", railUpcoming: "発売予定のゲーム", railTrending: "今週の注目作", railAll: "すべてのゲーム", countSuffix: "本", emptyTitle: "該当するゲームがありません", emptyBody: "別のキーワードを試すか、発売予定作をご覧ください。", searchResultsFor: (q) => `「${q}」の検索結果`,
     pillOwned: "運営Wiki", pillNav: "情報ページ", pillLive: "発売中", ctaOwned: "Wikiへ", ctaNav: "詳細を見る",
     relLive: "発売中", relTBA: "未定", relReleased: "発売済み", relToday: "本日発売", relDaysUntil: (d) => `発売まで${d}日`,
-    breadcrumbBack: "← GameRadarへ戻る", draftBanner: "⚠ このページは品質基準を満たしていない下書きです。内部確認用のため、検索エンジンには登録されません。", factReleaseDate: "発売日", factDeveloper: "開発会社", factPublisher: "販売会社", factPlatforms: "対応機種", factGenres: "ジャンル", factHype: "注目度", relatedLinks: "関連リンク", noLinks: "利用できるリンクはまだありません", detailNote: "確認済みの基本情報と厳選した情報源をまとめたページです。信頼できる情報が揃った項目から詳しい攻略を公開します。",
+    breadcrumbBack: "← GameRadarへ戻る", draftBanner: "⚠ このページは品質基準を満たしていない下書きです。内部確認用のため、検索エンジンには登録されません。", factReleaseDate: "発売日", factDeveloper: "開発会社", factPublisher: "販売会社", factPlatforms: "対応機種", factGenres: "ジャンル", factHype: "注目度", relatedLinks: "関連リンク", relatedGames: "似ているゲーム", noLinks: "利用できるリンクはまだありません", detailNote: "確認済みの基本情報と厳選した情報源をまとめたページです。信頼できる情報が揃った項目から詳しい攻略を公開します。",
     linkOfficial: "公式サイト", linkOfficialSub: "ゲームの一次情報", linkSteam: "Steamストア", linkSteamSub: "動作環境・価格・レビュー", linkReddit: "Redditコミュニティ", linkRedditSub: "プレイヤーの議論と情報", linkDiscord: "公式Discord", linkDiscordSub: "リアルタイムコミュニティ", linkFanwiki: "ファンWiki", linkFanwikiSub: "コミュニティ運営のデータベース", linkEpicgames: "Epic Gamesストア", linkEpicgamesSub: "動作環境・価格", linkGog: "GOGストア", linkGogSub: "DRMフリー版",
     genresPageTitle: "ジャンルから探す", platformsPageTitle: "プラットフォームから探す", draftRadarTitle: "下書きレーダー", draftRadarDesc: (n) => `公開品質基準を満たしていない候補ゲームは${n}本です。`, draftRadarEmptyTitle: "下書きはありません", draftRadarEmptyBody: "データ取得後、情報が不足している候補がここに表示されます。",
     metaDescHome: "発売予定作と注目作を毎日更新するゲーム攻略インデックス。完全攻略Wiki、確認済みデータ、厳選した関連情報を掲載。", gameMetaTitle: (t) => `${t} 攻略・発売日・対応機種 | GameRadar`, gameMetaDesc: (t, dev, pub) => `${t}の発売日、対応機種、ジャンル、公式リンクを掲載。開発：${dev}${pub ? `、販売：${pub}` : ""}。`, genreMetaDesc: (label, n) => `${label}ゲーム${n}本を掲載。発売予定作と注目作の対応機種、開発会社、公式リンクを確認できます。`, platformMetaDesc: (label, n) => `${label}対応ゲーム${n}本を掲載。ジャンル、開発会社、発売日、公式リンクを確認できます。`,

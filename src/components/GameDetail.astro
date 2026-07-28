@@ -1,12 +1,27 @@
 ---
 import { fmtDate, relText, availableLinks, buildJsonLd, slugify, displayTitle, translateGenres, buildFaqItems } from "../lib/games.js";
 import { t } from "../i18n/ui.js";
+import gamesData from "../../data/games.json";
+import GameCard from "./GameCard.astro";
 
 const { game, pageUrl, locale, isDraft = false } = Astro.props;
 const links = availableLinks(game, locale);
 const jsonLd = buildJsonLd(game, pageUrl, locale);
 const title = displayTitle(game, locale);
 const genresLocalized = translateGenres(game.genres, locale);
+
+// 同类型游戏：跟当前游戏共享至少一个类型标签、排除自己、按热度排序，取前 4 个。
+// 类型标签是从 Excel 选题库来的自由文本，同一个类型不同游戏之间大小写、措辞可能有细微差异
+// （比如 "RPG" 和 "rpg"），比较之前先用 slugify 归一化，不然会漏掉本来该算相关的游戏。
+// 这是真实存在的内部链接（不是硬凑的相关推荐），能帮用户继续在站内逛，也给搜索引擎
+// 多一条从这款游戏爬到其他游戏页面的路径。
+const gameGenreSlugs = new Set((game.genres || []).map((g) => slugify(g)));
+const relatedGames = (gameGenreSlugs.size
+  ? gamesData.games
+      .filter((g) => g.slug !== game.slug && g.genres?.some((genre) => gameGenreSlugs.has(slugify(genre))))
+      .sort((a, b) => (b.hype ?? 0) - (a.hype ?? 0))
+  : []
+).slice(0, 4);
 const editorial = game.content?.[locale] || {};
 const copy = {
   en: {
@@ -50,7 +65,17 @@ const faqJsonLd = {
 {!isDraft && <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />}
 
 <div class="detail-wrap">
-  <div class="crumb"><a href={`/${locale}/`}>{t(locale, "breadcrumbBack")}</a></div>
+  <div class="crumb">
+    <a href={`/${locale}/`}>{t(locale, "breadcrumbBack")}</a>
+    {game.genres?.[0] && (
+      <>
+        <span aria-hidden="true">/</span>
+        <a href={`/${locale}/genre/${slugify(game.genres[0])}/`}>{genresLocalized[0]}</a>
+      </>
+    )}
+    <span aria-hidden="true">/</span>
+    <span>{title}</span>
+  </div>
 
   {isDraft && <div class="draft-banner">{t(locale, "draftBanner")}</div>}
 
@@ -114,6 +139,15 @@ const faqJsonLd = {
     <section class="wiki-section source-section">
       <h2>{copy.sources}</h2>
       <ul>{editorial.sources.map((source) => <li><a href={source.url} target="_blank" rel="noopener">{source.label}</a></li>)}</ul>
+    </section>
+  )}
+
+  {relatedGames.length > 0 && (
+    <section class="wiki-section" aria-labelledby="related-games-title">
+      <h2 id="related-games-title">{t(locale, "relatedGames")}</h2>
+      <div class="grid" style="margin-top:14px">
+        {relatedGames.map((g) => <GameCard game={g} locale={locale} />)}
+      </div>
     </section>
   )}
 

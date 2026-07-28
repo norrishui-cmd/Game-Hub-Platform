@@ -1,0 +1,17 @@
+---
+import Base from "../layouts/Base.astro";
+import { t } from "../i18n/ui.js";
+
+const locale = "en";
+---
+<Base locale={locale} title={`404 — Page not found | GameRadar`} description="This page doesn't exist or may have moved." noindex={true}>
+  <main class="wrap" style="padding:80px 0; text-align:center">
+    <div style="font-family:var(--fd); font-size:72px; font-weight:700; color:var(--indigo); line-height:1">404</div>
+    <h1 style="margin:16px 0 8px">Page not found</h1>
+    <p style="color:var(--muted); margin:0 0 28px">The page you're looking for doesn't exist, or the link may be out of date.</p>
+    <a class="btn btn-primary" href="/en/">
+      Back to GameRadar
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+    </a>
+  </main>
+</Base>

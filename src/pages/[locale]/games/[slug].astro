@@ -4,7 +4,7 @@ import GameDetail from "../../../components/GameDetail.astro";
 import gamesData from "../../../../data/games.json";
 import { LOCALES } from "../../../i18n/locales.js";
 import { t } from "../../../i18n/ui.js";
-import { hasOwnPage, displayTitle, isGameIndexable } from "../../../lib/games.js";
+import { hasOwnPage, displayTitle, isGameIndexable, slugify, translateGenre, buildBreadcrumbJsonLd } from "../../../lib/games.js";
 
 export function getStaticPaths() {
   const wikiModules = import.meta.glob("../../../../data/wiki/*.json", { eager: true, import: "default" });
@@ -26,6 +26,19 @@ const title = displayTitle(game, locale);
 const pageUrl = `${site}/${locale}/games/${game.slug}/`;
 const indexable = isGameIndexable(game, locale);
 const indexableLocales = LOCALES.filter((l) => isGameIndexable(game, l));
+
+// 面包屑：首页 → 主类型分类页 → 游戏名。有类型信息的话多一层，
+// 既方便用户从游戏页反向逛到同类型的其他游戏，也是真实存在的可点击链路
+// （不是凑数据凑出来的假面包屑），符合 Google 结构化数据要跟页面实际导航一致的要求。
+const primaryGenre = game.genres?.[0];
+const breadcrumbItems = [{ name: "GameRadar", url: `${site}/${locale}/` }];
+if (primaryGenre) {
+  breadcrumbItems.push({
+    name: translateGenre(primaryGenre, locale),
+    url: `${site}/${locale}/genre/${slugify(primaryGenre)}/`,
+  });
+}
+breadcrumbItems.push({ name: title, url: pageUrl });
 ---
 <Base
   locale={locale}
@@ -34,6 +47,9 @@ const indexableLocales = LOCALES.filter((l) => isGameIndexable(game, l));
   pathSuffix={`/games/${game.slug}/`}
   noindex={!indexable}
   indexableLocales={indexableLocales}
+  image={game.cover}
+  ogType="article"
+  jsonLd={buildBreadcrumbJsonLd(breadcrumbItems)}
 >
   <GameDetail game={game} pageUrl={pageUrl} locale={locale} isDraft={false} />
 </Base>

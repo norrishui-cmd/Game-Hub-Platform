@@ -156,6 +156,20 @@ export function collectTaxonomy(games, field) {
   return [...map.values()].sort((a, b) => b.count - a.count);
 }
 
+export function buildBreadcrumbJsonLd(items) {
+  // items: [{ name, url }, ...]，第一项一般是首页
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
 export function buildJsonLd(game, pageUrl, locale = DEFAULT_LOCALE) {
   const jsonLd = {
     "@context": "https://schema.org",
