@@ -1,0 +1,27 @@
+{
+  "publishStatus": "published",
+  "content": {
+    "en": {
+      "summary": "Star Wars Zero Company is a single-player, turn-based tactics game set in the twilight of the Clone Wars. Developed by Bit Reactor — a studio founded by veterans of the XCOM series — in collaboration with Electronic Arts and Lucasfilm Games, it puts players in command of Hawks, a disgraced former Republic officer who forms an unconventional squad of operatives known as Zero Company. The team operates in the shadows of the war, hunting Kundri Fathom and the Infinite Coil, a Separatist-aligned cult spreading a deadly shadow plague across the galaxy.",
+      "faq": [
+        { "question": "When does Star Wars Zero Company release?", "answer": "August 27, 2026, on PC, PlayStation 5, and Xbox Series X/S." },
+        { "question": "Who is developing Star Wars Zero Company?", "answer": "Bit Reactor, a studio founded by former XCOM developers, in collaboration with Electronic Arts and Lucasfilm Games." },
+        { "question": "What kind of game is Star Wars Zero Company?", "answer": "A single-player, turn-based tactics game — similar in structure to XCOM — set during the Clone Wars era." },
+        { "question": "Who are the main characters?", "answer": "The player controls Hawks, a customizable former Republic officer, alongside a squad of Operators including Trick, Kundri Fathom (as an antagonist), and M-3VO/Meevo. The cast features returning Clone Wars voice actors including Dee Bradley Baker and Matt Lanter as Anakin Skywalker." }
+      ],
+      "guideSections": [
+        { "title": "Squad Building & Bond Synergies", "description": "How Operator bonds, class combinations, and Advantage/Overwatch mechanics interact — the foundation of building an effective squad before mission select." },
+        { "title": "Operators & Classes Overview", "description": "A breakdown of the twelve confirmed classes, their roles in combat, and which Operators pair well together based on known synergy and friction mechanics." }
+      ],
+      "sources": [
+        { "label": "EA — Star Wars Zero Company official news", "url": "https://www.ea.com/games/starwars/zero-company/news" },
+        { "label": "Game Informer — cast reveal coverage", "url": "https://gameinformer.com/2026/07/23/star-wars-zero-company-cast-includes-actors-from-clone-wars-hades-ii-resident-evil-and" },
+        { "label": "Star Wars News Net — Collector's Edition & SDCC coverage", "url": "https://www.starwarsnewsnet.com/2026/07/star-wars-zero-company-collectors-edition-revealed-at-san-diego-comic-con-first-single-from-soundtrack-available-now.html" }
+      ]
+    },
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+  }
+}
