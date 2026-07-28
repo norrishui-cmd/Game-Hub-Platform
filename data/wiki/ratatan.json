@@ -1,59 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Ratatan is an upcoming Rhythm strategy game for PC, PS5, Xbox, Switch 2. It is scheduled to release on October 15, 2026.",
+      "summary": "Ratatan is a rhythm roguelike from Ratata Arts and TVT Co., Ltd., published by Game Source Entertainment, widely seen as the spiritual successor to the Patapon series since it's led by Patapon creator Hiroyuki Kotani and several of the original developers. Funded through a Kickstarter that raised over $1 million, it launched into PC Early Access on September 18, 2025, with console versions for PlayStation, Xbox, and Switch following in 2026, casting players as a conductor who issues rhythm-timed commands to an army of small creatures called Ratatan.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Ratatan is confirmed for PC, PS5, Xbox, Switch 2. The current release target is October 15, 2026, though release dates for smaller studios can still shift. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "Rhythm Commands & Roguelike Runs", "description": "Instead of standard action inputs, players issue orders — Attack, Defend, and Specials — by hitting buttons in sync with the game's music, directly evolving Patapon's rhythm-command formula. Each roguelike run through procedurally generated stages grants temporary upgrades and items that are lost on death, alongside permanent unlocks that persist between runs." },
+        { "title": "Online Co-op for Up to 4 Players", "description": "Ratatan supports online co-op for up to four players commanding their armies together, a feature the original Patapon games never had, with battles scaling up to over 100 characters fighting in a single melee." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "AllKeyShop — Early Access launch, console timeline, and Patapon connection", "url": "https://www.allkeyshop.com/blog/ratatan-release-gameplay-early-access-features-news-k/" },
+        { "label": "Gaming Age — Early Access launch coverage and developer statement", "url": "https://gaming-age.com/2025/09/ratatan-rhythmically-and-strategically-hits-steam-early-access/" }
+      ]
     },
-    "de": {
-      "summary": "Ratatan ist ein kommendes Rhythm strategy-Spiel für PC, PS5, Xbox, Switch 2. Der Release ist für den 15. Oktober 2026 geplant.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Ratatan ist für PC, PS5, Xbox, Switch 2 bestätigt. Aktuell wird der 15. Oktober 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Ratatanは発売予定のRhythm strategyゲームで、対応プラットフォームはPC・PS5・Xbox・Switch 2。発売日は2026年10月15日を予定しています。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "RatatanはPC・PS5・Xbox・Switch 2での発売が確認されています。現時点では2026年10月15日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Ratatan es un próximo juego de Rhythm strategy para PC, PS5, Xbox, Switch 2. Su lanzamiento está previsto para el 15 de octubre de 2026.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Ratatan está confirmado para PC, PS5, Xbox, Switch 2. La fecha prevista es el 15 de octubre de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "Ratatan 是一款即将发行的Rhythm strategy游戏，登陆 PC、PS5、Xbox、Switch 2。目前定档 2026年10月15日 发行。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "Ratatan 目前确认登陆 PC、PS5、Xbox、Switch 2。目前定档 2026年10月15日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

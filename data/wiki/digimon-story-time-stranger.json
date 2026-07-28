@@ -1,59 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Digimon Story Time Stranger is a released JRPG, monster collecting game for Switch, Switch 2. It is available now.",
+      "summary": "Digimon Story: Time Stranger is the seventh entry in the Digimon Story subseries, developed by Media.Vision and published by Bandai Namco, which launched on PS5, Xbox Series X/S, and PC on October 3, 2025 before arriving on Nintendo Switch and Switch 2 on July 10, 2026. Following an agent of the organization ADAMAS investigating a catastrophic event that destroys Tokyo and sends the protagonist eight years into the past, it became Bandai Namco's biggest PC JRPG launch, surpassing every Persona and single-player Final Fantasy title's concurrent player count on Steam.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Digimon Story Time Stranger is confirmed for Switch, Switch 2. The game has already launched, so platform availability is confirmed. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "3-on-3 Turn-Based Combat & the DigiFarm", "description": "The game retains the series' signature 3-on-3 turn-based combat and Digivolving/De-Digivolving mechanics, adding new \"Digimon Personalities\" and \"Agent Skills\" systems, alongside a DigiFarm feature where Digimon not in active battle can passively train, gather resources, and craft items on their own." },
+        { "title": "A Standalone Story, 450+ Digimon", "description": "Time Stranger is fully standalone and requires no knowledge of Digimon Story: Cyber Sleuth, featuring a new cast of characters and over 450 collectible Digimon; a story expansion DLC was subsequently announced for a 2027 release." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "GamesRadar+ — official review with developer/publisher details and Steam performance", "url": "https://www.gamesradar.com/games/jrpg/digimon-story-time-stranger-review/" },
+        { "label": "Wikipedia — release dates across all platforms", "url": "https://en.wikipedia.org/wiki/Digimon_Story:_Time_Stranger" }
+      ]
     },
-    "de": {
-      "summary": "Digimon Story Time Stranger ist ein veröffentlichtes JRPG, monster collecting-Spiel für Switch, Switch 2. Es ist bereits erhältlich.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Digimon Story Time Stranger ist für Switch, Switch 2 bestätigt. Das Spiel ist bereits erschienen, die Plattformverfügbarkeit ist damit bestätigt. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Digimon Story Time StrangerはJRPG・monster collectingゲームで、対応プラットフォームはSwitch・Switch 2。現在すでに発売中です。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "Digimon Story Time StrangerはSwitch・Switch 2での発売が確認されています。すでに発売済みのため、対応プラットフォームは確定情報です。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Digimon Story Time Stranger es un juego de JRPG, monster collecting para Switch, Switch 2. Ya está disponible.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Digimon Story Time Stranger está confirmado para Switch, Switch 2. El juego ya se ha lanzado, por lo que la disponibilidad de plataformas está confirmada. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "Digimon Story Time Stranger 是一款已经发行的JRPG、monster collecting游戏，登陆 Switch、Switch 2。目前已经上线。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "Digimon Story Time Stranger 目前确认登陆 Switch、Switch 2。游戏已经正式上线，平台信息已经确认。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

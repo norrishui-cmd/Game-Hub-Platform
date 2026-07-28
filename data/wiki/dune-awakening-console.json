@@ -1,59 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Dune: Awakening Console is an upcoming Survival MMO game for PS5, Xbox. It is scheduled to release on September 22, 2026.",
+      "summary": "Dune: Awakening's console edition brings Funcom's open-world survival MMO to PlayStation 5 and Xbox Series X/S on September 22, 2026, more than a year after its June 2025 PC debut, arriving day one on Xbox Game Pass Ultimate and PC Game Pass with full Xbox Play Anywhere cross-progression. The console release bundles every content update and improvement shipped on PC to date, alongside a major simultaneous update completing the finale of the game's Book One story across all platforms.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Dune: Awakening Console is confirmed for PS5, Xbox. The current release target is September 22, 2026, though release dates for smaller studios can still shift. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "Built for Controllers", "description": "Rather than a straight port, Funcom rebuilt Dune: Awakening's controls and UI specifically for console play, offering a Performance mode targeting 60fps on PS5 and Xbox Series X and a Quality mode that prioritizes visuals, alongside a physical PlayStation 5 edition." },
+        { "title": "A New Single-Player Mode", "description": "The September 2026 update adds a full single-player mode with scalable difficulty on top of the existing multiplayer survival experience, letting players experience the complete Book One cinematic story — spanning Acts 1 through 4 — solo from start to finish for the first time." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "Gematsu — official console release date and platform details", "url": "https://www.gematsu.com/2026/06/dune-awakening-for-ps5-xbox-series-launches-september-22" },
+        { "label": "Dune: Awakening official site — console date and single-player announcement", "url": "https://duneawakening.com/news/console-date-and-single-player-announced/" }
+      ]
     },
-    "de": {
-      "summary": "Dune: Awakening Console ist ein kommendes Survival MMO-Spiel für PS5, Xbox. Der Release ist für den 22. September 2026 geplant.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Dune: Awakening Console ist für PS5, Xbox bestätigt. Aktuell wird der 22. September 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Dune: Awakening Consoleは発売予定のSurvival MMOゲームで、対応プラットフォームはPS5・Xbox。発売日は2026年9月22日を予定しています。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "Dune: Awakening ConsoleはPS5・Xboxでの発売が確認されています。現時点では2026年9月22日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Dune: Awakening Console es un próximo juego de Survival MMO para PS5, Xbox. Su lanzamiento está previsto para el 22 de septiembre de 2026.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Dune: Awakening Console está confirmado para PS5, Xbox. La fecha prevista es el 22 de septiembre de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "Dune: Awakening Console 是一款即将发行的Survival MMO游戏，登陆 PS5、Xbox。目前定档 2026年9月22日 发行。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "Dune: Awakening Console 目前确认登陆 PS5、Xbox。目前定档 2026年9月22日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }
