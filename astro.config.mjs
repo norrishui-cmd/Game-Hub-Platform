@@ -1,6 +1,8 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
+import { readFileSync, readdirSync } from "node:fs";
 import gamesData from "./data/games.json";
+import { isGameIndexable } from "./src/lib/games.js";
 
 const taxonomyCounts = (field) => {
   const counts = new Map();
@@ -12,6 +14,31 @@ const taxonomyCounts = (field) => {
 };
 const genreCounts = taxonomyCounts("genres");
 const platformCounts = taxonomyCounts("platforms");
+
+// 跟 [slug].astro / faq.astro / release-date.astro 的 getStaticPaths 用的是同一份逻辑：
+// 把 data/wiki/<slug>.json 的 content/publishStatus 合并进游戏对象，再判断收录资格。
+// 之前这里对非英文 /games/ 页面是"不管三七二十一整个排除"，现在选题库批量生成了
+// 5 种语言的基础内容之后，这条一刀切规则已经过时——改成跟页面上 <meta name="robots">
+// 实际展示的收录状态完全一致，sitemap 才不会自相矛盾（列出的都是真的可收录的页面）。
+const wikiBySlug = new Map();
+try {
+  for (const file of readdirSync("./data/wiki")) {
+    if (!file.endsWith(".json")) continue;
+    const slug = file.replace(/\.json$/, "");
+    wikiBySlug.set(slug, JSON.parse(readFileSync(`./data/wiki/${file}`, "utf-8")));
+  }
+} catch {
+  // data/wiki 目录不存在也不报错，这种情况下所有游戏都当作没有 wiki 内容处理
+}
+const gamesBySlug = new Map(gamesData.games.map((g) => [g.slug, g]));
+
+function isGamePathIndexable(locale, slug) {
+  const base = gamesBySlug.get(slug);
+  if (!base) return false;
+  const wiki = wikiBySlug.get(slug) || {};
+  const game = { ...base, publishStatus: wiki.publishStatus, content: wiki.content };
+  return isGameIndexable(game, locale);
+}
 
 export default defineConfig({
   // sitemap、hreflang、JSON-LD 里的绝对链接都靠这个字段拼出来。
@@ -38,7 +65,15 @@ export default defineConfig({
       serialize(item) {
         const path = new URL(item.url).pathname;
         if (path.includes("/games/draft/")) return undefined;
-        if (/\/(de|ja|es|zh)\/games\//.test(path)) return undefined;
+
+        // 游戏主页、FAQ 长尾页、发行日期长尾页，三种路径都走同一套收录判定。
+        const gameMatch = path.match(/^\/(en|de|ja|es|zh)\/games\/([^/]+)\/(?:(faq|release-date)\/)?$/);
+        if (gameMatch) {
+          const [, locale, slug] = gameMatch;
+          if (!isGamePathIndexable(locale, slug)) return undefined;
+          return item;
+        }
+
         if (/\/(de|ja|es|zh)\/(genres|platforms)\/$/.test(path)) return undefined;
         const taxonomy = path.match(/^\/(en|de|ja|es|zh)\/(genre|platform)\/([^/]+)\/$/);
         if (taxonomy) {

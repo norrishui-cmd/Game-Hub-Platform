@@ -1,0 +1,71 @@
+---
+import Base from "../../../../layouts/Base.astro";
+import gamesData from "../../../../../data/games.json";
+import { LOCALES } from "../../../../i18n/locales.js";
+import { t } from "../../../../i18n/ui.js";
+import { hasOwnPage, displayTitle, isGameIndexable, buildExtendedFaqItems, buildBreadcrumbJsonLd } from "../../../../lib/games.js";
+
+export async function getStaticPaths() {
+  const wikiModules = import.meta.glob("../../../../../data/wiki/*.json", { eager: true, import: "default" });
+  const wikiBySlug = Object.fromEntries(Object.entries(wikiModules).map(([file, value]) => [file.split("/").pop().replace(".json", ""), value]));
+  const publishable = gamesData.games.filter(hasOwnPage);
+  return LOCALES.flatMap((locale) =>
+    publishable.map((baseGame) => {
+      const wiki = wikiBySlug[baseGame.slug] || {};
+      const game = { ...baseGame, publishStatus: wiki.publishStatus, content: wiki.content };
+      return { params: { locale, slug: game.slug }, props: { game } };
+    })
+  );
+}
+
+const { locale } = Astro.params;
+const { game } = Astro.props;
+const site = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
+const title = displayTitle(game, locale);
+const pageUrl = `${site}/${locale}/games/${game.slug}/faq/`;
+// 长尾 FAQ 页跟主详情页共用同一套收录判定——内容深度来自同一份数据，没道理分开评估。
+const indexable = isGameIndexable(game, locale);
+const indexableLocales = LOCALES.filter((l) => isGameIndexable(game, l));
+const faqItems = buildExtendedFaqItems(game, locale);
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqItems.map((item) => ({ "@type": "Question", name: item.question, acceptedAnswer: { "@type": "Answer", text: item.answer } })),
+};
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: "GameRadar", url: `${site}/${locale}/` },
+  { name: title, url: `${site}/${locale}/games/${game.slug}/` },
+  { name: t(locale, "gameFaqPageTitle", title), url: pageUrl },
+]);
+---
+<Base
+  locale={locale}
+  title={`${t(locale, "gameFaqPageTitle", title)} | GameRadar`}
+  description={t(locale, "gameFaqIntro", title)}
+  pathSuffix={`/games/${game.slug}/faq/`}
+  noindex={!indexable}
+  indexableLocales={indexableLocales}
+  image={game.cover}
+  jsonLd={[faqJsonLd, breadcrumbJsonLd]}
+>
+  <main class="wrap" style="padding-top:28px; max-width:760px">
+    <p class="crumb">
+      <a href={`/${locale}/`}>GameRadar</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/${locale}/games/${game.slug}/`}>{title}</a>
+      <span aria-hidden="true">/</span>
+      <span>{t(locale, "gameFaqPageTitle", title)}</span>
+    </p>
+    <h1 style="font-family:var(--fd); font-size:clamp(24px,4vw,34px); margin:0 0 8px">{t(locale, "gameFaqPageTitle", title)}</h1>
+    <p style="color:var(--muted); margin:0 0 26px">{t(locale, "gameFaqIntro", title)}</p>
+
+    <div class="answer-list">
+      {faqItems.map((item) => <article><h3>{item.question}</h3><p>{item.answer}</p></article>)}
+    </div>
+
+    <p style="margin-top:28px">
+      <a href={`/${locale}/games/${game.slug}/`} style="color:var(--indigo); font-weight:700; text-decoration:none">← {title}</a>
+    </p>
+  </main>
+</Base>

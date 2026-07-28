@@ -1,0 +1,105 @@
+---
+import Base from "../../../../layouts/Base.astro";
+import gamesData from "../../../../../data/games.json";
+import { LOCALES } from "../../../../i18n/locales.js";
+import { t } from "../../../../i18n/ui.js";
+import { hasOwnPage, displayTitle, isGameIndexable, fmtDate, relText, buildPlatformQA, buildBreadcrumbJsonLd, slugify } from "../../../../lib/games.js";
+
+export async function getStaticPaths() {
+  const wikiModules = import.meta.glob("../../../../../data/wiki/*.json", { eager: true, import: "default" });
+  const wikiBySlug = Object.fromEntries(Object.entries(wikiModules).map(([file, value]) => [file.split("/").pop().replace(".json", ""), value]));
+  const publishable = gamesData.games.filter(hasOwnPage);
+  return LOCALES.flatMap((locale) =>
+    publishable.map((baseGame) => {
+      const wiki = wikiBySlug[baseGame.slug] || {};
+      const game = { ...baseGame, publishStatus: wiki.publishStatus, content: wiki.content };
+      return { params: { locale, slug: game.slug }, props: { game } };
+    })
+  );
+}
+
+const { locale } = Astro.params;
+const { game } = Astro.props;
+const site = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
+const title = displayTitle(game, locale);
+const pageUrl = `${site}/${locale}/games/${game.slug}/release-date/`;
+const indexable = isGameIndexable(game, locale);
+const indexableLocales = LOCALES.filter((l) => isGameIndexable(game, l));
+const platformQA = buildPlatformQA(game, locale);
+const isLive = game.status === "live";
+const hasDate = game.release && game.release !== "TBA";
+
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: "GameRadar", url: `${site}/${locale}/` },
+  { name: title, url: `${site}/${locale}/games/${game.slug}/` },
+  { name: t(locale, "gameReleaseDatePageTitle", title), url: pageUrl },
+]);
+---
+<Base
+  locale={locale}
+  title={`${t(locale, "gameReleaseDatePageTitle", title)} | GameRadar`}
+  description={t(locale, "gameReleaseDateIntro", title)}
+  pathSuffix={`/games/${game.slug}/release-date/`}
+  noindex={!indexable}
+  indexableLocales={indexableLocales}
+  image={game.cover}
+  jsonLd={breadcrumbJsonLd}
+>
+  <main class="wrap" style="padding-top:28px; max-width:760px">
+    <p class="crumb">
+      <a href={`/${locale}/`}>GameRadar</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/${locale}/games/${game.slug}/`}>{title}</a>
+      <span aria-hidden="true">/</span>
+      <span>{t(locale, "gameReleaseDatePageTitle", title)}</span>
+    </p>
+    <h1 style="font-family:var(--fd); font-size:clamp(24px,4vw,34px); margin:0 0 8px">{t(locale, "gameReleaseDatePageTitle", title)}</h1>
+    <p style="color:var(--muted); margin:0 0 26px">{t(locale, "gameReleaseDateIntro", title)}</p>
+
+    {isLive ? (
+      <div class="chip" style="font-size:15px; padding:10px 18px; display:inline-block; margin-bottom:20px">🟢 {t(locale, "releasedAlready")} — {fmtDate(game.release, locale)}</div>
+    ) : hasDate ? (
+      <div style="margin-bottom:28px">
+        <div class="lbl" style="font-size:12px; color:var(--faint); font-weight:700; text-transform:uppercase; letter-spacing:.04em; margin-bottom:8px">{t(locale, "daysUntilRelease")}</div>
+        <div class="cd-row">
+          <div class="cd-cell"><b id="cd-d">–</b><span>{t(locale, "unitDays")}</span></div>
+          <div class="cd-cell"><b id="cd-h">–</b><span>{t(locale, "unitHours")}</span></div>
+          <div class="cd-cell"><b id="cd-m">–</b><span>{t(locale, "unitMinutes")}</span></div>
+          <div class="cd-cell"><b id="cd-s">–</b><span>{t(locale, "unitSeconds")}</span></div>
+        </div>
+        <div class="rel" style="margin-top:12px; text-align:left">{fmtDate(game.release, locale)} · {relText(game, locale)}</div>
+      </div>
+    ) : (
+      <p class="note">{t(locale, "relTBA")}</p>
+    )}
+
+    <h2 style="font-size:20px; margin:8px 0 14px">{t(locale, "factPlatforms")}</h2>
+    <div class="answer-list">
+      {platformQA.map((item) => <article><h3>{item.question}</h3><p>{item.answer}</p></article>)}
+    </div>
+
+    <p style="margin-top:28px">
+      <a href={`/${locale}/games/${game.slug}/`} style="color:var(--indigo); font-weight:700; text-decoration:none">← {title}</a>
+    </p>
+  </main>
+</Base>
+
+{!isLive && hasDate && (
+  <script define:vars={{ releaseIso: game.release }}>
+    function startCountdown(iso) {
+      const set = (k, v) => { const e = document.querySelector("#cd-" + k); if (e) e.textContent = String(v).padStart(2, "0"); };
+      const target = new Date(iso + "T00:00:00").getTime();
+      const tick = () => {
+        let diff = Math.max(0, target - Date.now());
+        const d = Math.floor(diff / 864e5); diff -= d * 864e5;
+        const h = Math.floor(diff / 36e5); diff -= h * 36e5;
+        const m = Math.floor(diff / 6e4); diff -= m * 6e4;
+        const s = Math.floor(diff / 1e3);
+        set("d", d); set("h", h); set("m", m); set("s", s);
+      };
+      tick();
+      setInterval(tick, 1000);
+    }
+    startCountdown(releaseIso);
+  </script>
+)}

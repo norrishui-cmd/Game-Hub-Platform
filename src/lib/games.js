@@ -144,6 +144,46 @@ export function buildFaqItems(game, locale = DEFAULT_LOCALE) {
   return items;
 }
 
+// 全站认可的平台标签集合，跟 platforms.astro 分类页用的是同一份口径。
+// 用来生成"是否登陆XX平台"这类长尾问答——不管这款游戏实际有没有登陆某个平台，
+// 只要回答准确（有 → 平台+发行状态；没有 → 明确说目前没有），就是真实有用的内容，
+// 不是编出来的。
+export const CANONICAL_PLATFORMS = ["PC", "PS5", "Xbox Series", "Xbox", "Switch", "Switch 2", "Mobile", "Console"];
+
+export function buildPlatformQA(game, locale = DEFAULT_LOCALE) {
+  const title = displayTitle(game, locale);
+  const has = new Set(game.platforms || []);
+  return CANONICAL_PLATFORMS.map((p) => ({
+    question: t(locale, "isOnPlatformQ", title, p),
+    answer: has.has(p) ? t(locale, "yesOnPlatform", p) : t(locale, "noOnPlatform", p),
+  }));
+}
+
+function anticipationLevel(hype) {
+  if (hype >= 80) return "high";
+  if (hype >= 60) return "strong";
+  if (hype >= 40) return "moderate";
+  return "early";
+}
+
+// 长尾 FAQ 汇总页专用：在主页那 3-4 条基础问答之上，加上类型问答、逐平台问答、
+// 关注度问答，覆盖更多具体的搜索词（"XX值得关注吗" "XX上Switch吗" 这类）。
+// 跟主详情页的 buildFaqItems() 是两套不同深度的内容，不是同一份东西拆两页。
+export function buildExtendedFaqItems(game, locale = DEFAULT_LOCALE) {
+  const title = displayTitle(game, locale);
+  const base = buildFaqItems(game, locale);
+  const items = [...base];
+
+  if (game.genres?.length) {
+    items.push({ question: t(locale, "faqGenreQ", title), answer: translateGenres(game.genres, locale).join(locale === "zh" ? "、" : locale === "ja" ? "・" : ", ") });
+  }
+  if (typeof game.hype === "number") {
+    items.push({ question: t(locale, "faqAnticipationQ", title), answer: t(locale, `anticipation_${anticipationLevel(game.hype)}`) });
+  }
+  items.push(...buildPlatformQA(game, locale));
+  return items;
+}
+
 export function collectTaxonomy(games, field) {
   const map = new Map(); // slug -> { label, count }（label 始终是英文原名，展示时再翻译）
   for (const g of games) {
