@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-28T08:35:25.592Z",
+  "generatedAt": "2026-07-28T08:47:51.854Z",
   "count": 105,
   "games": [
     {
@@ -1345,7 +1345,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/hell-let-loose-vietnam-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#1f8a7a",
@@ -1397,7 +1397,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/iron-nest-heavy-turret-simulator-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#7a5cff",
@@ -1502,7 +1502,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/corsair-cove-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#b0453f",
@@ -1529,7 +1529,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/stronghold-4-early-access-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#8a3d2f",
@@ -1798,7 +1798,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/survive-the-apocalypse-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#8a3d2f",
@@ -1827,7 +1827,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/final-fantasy-resonance-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#5b6cff",
@@ -1856,7 +1856,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/minecraft-dungeons-ii-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#3a6d8c",
@@ -1883,7 +1883,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/castlevania-belmont-s-curse-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#e8624a",
@@ -1911,7 +1911,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/clive-barker-s-hellraiser-revival-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#7a5cff",
@@ -1939,7 +1939,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/halloween-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#7a5cff",
@@ -2073,7 +2073,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/tides-of-annihilation-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#5b6cff",
@@ -2286,7 +2286,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/trails-in-the-sky-2nd-chapter-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#5b6cff",

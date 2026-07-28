@@ -48,5 +48,17 @@
   "falling-frontier": { "cover": "/images/games/falling-frontier-banner.webp", "coverPosition": "center" },
   "the-witch-s-bakery": { "cover": "/images/games/the-witch-s-bakery-banner.webp", "coverPosition": "center" },
   "state-of-decay-3": { "cover": "/images/games/state-of-decay-3-banner.webp", "coverPosition": "center" },
-  "ark-2": { "cover": "/images/games/ark-2-banner.webp", "coverPosition": "center" }
+  "ark-2": { "cover": "/images/games/ark-2-banner.webp", "coverPosition": "center" },
+  "hell-let-loose-vietnam": { "cover": "/images/games/hell-let-loose-vietnam-banner.webp", "coverPosition": "center" },
+  "iron-nest-heavy-turret-simulator": { "cover": "/images/games/iron-nest-heavy-turret-simulator-banner.webp", "coverPosition": "center" },
+  "corsair-cove": { "cover": "/images/games/corsair-cove-banner.webp", "coverPosition": "center" },
+  "stronghold-4-early-access": { "cover": "/images/games/stronghold-4-early-access-banner.webp", "coverPosition": "center" },
+  "survive-the-apocalypse": { "cover": "/images/games/survive-the-apocalypse-banner.webp", "coverPosition": "center" },
+  "final-fantasy-resonance": { "cover": "/images/games/final-fantasy-resonance-banner.webp", "coverPosition": "center" },
+  "minecraft-dungeons-ii": { "cover": "/images/games/minecraft-dungeons-ii-banner.webp", "coverPosition": "center" },
+  "castlevania-belmont-s-curse": { "cover": "/images/games/castlevania-belmont-s-curse-banner.webp", "coverPosition": "center" },
+  "clive-barker-s-hellraiser-revival": { "cover": "/images/games/clive-barker-s-hellraiser-revival-banner.webp", "coverPosition": "center" },
+  "tides-of-annihilation": { "cover": "/images/games/tides-of-annihilation-banner.webp", "coverPosition": "center" },
+  "trails-in-the-sky-2nd-chapter": { "cover": "/images/games/trails-in-the-sky-2nd-chapter-banner.webp", "coverPosition": "center" },
+  "halloween": { "cover": "/images/games/halloween-banner.webp", "coverPosition": "center" }
 }
