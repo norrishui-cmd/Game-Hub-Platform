@@ -37,5 +37,16 @@
   "fire-emblem-fortune-s-weave": { "cover": "/images/games/fire-emblem-fortune-s-weave-banner.webp", "coverPosition": "center" },
   "lego-batman-legacy-of-the-dark-knight": { "cover": "/images/games/lego-batman-legacy-of-the-dark-knight-banner.webp", "coverPosition": "center" },
   "metaphor-refantazio-switch-2": { "cover": "/images/games/metaphor-refantazio-switch-2-banner.webp", "coverPosition": "center" },
-  "dragon-quest-11-s-switch-2-edition": { "cover": "/images/games/dragon-quest-11-s-switch-2-edition-banner.webp", "coverPosition": "center" }
+  "dragon-quest-11-s-switch-2-edition": { "cover": "/images/games/dragon-quest-11-s-switch-2-edition-banner.webp", "coverPosition": "center" },
+  "another-eden-begins": { "cover": "/images/games/another-eden-begins-banner.webp", "coverPosition": "center" },
+  "xenofeels": { "cover": "/images/games/xenofeels-banner.webp", "coverPosition": "center" },
+  "wielders-of-the-essence": { "cover": "/images/games/wielders-of-the-essence-banner.webp", "coverPosition": "center" },
+  "bombanana": { "cover": "/images/games/bombanana-banner.webp", "coverPosition": "center" },
+  "valor-mortis": { "cover": "/images/games/valor-mortis-banner.webp", "coverPosition": "center" },
+  "madden-nfl-27": { "cover": "/images/games/madden-nfl-27-banner.webp", "coverPosition": "center" },
+  "alkahest": { "cover": "/images/games/alkahest-banner.webp", "coverPosition": "center" },
+  "falling-frontier": { "cover": "/images/games/falling-frontier-banner.webp", "coverPosition": "center" },
+  "the-witch-s-bakery": { "cover": "/images/games/the-witch-s-bakery-banner.webp", "coverPosition": "center" },
+  "state-of-decay-3": { "cover": "/images/games/state-of-decay-3-banner.webp", "coverPosition": "center" },
+  "ark-2": { "cover": "/images/games/ark-2-banner.webp", "coverPosition": "center" }
 }

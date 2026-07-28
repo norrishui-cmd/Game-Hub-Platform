@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-28T08:24:35.962Z",
+  "generatedAt": "2026-07-28T08:35:25.592Z",
   "count": 105,
   "games": [
     {
@@ -1666,7 +1666,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/madden-nfl-27-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#8a3d2f",
@@ -1967,7 +1967,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/valor-mortis-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#1f8a7a",
@@ -1994,7 +1994,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/the-witch-s-bakery-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#3a6d8c",
@@ -2020,7 +2020,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/falling-frontier-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#b0453f",
@@ -2046,7 +2046,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/alkahest-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#1f8a7a",
@@ -2100,7 +2100,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/state-of-decay-3-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#8a3d2f",
@@ -2127,7 +2127,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/ark-2-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#1f8a7a",
@@ -2205,7 +2205,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/bombanana-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#7a5cff",
@@ -2258,7 +2258,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/another-eden-begins-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#7a5cff",
@@ -2340,7 +2340,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/wielders-of-the-essence-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#5b6cff",
@@ -2758,7 +2758,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/xenofeels-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#1f8a7a",
