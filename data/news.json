@@ -1,0 +1,77 @@
+{
+  "generatedAt": "2026-07-28T00:00:00.000Z",
+  "_note": "内部说明，不在页面上直接渲染：这一版是人工研究种子数据（真实新闻标题+来源+链接，2026-07-28 搜索整理，偏重攻略/Wiki 视角——衍生版本、角色/阵容公布、玩法机制更新、补丁说明，而非纯粹的评测或八卦）。scripts/fetch-news.mjs 第一次成功运行后，这个文件会被每日自动抓取的滚动列表整体覆盖，schema 保持一致。只存标题+来源+链接，不转载正文，符合版权要求。",
+  "count": 10,
+  "items": [
+    {
+      "title": "Star Wars Zero Company Collector's Edition Revealed at SDCC, First Single From Soundtrack Available Now",
+      "source": "Star Wars News Net",
+      "url": "https://www.starwarsnewsnet.com/2026/07/star-wars-zero-company-collectors-edition-revealed-at-san-diego-comic-con-first-single-from-soundtrack-available-now.html",
+      "publishedAt": "2026-07-26",
+      "relatedSlug": "star-wars-zero-company"
+    },
+    {
+      "title": "Star Wars Zero Company Cast Includes Actors From Clone Wars, Hades II, Resident Evil, And More",
+      "source": "Game Informer",
+      "url": "https://gameinformer.com/2026/07/23/star-wars-zero-company-cast-includes-actors-from-clone-wars-hades-ii-resident-evil-and",
+      "publishedAt": "2026-07-23",
+      "relatedSlug": "star-wars-zero-company"
+    },
+    {
+      "title": "Answering the Internet's Biggest Questions about Star Wars Zero Company",
+      "source": "EA",
+      "url": "https://www.ea.com/games/starwars/zero-company/news/answering-biggest-questions",
+      "publishedAt": "2026-07-21",
+      "relatedSlug": "star-wars-zero-company"
+    },
+    {
+      "title": "Planet Zoo 2 Feature Focus: Seasonal Breeding and Visible Pregnant Bellies Confirmed",
+      "source": "Cozy Games Cove",
+      "url": "https://cozygamescove.com/planet-zoo-2-news-updates/",
+      "publishedAt": "2026-07-25",
+      "relatedSlug": "planet-zoo-2"
+    },
+    {
+      "title": "25-Year-Old Game Is Currently the #1 Best-Selling Game on Steam (Halo: Campaign Evolved Early Access)",
+      "source": "ComicBook.com",
+      "url": "https://comicbook.com/gaming/news/steam-deck-game-pc-best-selling-july-2026/",
+      "publishedAt": "2026-07-26",
+      "relatedSlug": "halo-campaign-evolved"
+    },
+    {
+      "title": "League of Legends Patch 26.14 Notes",
+      "source": "League of Legends",
+      "url": "https://www.leagueoflegends.com/en-us/news/game-updates/league-of-legends-patch-26-14-notes/",
+      "publishedAt": "2026-07-15",
+      "relatedSlug": null
+    },
+    {
+      "title": "Diablo IV: Next Patch (July 28) Will Focus on Bug Fixes Only",
+      "source": "Diablo IV Forums",
+      "url": "https://us.forums.blizzard.com/en/d4/t/next-d4-patch-july-28th/262985",
+      "publishedAt": "2026-07-14",
+      "relatedSlug": null
+    },
+    {
+      "title": "Weekly Top Selling Games on Steam (20th–26th of July 2026)",
+      "source": "GameGrin",
+      "url": "https://www.gamegrin.com/news/weekly-top-selling-games-on-steam-20th26th-of-july-2026",
+      "publishedAt": "2026-07-20",
+      "relatedSlug": null
+    },
+    {
+      "title": "Overwatch Summer Games 2026 Is Live, Bringing Back Lucioball and Beach Volleyball",
+      "source": "Blizzard Entertainment",
+      "url": "https://overwatch.blizzard.com/en-us/news/patch-notes/",
+      "publishedAt": "2026-07-14",
+      "relatedSlug": null
+    },
+    {
+      "title": "Call of Duty: Black Ops 7 Season 04 Patch Notes",
+      "source": "Call of Duty",
+      "url": "https://www.callofduty.com/patchnotes",
+      "publishedAt": "2026-07-02",
+      "relatedSlug": null
+    }
+  ]
+}

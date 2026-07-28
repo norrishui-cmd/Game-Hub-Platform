@@ -127,6 +127,23 @@ export function availableLinks(game, locale = DEFAULT_LOCALE) {
   }));
 }
 
+// FAQ 生成逻辑集中在这一处：GameDetail.astro（单个游戏页）和 faq.astro（全站 FAQ 汇总页）
+// 都调用这个函数，保证同一款游戏在两个地方看到的 FAQ 完全一致，不会出现两套口径。
+export function buildFaqItems(game, locale = DEFAULT_LOCALE) {
+  const title = displayTitle(game, locale);
+  const editorial = game.content?.[locale];
+  if (editorial?.faq?.length) return editorial.faq;
+
+  const releaseAnswer = game.release === "TBA" ? t(locale, "relTBA") : fmtDate(game.release, locale);
+  const platformAnswer = game.platforms?.length ? game.platforms.join(", ") : "—";
+  const items = [
+    { question: t(locale, "faqReleaseQ", title), answer: releaseAnswer },
+    { question: t(locale, "faqPlatformQ", title), answer: platformAnswer },
+  ];
+  if (game.developer) items.push({ question: t(locale, "faqDeveloperQ", title), answer: game.developer });
+  return items;
+}
+
 export function collectTaxonomy(games, field) {
   const map = new Map(); // slug -> { label, count }（label 始终是英文原名，展示时再翻译）
   for (const g of games) {

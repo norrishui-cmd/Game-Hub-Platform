@@ -1,0 +1,49 @@
+---
+import Base from "../../layouts/Base.astro";
+import FaqAccordion from "../../components/FaqAccordion.astro";
+import gamesData from "../../../data/games.json";
+import { LOCALES } from "../../i18n/locales.js";
+import { t } from "../../i18n/ui.js";
+import { buildFaqItems } from "../../lib/games.js";
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+const games = [...gamesData.games].sort((a, b) => (b.hype ?? 0) - (a.hype ?? 0));
+
+// JSON-LD 只取热度最高的前 20 款，保持结构化数据体积合理；页面本身仍然展示全部游戏。
+const jsonLdGames = games.slice(0, 20);
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: jsonLdGames.flatMap((g) =>
+    buildFaqItems(g, locale).map((item) => ({
+      "@type": "Question",
+      name: item.question,
+      acceptedAnswer: { "@type": "Answer", text: item.answer },
+    }))
+  ),
+};
+---
+<Base
+  locale={locale}
+  title={`${t(locale, "faqHeading")} | GameRadar`}
+  description={t(locale, "faqSubtitle")}
+  pathSuffix="/faq/"
+  noindex={locale !== "en"}
+  indexableLocales={["en"]}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <main class="wrap" style="padding-top:28px; max-width:760px">
+    <div class="crumb"><a href={`/${locale}/`}>{t(locale, "breadcrumbBack")}</a></div>
+    <div class="rail-head" style="flex-direction:column; align-items:flex-start; gap:6px">
+      <h1><span class="bar" style="background:var(--indigo)"></span>{t(locale, "faqHeading")}</h1>
+      <p style="margin:0; color:var(--muted); font-size:15px">{t(locale, "faqSubtitle")}</p>
+    </div>
+    <p style="color:var(--faint); font-size:13px; margin:0 0 22px">{games.length} {t(locale, "countSuffix")}</p>
+
+    <FaqAccordion games={games} locale={locale} />
+  </main>
+</Base>

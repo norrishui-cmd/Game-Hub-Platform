@@ -39,10 +39,15 @@ jobs:
         continue-on-error: true
         run: node scripts/fetch-trending.mjs
 
+      - name: 运行最新资讯抓取脚本
+        # 纯 RSS 公开源，不需要任何密钥。同样单独失败不影响其他两步。
+        continue-on-error: true
+        run: node scripts/fetch-news.mjs
+
       - name: 提交更新后的数据（如果有变化）
         run: |
           git config user.name "gameradar-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data/games.json data/drafts.json data/monthly-trending.json data/trending-history/
+          git add data/games.json data/drafts.json data/monthly-trending.json data/trending-history/ data/news.json
           git diff --staged --quiet || git commit -m "chore: 自动更新游戏数据 $(date -u +'%Y-%m-%d')"
           git push

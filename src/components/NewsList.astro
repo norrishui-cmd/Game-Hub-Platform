@@ -1,0 +1,55 @@
+---
+import { t } from "../i18n/ui.js";
+
+const { items, locale, limit } = Astro.props;
+const list = limit ? items.slice(0, limit) : items;
+
+const DATE_TAG = { zh: "zh-CN", en: "en-US", es: "es-ES", de: "de-DE", ja: "ja-JP" };
+function fmt(iso) {
+  return new Date(iso + "T00:00:00").toLocaleDateString(DATE_TAG[locale] || "en-US", { month: "short", day: "numeric" });
+}
+---
+<ol class="news-list">
+  {list.map((item) => (
+    <li>
+      <a class="news-row" href={item.url} target="_blank" rel="noopener noreferrer">
+        <div class="news-main">
+          <div class="news-title">{item.title}</div>
+          <div class="news-meta">
+            <span class="news-source">{item.source}</span>
+            <span class="news-dot">·</span>
+            <time datetime={item.publishedAt}>{fmt(item.publishedAt)}</time>
+          </div>
+        </div>
+        <svg class="news-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
+      </a>
+      {item.relatedSlug && (
+        <a class="news-related" href={`/${locale}/games/${item.relatedSlug}/`}>
+          {t(locale, "newsRelatedGame")}
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+      )}
+    </li>
+  ))}
+</ol>
+
+<style>
+  .news-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+  .news-list li { display: flex; flex-direction: column; }
+  .news-row {
+    display: flex; align-items: flex-start; gap: 12px; padding: 12px 16px;
+    border-radius: var(--r-sm); background: var(--panel); border: 1px solid var(--line-soft);
+    text-decoration: none; color: inherit; transition: background 0.15s ease;
+  }
+  .news-row:hover { background: var(--panel-2); }
+  .news-main { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 4px; }
+  .news-title { font-weight: 600; color: var(--ink); font-size: 14.5px; line-height: 1.4; }
+  .news-meta { display: flex; align-items: center; gap: 6px; font-size: 12px; color: var(--faint); font-weight: 600; }
+  .news-source { color: var(--muted); }
+  .news-arrow { flex: 0 0 auto; width: 16px; height: 16px; color: var(--faint); margin-top: 2px; }
+  .news-related {
+    align-self: flex-start; margin: 4px 0 4px 16px; font-size: 12.5px; font-weight: 600;
+    color: var(--indigo); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
+  }
+  .news-related svg { width: 13px; height: 13px; }
+</style>

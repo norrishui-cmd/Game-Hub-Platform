@@ -1,5 +1,5 @@
 ---
-import { fmtDate, relText, availableLinks, buildJsonLd, slugify, displayTitle, translateGenres } from "../lib/games.js";
+import { fmtDate, relText, availableLinks, buildJsonLd, slugify, displayTitle, translateGenres, buildFaqItems } from "../lib/games.js";
 import { t } from "../i18n/ui.js";
 
 const { game, pageUrl, locale, isDraft = false } = Astro.props;
@@ -40,13 +40,7 @@ const copy = {
     fullWiki: "完全版の独立Wikiを開く", fullWikiSub: "攻略、データベース、ビルド、詳しいプレイヤー向け情報", verified: "確認済み情報", updated: "構造化されたゲームデータと確認済みの情報源を基に更新しています。未確認情報を事実として掲載しません。", sources: "情報源", guidesCta: "攻略を見る"
   }
 }[locale] || {};
-const releaseAnswer = game.release === "TBA" ? t(locale, "relTBA") : fmtDate(game.release, locale);
-const platformAnswer = game.platforms?.length ? game.platforms.join(", ") : "—";
-const faqItems = editorial.faq?.length ? editorial.faq : [
-  { question: copy.releaseQ, answer: releaseAnswer },
-  { question: copy.platformQ, answer: platformAnswer },
-  ...(game.developer ? [{ question: copy.developerQ, answer: game.developer }] : []),
-];
+const faqItems = buildFaqItems(game, locale);
 const faqJsonLd = {
   "@context": "https://schema.org", "@type": "FAQPage",
   mainEntity: faqItems.map((item) => ({ "@type": "Question", name: item.question, acceptedAnswer: { "@type": "Answer", text: item.answer } })),

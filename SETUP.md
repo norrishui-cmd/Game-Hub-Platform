@@ -190,6 +190,38 @@ node scripts/fetch-trending.mjs
 GameGrin 整理的 Steam 官方畅销榜与 TwitchTracker 的观看数据），第一次 `fetch-trending.mjs`
 成功跑起来之后会被自动榜单整体覆盖，字段结构完全一致，不需要额外处理。
 
+## 2026-07-28 更新（三）：最新资讯 + FAQ 汇总
+
+新增了两个独立栏目，首页和导航都有入口：
+
+### 最新资讯（`/{locale}/news/`）
+
+每天自动汇总几家主流游戏媒体（PC Gamer、Eurogamer、Rock Paper Shotgun、PCGamesN、GamesRadar+）
+的 RSS 公开订阅源，偏"攻略/Wiki 视角"——版本更新、阵容公布、玩法机制解读，而不是纯评测/八卦。
+只存标题 + 来源 + 原文链接 + 日期，不转载正文，符合版权要求（跟 Google 新闻一样的聚合索引逻辑）。
+
+- **不需要任何密钥**：RSS 是公开订阅源，`scripts/fetch-news.mjs` 直接用 `fetch()` 读取。
+- 如果新闻标题里出现了本站已收录的游戏名（比如这次种子数据里的 Star Wars Zero Company、
+  Planet Zoo 2、Halo: Campaign Evolved），会自动加一个"查看本站攻略页"的内链。
+- 已经接进 `.github/workflows/daily-fetch.yml`，跟游戏数据、热门榜单一起每天自动跑，
+  单独失败不影响其他两个脚本（`continue-on-error: true`）。
+- 想立刻手动跑一次：`node scripts/fetch-news.mjs`。
+- 当前 `data/news.json` 里的 10 条是人工研究种子数据（2026-07-28 真实搜索整理），
+  第一次 `fetch-news.mjs` 成功跑起来后会被自动列表整体覆盖。
+- 如果哪天某个媒体的 RSS 地址失效了：编辑 `scripts/fetch-news.mjs` 顶部的 `FEEDS` 数组，
+  改 `url` 或者加/删源，其他源不受影响。
+
+### 常见问题 FAQ（`/{locale}/faq/`）
+
+把本站每一款游戏的基础 FAQ（发行日期、平台、开发商——跟每个游戏详情页底部那三条一模一样，
+两边共用同一个函数 `buildFaqItems()`，写在 `src/lib/games.js` 里，不会出现两套口径）汇总到一个
+可折叠列表页，按热度排序，点开某一款可以看到完整 Q&A，再点"查看完整攻略"跳到那款游戏自己的页面。
+首页放了热度最高的 6 款做预览。
+
+这批 FAQ 目前都是自动生成的基础三问；以后要是给某款游戏写了更详细的编辑内容（存在
+`data/wiki/<slug>.json` 里，字段是 `content.<locale>.faq`），`buildFaqItems()` 会自动优先用那份
+更详细的内容，FAQ 汇总页和游戏详情页会同步更新，不需要额外操作。
+
 ## 日常怎么维护
 
 - **新建了独立 wiki，想让门户直链过去**：编辑 `data/owned-wikis.json`。

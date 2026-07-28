@@ -1,0 +1,56 @@
+---
+import { t } from "../i18n/ui.js";
+import { displayTitle, buildFaqItems } from "../lib/games.js";
+
+const { games, locale, limit } = Astro.props;
+const list = limit ? games.slice(0, limit) : games;
+---
+<div class="faq-hub">
+  {list.map((g) => {
+    const title = displayTitle(g, locale);
+    const items = buildFaqItems(g, locale);
+    return (
+      <details class="faq-group">
+        <summary>
+          <span class="faq-mono" style={`background:linear-gradient(135deg, ${g.grad[0]}, ${g.grad[1]})`}>{g.mono}</span>
+          <span class="faq-group-title">{title}</span>
+          <svg class="faq-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+        </summary>
+        <div class="faq-body">
+          {items.map((item) => (
+            <div class="faq-item">
+              <h3>{item.question}</h3>
+              <p>{item.answer}</p>
+            </div>
+          ))}
+          <a class="faq-goto" href={`/${locale}/games/${g.slug}/`}>{t(locale, "faqGoToGame")}</a>
+        </div>
+      </details>
+    );
+  })}
+</div>
+
+<style>
+  .faq-hub { display: flex; flex-direction: column; gap: 8px; }
+  .faq-group {
+    border: 1px solid var(--line-soft); border-radius: var(--r-sm); background: var(--panel);
+    overflow: hidden;
+  }
+  .faq-group[open] { background: var(--panel-2); }
+  .faq-group summary {
+    display: flex; align-items: center; gap: 12px; padding: 13px 16px; cursor: pointer;
+    list-style: none; font-weight: 700; color: var(--ink); font-size: 14.5px;
+  }
+  .faq-group summary::-webkit-details-marker { display: none; }
+  .faq-mono {
+    flex: 0 0 28px; height: 28px; border-radius: 7px; display: flex; align-items: center;
+    justify-content: center; font-weight: 800; font-size: 13px; color: #0a0c17;
+  }
+  .faq-group-title { flex: 1; }
+  .faq-chev { width: 16px; height: 16px; color: var(--faint); transition: transform 0.15s ease; flex: 0 0 auto; }
+  .faq-group[open] .faq-chev { transform: rotate(180deg); }
+  .faq-body { padding: 0 16px 16px 56px; display: flex; flex-direction: column; gap: 12px; }
+  .faq-item h3 { margin: 0 0 4px; font-size: 13.5px; font-weight: 700; color: var(--ink); }
+  .faq-item p { margin: 0; font-size: 13.5px; color: var(--muted); }
+  .faq-goto { align-self: flex-start; font-size: 13px; font-weight: 700; color: var(--indigo); text-decoration: none; margin-top: 2px; }
+</style>
