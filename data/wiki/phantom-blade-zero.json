@@ -1,34 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "",
+      "summary": "Phantom Blade Zero is a wuxia action RPG from Beijing studio S-GAME, revisiting the universe of its earlier Rainblood and Phantom Blade titles with a new, self-contained story. Players control Soul, an elite assassin of a secretive order called The Order, who is framed for his master's murder, killed, and revived by a mystic healer on borrowed time — leaving him a strict window to uncover the conspiracy and clear his name.",
       "faq": [],
-      "guideSections": [],
-      "sources": []
+      "guideSections": [
+        { "title": "Combat: Combo Chain System", "description": "Built around S-GAME's own Combo Chain system, combat lets players string together elaborate martial-arts combinations from just two buttons, choreographed by action director Kenji Tanigaki (known for the Rurouni Kenshin live-action films)." },
+        { "title": "Semi-Open World & Multiple Endings", "description": "The Phantom World is split into large interconnected regions rather than one seamless map, with side quests and the order players tackle them in affecting both story beats and which of the game's multiple endings they reach." }
+      ],
+      "sources": [
+        { "label": "GameSpot — release date and combat reveal at The Game Awards", "url": "https://www.gamespot.com/articles/chinese-martial-arts-rpg-phantom-blade-zero-gets-september-2026-release-date/1100-6536785/" },
+        { "label": "Sportskeeda — gameplay trailer breakdown, Combo Chain and Seven Judgments boss fight", "url": "https://sportskeeda.com/esports/key-takeaways-new-phantom-blade-zero-gameplay-trailer" }
+      ]
     },
-    "de": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "ja": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "es": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "zh": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

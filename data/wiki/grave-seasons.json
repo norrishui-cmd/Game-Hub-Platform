@@ -1,34 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "",
+      "summary": "Grave Seasons is a farming sim with a murder-mystery twist, developed by Perfect Garbage and published by Blumhouse Games (the interactive arm of Jason Blum's horror production company). Releasing August 14, 2026 on PC, PlayStation 5, Xbox Series X/S, and Nintendo Switch (day one on Xbox Game Pass), it casts the player as an escaped convict starting a new farm life in the small mountain town of Ashenridge — only for a supernatural serial killer to start targeting the neighbors.",
       "faq": [],
-      "guideSections": [],
-      "sources": []
+      "guideSections": [
+        { "title": "Farming Meets Murder Investigation", "description": "How day-to-day farming, foraging, and crafting interweave with gathering clues, tracking suspects, and warding off monsters across the game's one-year story clock." },
+        { "title": "Choices, Consequences & Variable Killer", "description": "Grave Seasons autosaves player choices as they're made, and the killer's identity can change between playthroughs — a structural reason to avoid treating any single walkthrough as a universal spoiler-free answer." }
+      ],
+      "sources": [
+        { "label": "IGN — release date and demo plans", "url": "https://www.aol.com/articles/grave-seasons-digs-august-2026-173744665.html" },
+        { "label": "Grave Seasons Wiki (Fandom) — developer, publisher, and premise", "url": "https://graveseasons.fandom.com/wiki/Grave_Seasons" }
+      ]
     },
-    "de": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "ja": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "es": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "zh": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

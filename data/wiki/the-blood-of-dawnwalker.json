@@ -1,34 +1,22 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "",
+      "summary": "The Blood of Dawnwalker is the debut game from Rebel Wolves, a studio co-founded by former Witcher 3 director Konrad Tomaszkiewicz and Cyberpunk 2077 quest design director Mateusz Tomaszkiewicz. Set in 14th-century Europe during the Black Death, it follows Coen, a young man turned into a half-vampire \"Dawnwalker\" who must save his family from the vampire lord Brencis within a strict 30 in-game day-and-night window. Time only advances when the player chooses to advance it, giving the story a resource-management rhythm rather than a hard countdown.",
       "faq": [],
-      "guideSections": [],
-      "sources": []
+      "guideSections": [
+        { "title": "Day vs. Night: Two Playstyles", "description": "By day Coen fights as a human swordsman with witchcraft support and no natural health regeneration; by night he gains vampiric powers like Shadow Step, but must manage a bloodthirst meter that can trigger forced, story-altering attacks on NPCs if it runs too low." },
+        { "title": "The Infamy System & Time Budget", "description": "How the Infamy meter tracks Brencis's attention and unlocks assassination windows against his generals, and how the game's hourglass-tracked activities (quests, leveling, some side content) spend your limited 30-day timeline." }
+      ],
+      "sources": [
+        { "label": "GamesRadar+ — 4-hour hands-on preview", "url": "https://www.gamesradar.com/games/rpg/the-blood-of-dawnwalker-big-preview-july-2026/" },
+        { "label": "AllKeyShop — Infamy system and bloodthirst mechanic details", "url": "https://www.allkeyshop.com/blog/blood-dawnwalker-preview-gameplay-details-los-angeles-news-r/" },
+        { "label": "Rebel Wolves / Bandai Namco — official site", "url": "https://www.bandainamcoent.com/games/dawnwalker" }
+      ]
     },
-    "de": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "ja": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "es": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "zh": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

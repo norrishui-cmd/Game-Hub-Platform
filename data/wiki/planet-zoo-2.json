@@ -1,34 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "",
+      "summary": "Planet Zoo 2 is Frontier Developments' sequel to its acclaimed zoo management sim, launching October 13, 2026 on PC, PlayStation 5, and Xbox Series X/S. The sequel adds two habitat types the original never had — fully aquatic aquariums and flying aviaries — alongside a new conservation layer: once a species is thriving in your zoo, you can release and breed it in open, ecosystem-style Wildlife Reserves outside the park gates.",
       "faq": [],
-      "guideSections": [],
-      "sources": []
+      "guideSections": [
+        { "title": "Aquariums & Aviaries: New Habitat Types", "description": "How to build custom freshwater and saltwater aquariums with filtration and guest walk-through tunnels, and how aviary mesh-canopy physics and support poles work for flighted birds." },
+        { "title": "Wildlife Reserves & Conservation Loop", "description": "How releasing zoo-bred animals into Wildlife Reserves works, how reserve breeding and ecosystem management differ from standard habitat care, and why it matters for long-term conservation scoring." }
+      ],
+      "sources": [
+        { "label": "Frontier Developments — official Planet Zoo 2 announcement", "url": "https://www.frontier.co.uk/news/2026-05-28/build-wilder-world-october-planet-zoo-2" },
+        { "label": "TechTimes — aquariums, aviaries, and reserve breeding confirmed", "url": "https://www.techtimes.com/articles/319000/20260624/planet-zoo-2-moves-beyond-zoo-frontier-confirms-reserve-breeding-new-animal-physics.htm" }
+      ]
     },
-    "de": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "ja": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "es": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "zh": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

@@ -1,34 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "",
+      "summary": "REKA is a cozy-but-eerie exploration and house-building game from German studio Emberstorm Entertainment, published by Fireshine Games and grounded in Slavic folklore (drawing especially on the traditions of eastern Germany's Slavic communities). Players take the role of Reka, apprentice to the legendary forest witch Baba Jaga (Baba Yaga), who inherits her mentor's iconic chicken-legged walking hut and travels the land fulfilling contracts that can help or curse the people and mythological creatures she meets.",
       "faq": [],
-      "guideSections": [],
-      "sources": []
+      "guideSections": [
+        { "title": "The Chicken-Legged Hut & Base Building", "description": "How to customize and decorate the walking izbushka hut with furniture and accessories earned through side quests, and how the hut itself doubles as your mobile base as you explore procedurally arranged woodland." },
+        { "title": "Witchcraft, Contracts & Moral Choice", "description": "How gathering ingredients and brewing potions ties into fulfilling contracts for villagers and forest spirits — and how choosing to help or hinder them shapes the world around Reka." }
+      ],
+      "sources": [
+        { "label": "PC Gamer — early access announcement and developer interview", "url": "https://www.pcgamer.com/games/survival-crafting/slavic-witchcrafting-game-reka-is-equal-parts-cozy-and-creepy-and-its-coming-to-early-access-in-august/" },
+        { "label": "GamesRadar+ — hands-on preview of Slavic folklore setting", "url": "https://www.gamesradar.com/games/adventure/i-feel-like-im-living-and-breathing-slavic-folklore-in-this-mystical-adventure-game-and-i-never-want-to-leave-it/" }
+      ]
     },
-    "de": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "ja": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "es": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "zh": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

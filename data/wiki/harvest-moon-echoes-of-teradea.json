@@ -1,34 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "",
+      "summary": "Harvest Moon: Echoes of Teradea is Natsume's next mainline entry in the long-running farming-sim series, releasing September 24, 2026 on Nintendo Switch, Switch 2, PlayStation 5, Xbox Series X/S, and PC — the franchise's first appearance on Switch 2. Raised in Bloomfield Village, the player investigates a mysterious mist spreading from the Forest of Echoes alongside a childhood friend, restoring farms and communities across the wider region of Teradea while taming the wild wolves the mist has unleashed.",
       "faq": [],
-      "guideSections": [],
-      "sources": []
+      "guideSections": [
+        { "title": "Animal Companions & Expanded Movement", "description": "Beyond traditional farming, players travel with animal companions that each grant unique traversal abilities (breaking obstacles, reaching hidden ledges), combined with an expanded moveset that adds jumping, ladder-climbing, and vine-scaling to the usual Harvest Moon toolkit." },
+        { "title": "Romance & Guardian Spirits", "description": "Echoes of Teradea offers ten romanceable villagers (five bachelors, five bachelorettes) alongside a main story built around helping the region's Guardian Spirits and the Harvest Goddess restore balance to Teradea." }
+      ],
+      "sources": [
+        { "label": "Gematsu — debut trailer and key features breakdown", "url": "https://www.gematsu.com/2026/06/harvest-moon-echoes-of-teradea-debut-trailer" },
+        { "label": "Nintendo Everything — Switch/Switch 2 release date confirmation", "url": "https://nintendoeverything.com/harvest-moon-echoes-of-teradea-gets-nintendo-switch-and-switch-2-release-date/" }
+      ]
     },
-    "de": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "ja": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "es": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "zh": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

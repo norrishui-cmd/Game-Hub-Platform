@@ -1,34 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "",
+      "summary": "Beast of Reincarnation is Game Freak's first major action game outside the Pokémon series, releasing August 4, 2026 on PC, PlayStation 5, and Xbox Series X/S. Billed as a \"single-player, single-dog\" action RPG, it's set in a post-apocalyptic Japan of the year 4026 and follows Emma the Sealer, an 18-year-old outcast with plant-manipulating \"blight\" powers, and her wolf companion Koo, as they hunt down corrupted giants called Nushi to uncover the source of the world's blight.",
       "faq": [],
-      "guideSections": [],
-      "sources": []
+      "guideSections": [
+        { "title": "Combat: Emma & Koo Together", "description": "Emma fights in real time with katana combos and parries, while successful parries build points spent on tactical commands for Koo — a hybrid system reviewers have compared to Sekiro, NieR: Automata, and Final Fantasy 7 Remake's command-based combat." },
+        { "title": "Story Length & Structure", "description": "A full playthrough is estimated at 30–40 hours, split across multiple large explorable regions rather than one seamless open world, with progression letting players prioritize Emma's melee skills, Koo's support abilities, or a balance of both." }
+      ],
+      "sources": [
+        { "label": "Vice — 40-hour story length and structure details", "url": "https://www.vice.com/en/article/beast-of-reincarnation-game-details/" },
+        { "label": "Screen Rant — release window, gameplay & story breakdown", "url": "https://screenrant.com/beast-of-reincarnation-release-window-gameplay-story/" }
+      ]
     },
-    "de": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "ja": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "es": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    },
-    "zh": {
-      "summary": "",
-      "faq": [],
-      "guideSections": [],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }
