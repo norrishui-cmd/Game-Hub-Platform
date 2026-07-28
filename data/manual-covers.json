@@ -23,5 +23,19 @@
   "ratatan": { "cover": "/images/games/ratatan-banner.webp", "coverPosition": "center" },
   "beautiful-light": { "cover": "/images/games/beautiful-light-banner.webp", "coverPosition": "center" },
   "chronicles-medieval": { "cover": "/images/games/chronicles-medieval-banner.webp", "coverPosition": "center" },
-  "mortal-shell-ii": { "cover": "/images/games/mortal-shell-ii-banner.webp", "coverPosition": "center" }
+  "mortal-shell-ii": { "cover": "/images/games/mortal-shell-ii-banner.webp", "coverPosition": "center" },
+  "railborn": { "cover": "/images/games/railborn-banner.webp", "coverPosition": "center" },
+  "rules-of-engagement-the-grey-state": { "cover": "/images/games/rules-of-engagement-the-grey-state-banner.webp", "coverPosition": "center" },
+  "wardogs": { "cover": "/images/games/wardogs-banner.webp", "coverPosition": "center" },
+  "over-the-hill": { "cover": "/images/games/over-the-hill-banner.webp", "coverPosition": "center" },
+  "crymelight": { "cover": "/images/games/crymelight-banner.webp", "coverPosition": "center" },
+  "jigenro": { "cover": "/images/games/jigenro-banner.webp", "coverPosition": "center" },
+  "gta-6": { "cover": "/images/games/gta-6-banner.webp", "coverPosition": "center" },
+  "marvel-s-wolverine": { "cover": "/images/games/marvel-s-wolverine-banner.webp", "coverPosition": "center" },
+  "call-of-duty-modern-warfare-4": { "cover": "/images/games/call-of-duty-modern-warfare-4-banner.webp", "coverPosition": "center" },
+  "gears-of-war-e-day": { "cover": "/images/games/gears-of-war-e-day-banner.webp", "coverPosition": "center" },
+  "fire-emblem-fortune-s-weave": { "cover": "/images/games/fire-emblem-fortune-s-weave-banner.webp", "coverPosition": "center" },
+  "lego-batman-legacy-of-the-dark-knight": { "cover": "/images/games/lego-batman-legacy-of-the-dark-knight-banner.webp", "coverPosition": "center" },
+  "metaphor-refantazio-switch-2": { "cover": "/images/games/metaphor-refantazio-switch-2-banner.webp", "coverPosition": "center" },
+  "dragon-quest-11-s-switch-2-edition": { "cover": "/images/games/dragon-quest-11-s-switch-2-edition-banner.webp", "coverPosition": "center" }
 }

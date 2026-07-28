@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-28T08:10:47.495Z",
+  "generatedAt": "2026-07-28T08:24:35.962Z",
   "count": 105,
   "games": [
     {
@@ -1104,7 +1104,7 @@
         "reddit": "https://www.reddit.com/r/GTA6/",
         "fanwiki": "https://gta.fandom.com"
       },
-      "cover": null,
+      "cover": "/images/games/gta-6-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#e8624a",
@@ -1130,7 +1130,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/marvel-s-wolverine-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#1fa87a",
@@ -1158,7 +1158,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/call-of-duty-modern-warfare-4-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#1f8a7a",
@@ -1185,7 +1185,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/gears-of-war-e-day-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#e8624a",
@@ -1239,7 +1239,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/fire-emblem-fortune-s-weave-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#5b6cff",
@@ -1265,7 +1265,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/lego-batman-legacy-of-the-dark-knight-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#e8624a",
@@ -1291,7 +1291,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/metaphor-refantazio-switch-2-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#8a3d2f",
@@ -1317,7 +1317,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/dragon-quest-11-s-switch-2-edition-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#3a6d8c",
@@ -2314,7 +2314,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/crymelight-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#3a6d8c",
@@ -2393,7 +2393,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/jigenro-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#8a3d2f",
@@ -2785,7 +2785,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/over-the-hill-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#8a3d2f",
@@ -2812,7 +2812,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/wardogs-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#1f8a7a",
@@ -2838,7 +2838,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/rules-of-engagement-the-grey-state-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#7a5cff",
@@ -2865,7 +2865,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/railborn-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#b0453f",
