@@ -1,59 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Lou's Lagoon is an upcoming Cozy adventure game for PC, Console. It is scheduled to release on August 27, 2026.",
+      "summary": "Lou's Lagoon is a cozy exploration-and-crafting adventure from developer Tiny Roar, published by Megabit, releasing August 27, 2026 on PC, PlayStation 5, Xbox Series X/S, Nintendo Switch, and Nintendo Switch 2. Players arrive on the tropical Limbo archipelago to find their Uncle Lou missing after a storm, inheriting his seaplane delivery service and setting out island to island to gather resources, rebuild communities, and piece together clues to solve the mystery of his disappearance.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Lou's Lagoon is confirmed for PC, Console. The current release target is August 27, 2026, though release dates for smaller studios can still shift. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "Seaplane Travel & Gadgets", "description": "Getting around Limbo means piloting a customizable, upgradable seaplane between islands and mastering ring challenges in open skies, alongside an upgradable gadget called the Swirler 2000 used for scooping, building, gliding, and fishing." },
+        { "title": "Base Building & Character Customization", "description": "Beyond the central mystery, players build and decorate their own island base and fully customize their avatar's hairstyle, outfits, and accessories, with a Deluxe Edition at launch adding bubble-themed cosmetics." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "Gematsu — Switch 2 version announcement and gameplay overview", "url": "https://www.gematsu.com/2026/07/lous-lagoon-adds-switch-2-version" },
+        { "label": "Megabit Publishing — official news and devlog archive", "url": "https://megabit-publishing.com/games/lous-lagoon" }
+      ]
     },
-    "de": {
-      "summary": "Lou's Lagoon ist ein kommendes Cozy adventure-Spiel für PC, Console. Der Release ist für den 27. August 2026 geplant.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Lou's Lagoon ist für PC, Console bestätigt. Aktuell wird der 27. August 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Lou's Lagoonは発売予定のCozy adventureゲームで、対応プラットフォームはPC・Console。発売日は2026年8月27日を予定しています。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "Lou's LagoonはPC・Consoleでの発売が確認されています。現時点では2026年8月27日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Lou's Lagoon es un próximo juego de Cozy adventure para PC, Console. Su lanzamiento está previsto para el 27 de agosto de 2026.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Lou's Lagoon está confirmado para PC, Console. La fecha prevista es el 27 de agosto de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "Lou's Lagoon 是一款即将发行的Cozy adventure游戏，登陆 PC、Console。目前定档 2026年8月27日 发行。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "Lou's Lagoon 目前确认登陆 PC、Console。目前定档 2026年8月27日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

@@ -1,59 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Onimusha: Way of the Sword is an upcoming Action adventure game for PC, PS5, Xbox. It is scheduled to release on September 3, 2026.",
+      "summary": "Onimusha: Way of the Sword is Capcom's revival of the Onimusha series, its first new mainline entry in over 20 years, releasing September 4, 2026 (moved up from an initially announced September 25) for PlayStation 5, Xbox Series X/S, Nintendo Switch 2, and PC. Set in an Edo-era Kyoto twisted by clouds of supernatural Malice, it casts the legendary swordsman Miyamoto Musashi as protagonist, wielding the powers of the Oni to battle demonic Genma with sword-based action and magical abilities.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Onimusha: Way of the Sword is confirmed for PC, PS5, Xbox. The current release target is September 3, 2026, though release dates for smaller studios can still shift. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "The Oni Gauntlet & Sword Combat", "description": "Musashi fights using intense, duel-focused melee combat centered on a special Oni Gauntlet that grants superhuman attacks and blocks; the demo showcased a boss fight against rival swordsman Sasaki Ganryu, one of Musashi's real historical rivals reimagined within the game's dark fantasy setting." },
+        { "title": "Release Date Moved Up", "description": "Capcom originally set the release for September 25, 2026, then moved it up to September 4, 2026 in response to positive feedback from the public demo, though the Windows version was noted to arrive slightly later than the console releases." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "Capcom — official press release confirming the moved-up release date", "url": "https://www.capcom.co.jp/ir/english/news/html/e260702.html" },
+        { "label": "Engadget — demo and story context coverage", "url": "https://www.engadget.com/2186239/onimusha-way-of-the-sword-arrives-september-25-but-there-s-a-demo-today/" }
+      ]
     },
-    "de": {
-      "summary": "Onimusha: Way of the Sword ist ein kommendes Action adventure-Spiel für PC, PS5, Xbox. Der Release ist für den 3. September 2026 geplant.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Onimusha: Way of the Sword ist für PC, PS5, Xbox bestätigt. Aktuell wird der 3. September 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Onimusha: Way of the Swordは発売予定のAction adventureゲームで、対応プラットフォームはPC・PS5・Xbox。発売日は2026年9月3日を予定しています。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "Onimusha: Way of the SwordはPC・PS5・Xboxでの発売が確認されています。現時点では2026年9月3日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Onimusha: Way of the Sword es un próximo juego de Action adventure para PC, PS5, Xbox. Su lanzamiento está previsto para el 3 de septiembre de 2026.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Onimusha: Way of the Sword está confirmado para PC, PS5, Xbox. La fecha prevista es el 3 de septiembre de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "Onimusha: Way of the Sword 是一款即将发行的Action adventure游戏，登陆 PC、PS5、Xbox。目前定档 2026年9月3日 发行。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "Onimusha: Way of the Sword 目前确认登陆 PC、PS5、Xbox。目前定档 2026年9月3日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

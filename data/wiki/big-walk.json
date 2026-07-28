@@ -1,59 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Big Walk is an upcoming Co-op exploration game for PC, PS5, Switch 2. It is scheduled to release on August 4, 2026.",
+      "summary": "Big Walk is a cooperative multiplayer \"walker-talker\" from House House (the Melbourne studio behind Untitled Goose Game), published by Panic and releasing August 4, 2026 across PC, macOS, PlayStation 5, Switch 2, iOS, and Android with full crossplay. Built for 2 to 12 friends, it drops players into a large open world to explore together, using a proximity-based voice chat system and an assortment of tools — walkie-talkies, megaphones, flares, laser pointers — to stay in contact and solve puzzles as a group, with a defined ending rather than an endless sandbox.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Big Walk is confirmed for PC, PS5, Switch 2. The current release target is August 4, 2026, though release dates for smaller studios can still shift. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "Proximity Voice & No Matchmaking", "description": "Big Walk's core hook is a proximity voice chat system where voices fade with distance, echo down corridors, and crackle through walkie-talkies. It's designed to be played with real-life friends rather than strangers — there's no public matchmaking, so you'll need to invite people directly." },
+        { "title": "A Finite, Hand-Crafted Adventure", "description": "Unlike many social multiplayer games, Big Walk has a definite ending and is meant to be played start-to-finish, with House House estimating 10–15 hours for a full playthrough, similar in spirit to a recurring tabletop session with the same group of friends." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "Game Informer — hands-on preview at Panic's offices", "url": "https://gameinformer.com/preview/2026/03/09/a-walk-well-wasted" },
+        { "label": "PlayStation Store — official platform and feature listing", "url": "https://store.playstation.com/en-us/concept/10017189" }
+      ]
     },
-    "de": {
-      "summary": "Big Walk ist ein kommendes Co-op exploration-Spiel für PC, PS5, Switch 2. Der Release ist für den 4. August 2026 geplant.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Big Walk ist für PC, PS5, Switch 2 bestätigt. Aktuell wird der 4. August 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Big Walkは発売予定のCo-op explorationゲームで、対応プラットフォームはPC・PS5・Switch 2。発売日は2026年8月4日を予定しています。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "Big WalkはPC・PS5・Switch 2での発売が確認されています。現時点では2026年8月4日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Big Walk es un próximo juego de Co-op exploration para PC, PS5, Switch 2. Su lanzamiento está previsto para el 4 de agosto de 2026.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Big Walk está confirmado para PC, PS5, Switch 2. La fecha prevista es el 4 de agosto de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "Big Walk 是一款即将发行的Co-op exploration游戏，登陆 PC、PS5、Switch 2。目前定档 2026年8月4日 发行。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "Big Walk 目前确认登陆 PC、PS5、Switch 2。目前定档 2026年8月4日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }
