@@ -1,17 +1,19 @@
 {
-  "name": "wiki-site-template",
+  "name": "gameradar",
   "type": "module",
-  "version": "1.0.0",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build && pagefind --site dist",
-    "preview": "astro preview"
+    "build": "astro build",
+    "preview": "astro preview",
+    "seo:audit": "node scripts/seo-audit.mjs",
+    "game:create": "node scripts/game-create.mjs",
+    "game:audit": "node scripts/game-audit.mjs",
+    "game:publish": "node scripts/game-publish.mjs"
   },
   "dependencies": {
     "astro": "^5.0.0",
     "@astrojs/sitemap": "^3.0.0"
-  },
-  "devDependencies": {
-    "pagefind": "^1.3.0"
   }
 }

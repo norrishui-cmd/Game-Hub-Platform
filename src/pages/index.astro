@@ -1,36 +1,48 @@
 ---
-import Base from "../layouts/Base.astro";
-import { getAllArticles, getArticlesByCategory, categoryHref } from "../lib/wiki.js";
-import { SITE } from "../../site.config.mjs";
-
-const all = await getAllArticles();
-const grouped = await getArticlesByCategory();
+// 这个文件现在真的会生效（astro.config.mjs 里设了 redirectToDefaultLocale:false，
+// Astro 不会再用它自己生成的跳转页覆盖这里）。
+//
+// 逻辑：优先读上次手动选过的语言（localStorage），没有的话按浏览器语言列表
+// 依次匹配 en/es/zh，一个都不匹配就落到英文——对应"英文优先，其次西语、中文"的要求。
+// 2 秒的 meta refresh 是没启用 JS 时的兜底（正常情况下上面的 JS 几乎瞬间就跑完了，
+// 不会等到 2 秒），这个写法和 Astro 自己生成的跳转页是一个套路。
 ---
-<Base currentSlug="__home">
-  <div class="banner">
-    <img src={SITE.banner} alt={SITE.bannerAlt} />
-    <div class="banner-cap">{SITE.shortName} Wiki</div>
-  </div>
-
-  <div class="welcome-grid">
-    <div>
-      <h2>Welcome to the {SITE.shortName} Wiki</h2>
-      <p>{SITE.description}</p>
-    </div>
-    <div>
-      <h2>This wiki</h2>
-      <p><span class="stat">{all.length}</span> article{all.length === 1 ? "" : "s"} and counting.</p>
-    </div>
-  </div>
-
-  <div class="cat-grid">
-    {grouped.map((cat) => (
-      <a class="cat-card" href={categoryHref(cat.slug)}>
-        <span class="ic">{cat.icon}</span>
-        <b>{cat.label}</b>
-        <span>{cat.description}</span>
-        <span class="n">{cat.articles.length} article{cat.articles.length === 1 ? "" : "s"}</span>
-      </a>
-    ))}
-  </div>
-</Base>
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="google-adsense-account" content="ca-pub-9505220977121599" />
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9505220977121599" crossorigin="anonymous"></script>
+  <meta http-equiv="refresh" content="2; url=/en/" />
+  <meta name="robots" content="noindex" />
+  <link rel="canonical" href="/en/" />
+  <title>GameRadar</title>
+</head>
+<body>
+  <p>Redirecting… <a href="/en/">Continue to GameRadar</a></p>
+  <script>
+    (function () {
+      var SUPPORTED = ["en", "de", "ja", "es", "zh"];
+      function matchLocale(tag) {
+        var primary = String(tag || "").toLowerCase().split("-")[0];
+        return SUPPORTED.indexOf(primary) !== -1 ? primary : null;
+      }
+      function detect() {
+        try {
+          var saved = localStorage.getItem("gr_locale");
+          if (saved && SUPPORTED.indexOf(saved) !== -1) return saved;
+        } catch (e) {}
+        var prefs = (navigator.languages && navigator.languages.length)
+          ? navigator.languages
+          : [navigator.language || navigator.userLanguage || ""];
+        for (var i = 0; i < prefs.length; i++) {
+          var m = matchLocale(prefs[i]);
+          if (m) return m;
+        }
+        return "en"; // 英文优先兜底；探测到西语/中文的话上面的循环会先命中，走不到这一行
+      }
+      location.replace("/" + detect() + "/");
+    })();
+  </script>
+</body>
+</html>
