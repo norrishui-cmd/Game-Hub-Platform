@@ -1,0 +1,59 @@
+/* ============================================================================
+ * 设计基调："夜间档案室" —— 深色、纸感、带一点被翻阅过的痕迹，配合等宽字体的
+ * 数据卡片，让每一页都像从一份被认真维护的活档案里翻出来的条目，而不是通用
+ * MediaWiki 换皮站。
+ *
+ * 换游戏只改 --accent（从 site.config.mjs 的 SITE.accent 注入），其余变量固定，
+ * 这样出自这套模板的所有 wiki 视觉骨架永远一致，只有强调色随游戏气质变化。
+ * ==========================================================================*/
+:root {
+  --bg: #0b0d12;
+  --bg-2: #08090d;
+  --panel: #12151c;
+  --panel-2: #171b24;
+  --raise: #1e232f;
+  --line: #232838;
+  --line-soft: #1a1e29;
+  --ink: #ede9e0; /* 微暖白，纸感，不是纯白 */
+  --muted: #9b9d9a;
+  --faint: #6b6e70;
+  --danger: #e8637a;
+
+  --r: 12px;
+  --r-sm: 8px;
+  --shadow: 0 20px 44px -20px rgba(0, 0, 0, 0.75);
+
+  /* 三种字体各司其职：展示用带个性的衬线体，正文用易读衬线体，UI/数据用等宽体 */
+  --fd: "Fraunces", Georgia, serif;
+  --fb: "Source Serif 4", Georgia, "Noto Serif SC", serif;
+  --fm: "IBM Plex Mono", ui-monospace, monospace;
+}
+
+* { box-sizing: border-box; }
+html { background: var(--bg); color-scheme: dark; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--fb);
+  font-size: 16px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4 { font-family: var(--fd); font-weight: 600; color: var(--ink); margin: 0; }
+a { color: var(--accent, #8b7fd1); }
+code, .mono { font-family: var(--fm); }
+
+.wrap { max-width: 1180px; margin: 0 auto; padding: 0 24px; }
+
+::selection { background: color-mix(in srgb, var(--accent, #8b7fd1) 35%, transparent); }
+
+:focus-visible {
+  outline: 2px solid var(--accent, #8b7fd1);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.001ms !important; transition-duration: 0.001ms !important; }
+}

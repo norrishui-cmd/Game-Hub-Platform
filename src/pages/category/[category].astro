@@ -1,0 +1,31 @@
+---
+import Base from "../../layouts/Base.astro";
+import { getArticlesByCategory, articleHref } from "../../lib/wiki.js";
+import { SITE } from "../../../site.config.mjs";
+
+export async function getStaticPaths() {
+  return SITE.categories.map((cat) => ({ params: { category: cat.slug } }));
+}
+
+const { category } = Astro.params;
+const grouped = await getArticlesByCategory();
+const cat = grouped.find((c) => c.slug === category);
+---
+<Base title={cat.label} description={cat.description} currentSlug={`__cat:${cat.slug}`}>
+  <p class="crumb"><a href="/">Main page</a> / {cat.label}</p>
+  <h1>{cat.icon} {cat.label}</h1>
+  <p class="article .summary" style="color:var(--muted); margin:8px 0 0">{cat.description}</p>
+
+  <div class="article-list">
+    {cat.articles.length === 0 && <p style="color:var(--muted)">No articles in this category yet.</p>}
+    {cat.articles.map((a) => (
+      <a href={articleHref(a)}>
+        <div class="row-main">
+          <b>{a.data.title}</b>
+          <span>{a.data.summary}</span>
+        </div>
+        <span class="mono" style="color:var(--faint); font-size:12px; white-space:nowrap">{a.data.updatedAt}</span>
+      </a>
+    ))}
+  </div>
+</Base>

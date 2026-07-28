@@ -1,0 +1,63 @@
+---
+import { getCollection } from "astro:content";
+import Base from "../../layouts/Base.astro";
+import InfoBox from "../../components/InfoBox.astro";
+import { SITE } from "../../../site.config.mjs";
+
+export async function getStaticPaths() {
+  const entries = await getCollection("wiki");
+
+  // 文章 URL 只用文件名，不带分类目录前缀（见 lib/wiki.js 的 articleHref 注释）。
+  // 这就要求文件名在整个 wiki 里唯一——跟大多数 wiki 系统「页面标题全站唯一」是一个道理。
+  // 如果不小心在两个分类目录下起了同名文件，这里会在构建时直接报错提醒你改名，
+  // 而不是悄悄生成一个互相覆盖的路由。
+  const seen = new Map();
+  for (const entry of entries) {
+    const flatSlug = entry.slug.split("/").pop();
+    if (seen.has(flatSlug)) {
+      throw new Error(
+        `[wiki] 文件名冲突："${flatSlug}" 同时出现在 "${seen.get(flatSlug)}" 和 "${entry.slug}"。` +
+        `文章 URL 只取文件名，两篇文章不能同名，把其中一个文件改个名字。`
+      );
+    }
+    seen.set(flatSlug, entry.slug);
+  }
+
+  return entries.map((entry) => ({
+    params: { slug: entry.slug.split("/").pop() },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+const cat = SITE.categories.find((c) => c.slug === entry.data.category);
+const hasInfobox = entry.data.infobox && Object.keys(entry.data.infobox).length > 0;
+---
+<Base
+  title={entry.data.title}
+  description={entry.data.summary}
+  currentSlug={entry.slug}
+  withInfobox={hasInfobox}
+>
+  <article class="article">
+    <p class="crumb"><a href="/">Main page</a> / <a href={`/category/${cat?.slug}/`}>{cat?.label}</a> / {entry.data.title}</p>
+    <h1>{entry.data.title}</h1>
+    <p class="summary">{entry.data.summary}</p>
+    <div class="prose">
+      <Content />
+    </div>
+    {entry.data.tags.length > 0 && (
+      <div class="tags">
+        {entry.data.tags.map((t) => <span class="tag">{t}</span>)}
+      </div>
+    )}
+    <p class="updated-stamp">Last updated {entry.data.updatedAt}</p>
+  </article>
+
+  {hasInfobox && (
+    <Fragment slot="infobox">
+      <InfoBox title={entry.data.title} data={entry.data.infobox} updatedAt={entry.data.updatedAt} />
+    </Fragment>
+  )}
+</Base>

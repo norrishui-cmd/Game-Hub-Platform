@@ -1,0 +1,22 @@
+---
+const { title, data, updatedAt } = Astro.props;
+const entries = Object.entries(data || {});
+---
+<div class="infobox">
+  <div class="infobox-head">
+    <b>{title}</b>
+    <span class="infobox-badge">Verified</span>
+  </div>
+  {entries.length > 0 && (
+    <dl>
+      {entries.map(([k, v]) => (
+        <div><dt>{k}</dt><dd>{v}</dd></div>
+      ))}
+    </dl>
+  )}
+  {updatedAt && (
+    <div style="padding:10px 16px; border-top:1px solid var(--line-soft)">
+      <span class="updated-stamp" style="margin:0">Updated {updatedAt}</span>
+    </div>
+  )}
+</div>

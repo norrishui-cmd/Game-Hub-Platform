@@ -1,0 +1,40 @@
+---
+import { getArticlesByCategory, articleHref, categoryHref } from "../lib/wiki.js";
+import { SITE } from "../../site.config.mjs";
+
+const grouped = await getArticlesByCategory();
+const { currentSlug } = Astro.props;
+---
+<aside class="sidebar">
+  <div class="side-group">
+    <b>Contents</b>
+    <ul>
+      <li><a href="/" class={currentSlug === "__home" ? "on" : ""}>Main page</a></li>
+      {grouped.map((cat) => (
+        <li><a href={categoryHref(cat.slug)} class={currentSlug === `__cat:${cat.slug}` ? "on" : ""}>{cat.icon} {cat.label}</a></li>
+      ))}
+    </ul>
+  </div>
+
+  {grouped.filter((c) => c.articles.length > 0).map((cat) => (
+    <div class="side-group">
+      <b>{cat.label}</b>
+      <ul>
+        {cat.articles.map((a) => (
+          <li><a href={articleHref(a)} class={currentSlug === a.slug ? "on" : ""}>{a.data.title}</a></li>
+        ))}
+      </ul>
+    </div>
+  ))}
+
+  {SITE.externalLinks.length > 0 && (
+    <div class="side-group">
+      <b>Links</b>
+      <ul>
+        {SITE.externalLinks.map((l) => (
+          <li><a href={l.url} target="_blank" rel="noopener">{l.label} ↗</a></li>
+        ))}
+      </ul>
+    </div>
+  )}
+</aside>
