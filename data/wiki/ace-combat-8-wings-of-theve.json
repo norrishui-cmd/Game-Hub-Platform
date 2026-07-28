@@ -1,59 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "ACE COMBAT 8: WINGS OF THEVE is an upcoming Flight action game for PC. It is scheduled to release on October 1, 2026.",
+      "summary": "Ace Combat 8: Wings of Theve is Bandai Namco Aces' first mainline Ace Combat entry in seven years, launching October 2, 2026 on PC, PlayStation 5, and Xbox Series X/S (Deluxe Edition owners get 3-day early access from September 29). Built on Unreal Engine 5, it casts players as an ace pilot rescued by the aircraft carrier Endurance after their homeland's navy is shattered, flying for a squadron known as Joker Flight amid an emotionally charged story of identity and duty.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "ACE COMBAT 8: WINGS OF THEVE is confirmed for PC. The current release target is October 1, 2026, though release dates for smaller studios can still shift. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "Campaign & Joker Flight", "description": "The story follows pilots Baxter, Tasha, and Coster — together Joker Flight — through a cinematic campaign centered on the fall of the Federation of Central Usea to an invasion by the Republic of Sotoa, continuing the series' tradition of grounding arcade dogfighting in a scripted wartime narrative." },
+        { "title": "Editions & Pre-order Bonuses", "description": "Pre-ordering unlocks the F-14A aircraft and a digital copy of the 2006 prequel Ace Combat Zero: The Belkan War; the Deluxe Edition adds early access and a Premium Ace Pass, while a limited Joker Flight Pack bundles a two-LP vinyl soundtrack and a 200-page artbook." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "Bandai Namco Europe — official release date and preorder details", "url": "https://en.bandainamcoent.eu/ace-combat/news/ace-combat-8-wings-of-theve-takes-flight-october" },
+        { "label": "Bandai Namco America — campaign and gameplay reveal", "url": "https://www.bandainamcoent.com/news/ace-combat-8-wings-of-theve-coming-in-2026" }
+      ]
     },
-    "de": {
-      "summary": "ACE COMBAT 8: WINGS OF THEVE ist ein kommendes Flight action-Spiel für PC. Der Release ist für den 1. Oktober 2026 geplant.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "ACE COMBAT 8: WINGS OF THEVE ist für PC bestätigt. Aktuell wird der 1. Oktober 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "ACE COMBAT 8: WINGS OF THEVEは発売予定のFlight actionゲームで、対応プラットフォームはPC。発売日は2026年10月1日を予定しています。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "ACE COMBAT 8: WINGS OF THEVEはPCでの発売が確認されています。現時点では2026年10月1日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "ACE COMBAT 8: WINGS OF THEVE es un próximo juego de Flight action para PC. Su lanzamiento está previsto para el 1 de octubre de 2026.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "ACE COMBAT 8: WINGS OF THEVE está confirmado para PC. La fecha prevista es el 1 de octubre de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "Ace Combat 8: Wings of Theve 是一款即将发行的Flight action游戏，登陆 PC。目前定档 2026年10月1日 发行。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "Ace Combat 8: Wings of Theve 目前确认登陆 PC。目前定档 2026年10月1日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

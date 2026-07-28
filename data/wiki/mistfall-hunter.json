@@ -1,59 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Mistfall Hunter is an upcoming Extraction action RPG game for PC, Console. It is scheduled to release on July 29, 2026.",
+      "summary": "Mistfall Hunter is a third-person PvPvE extraction ARPG from Bellring Games, published by Skystone Games and launching July 29, 2026 on PC, PlayStation 5, and Xbox Series X/S (day one on Xbox Game Pass). Set in Weavereach after the gods have fallen and the corrupting Gyldenmist consumes the world, players take on the role of a Gyldhunter revived by a mysterious girl named Dew, venturing solo or in three-player squads to harvest Gyldenblood and extract before death strips them of everything.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Mistfall Hunter is confirmed for PC, Console. The current release target is July 29, 2026, though release dates for smaller studios can still shift. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "The Extraction Loop", "description": "Runs revolve around scavenging Gyldenblood and relics, fighting corrupted creatures and rival Gyldhunter squads, then reaching a Returner Woodling to secure a Soul of Return and extract safely — death costs you everything you were carrying, keeping every run tense." },
+        { "title": "Classes & No Pay-to-Win Design", "description": "Mistfall Hunter ships with six classes, seasonal content, and a stated no-pay-to-win approach; an Open Beta ran June 14–22, 2026 across Steam, Xbox Series X/S, and PlayStation ahead of launch." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "Bleeding Cool — final gameplay trailer and launch details", "url": "https://bleedingcool.com/games/mistfall-hunter-releases-new-gameplay-trailer-ahead-of-launch/" },
+        { "label": "Backyard Drunkard — release date, platforms, Game Pass confirmation", "url": "https://backyarddrunkard.com/game-news/mistfall-hunter-release-date-platforms-and-gameplay-details/" }
+      ]
     },
-    "de": {
-      "summary": "Mistfall Hunter ist ein kommendes Extraction action RPG-Spiel für PC, Console. Der Release ist für den 29. Juli 2026 geplant.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Mistfall Hunter ist für PC, Console bestätigt. Aktuell wird der 29. Juli 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Mistfall Hunterは発売予定のExtraction action RPGゲームで、対応プラットフォームはPC・Console。発売日は2026年7月29日を予定しています。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "Mistfall HunterはPC・Consoleでの発売が確認されています。現時点では2026年7月29日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Mistfall Hunter es un próximo juego de Extraction action RPG para PC, Console. Su lanzamiento está previsto para el 29 de julio de 2026.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Mistfall Hunter está confirmado para PC, Console. La fecha prevista es el 29 de julio de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "Mistfall Hunter 是一款即将发行的Extraction action RPG游戏，登陆 PC、Console。目前定档 2026年7月29日 发行。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "Mistfall Hunter 目前确认登陆 PC、Console。目前定档 2026年7月29日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

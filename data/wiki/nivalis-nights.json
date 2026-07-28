@@ -1,59 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Nivalis Nights is an upcoming Life sim, cyberpunk game for PC. It is scheduled to release on September 29, 2026.",
+      "summary": "Nivalis Nights is a cozy cyberpunk slice-of-life sim from ION LANDS (the studio behind Cloudpunk), published by 505 Games and set for release September 29, 2026. Set in the vertical neon city of Nivalis, players arrive with almost nothing and build a life from the ground up — running restaurants, ramen stands, or nightclubs, fishing and exploring the city by boat, decorating an apartment, and navigating relationships with the city's residents under the pressure of CorpSec curfews.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Nivalis Nights is confirmed for PC. The current release target is September 29, 2026, though release dates for smaller studios can still shift. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "Business, Boats & Curfew Risk", "description": "The core loop mixes business management (growing a noodle stand into a top restaurant or nightclub) with free-form city exploration by boat and fishing, while operating under curfew — sabotaging rivals or growing ingredients illegally carries real risk of the same tactics being used against you." },
+        { "title": "Languages & Ties to Cloudpunk", "description": "Nivalis Nights ships with 11 languages at launch (including English, Simplified and Traditional Chinese, and Japanese) and is set in the same city, Nivalis, previously explored in ION LANDS' earlier game Cloudpunk, though it can be played and enjoyed without having played that title." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "505 Games — official Nivalis Nights game page", "url": "https://505games.com/games/nivalisnights/" },
+        { "label": "Nivalis Nights official site — ION LANDS / Cloudpunk connection, languages, requirements", "url": "https://nivalisnights.org/" }
+      ]
     },
-    "de": {
-      "summary": "Nivalis Nights ist ein kommendes Life sim, cyberpunk-Spiel für PC. Der Release ist für den 29. September 2026 geplant.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Nivalis Nights ist für PC bestätigt. Aktuell wird der 29. September 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Nivalis Nightsは発売予定のLife sim・cyberpunkゲームで、対応プラットフォームはPC。発売日は2026年9月29日を予定しています。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "Nivalis NightsはPCでの発売が確認されています。現時点では2026年9月29日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Nivalis Nights es un próximo juego de Life sim, cyberpunk para PC. Su lanzamiento está previsto para el 29 de septiembre de 2026.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Nivalis Nights está confirmado para PC. La fecha prevista es el 29 de septiembre de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "Nivalis Nights 是一款即将发行的Life sim、cyberpunk游戏，登陆 PC。目前定档 2026年9月29日 发行。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "Nivalis Nights 目前确认登陆 PC。目前定档 2026年9月29日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

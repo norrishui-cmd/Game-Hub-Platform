@@ -1,59 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Neverway is an upcoming video game game. An official release date has not been confirmed yet.",
+      "summary": "Neverway is the debut game from Vancouver studio Coldblood Inc., a horror life-sim RPG releasing October 2026 on PC (Windows/macOS/Linux) and Nintendo Switch. Players control Fiona, a woman who quits her dead-end job to start over on a remote island farm, only to become the immortal herald of a dead god as a nightmare reality called Neverway begins leaking into the world around her.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Neverway is confirmed for platforms still to be announced. No release date has been locked in yet — this page will be updated as soon as one is confirmed. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "Farming by Day, Horror by Night", "description": "Neverway deliberately refuses to treat its life-sim and horror halves as separate modes: farming, fishing, and building friendships with the island's residents sit alongside fast-paced action-RPG combat and a slow-burn psychological horror story, with the two systems feeding into each other rather than being switched between." },
+        { "title": "Art & Music Pedigree", "description": "The pixel art comes from Pedro Medeiros (Celeste, TowerFall) and the score from Disasterpeace (Fez, Hyper Light Drifter); a free prologue is already available on Steam ahead of the full release, giving players a first look at the game's tone before launch." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "Engadget — release window and developer background", "url": "https://www.engadget.com/gaming/indie-game-neverway-will-launch-this-october-just-in-time-for-spooky-season-170000669.html" },
+        { "label": "KeenGamer — gameplay and premise breakdown", "url": "https://www.keengamer.com/games/neverway/" }
+      ]
     },
-    "de": {
-      "summary": "Neverway ist ein kommendes Videospiel-Spiel. Ein offizielles Erscheinungsdatum steht noch nicht fest.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Neverway ist für noch nicht angekündigte Plattformen bestätigt. Ein Release-Termin steht noch nicht fest — diese Seite wird aktualisiert, sobald einer bestätigt ist. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Neverwayは発売予定のゲームゲーム。公式の発売日はまだ発表されていません。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "Neverwayは対応プラットフォーム未発表での発売が確認されています。公式の発売日はまだ確定していません。確定次第このページを更新します。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Neverway es un próximo juego de videojuego. Aún no se ha confirmado una fecha de lanzamiento oficial.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Neverway está confirmado para plataformas aún por anunciar. Todavía no hay una fecha de lanzamiento confirmada — esta página se actualizará en cuanto se anuncie una. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "Neverway 是一款即将发行的游戏游戏。官方发行日期暂未确认。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "Neverway 目前确认登陆 平台暂未公布。官方还没有锁定具体发行日期，这里会在确认后第一时间更新。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

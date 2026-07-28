@@ -67,7 +67,7 @@ export default defineConfig({
         if (path.includes("/games/draft/")) return undefined;
 
         // 游戏主页、FAQ 长尾页、发行日期长尾页，三种路径都走同一套收录判定。
-        const gameMatch = path.match(/^\/(en|de|ja|es|zh)\/games\/([^/]+)\/(?:(faq|release-date)\/)?$/);
+        const gameMatch = path.match(/^\/(en|de|ja|es|zh)\/games\/([^/]+)\/(?:(faq|release-date|news)\/)?$/);
         if (gameMatch) {
           const [, locale, slug] = gameMatch;
           if (!isGamePathIndexable(locale, slug)) return undefined;

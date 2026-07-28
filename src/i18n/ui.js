@@ -139,6 +139,10 @@ export const UI = {
     viewReleaseDateCta: "查看发行倒计时 →",
     releasedAlready: "已经发行",
     daysUntilRelease: "距离发行还有",
+
+    gameNewsPageTitle: (title) => `${title} 最新资讯`,
+    gameNewsIntro: (title) => `跟 ${title} 相关的最新报道，按时间倒序排列。`,
+    viewGameNewsCta: "查看相关资讯 →",
   },
 
   en: {
@@ -278,6 +282,10 @@ export const UI = {
     viewReleaseDateCta: "View release countdown →",
     releasedAlready: "Already released",
     daysUntilRelease: "Time until release",
+
+    gameNewsPageTitle: (title) => `${title} news`,
+    gameNewsIntro: (title) => `The latest coverage related to ${title}, newest first.`,
+    viewGameNewsCta: "View related news →",
   },
 
   es: {
@@ -417,6 +425,10 @@ export const UI = {
     viewReleaseDateCta: "Ver cuenta atrás →",
     releasedAlready: "Ya disponible",
     daysUntilRelease: "Tiempo hasta el lanzamiento",
+
+    gameNewsPageTitle: (title) => `Noticias de ${title}`,
+    gameNewsIntro: (title) => `La cobertura más reciente sobre ${title}, de más nueva a más antigua.`,
+    viewGameNewsCta: "Ver noticias relacionadas →",
   },
 
   de: {
@@ -433,7 +445,7 @@ export const UI = {
     monthlyChartHeading: "Monatliche Hitliste", monthlyChartSubtitle: "Kombiniert Steams Bestsellerliste mit der Twitch-Zuschauerzahl, um die beliebtesten Spiele des Monats zu verfolgen", monthlyChartUpdatedLabel: "Aktualisiert am", monthlyChartSourceSteam: "Steam-Bestseller", monthlyChartSourceTwitch: "Twitch-Zuschauerzahl", monthlyChartViewGame: "Guide ansehen", monthlyChartViewExternal: "Auf Steam ansehen", monthlyChartViewFull: "Vollständige Liste ansehen →", monthlyChartMethodology: "Diese Liste kombiniert Valves offizielle wöchentliche Bestsellerliste (Umsatzdaten) mit dem 7-Tage-Durchschnitt der gleichzeitigen Twitch-Zuschauer. Jedes Spiel erhält Punkte nach seiner Platzierung in beiden Listen; die Liste wird täglich automatisch aktualisiert. Spiele, die bereits auf unserem Portal geführt werden, verlinken direkt zum Guide; alle anderen Titel verlinken zur Steam-Seite.",
     faqReleaseQ: (title) => `Wann erscheint ${title}?`, faqPlatformQ: (title) => `Für welche Plattformen erscheint ${title}?`, faqDeveloperQ: (title) => `Wer entwickelt ${title}?`,
     newsHeading: "Neuigkeiten", newsSubtitle: "Täglich aktualisierte Zusammenfassung großer Gaming-Portale mit Guide/Wiki-Fokus: Patch Notes, Cast-Enthüllungen und Mechanik-Analysen", newsUpdatedLabel: "Aktualisiert am", newsViewFull: "Alle Neuigkeiten ansehen →", newsReadMore: "Ganzen Artikel lesen", newsRelatedGame: "Unseren Guide ansehen", newsEmpty: "Aktuell keine Neuigkeiten – schau morgen wieder vorbei.",
-    faqHeading: "Häufig gestellte Fragen", faqSubtitle: "Das Wichtigste zu jedem von uns geführten Spiel: Veröffentlichungstermin, Plattformen und Entwickler. Öffne ein Spiel für den vollständigen Guide.", faqViewFull: "Vollständiges FAQ ansehen →", faqExpandAll: "Alle ausklappen", faqCollapseAll: "Alle einklappen", faqGoToGame: "Vollständigen Guide ansehen →", isOnPlatformQ: (title, p) => `Erscheint ${title} für ${p}?`, yesOnPlatform: (p) => `Ja, bestätigt für ${p}.`, noOnPlatform: (p) => `Für ${p} ist derzeit keine offizielle Veröffentlichung angekündigt.`, faqGenreQ: (title) => `Welches Genre hat ${title}?`, faqAnticipationQ: (title) => `Wie groß ist das Interesse an ${title} aktuell?`, anticipation_high: "Aktuell eines der am meisten erwarteten Spiele, die wir verfolgen.", anticipation_strong: "Aktuell solides, stetiges Interesse.", anticipation_moderate: "Das Interesse wächst langsam.", anticipation_early: "Noch früh in der Entwicklung — bisher begrenztes Interesse.", gameFaqPageTitle: (title) => `${title} – Häufig gestellte Fragen`, gameFaqIntro: (title) => `Eine ausführlichere Liste an Fragen zu Veröffentlichung, Plattformen und Genre von ${title}.`, viewFullFaqCta: "Vollständiges FAQ ansehen →", gameReleaseDatePageTitle: (title) => `${title} – Erscheinungstermin & Countdown`, gameReleaseDateIntro: (title) => `Der bestätigte Erscheinungstermin, die Plattformen und der Countdown für ${title}.`, viewReleaseDateCta: "Countdown ansehen →", releasedAlready: "Bereits erschienen", daysUntilRelease: "Zeit bis zur Veröffentlichung",
+    faqHeading: "Häufig gestellte Fragen", faqSubtitle: "Das Wichtigste zu jedem von uns geführten Spiel: Veröffentlichungstermin, Plattformen und Entwickler. Öffne ein Spiel für den vollständigen Guide.", faqViewFull: "Vollständiges FAQ ansehen →", faqExpandAll: "Alle ausklappen", faqCollapseAll: "Alle einklappen", faqGoToGame: "Vollständigen Guide ansehen →", isOnPlatformQ: (title, p) => `Erscheint ${title} für ${p}?`, yesOnPlatform: (p) => `Ja, bestätigt für ${p}.`, noOnPlatform: (p) => `Für ${p} ist derzeit keine offizielle Veröffentlichung angekündigt.`, faqGenreQ: (title) => `Welches Genre hat ${title}?`, faqAnticipationQ: (title) => `Wie groß ist das Interesse an ${title} aktuell?`, anticipation_high: "Aktuell eines der am meisten erwarteten Spiele, die wir verfolgen.", anticipation_strong: "Aktuell solides, stetiges Interesse.", anticipation_moderate: "Das Interesse wächst langsam.", anticipation_early: "Noch früh in der Entwicklung — bisher begrenztes Interesse.", gameFaqPageTitle: (title) => `${title} – Häufig gestellte Fragen`, gameFaqIntro: (title) => `Eine ausführlichere Liste an Fragen zu Veröffentlichung, Plattformen und Genre von ${title}.`, viewFullFaqCta: "Vollständiges FAQ ansehen →", gameReleaseDatePageTitle: (title) => `${title} – Erscheinungstermin & Countdown`, gameReleaseDateIntro: (title) => `Der bestätigte Erscheinungstermin, die Plattformen und der Countdown für ${title}.`, viewReleaseDateCta: "Countdown ansehen →", releasedAlready: "Bereits erschienen", daysUntilRelease: "Zeit bis zur Veröffentlichung", gameNewsPageTitle: (title) => `${title} – Neuigkeiten`, gameNewsIntro: (title) => `Die neuesten Berichte zu ${title}, aktuellste zuerst.`, viewGameNewsCta: "Verwandte Neuigkeiten ansehen →",
   },
 
   ja: {
@@ -450,7 +462,7 @@ export const UI = {
     monthlyChartHeading: "今月の人気ランキング", monthlyChartSubtitle: "Steamのベストセラーランキングと Twitch の視聴データを組み合わせて、今月最も人気のゲームを追跡します", monthlyChartUpdatedLabel: "更新日", monthlyChartSourceSteam: "Steamベストセラー", monthlyChartSourceTwitch: "Twitch視聴数", monthlyChartViewGame: "攻略を見る", monthlyChartViewExternal: "Steamで見る", monthlyChartViewFull: "ランキング全体を見る →", monthlyChartMethodology: "このランキングは、Valve公式の週間ベストセラーランキング（売上データ）と、Twitchの過去7日間の平均同時視聴者数ランキングを組み合わせ、両方の順位に応じてスコアを付けて算出し、毎日自動更新しています。当サイトで既に取り上げているゲームは攻略ページへ直接リンクし、それ以外の定番タイトルはSteamストアページへリンクします。",
     faqReleaseQ: (title) => `${title}の発売日はいつですか？`, faqPlatformQ: (title) => `${title}の対応プラットフォームは？`, faqDeveloperQ: (title) => `${title}の開発会社は？`,
     newsHeading: "最新情報", newsSubtitle: "主要ゲームメディアの最新情報を毎日自動でまとめています。攻略・Wiki視点で、アップデート情報、キャスト発表、ゲームシステム解説などを中心に掲載", newsUpdatedLabel: "更新日", newsViewFull: "すべての最新情報を見る →", newsReadMore: "元記事を読む", newsRelatedGame: "当サイトの攻略ページを見る", newsEmpty: "現在表示できる情報がありません。また明日お越しください。",
-    faqHeading: "よくある質問", faqSubtitle: "当サイトで扱う全ゲームの基本情報（発売日・対応機種・開発会社）をまとめました。各ゲームを開くと、より詳しい攻略情報がご覧いただけます。", faqViewFull: "FAQ全体を見る →", faqExpandAll: "すべて展開", faqCollapseAll: "すべて折りたたむ", faqGoToGame: "完全攻略を見る →", isOnPlatformQ: (title, p) => `${title}は${p}で発売されますか？`, yesOnPlatform: (p) => `はい、${p}向けの発売が確認されています。`, noOnPlatform: (p) => `現時点で${p}向けの発売は公式に発表されていません。`, faqGenreQ: (title) => `${title}はどのようなジャンルのゲームですか？`, faqAnticipationQ: (title) => `${title}への現在の注目度は？`, anticipation_high: "現在、当サイトで追っているタイトルの中でも特に注目度が高い作品です。", anticipation_strong: "着実に注目度を集めています。", anticipation_moderate: "少しずつ注目度が高まっている段階です。", anticipation_early: "発表からまだ日が浅く、現時点での注目度は限定的です。", gameFaqPageTitle: (title) => `${title} よくある質問`, gameFaqIntro: (title) => `${title}の発売日・対応プラットフォーム・ジャンルについて、より詳しい質問と回答をまとめました。`, viewFullFaqCta: "FAQ全体を見る →", gameReleaseDatePageTitle: (title) => `${title} 発売日とカウントダウン`, gameReleaseDateIntro: (title) => `${title}の確定している発売日、対応プラットフォーム、カウントダウンです。`, viewReleaseDateCta: "発売日カウントダウンを見る →", releasedAlready: "発売済み", daysUntilRelease: "発売までの残り時間",
+    faqHeading: "よくある質問", faqSubtitle: "当サイトで扱う全ゲームの基本情報（発売日・対応機種・開発会社）をまとめました。各ゲームを開くと、より詳しい攻略情報がご覧いただけます。", faqViewFull: "FAQ全体を見る →", faqExpandAll: "すべて展開", faqCollapseAll: "すべて折りたたむ", faqGoToGame: "完全攻略を見る →", isOnPlatformQ: (title, p) => `${title}は${p}で発売されますか？`, yesOnPlatform: (p) => `はい、${p}向けの発売が確認されています。`, noOnPlatform: (p) => `現時点で${p}向けの発売は公式に発表されていません。`, faqGenreQ: (title) => `${title}はどのようなジャンルのゲームですか？`, faqAnticipationQ: (title) => `${title}への現在の注目度は？`, anticipation_high: "現在、当サイトで追っているタイトルの中でも特に注目度が高い作品です。", anticipation_strong: "着実に注目度を集めています。", anticipation_moderate: "少しずつ注目度が高まっている段階です。", anticipation_early: "発表からまだ日が浅く、現時点での注目度は限定的です。", gameFaqPageTitle: (title) => `${title} よくある質問`, gameFaqIntro: (title) => `${title}の発売日・対応プラットフォーム・ジャンルについて、より詳しい質問と回答をまとめました。`, viewFullFaqCta: "FAQ全体を見る →", gameReleaseDatePageTitle: (title) => `${title} 発売日とカウントダウン`, gameReleaseDateIntro: (title) => `${title}の確定している発売日、対応プラットフォーム、カウントダウンです。`, viewReleaseDateCta: "発売日カウントダウンを見る →", releasedAlready: "発売済み", daysUntilRelease: "発売までの残り時間", gameNewsPageTitle: (title) => `${title} 最新情報`, gameNewsIntro: (title) => `${title}に関する最新の報道を新着順にまとめました。`, viewGameNewsCta: "関連情報を見る →",
   },
 };
 

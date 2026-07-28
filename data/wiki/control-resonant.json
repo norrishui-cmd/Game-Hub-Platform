@@ -1,59 +1,21 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "CONTROL Resonant is an upcoming Action adventure game for PC, PS5, Xbox. It is scheduled to release on September 24, 2026.",
+      "summary": "CONTROL Resonant is Remedy Entertainment's sequel to 2019's Control, releasing September 24, 2026. It swaps protagonists and genres: instead of Jesse Faden's gunplay-focused adventure through the claustrophobic Oldest House, players now control her brother Dylan Faden in a fast-paced action-RPG set across an open-ended, warped reimagining of Manhattan, wielding a shapeshifting melee weapon called the Aberrant.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "CONTROL Resonant is confirmed for PC, PS5, Xbox. The current release target is September 24, 2026, though release dates for smaller studios can still shift. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "Dylan Faden & the Aberrant", "description": "Dylan fights primarily with melee combat and supernatural abilities rather than Jesse's guns, centered on the Aberrant — a shapeshifting weapon — and traversal through Gravity Anomalies, zones where normal physics no longer apply." },
+        { "title": "New Game Plus", "description": "Remedy has confirmed New Game Plus carries over Aberrant upgrades, health and resource improvements, unlocked combat abilities, talents, and artifacts — though traversal abilities stay tied to story progression and do not carry over, since a fresh playthrough is built around re-discovering how the world behaves." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "Remedy Entertainment — official CONTROL Resonant gameplay reveal", "url": "https://www.remedygames.com/article/remedy-entertainment-unveils-new-gameplay-details-for-control-resonant" },
+        { "label": "PlayStation Blog — New Game Plus details", "url": "https://blog.playstation.com/2026/04/30/control-resonant-remedy-shares-first-details-on-new-game-plus/" }
+      ]
     },
-    "de": {
-      "summary": "CONTROL Resonant ist ein kommendes Action adventure-Spiel für PC, PS5, Xbox. Der Release ist für den 24. September 2026 geplant.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "CONTROL Resonant ist für PC, PS5, Xbox bestätigt. Aktuell wird der 24. September 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "CONTROL Resonantは発売予定のAction adventureゲームで、対応プラットフォームはPC・PS5・Xbox。発売日は2026年9月24日を予定しています。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "CONTROL ResonantはPC・PS5・Xboxでの発売が確認されています。現時点では2026年9月24日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "CONTROL Resonant es un próximo juego de Action adventure para PC, PS5, Xbox. Su lanzamiento está previsto para el 24 de septiembre de 2026.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "CONTROL Resonant está confirmado para PC, PS5, Xbox. La fecha prevista es el 24 de septiembre de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "CONTROL Resonant 是一款即将发行的Action adventure游戏，登陆 PC、PS5、Xbox。目前定档 2026年9月24日 发行。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "CONTROL Resonant 目前确认登陆 PC、PS5、Xbox。目前定档 2026年9月24日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

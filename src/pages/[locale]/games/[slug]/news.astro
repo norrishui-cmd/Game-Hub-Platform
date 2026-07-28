@@ -1,0 +1,71 @@
+---
+import Base from "../../../../layouts/Base.astro";
+import NewsList from "../../../../components/NewsList.astro";
+import gamesData from "../../../../../data/games.json";
+import newsData from "../../../../../data/news.json";
+import { LOCALES } from "../../../../i18n/locales.js";
+import { t } from "../../../../i18n/ui.js";
+import { hasOwnPage, displayTitle, isGameIndexable, buildBreadcrumbJsonLd } from "../../../../lib/games.js";
+
+export async function getStaticPaths() {
+  const wikiModules = import.meta.glob("../../../../../data/wiki/*.json", { eager: true, import: "default" });
+  const wikiBySlug = Object.fromEntries(Object.entries(wikiModules).map(([file, value]) => [file.split("/").pop().replace(".json", ""), value]));
+
+  // 只给真的有相关新闻的游戏建这个页面——没有新闻硬凑一个空页面没有意义，
+  // 也是单薄内容。fetch-news.mjs 每天跑，未来会有更多游戏自然而然攒够新闻，
+  // 到时候这里会自动多出对应的页面，不需要手动维护名单。
+  const slugsWithNews = new Set(newsData.items.map((item) => item.relatedSlug).filter(Boolean));
+  const publishable = gamesData.games.filter((g) => hasOwnPage(g) && slugsWithNews.has(g.slug));
+
+  return LOCALES.flatMap((locale) =>
+    publishable.map((baseGame) => {
+      const wiki = wikiBySlug[baseGame.slug] || {};
+      const game = { ...baseGame, publishStatus: wiki.publishStatus, content: wiki.content };
+      return { params: { locale, slug: game.slug }, props: { game } };
+    })
+  );
+}
+
+const { locale } = Astro.params;
+const { game } = Astro.props;
+const site = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
+const title = displayTitle(game, locale);
+const pageUrl = `${site}/${locale}/games/${game.slug}/news/`;
+const indexable = isGameIndexable(game, locale);
+const indexableLocales = LOCALES.filter((l) => isGameIndexable(game, l));
+const gameNews = newsData.items.filter((item) => item.relatedSlug === game.slug);
+
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: "GameRadar", url: `${site}/${locale}/` },
+  { name: title, url: `${site}/${locale}/games/${game.slug}/` },
+  { name: t(locale, "gameNewsPageTitle", title), url: pageUrl },
+]);
+---
+<Base
+  locale={locale}
+  title={`${t(locale, "gameNewsPageTitle", title)} | GameRadar`}
+  description={t(locale, "gameNewsIntro", title)}
+  pathSuffix={`/games/${game.slug}/news/`}
+  noindex={!indexable}
+  indexableLocales={indexableLocales}
+  image={game.cover}
+  jsonLd={breadcrumbJsonLd}
+>
+  <main class="wrap" style="padding-top:28px; max-width:760px">
+    <p class="crumb">
+      <a href={`/${locale}/`}>GameRadar</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/${locale}/games/${game.slug}/`}>{title}</a>
+      <span aria-hidden="true">/</span>
+      <span>{t(locale, "gameNewsPageTitle", title)}</span>
+    </p>
+    <h1 style="font-family:var(--fd); font-size:clamp(24px,4vw,34px); margin:0 0 8px">{t(locale, "gameNewsPageTitle", title)}</h1>
+    <p style="color:var(--muted); margin:0 0 26px">{t(locale, "gameNewsIntro", title)}</p>
+
+    <NewsList items={gameNews} locale={locale} />
+
+    <p style="margin-top:28px">
+      <a href={`/${locale}/games/${game.slug}/`} style="color:var(--indigo); font-weight:700; text-decoration:none">← {title}</a>
+    </p>
+  </main>
+</Base>

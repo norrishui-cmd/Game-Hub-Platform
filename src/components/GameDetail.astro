@@ -2,6 +2,7 @@
 import { fmtDate, relText, availableLinks, buildJsonLd, slugify, displayTitle, translateGenres, buildFaqItems } from "../lib/games.js";
 import { t } from "../i18n/ui.js";
 import gamesData from "../../data/games.json";
+import newsData from "../../data/news.json";
 import GameCard from "./GameCard.astro";
 
 const { game, pageUrl, locale, isDraft = false } = Astro.props;
@@ -22,6 +23,7 @@ const relatedGames = (gameGenreSlugs.size
       .sort((a, b) => (b.hype ?? 0) - (a.hype ?? 0))
   : []
 ).slice(0, 4);
+const hasGameNews = newsData.items.some((item) => item.relatedSlug === game.slug);
 const editorial = game.content?.[locale] || {};
 const copy = {
   en: {
@@ -125,6 +127,7 @@ const faqJsonLd = {
     <p style="margin-top:16px; display:flex; gap:20px; flex-wrap:wrap">
       <a href={`/${locale}/games/${game.slug}/faq/`} style="color:var(--indigo); font-weight:700; text-decoration:none; font-size:14px">{t(locale, "viewFullFaqCta")}</a>
       <a href={`/${locale}/games/${game.slug}/release-date/`} style="color:var(--indigo); font-weight:700; text-decoration:none; font-size:14px">{t(locale, "viewReleaseDateCta")}</a>
+      {hasGameNews && <a href={`/${locale}/games/${game.slug}/news/`} style="color:var(--indigo); font-weight:700; text-decoration:none; font-size:14px">{t(locale, "viewGameNewsCta")}</a>}
     </p>
   </section>
 

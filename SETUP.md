@@ -357,6 +357,25 @@ node scripts/build-baseline-wiki.mjs some-slug     # 只处理指定的一两个
 
 这些改动不需要你做任何操作，直接覆盖部署即可。
 
+## 2026-07-28 更新（八）：owned 游戏深挖收尾 + 第三个长尾 URL（新闻页）
+
+**16 款 owned 游戏（有你自己独立 wiki 的那批）现在 100% 都有真实深挖过的英文内容**——这次
+补完了剩下 6 款：Valheim 1.0、CONTROL Resonant、Mistfall Hunter、Nivalis Nights、
+Ace Combat 8: Wings of Theve、Neverway。每款都是真实搜索来的资料（开发商、发行日期、
+核心玩法机制），格式跟之前一致：简介 + 2 个攻略板块 + 2-3 个真实信息源链接。
+
+**新增第三个长尾 URL**：`/games/<slug>/news/`——只给**真的有相关新闻**的游戏生成这个页面
+（判断依据：`data/news.json` 里 `relatedSlug` 字段命中这款游戏），没有新闻的游戏不会生成空页面，
+避免单薄内容。目前只有 3 款游戏（Star Wars Zero Company、Planet Zoo 2、Halo: Campaign Evolved）
+够格，但 `scripts/fetch-news.mjs` 每天自动跑，以后会有更多游戏自然攒够新闻，届时这个页面
+会自动生成，不需要手动维护名单。
+
+主详情页的"快速解答"板块下面现在最多有三个入口：查看完整 FAQ、查看发行倒计时、
+（如果有相关新闻）查看相关资讯——三个长尾页面加上主页面，每款游戏现在最多有 4 个独立 URL。
+
+**下一步建议**：owned 游戏已经全部深挖完了，接下来可以按热度从高到低，继续把"选题库"里
+其余约 89 款游戏的基础版内容换成深挖版——同样的流程，把想深挖的游戏 slug 发给我就行。
+
 ## 日常怎么维护
 
 - **新建了独立 wiki，想让门户直链过去**：编辑 `data/owned-wikis.json`。
