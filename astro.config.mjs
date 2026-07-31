@@ -1,7 +1,9 @@
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
-import { readFileSync, readdirSync } from "node:fs";
+import { readFileSync, readdirSync, statSync } from "node:fs";
 import gamesData from "./data/games.json";
+import newsData from "./data/news.json";
+import trendingData from "./data/monthly-trending.json";
 import { isGameIndexable } from "./src/lib/games.js";
 
 const taxonomyCounts = (field) => {
@@ -21,16 +23,27 @@ const platformCounts = taxonomyCounts("platforms");
 // 5 种语言的基础内容之后，这条一刀切规则已经过时——改成跟页面上 <meta name="robots">
 // 实际展示的收录状态完全一致，sitemap 才不会自相矛盾（列出的都是真的可收录的页面）。
 const wikiBySlug = new Map();
+const wikiMtimeBySlug = new Map();
 try {
   for (const file of readdirSync("./data/wiki")) {
     if (!file.endsWith(".json")) continue;
     const slug = file.replace(/\.json$/, "");
-    wikiBySlug.set(slug, JSON.parse(readFileSync(`./data/wiki/${file}`, "utf-8")));
+    const path = `./data/wiki/${file}`;
+    wikiBySlug.set(slug, JSON.parse(readFileSync(path, "utf-8")));
+    wikiMtimeBySlug.set(slug, statSync(path).mtime);
   }
 } catch {
   // data/wiki 目录不存在也不报错，这种情况下所有游戏都当作没有 wiki 内容处理
 }
 const gamesBySlug = new Map(gamesData.games.map((g) => [g.slug, g]));
+
+// sitemap 里一直没有 lastmod，Google 没法据此判断哪些页面是新鲜的、该优先重新抓取。
+// 游戏详情/FAQ/发行日期三个长尾页优先用对应 data/wiki/<slug>.json 文件的实际修改时间——
+// 这才是这款游戏内容真正最后一次变动的时间；没有 wiki 文件的游戏（纯选题库基础版）
+// 就退回用 games.json 整体的 generatedAt，因为它们的问答内容就是从这份数据当场生成的。
+function lastmodForSlug(slug) {
+  return wikiMtimeBySlug.get(slug) || new Date(gamesData.generatedAt);
+}
 
 function isGamePathIndexable(locale, slug) {
   const base = gamesBySlug.get(slug);
@@ -65,12 +78,16 @@ export default defineConfig({
       serialize(item) {
         const path = new URL(item.url).pathname;
         if (path.includes("/games/draft/")) return undefined;
+        // 裸域名 "/" 本身是 noindex 的语言探测跳转页（详见 src/pages/index.astro 里的说明），
+        // 不该出现在 sitemap 里——sitemap 应该只列真正想被收录的网址，不然自相矛盾。
+        if (path === "/") return undefined;
 
         // 游戏主页、FAQ 长尾页、发行日期长尾页，三种路径都走同一套收录判定。
         const gameMatch = path.match(/^\/(en|de|ja|es|zh)\/games\/([^/]+)\/(?:(faq|release-date|news)\/)?$/);
         if (gameMatch) {
           const [, locale, slug] = gameMatch;
           if (!isGamePathIndexable(locale, slug)) return undefined;
+          item.lastmod = lastmodForSlug(slug);
           return item;
         }
 
@@ -80,6 +97,30 @@ export default defineConfig({
           const [, locale, type, slug] = taxonomy;
           const count = (type === "genre" ? genreCounts : platformCounts).get(slug) || 0;
           if (locale !== "en" || count < 3) return undefined;
+          item.lastmod = new Date(gamesData.generatedAt);
+          return item;
+        }
+        if (/^\/en\/(genres|platforms)\/$/.test(path)) {
+          item.lastmod = new Date(gamesData.generatedAt);
+          return item;
+        }
+        // 发行日历页（/releases/、/releases/2026/、/releases/2026-08/、/releases/tba/）
+        // 内容完全由 games.json 派生，用它的生成时间当 lastmod 最准确。
+        if (/^\/(en|de|ja|es|zh)\/releases\/([^/]+\/)?$/.test(path)) {
+          item.lastmod = new Date(gamesData.generatedAt);
+          return item;
+        }
+
+        // 首页、月度榜单、最新资讯——这三类内容更新频率最高，各自对应数据文件自己的
+        // generatedAt/updatedAt 字段就是最准确的 lastmod，比整站用同一个时间戳更真实。
+        if (/^\/(en|de|ja|es|zh)\/$/.test(path)) {
+          item.lastmod = new Date(gamesData.generatedAt);
+        } else if (/^\/(en|de|ja|es|zh)\/monthly-chart\/$/.test(path)) {
+          item.lastmod = new Date(trendingData.updatedAt);
+        } else if (/^\/(en|de|ja|es|zh)\/news\/$/.test(path)) {
+          item.lastmod = new Date(newsData.generatedAt);
+        } else if (/^\/(en|de|ja|es|zh)\/faq\/$/.test(path)) {
+          item.lastmod = new Date(gamesData.generatedAt);
         }
         return item;
       },

@@ -1,0 +1,90 @@
+---
+import Base from "../../../layouts/Base.astro";
+import gamesData from "../../../../data/games.json";
+import { LOCALES } from "../../../i18n/locales.js";
+import { t } from "../../../i18n/ui.js";
+import {
+  collectReleaseYears,
+  collectReleaseMonths,
+  collectTbaGames,
+  RELEASE_TBA_MIN,
+  fmtMonth,
+  buildBreadcrumbJsonLd,
+  pageTitle,
+} from "../../../lib/games.js";
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+const site = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
+const years = collectReleaseYears(gamesData.games);
+const months = collectReleaseMonths(gamesData.games);
+const tba = collectTbaGames(gamesData.games);
+const showTba = tba.length >= RELEASE_TBA_MIN;
+
+const breadcrumbJsonLd = buildBreadcrumbJsonLd([
+  { name: "GameRadar", url: `${site}/${locale}/` },
+  { name: t(locale, "releasesHubTitle"), url: `${site}/${locale}/releases/` },
+]);
+---
+<Base
+  locale={locale}
+  title={pageTitle(t(locale, "releasesHubTitle"))}
+  description={t(locale, "releasesHubIntro")}
+  pathSuffix="/releases/"
+  jsonLd={breadcrumbJsonLd}
+>
+  <main class="wrap" style="padding-top:28px; max-width:860px">
+    <div class="crumb"><a href={`/${locale}/`}>{t(locale, "breadcrumbBack")}</a></div>
+    <div class="rail-head" style="flex-direction:column; align-items:flex-start; gap:6px">
+      <h1><span class="bar" style="background:var(--teal)"></span>{t(locale, "releasesHubTitle")}</h1>
+      <p style="margin:0; color:var(--muted); font-size:15px">{t(locale, "releasesHubIntro")}</p>
+    </div>
+
+    <h2 style="font-size:18px; margin:28px 0 12px">{t(locale, "releasesHubYears")}</h2>
+    <div class="cal-grid">
+      {years.map((y) => (
+        <a class="cal-card" href={`/${locale}/releases/${y.year}/`}>
+          <b>{y.year}</b>
+          <span>{t(locale, "releaseCountThisMonth", y.games.length)}</span>
+        </a>
+      ))}
+    </div>
+
+    <h2 style="font-size:18px; margin:32px 0 12px">{t(locale, "releasesHubMonths")}</h2>
+    <div class="cal-grid">
+      {months.map((m) => (
+        <a class="cal-card" href={`/${locale}/releases/${m.month}/`}>
+          <b>{fmtMonth(m.month, locale)}</b>
+          <span>{t(locale, "releaseCountThisMonth", m.games.length)}</span>
+        </a>
+      ))}
+    </div>
+
+    {showTba && (
+      <>
+        <h2 style="font-size:18px; margin:32px 0 12px">{t(locale, "releasesHubTba")}</h2>
+        <div class="cal-grid">
+          <a class="cal-card" href={`/${locale}/releases/tba/`}>
+            <b>{t(locale, "releasesHubTba")}</b>
+            <span>{t(locale, "releaseCountThisMonth", tba.length)}</span>
+          </a>
+        </div>
+      </>
+    )}
+  </main>
+</Base>
+
+<style>
+  .cal-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+  .cal-grid :global(.cal-card) {
+    display: flex; flex-direction: column; gap: 4px; padding: 16px 18px;
+    border-radius: var(--r-sm); background: var(--panel); border: 1px solid var(--line-soft);
+    text-decoration: none; transition: border-color .15s, transform .15s;
+  }
+  .cal-grid :global(.cal-card:hover) { border-color: var(--indigo); transform: translateY(-2px); }
+  .cal-grid :global(.cal-card b) { font-family: var(--fd); font-size: 17px; color: var(--ink); }
+  .cal-grid :global(.cal-card span) { font-size: 13px; color: var(--muted); font-weight: 600; }
+</style>

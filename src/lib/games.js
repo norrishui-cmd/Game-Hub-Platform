@@ -9,6 +9,15 @@ import { t } from "../i18n/ui.js";
 import { translateGenre, translateGenres } from "../i18n/genres.js";
 import { DEFAULT_LOCALE } from "../i18n/locales.js";
 
+// 搜索结果里标题超过一定长度会被截断成省略号，游戏名本来就长的话（尤其加了副标题/数字后缀），
+// 拼上品牌后缀很容易把关键的游戏名挤到截断线以外。这里做法很简单：拼上品牌后缀还在预算内就拼，
+// 超预算就宁可不带品牌后缀，保住游戏名和描述短语完整可读——品牌曝光跟标题可读性冲突的时候，
+// 优先保标题可读性，反正每个页面本来就有 og:site_name 兜底站点身份。
+export function pageTitle(base, brand = "GameRadar", maxLen = 60) {
+  const withBrand = `${base} | ${brand}`;
+  return withBrand.length <= maxLen ? withBrand : base;
+}
+
 export function slugify(text) {
   return String(text)
     .trim()
@@ -182,6 +191,71 @@ export function buildExtendedFaqItems(game, locale = DEFAULT_LOCALE) {
   }
   items.push(...buildPlatformQA(game, locale));
   return items;
+}
+
+// ---------------------------------------------------------------------------
+// 发行日历：把游戏按年/月/待定分桶，生成 /releases/ 下面的日历落地页。
+// 门槛的意义：一个月只有 1 款游戏的页面就是薄内容，与其生成出来拉低整站质量，
+// 不如干脆不生成——随着选题库变大，够格的月份自然会出现，不需要手动维护名单。
+// ---------------------------------------------------------------------------
+export const RELEASE_YEAR_MIN = 10; // 年度页至少要有这么多款游戏才生成
+export const RELEASE_MONTH_MIN = 4; // 月度页至少要有这么多款游戏才生成
+export const RELEASE_TBA_MIN = 5; // 待定页至少要有这么多款游戏才生成
+
+export function hasRealDate(game) {
+  return Boolean(game.release && game.release !== "TBA");
+}
+
+// 按发行日期升序；同一天的按热度降序，让当天最受关注的排前面
+function byDateThenHype(a, b) {
+  if (a.release !== b.release) return a.release < b.release ? -1 : 1;
+  return (b.hype ?? 0) - (a.hype ?? 0);
+}
+
+export function collectReleaseYears(games) {
+  const map = new Map();
+  for (const g of games) {
+    if (!hasRealDate(g)) continue;
+    const year = g.release.slice(0, 4);
+    if (!map.has(year)) map.set(year, []);
+    map.get(year).push(g);
+  }
+  return [...map.entries()]
+    .filter(([, list]) => list.length >= RELEASE_YEAR_MIN)
+    .map(([year, list]) => ({ year, games: list.sort(byDateThenHype) }))
+    .sort((a, b) => (a.year < b.year ? -1 : 1));
+}
+
+export function collectReleaseMonths(games) {
+  const map = new Map();
+  for (const g of games) {
+    if (!hasRealDate(g)) continue;
+    const month = g.release.slice(0, 7); // "2026-08"
+    if (!map.has(month)) map.set(month, []);
+    map.get(month).push(g);
+  }
+  return [...map.entries()]
+    .filter(([, list]) => list.length >= RELEASE_MONTH_MIN)
+    .map(([month, list]) => ({ month, games: list.sort(byDateThenHype) }))
+    .sort((a, b) => (a.month < b.month ? -1 : 1));
+}
+
+export function collectTbaGames(games) {
+  return games.filter((g) => !hasRealDate(g)).sort((a, b) => (b.hype ?? 0) - (a.hype ?? 0));
+}
+
+// 年度页里再按月分组展示，比一长串平铺列表好读，也跟竞品的日历结构一致
+export function groupByMonth(games) {
+  const map = new Map();
+  for (const g of games) {
+    if (!hasRealDate(g)) continue;
+    const month = g.release.slice(0, 7);
+    if (!map.has(month)) map.set(month, []);
+    map.get(month).push(g);
+  }
+  return [...map.entries()]
+    .map(([month, list]) => ({ month, games: list.sort(byDateThenHype) }))
+    .sort((a, b) => (a.month < b.month ? -1 : 1));
 }
 
 export function collectTaxonomy(games, field) {

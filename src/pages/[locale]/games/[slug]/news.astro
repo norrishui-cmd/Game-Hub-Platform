@@ -5,7 +5,7 @@ import gamesData from "../../../../../data/games.json";
 import newsData from "../../../../../data/news.json";
 import { LOCALES } from "../../../../i18n/locales.js";
 import { t } from "../../../../i18n/ui.js";
-import { hasOwnPage, displayTitle, isGameIndexable, buildBreadcrumbJsonLd } from "../../../../lib/games.js";
+import { hasOwnPage, displayTitle, isGameIndexable, buildBreadcrumbJsonLd, pageTitle } from "../../../../lib/games.js";
 
 export async function getStaticPaths() {
   const wikiModules = import.meta.glob("../../../../../data/wiki/*.json", { eager: true, import: "default" });
@@ -43,7 +43,7 @@ const breadcrumbJsonLd = buildBreadcrumbJsonLd([
 ---
 <Base
   locale={locale}
-  title={`${t(locale, "gameNewsPageTitle", title)} | GameRadar`}
+  title={pageTitle(t(locale, "gameNewsPageTitle", title))}
   description={t(locale, "gameNewsIntro", title)}
   pathSuffix={`/games/${game.slug}/news/`}
   noindex={!indexable}

@@ -1,0 +1,119 @@
+---
+import Base from "../../../layouts/Base.astro";
+import GameCard from "../../../components/GameCard.astro";
+import gamesData from "../../../../data/games.json";
+import { LOCALES } from "../../../i18n/locales.js";
+import { t } from "../../../i18n/ui.js";
+import {
+  collectReleaseYears,
+  collectReleaseMonths,
+  collectTbaGames,
+  groupByMonth,
+  RELEASE_TBA_MIN,
+  fmtMonth,
+  fmtDate,
+  displayTitle,
+  buildBreadcrumbJsonLd,
+  pageTitle,
+} from "../../../lib/games.js";
+
+// 一个路由同时承担三种日历页（年 / 月 / 待定），因为它们的版式和数据结构几乎一致，
+// 拆成三个文件反而要维护三份几乎相同的模板。用 props.kind 区分具体渲染差异。
+export function getStaticPaths() {
+  const years = collectReleaseYears(gamesData.games);
+  const months = collectReleaseMonths(gamesData.games);
+  const tba = collectTbaGames(gamesData.games);
+
+  const buckets = [
+    ...years.map((y) => ({ slug: y.year, kind: "year", key: y.year, games: y.games })),
+    ...months.map((m) => ({ slug: m.month, kind: "month", key: m.month, games: m.games })),
+    ...(tba.length >= RELEASE_TBA_MIN ? [{ slug: "tba", kind: "tba", key: "tba", games: tba }] : []),
+  ];
+
+  return LOCALES.flatMap((locale) =>
+    buckets.map((b) => ({
+      params: { locale, period: b.slug },
+      props: { kind: b.kind, periodKey: b.key, games: b.games },
+    }))
+  );
+}
+
+const { locale, period } = Astro.params;
+const { kind, periodKey, games } = Astro.props;
+const site = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
+
+const monthLabel = kind === "month" ? fmtMonth(periodKey, locale) : "";
+const heading =
+  kind === "year" ? t(locale, "releaseYearTitle", periodKey)
+  : kind === "month" ? t(locale, "releaseMonthTitle", monthLabel)
+  : t(locale, "releasesTbaTitle");
+const intro =
+  kind === "year" ? t(locale, "releaseYearIntro", periodKey, games.length)
+  : kind === "month" ? t(locale, "releaseMonthIntro", monthLabel, games.length)
+  : t(locale, "releasesTbaIntro", games.length);
+
+// 年度页按月分组展示，比一长串平铺好读；月度页和待定页直接平铺。
+const monthGroups = kind === "year" ? groupByMonth(games) : [];
+
+const pageUrl = `${site}/${locale}/releases/${period}/`;
+const jsonLd = [
+  buildBreadcrumbJsonLd([
+    { name: "GameRadar", url: `${site}/${locale}/` },
+    { name: t(locale, "releasesHubTitle"), url: `${site}/${locale}/releases/` },
+    { name: heading, url: pageUrl },
+  ]),
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: heading,
+    numberOfItems: games.length,
+    itemListElement: games.slice(0, 50).map((g, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: displayTitle(g, locale),
+      url: `${site}/${locale}/games/${g.slug}/`,
+    })),
+  },
+];
+---
+<Base
+  locale={locale}
+  title={pageTitle(heading)}
+  description={intro}
+  pathSuffix={`/releases/${period}/`}
+  jsonLd={jsonLd}
+>
+  <main class="wrap" style="padding-top:28px">
+    <p class="crumb">
+      <a href={`/${locale}/`}>{t(locale, "breadcrumbBack")}</a>
+      <span aria-hidden="true">/</span>
+      <a href={`/${locale}/releases/`}>{t(locale, "releasesHubTitle")}</a>
+      <span aria-hidden="true">/</span>
+      <span>{heading}</span>
+    </p>
+    <div class="rail-head" style="flex-direction:column; align-items:flex-start; gap:6px">
+      <h1><span class="bar" style="background:var(--teal)"></span>{heading}</h1>
+      <p style="margin:0; color:var(--muted); font-size:15px; max-width:70ch">{intro}</p>
+    </div>
+
+    {kind === "year" ? (
+      monthGroups.map((mg) => (
+        <section style="margin-top:32px">
+          <div class="rail-head">
+            <h2 style="font-size:20px"><span class="bar" style="background:var(--indigo)"></span>{fmtMonth(mg.month, locale)}</h2>
+            <a class="count" href={`/${locale}/releases/${mg.month}/`} style="text-decoration:underline; text-underline-offset:2px">
+              {t(locale, "releaseCountThisMonth", mg.games.length)}
+            </a>
+          </div>
+          <div class="grid">{mg.games.map((g) => <GameCard game={g} locale={locale} />)}</div>
+        </section>
+      ))
+    ) : (
+      <div class="grid" style="margin-top:24px">{games.map((g) => <GameCard game={g} locale={locale} />)}</div>
+    )}
+
+    <p style="margin-top:32px">
+      <a href={`/${locale}/releases/`} style="color:var(--indigo); font-weight:700; text-decoration:none">{t(locale, "backToReleases")}</a>
+    </p>
+  </main>
+</Base>
