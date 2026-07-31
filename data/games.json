@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T11:07:28.338Z",
+  "generatedAt": "2026-07-31T11:20:00.281Z",
   "count": 105,
   "games": [
     {
@@ -1717,9 +1717,9 @@
       "genres": [
         "Sandbox strategy sim"
       ],
-      "release": "2026-07-16",
+      "release": "TBA",
       "hype": 45,
-      "status": "live",
+      "status": "upcoming",
       "trending": false,
       "coverage": "atlas",
       "links": {},

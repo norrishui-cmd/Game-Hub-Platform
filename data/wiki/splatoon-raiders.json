@@ -1,59 +1,22 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Splatoon Raiders is a released Shooter, adventure game for Switch 2. It is available now.",
+      "summary": "Splatoon Raiders is a single-player-focused spin-off in Nintendo's Splatoon series, developed by Nintendo EPD and released July 23, 2026 exclusively on Nintendo Switch 2. Players create an Inkling or Octoling cast as a mechanic, joining Deep Cut — Shiver, Frye and Big Man from Splatoon 3 — to explore the Spirhalite Islands, hunting treasure and battling Salmonids. It drops Turf War entirely in favour of a story-driven loot chase, with four-player co-op (local or online) that scales difficulty by player count.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Splatoon Raiders is confirmed for Switch 2. The game has already launched, so platform availability is confirmed. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "A Structural Departure from Mainline Splatoon", "description": "Raiders replaces Splatoon's competitive multiplayer core with exploration, puzzle-solving, combat and resource gathering across the Spirhalite Islands, built around a weapon upgrade system, a home base, and extensive player customisation. Reviews landed at 81 on Metacritic and 80 on OpenCritic — level with the three mainline entries — with IGN and Nintendo Life both scoring it 9/10, though critics noted boss fights lean more on damage sponges than puzzle design." },
+        { "title": "Pricing, amiibo & No Extra Editions", "description": "Digital is $49.99 and physical $59.99, with no Deluxe edition, no Collector's Edition and no season pass — notably unusual for a 2026 first-party release. Three Raiders-specific Deep Cut amiibo (Shiver, Frye, Big Man) launched alongside the game, each unlocking outfit options for the Mechanic, plus a themed Joy-Con 2 pair at $99.99." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "Nintendo — official Splatoon Raiders game page", "url": "https://www.nintendo.com/my/games/switch2/aadla/index.html" },
+        { "label": "Inkipedia — announcement history, setting and characters", "url": "https://splatoonwiki.org/wiki/Splatoon_Raiders" },
+        { "label": "Forbes — pricing, amiibo and review score roundup", "url": "https://www.forbes.com/sites/brianmazique/2026/07/22/splatoon-raiders-release-time-when-can-you-start-playing/" }
+      ]
     },
-    "de": {
-      "summary": "Splatoon Raiders ist ein veröffentlichtes Shooter, adventure-Spiel für Switch 2. Es ist bereits erhältlich.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Splatoon Raiders ist für Switch 2 bestätigt. Das Spiel ist bereits erschienen, die Plattformverfügbarkeit ist damit bestätigt. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Splatoon Raidersはシューティング・adventureゲームで、対応プラットフォームはSwitch 2。現在すでに発売中です。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "Splatoon RaidersはSwitch 2での発売が確認されています。すでに発売済みのため、対応プラットフォームは確定情報です。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Splatoon Raiders es un juego de Disparos, adventure para Switch 2. Ya está disponible.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Splatoon Raiders está confirmado para Switch 2. El juego ya se ha lanzado, por lo que la disponibilidad de plataformas está confirmada. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "Splatoon Raiders 是一款已经发行的射击、adventure游戏，登陆 Switch 2。目前已经上线。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "Splatoon Raiders 目前确认登陆 Switch 2。游戏已经正式上线，平台信息已经确认。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }
