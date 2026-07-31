@@ -1,59 +1,22 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "ZeroSpace is a released RTS game for PC. It is available now.",
+      "summary": "ZeroSpace is a cinematic sci-fi real-time strategy game from Starlance Studios in collaboration with Ironward, which entered Steam Early Access on July 20, 2026 as a PC-exclusive, buy-to-play title. Set in the Orion Arm of the Milky Way in the year 2700, it casts players as a commander of the Protectorate as humanity's fragile peace with ten alien civilisations begins to collapse, combining traditional base-building and unit management with hero-driven tactics and branching, RPG-style story choices.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "ZeroSpace is confirmed for PC. The game has already launched, so platform availability is confirmed. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "Army Building: Races, Heroes & Mercenaries", "description": "ZeroSpace's army system layers four core races, six legendary heroes, and 14 mercenary factions, letting players mix units and tactics across all three. The developers have emphasised streamlining classic RTS systems for responsiveness without cutting strategic depth, alongside advanced group simulation and pathfinding built for large armies." },
+        { "title": "Campaign, Galactic War & Development Team", "description": "Beyond the story-driven campaign with Mass Effect-style dialogue trees where choices affect diplomacy, story routes and endings, ZeroSpace includes large asynchronous multiplayer warfronts, co-op PvE with resource sharing, plus ranked and casual play. Art direction comes from Aaron Kambeitz — Relic Entertainment co-founder and lead artist on the Homeworld series. Starlance plans roughly a year in Early Access, adjusting based on player feedback." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "Games Press — official Early Access launch announcement", "url": "https://www.gamespress.com/ZeroSpace-Launches-in-Early-Access-on-Steam" },
+        { "label": "Steam — official store page and Early Access statement", "url": "https://store.steampowered.com/app/1605850/ZeroSpace/" },
+        { "label": "NewsGlobeNow — army systems, art direction and director interview", "url": "https://www.newsglobenow.com/new381972.html" }
+      ]
     },
-    "de": {
-      "summary": "ZeroSpace ist ein veröffentlichtes RTS-Spiel für PC. Es ist bereits erhältlich.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "ZeroSpace ist für PC bestätigt. Das Spiel ist bereits erschienen, die Plattformverfügbarkeit ist damit bestätigt. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "ZeroSpaceはRTSゲームで、対応プラットフォームはPC。現在すでに発売中です。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "ZeroSpaceはPCでの発売が確認されています。すでに発売済みのため、対応プラットフォームは確定情報です。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "ZeroSpace es un juego de RTS para PC. Ya está disponible.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "ZeroSpace está confirmado para PC. El juego ya se ha lanzado, por lo que la disponibilidad de plataformas está confirmada. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "ZeroSpace 是一款已经发行的RTS游戏，登陆 PC。目前已经上线。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "ZeroSpace 目前确认登陆 PC。游戏已经正式上线，平台信息已经确认。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }
