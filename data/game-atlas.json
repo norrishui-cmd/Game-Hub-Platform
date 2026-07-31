@@ -849,10 +849,12 @@
       "rank": 45,
       "slug": "nte-neverness-to-everness",
       "titleEn": "NTE: Neverness to Everness",
-      "release": "2026-07-07",
-      "releaseWindow": "Jul 2026",
+      "release": "2026-04-29",
+      "releaseWindow": "Apr 2026",
       "platforms": [
-        "PC"
+        "PC",
+        "PS5",
+        "Mobile"
       ],
       "genres": [
         "Open world anime RPG"

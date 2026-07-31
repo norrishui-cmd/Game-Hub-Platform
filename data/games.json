@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T08:40:35.849Z",
+  "generatedAt": "2026-07-31T11:03:08.943Z",
   "count": 105,
   "games": [
     {
@@ -1412,12 +1412,14 @@
       "developer": null,
       "publisher": "",
       "platforms": [
-        "PC"
+        "PC",
+        "PS5",
+        "Mobile"
       ],
       "genres": [
         "Open world anime RPG"
       ],
-      "release": "2026-07-07",
+      "release": "2026-04-29",
       "hype": 45,
       "status": "live",
       "trending": false,
