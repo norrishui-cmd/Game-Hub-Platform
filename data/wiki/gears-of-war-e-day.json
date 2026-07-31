@@ -1,59 +1,22 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Gears of War: E-Day is an upcoming Shooter game for PC, Xbox. It is scheduled to release on October 6, 2026.",
+      "summary": "Gears of War: E-Day is the sixth mainline entry in the Gears of War franchise, developed by The Coalition with People Can Fly in Unreal Engine 5 and releasing October 6, 2026 on Xbox Series X/S and PC (Steam and Windows Store), day one on Game Pass with Xbox Play Anywhere support. A prequel set 14 years before the original Gears of War, it follows younger versions of Marcus Fenix and Dominic Santiago through the first 24 hours of Emergence Day, when the Locust Horde first erupts from beneath the surface of Sera.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Gears of War: E-Day is confirmed for PC, Xbox. The current release target is October 6, 2026, though release dates for smaller studios can still shift. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "A Survival-Toned Prequel", "description": "E-Day keeps the series' signature cover-based combat but adds modern movement and environmental interaction systems, with gameplay footage emphasising makeshift weapons and limited gear to reflect a military caught completely unprepared. Original voice actors John DiMaggio and Carlos Ferro return as Marcus and Dom. The campaign supports solo play, split-screen co-op, and up to four players online." },
+        { "title": "Beta, Editions & Early Access", "description": "An Open Beta is scheduled for August 2026, with early access from August 6 for players who pre-order. Three editions are available — Standard ($69.99), Premium ($99.99), and a Collector's Edition — with Premium and Collector's owners getting up to five days of early access starting October 1, 2026. A Premium Edition Upgrade is available separately for Game Pass subscribers." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "Xbox — official game page and pre-order terms", "url": "https://www.xbox.com/en-US/games/gears-of-war-eday" },
+        { "label": "Game Informer — hands-on preview and developer interview", "url": "https://gameinformer.com/preview/2026/06/10/more-insight-into-the-coalitions-hopeful-return-to-form" },
+        { "label": "AllKeyShop — release date, platforms and premise breakdown", "url": "https://www.allkeyshop.com/blog/gears-of-war-eday-release-date-news-d/" }
+      ]
     },
-    "de": {
-      "summary": "Gears of War: E-Day ist ein kommendes Shooter-Spiel für PC, Xbox. Der Release ist für den 6. Oktober 2026 geplant.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Gears of War: E-Day ist für PC, Xbox bestätigt. Aktuell wird der 6. Oktober 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Gears of War: E-Dayは発売予定のシューティングゲームで、対応プラットフォームはPC・Xbox。発売日は2026年10月6日を予定しています。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "Gears of War: E-DayはPC・Xboxでの発売が確認されています。現時点では2026年10月6日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Gears of War: E-Day es un próximo juego de Disparos para PC, Xbox. Su lanzamiento está previsto para el 6 de octubre de 2026.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Gears of War: E-Day está confirmado para PC, Xbox. La fecha prevista es el 6 de octubre de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "Gears of War: E-Day 是一款即将发行的射击游戏，登陆 PC、Xbox。目前定档 2026年10月6日 发行。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "Gears of War: E-Day 目前确认登陆 PC、Xbox。目前定档 2026年10月6日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

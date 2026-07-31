@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-28T08:47:51.854Z",
+  "generatedAt": "2026-07-31T08:40:35.849Z",
   "count": 105,
   "games": [
     {
@@ -366,7 +366,7 @@
       ],
       "release": "2026-07-29",
       "hype": 65,
-      "status": "upcoming",
+      "status": "live",
       "trending": false,
       "coverage": "owned",
       "links": {},
@@ -880,9 +880,9 @@
       "genres": [
         "Rhythm strategy"
       ],
-      "release": "2026-07-16",
+      "release": "2026-10-15",
       "hype": 65,
-      "status": "live",
+      "status": "upcoming",
       "trending": false,
       "coverage": "atlas",
       "links": {},
@@ -1498,7 +1498,7 @@
       ],
       "release": "2026-07-31",
       "hype": 45,
-      "status": "upcoming",
+      "status": "live",
       "trending": false,
       "coverage": "atlas",
       "links": {},

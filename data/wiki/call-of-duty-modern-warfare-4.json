@@ -1,59 +1,22 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Call of Duty: Modern Warfare 4 is an upcoming FPS game for PC, PS5, Xbox. It is scheduled to release on October 23, 2026.",
+      "summary": "Call of Duty: Modern Warfare 4 is the twenty-third installment in the Call of Duty franchise and the fourth entry in the rebooted Modern Warfare sub-series, developed by Infinity Ward and published by Activision. Releasing October 23, 2026 on PlayStation 5, Xbox Series X/S, PC (Battle.net, Steam, Xbox on PC) and — for the first time in the series — Nintendo Switch 2, its campaign follows Private Park, a young South Korean soldier caught in a full-scale North Korean invasion, while a wanted Captain Price wages an off-book war from the shadows.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Call of Duty: Modern Warfare 4 is confirmed for PC, PS5, Xbox. The current release target is October 23, 2026, though release dates for smaller studios can still shift. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "Campaign: A New \"Big War\" Setting", "description": "The campaign spans trench warfare in Korea, close-quarters combat in New York, chases through Paris, and SAS night raids in Mumbai, introducing Park and his squad of South Korean Marines alongside returning series characters. Activision has framed it as a return to large-scale army-versus-army conflict, grounded in the military authenticity the Modern Warfare name is known for." },
+        { "title": "Multiplayer Changes & DMZ's Return", "description": "The headline multiplayer change is the removal of hip-fire weapon bloom, so shots always land where you aim. Black Ops 7's Omnimovement does not return; instead new mantling, hanging, climbing and jumping options aim for fluid traversal, and Create-a-Class has been redesigned for per-loadout customisation. DMZ also returns as a dedicated extraction mode set in Hajin, an Exclusion Zone formed after the campaign's events." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "Call of Duty — official announcement blog", "url": "https://www.callofduty.com/blog/2026/05/call-of-duty-modern-warfare-4-announcement" },
+        { "label": "Xbox Wire — campaign details and platform breakdown", "url": "https://news.xbox.com/en-us/2026/05/28/call-of-duty-modern-warfare-4-first-details-campaign/" },
+        { "label": "Call of Duty Wiki — multiplayer changes and character roster", "url": "https://callofduty.fandom.com/wiki/Call_of_Duty:_Modern_Warfare_4" }
+      ]
     },
-    "de": {
-      "summary": "Call of Duty: Modern Warfare 4 ist ein kommendes FPS-Spiel für PC, PS5, Xbox. Der Release ist für den 23. Oktober 2026 geplant.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Call of Duty: Modern Warfare 4 ist für PC, PS5, Xbox bestätigt. Aktuell wird der 23. Oktober 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Call of Duty: Modern Warfare 4は発売予定のFPSゲームで、対応プラットフォームはPC・PS5・Xbox。発売日は2026年10月23日を予定しています。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "Call of Duty: Modern Warfare 4はPC・PS5・Xboxでの発売が確認されています。現時点では2026年10月23日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Call of Duty: Modern Warfare 4 es un próximo juego de FPS para PC, PS5, Xbox. Su lanzamiento está previsto para el 23 de octubre de 2026.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Call of Duty: Modern Warfare 4 está confirmado para PC, PS5, Xbox. La fecha prevista es el 23 de octubre de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "Call of Duty: Modern Warfare 4 是一款即将发行的FPS游戏，登陆 PC、PS5、Xbox。目前定档 2026年10月23日 发行。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "Call of Duty: Modern Warfare 4 目前确认登陆 PC、PS5、Xbox。目前定档 2026年10月23日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

@@ -1,59 +1,22 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Assassin's Creed Black Flag Resynced is a released Open world action game for PC, PS5, Xbox. It is available now.",
+      "summary": "Assassin's Creed Black Flag Resynced is a ground-up remake of 2013's Assassin's Creed IV: Black Flag, developed primarily by Ubisoft Singapore and released July 9, 2026 on PlayStation 5, Xbox Series X/S, and PC (Ubisoft Store, Steam, Epic Games Store), with Steam Deck verification. Rebuilt on the latest Anvil engine, it returns players to the Golden Age of Piracy as Edward Kenway — with Matt Ryan reprising the role — and also serves as the fifteenth main installment in the series, continuing the modern-day arc begun in Assassin's Creed Shadows.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Assassin's Creed Black Flag Resynced is confirmed for PC, PS5, Xbox. The game has already launched, so platform availability is confirmed. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "Action-Adventure, Not an RPG", "description": "Ubisoft has been explicit that Resynced is a faithful remake rather than a reinvention: it deliberately steps away from the RPG systems of recent Assassin's Creed entries. Improvements include parry-driven combat closer to Assassin's Creed Shadows, refined stealth and parkour, deeper naval mechanics, enhanced lighting, high-resolution textures, a dynamic weather system, and a fully customisable HUD with presets." },
+        { "title": "What's Not Included", "description": "Resynced omits the original Black Flag's multiplayer mode and DLC, focusing entirely on the single-player campaign plus new narrative content and a reworked Animus framing. Ubisoft Singapore, which was one of Ubisoft Montreal's main collaborators on the 2013 original, led development with many original Black Flag developers returning; 15 Ubisoft studios contributed in total." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "Ubisoft — official game page and FAQ", "url": "https://www.ubisoft.com/en-us/game/assassins-creed/black-flag-resynced" },
+        { "label": "Wikipedia — development history, release and studio credits", "url": "https://en.wikipedia.org/wiki/Assassin's_Creed_Black_Flag_Resynced" },
+        { "label": "MobileSyrup — reveal showcase details and director quotes", "url": "https://mobilesyrup.com/2026/04/23/ubisoft-assassins-creed-black-flag-resynced-details/" }
+      ]
     },
-    "de": {
-      "summary": "Assassin's Creed Black Flag Resynced ist ein veröffentlichtes Open world action-Spiel für PC, PS5, Xbox. Es ist bereits erhältlich.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Assassin's Creed Black Flag Resynced ist für PC, PS5, Xbox bestätigt. Das Spiel ist bereits erschienen, die Plattformverfügbarkeit ist damit bestätigt. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Assassin's Creed Black Flag ResyncedはOpen world actionゲームで、対応プラットフォームはPC・PS5・Xbox。現在すでに発売中です。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "Assassin's Creed Black Flag ResyncedはPC・PS5・Xboxでの発売が確認されています。すでに発売済みのため、対応プラットフォームは確定情報です。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Assassin's Creed Black Flag Resynced es un juego de Open world action para PC, PS5, Xbox. Ya está disponible.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Assassin's Creed Black Flag Resynced está confirmado para PC, PS5, Xbox. El juego ya se ha lanzado, por lo que la disponibilidad de plataformas está confirmada. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "Assassin's Creed Black Flag Resynced 是一款已经发行的Open world action游戏，登陆 PC、PS5、Xbox。目前已经上线。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "Assassin's Creed Black Flag Resynced 目前确认登陆 PC、PS5、Xbox。游戏已经正式上线，平台信息已经确认。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

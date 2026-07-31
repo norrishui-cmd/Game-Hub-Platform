@@ -424,6 +424,28 @@ Beebom、Mobalytics 全都有"2026 游戏发行日历"页面）之后补的一�
 每个日历页都带 BreadcrumbList + ItemList 结构化数据、完整的 5 语言翻译、以及 sitemap 里
 准确的 lastmod。导航栏和页脚也都加了"发行日历"入口。
 
+## 2026-07-28 更新（十一）：AAA 大作深挖 + 一个数据源头 bug
+
+这批深挖了搜索量最大的四款 AAA：**GTA VI、Marvel's Wolverine、Halo: Campaign Evolved、
+Gears of War: E-Day**。累计已深挖 37 款。
+
+**顺手修了一个我自己前几轮埋下的坑（重要）**：之前核实到 Onimusha 官方把发行日期从 9/25 提前到
+9/4 时，我直接改了 `data/games.json`——但那是**派生文件**，真正的源头是 `data/game-atlas.json`。
+只要谁跑一次 `node scripts/build-from-atlas.mjs`（而这在文档里就是常规维护步骤），这个修正就会
+被源头的旧数据悄悄覆盖回去。现在已经改到源头 `game-atlas.json` 里，重新生成后验证过，修正是
+持久的了。
+
+**教训写在这里供以后参考**：`data/games.json` 是自动生成的派生文件，**任何手动修正都不要直接
+改它**——改对应的源头文件：
+- 选题库里的游戏（发行日期/平台/类型）→ 改 `data/game-atlas.json`
+- 自有 wiki 直链 → 改 `data/owned-wikis.json`
+- 封面图 → 改 `data/manual-covers.json`
+- wiki 正文内容 → 改 `data/wiki/<slug>.json`
+
+同时借这次重新生成，修正了 3 款已过发行日但状态还停留在"即将发行"的游戏
+（Halo: Campaign Evolved、Mistfall Hunter、Corsair Cove）——`build-from-atlas.mjs` 会按当天日期
+自动重算 `status`，所以以后只要定期跑，这类状态漂移会自动修好。
+
 ## 日常怎么维护
 
 - **新建了独立 wiki，想让门户直链过去**：编辑 `data/owned-wikis.json`。

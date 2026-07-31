@@ -1,59 +1,22 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Marvel's Wolverine is an upcoming Action adventure game for PS5. It is scheduled to release on September 15, 2026.",
+      "summary": "Marvel's Wolverine is a single-player action-adventure game from Insomniac Games (the studio behind Marvel's Spider-Man), published by Sony Interactive Entertainment and releasing September 15, 2026 exclusively on PlayStation 5. Built from the ground up for PS5 with no PS4 or PC version planned, it tells an original story following Logan as he searches for answers about his past, wielding adamantium claws and berserker rage in what Insomniac describes as a deliberately brutal, violent take on the character.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Marvel's Wolverine is confirmed for PS5. The current release target is September 15, 2026, though release dates for smaller studios can still shift. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "Combat & Story Direction", "description": "Rather than an open world, Marvel's Wolverine is a narrative-driven action-adventure built around fast, fluid claw combat and a berserker rage meter that builds momentum in battle. The June 2026 State of Play trailer confirmed appearances from Jean Grey, Sabretooth, Mystique and Omega Red, with a story involving mutants captured by a group known as the Reavers." },
+        { "title": "Development History & Accessibility", "description": "First revealed at the 2021 PlayStation Showcase, the game was among the projects exposed in the December 2023 ransomware attack on Insomniac; directors Marcus Smith and Mike Daly took over by October 2024. Insomniac has confirmed a comprehensive accessibility feature set at launch, covering cognitive, visual, auditory and motor assistance, plus PS5 Pro enhancements." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "PlayStation Blog — State of Play gameplay and story details", "url": "https://blog.playstation.com/2026/06/02/marvels-wolverine-new-gameplay-story-details-from-state-of-play/" },
+        { "label": "Marvel — official release date announcement", "url": "https://www.marvel.com/articles/games/marvels-wolverine-gameplay-trailer-playstation-state-of-play-2025" },
+        { "label": "GamesRadar+ — comprehensive preview roundup", "url": "https://www.gamesradar.com/marvels-wolverine-guide/" }
+      ]
     },
-    "de": {
-      "summary": "Marvel's Wolverine ist ein kommendes Action adventure-Spiel für PS5. Der Release ist für den 15. September 2026 geplant.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Marvel's Wolverine ist für PS5 bestätigt. Aktuell wird der 15. September 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Marvel's Wolverineは発売予定のAction adventureゲームで、対応プラットフォームはPS5。発売日は2026年9月15日を予定しています。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "Marvel's WolverineはPS5での発売が確認されています。現時点では2026年9月15日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Marvel's Wolverine es un próximo juego de Action adventure para PS5. Su lanzamiento está previsto para el 15 de septiembre de 2026.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Marvel's Wolverine está confirmado para PS5. La fecha prevista es el 15 de septiembre de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "Marvel's Wolverine 是一款即将发行的Action adventure游戏，登陆 PS5。目前定档 2026年9月15日 发行。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "Marvel's Wolverine 目前确认登陆 PS5。目前定档 2026年9月15日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

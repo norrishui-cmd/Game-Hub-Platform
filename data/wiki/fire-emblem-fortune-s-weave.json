@@ -1,59 +1,22 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Fire Emblem: Fortune's Weave is an upcoming Tactical RPG game for Switch 2. It is scheduled to release on September 17, 2026.",
+      "summary": "Fire Emblem: Fortune's Weave is the eighteenth mainline entry in Nintendo's tactical RPG series, developed by Intelligent Systems and releasing September 17, 2026 exclusively on Nintendo Switch 2 — with no original Switch version planned. Set on the continent of Dagda in the Dagdan Empire, a land ruled by gods for 1,500 years, it centres on the Heroic Games: a gladiatorial tournament held in the capital Dagsion whose winner is granted a single wish.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Fire Emblem: Fortune's Weave is confirmed for Switch 2. The current release target is September 17, 2026, though release dates for smaller studios can still shift. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "Four Protagonists, Four Routes", "description": "Like Three Houses, Fortune's Weave uses a multi-route structure where you pick one of four leads and follow their version of events: Cai, a boy fighting to free his imprisoned father; Dietrich, a swordsman chasing stronger opponents; Theodora, a queen pursuing her homeland's long-held dream; and Leda, a musician seeking revenge." },
+        { "title": "Between Matches & the Three Houses Connection", "description": "Between tournament matches you can train at the training grounds, strengthen bonds to recruit allies, and travel beyond Dagsion's walls for extra battles and dungeons. The game shares a world with the Fódlan setting of Three Houses in a different era — an aged Sothis appears in trailers, and Three Houses character designer Chinatsu Kurahana returns, though Koei Tecmo was not involved this time." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "Nintendo — official Fortune's Weave game page", "url": "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Fire-Emblem-Fortune-s-Weave-2915498.html" },
+        { "label": "Fire Emblem Wiki — setting, route structure and Three Houses links", "url": "https://fireemblem.fandom.com/wiki/Fire_Emblem:_Fortune's_Weave" },
+        { "label": "Dot Esports — release date, editions and pricing", "url": "https://dotesports.com/nintendo/guides/fire-emblem-fortunes-weave-release-date-editions" }
+      ]
     },
-    "de": {
-      "summary": "Fire Emblem: Fortune's Weave ist ein kommendes Tactical RPG-Spiel für Switch 2. Der Release ist für den 17. September 2026 geplant.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Fire Emblem: Fortune's Weave ist für Switch 2 bestätigt. Aktuell wird der 17. September 2026 als Release-Termin angepeilt, bei kleineren Studios kann sich das noch verschieben. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Fire Emblem: Fortune's Weaveは発売予定のTactical RPGゲームで、対応プラットフォームはSwitch 2。発売日は2026年9月17日を予定しています。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "Fire Emblem: Fortune's WeaveはSwitch 2での発売が確認されています。現時点では2026年9月17日の発売を予定していますが、中小規模タイトルでは延期の可能性もあります。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Fire Emblem: Fortune's Weave es un próximo juego de Tactical RPG para Switch 2. Su lanzamiento está previsto para el 17 de septiembre de 2026.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Fire Emblem: Fortune's Weave está confirmado para Switch 2. La fecha prevista es el 17 de septiembre de 2026, aunque los lanzamientos de estudios pequeños pueden retrasarse. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "Fire Emblem: Fortune's Weave 是一款即将发行的Tactical RPG游戏，登陆 Switch 2。目前定档 2026年9月17日 发行。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "Fire Emblem: Fortune's Weave 目前确认登陆 Switch 2。目前定档 2026年9月17日 发行，中小体量游戏的档期仍有推迟可能。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

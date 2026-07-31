@@ -1,59 +1,22 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Halo: Campaign Evolved is a released FPS remaster game for PC, PS5, Xbox. It is available now.",
+      "summary": "Halo: Campaign Evolved is a ground-up remake of 2001's Halo: Combat Evolved campaign, developed in Unreal Engine 5 by Halo Studios and released July 28, 2026 — 25 years after the original. It marks the first time a mainline Halo game has launched on PlayStation 5, alongside Xbox Series X/S, PC (Steam and Windows Store), cloud, and day-one Game Pass, with cross-play and cross-progression across every platform.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Halo: Campaign Evolved is confirmed for PC, PS5, Xbox. The game has already launched, so platform availability is confirmed. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "Operation: METEORITE — The New Missions", "description": "Included with every edition, Operation: METEORITE is a new three-mission story arc set one year before the events of Combat Evolved, featuring Master Chief and Sgt. Johnson infiltrating a Covenant research vessel. It adds new locations, enemy variants, and weapons drawn from across the wider Halo series." },
+        { "title": "What's In and What's Out", "description": "Campaign Evolved is campaign-only — the original competitive multiplayer is not included. It does support four-player online co-op and two-player split-screen on consoles, plus gameplay-modifying Skulls for replayability. Premium and Collector's Edition owners received up to five days of early access starting July 23, 2026." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "Xbox Wire — official launch and feature breakdown", "url": "https://news.xbox.com/en-us/2026/07/23/halo-campaign-evolved-early-access-launch-xbox/" },
+        { "label": "Halopedia — platforms, remake scope and release details", "url": "https://www.halopedia.org/Halo:_Campaign_Evolved" },
+        { "label": "Space.com — release date, editions and trailer roundup", "url": "https://www.space.com/entertainment/space-games/halo-campaign-evolved-release-date-rumors-platforms-and-everything-else-we-know-about-the-halo-remake" }
+      ]
     },
-    "de": {
-      "summary": "Halo: Campaign Evolved ist ein veröffentlichtes FPS remaster-Spiel für PC, PS5, Xbox. Es ist bereits erhältlich.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Halo: Campaign Evolved ist für PC, PS5, Xbox bestätigt. Das Spiel ist bereits erschienen, die Plattformverfügbarkeit ist damit bestätigt. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Halo: Campaign EvolvedはFPS remasterゲームで、対応プラットフォームはPC・PS5・Xbox。現在すでに発売中です。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "Halo: Campaign EvolvedはPC・PS5・Xboxでの発売が確認されています。すでに発売済みのため、対応プラットフォームは確定情報です。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Halo: Campaign Evolved es un juego de FPS remaster para PC, PS5, Xbox. Ya está disponible.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Halo: Campaign Evolved está confirmado para PC, PS5, Xbox. El juego ya se ha lanzado, por lo que la disponibilidad de plataformas está confirmada. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "Halo: Campaign Evolved 是一款已经发行的FPS remaster游戏，登陆 PC、PS5、Xbox。目前已经上线。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "Halo: Campaign Evolved 目前确认登陆 PC、PS5、Xbox。游戏已经正式上线，平台信息已经确认。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }
