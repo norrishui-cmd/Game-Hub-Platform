@@ -1,59 +1,22 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "The Bustling World is an upcoming Open world life sim game for PC. An official release date has not been confirmed yet.",
+      "summary": "The Bustling World (烽火与炊烟) is an ambitious open-world sandbox RPG from Chengdu-based indie studio FireWo Games, published by Lightning Games, set in a fictional ancient China and in development for PC via Steam and the Epic Games Store. First announced in December 2023, it still has no confirmed release date. The pitch is near-total freedom: settle down and run a shop, workshop, inn or pharmacy; farm quietly; go adventuring; turn to crime; or raise an army, stabilise a regime and found your own kingdom.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "The Bustling World is confirmed for PC. No release date has been locked in yet — this page will be updated as soon as one is confirmed. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "Systems: Life Sim Meets Strategy", "description": "The Bustling World blends isometric RPG exploration with life-sim and strategy layers — farming, crafting, building, business management, diplomacy and warfare all coexist in one open world of cities, settlements and countryside. Every resident is an individually simulated character, and player choices are designed to ripple through the world rather than following a single fixed path." },
+        { "title": "Art Direction & Development Status", "description": "To land its stylised look, the team studied over ten thousand ancient Chinese paintings and texts. FireWo Games has grown past 50 members and showcased the project at GDC, but has not committed to a release window — anyone tracking this one should treat any specific date circulating online as unconfirmed until the studio announces it." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "Steam — official store page and feature description", "url": "https://store.steampowered.com/app/2724650/The_Bustling_World/" },
+        { "label": "Gamepressure — systems and setting breakdown", "url": "https://www.gamepressure.com/games/the-bustling-world/zb687f" },
+        { "label": "Steam Community — developer update diaries and studio status", "url": "https://steamcommunity.com/app/2724650" }
+      ]
     },
-    "de": {
-      "summary": "The Bustling World ist ein kommendes Open world life sim-Spiel für PC. Ein offizielles Erscheinungsdatum steht noch nicht fest.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "The Bustling World ist für PC bestätigt. Ein Release-Termin steht noch nicht fest — diese Seite wird aktualisiert, sobald einer bestätigt ist. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "The Bustling Worldは発売予定のOpen world life simゲームで、対応プラットフォームはPC。公式の発売日はまだ発表されていません。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "The Bustling WorldはPCでの発売が確認されています。公式の発売日はまだ確定していません。確定次第このページを更新します。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "The Bustling World es un próximo juego de Open world life sim para PC. Aún no se ha confirmado una fecha de lanzamiento oficial.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "The Bustling World está confirmado para PC. Todavía no hay una fecha de lanzamiento confirmada — esta página se actualizará en cuanto se anuncie una. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "The Bustling World 是一款即将发行的Open world life sim游戏，登陆 PC。官方发行日期暂未确认。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "The Bustling World 目前确认登陆 PC。官方还没有锁定具体发行日期，这里会在确认后第一时间更新。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

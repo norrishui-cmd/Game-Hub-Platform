@@ -60,5 +60,6 @@
   "clive-barker-s-hellraiser-revival": { "cover": "/images/games/clive-barker-s-hellraiser-revival-banner.webp", "coverPosition": "center" },
   "tides-of-annihilation": { "cover": "/images/games/tides-of-annihilation-banner.webp", "coverPosition": "center" },
   "trails-in-the-sky-2nd-chapter": { "cover": "/images/games/trails-in-the-sky-2nd-chapter-banner.webp", "coverPosition": "center" },
-  "halloween": { "cover": "/images/games/halloween-banner.webp", "coverPosition": "center" }
+  "halloween": { "cover": "/images/games/halloween-banner.webp", "coverPosition": "center" },
+  "wind-runners": { "cover": "/images/games/wind-runners-banner.webp", "coverPosition": "center" }
 }

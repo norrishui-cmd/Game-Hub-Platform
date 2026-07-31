@@ -532,11 +532,12 @@
       "rank": 28,
       "slug": "mortal-shell-ii",
       "titleEn": "Mortal Shell II",
-      "release": "TBA",
-      "releaseWindow": "2026 TBC",
+      "release": "2026-08-20",
+      "releaseWindow": "Aug 2026",
       "platforms": [
         "PC",
-        "Console"
+        "PS5",
+        "Xbox Series"
       ],
       "genres": [
         "Soulslike RPG"

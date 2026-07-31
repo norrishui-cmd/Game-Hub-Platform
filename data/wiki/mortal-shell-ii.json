@@ -1,59 +1,22 @@
 {
+  "publishStatus": "published",
   "content": {
     "en": {
-      "summary": "Mortal Shell II is an upcoming Soulslike RPG game for PC, Console. An official release date has not been confirmed yet.",
+      "summary": "Mortal Shell II is a standalone Soulslike action RPG sequel from Cold Symmetry, published by Playstack and releasing August 20, 2026 on PC (Steam), PlayStation 5 and Xbox Series X/S — with no PS4 or Xbox One version. Players return as the Harbinger, possessing the bodies of fallen warriors known as Shells to inherit their combat abilities, this time across a much larger interconnected open world set in a redesigned, swampy and cold reimagining of Fallgrim.",
       "faq": [],
       "guideSections": [
-        {
-          "title": "Platforms & release status",
-          "description": "Mortal Shell II is confirmed for PC, Console. No release date has been locked in yet — this page will be updated as soon as one is confirmed. Check the official links below for the latest word directly from the developer."
-        }
+        { "title": "Eight Shells & Faster Combat", "description": "The sequel ships with eight playable Shells (up from the original's four), including Tiel the Acolyte, Eredrim the Venerable, and Proxima the Broodseeker — each offering a distinct fighting style. Combat is deliberately faster and more aggressive than the original's patience-and-timing focus, with deeper weapon upgrade options and the addition of firearms and ranged combat." },
+        { "title": "World Design & Post-Launch Plans", "description": "Cold Symmetry has said the interconnected world is designed to stay deliberately compact — high content density with minimal wasted travel — with over 60 dungeons to explore. Confirmed post-launch content includes New Game Plus, a Boss Rush mode, additional Shells, and story DLC. The Steam Open Beta drew more than 500,000 players in under two weeks and held a 93% positive rating." }
       ],
-      "sources": []
+      "sources": [
+        { "label": "Gematsu — gameplay reveal and physical edition details", "url": "https://www.gematsu.com/2026/04/mortal-shell-ii-gameplay-reveal-trailer" },
+        { "label": "Game Rant — release date confirmation and content scope", "url": "https://gamerant.com/mortal-shell-2-soulslike-sequel-august-20-release-date/" },
+        { "label": "Sortiraparis — editions, world design and beta figures", "url": "https://www.sortiraparis.com/en/what-to-do-in-paris/gaming/articles/349183-mortal-shell-ii-release-date-gameplay-trailer-preorder-all-you-need-to-know-about-the-dark-fantasy-rpg" }
+      ]
     },
-    "de": {
-      "summary": "Mortal Shell II ist ein kommendes Soulslike RPG-Spiel für PC, Console. Ein offizielles Erscheinungsdatum steht noch nicht fest.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plattformen & Release-Status",
-          "description": "Mortal Shell II ist für PC, Console bestätigt. Ein Release-Termin steht noch nicht fest — diese Seite wird aktualisiert, sobald einer bestätigt ist. Die aktuellsten Infos gibt es über die offiziellen Links weiter unten."
-        }
-      ],
-      "sources": []
-    },
-    "ja": {
-      "summary": "Mortal Shell IIは発売予定のSoulslike RPGゲームで、対応プラットフォームはPC・Console。公式の発売日はまだ発表されていません。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "対応プラットフォームと発売状況",
-          "description": "Mortal Shell IIはPC・Consoleでの発売が確認されています。公式の発売日はまだ確定していません。確定次第このページを更新します。最新情報は下記の公式リンクからご確認いただけます。"
-        }
-      ],
-      "sources": []
-    },
-    "es": {
-      "summary": "Mortal Shell II es un próximo juego de Soulslike RPG para PC, Console. Aún no se ha confirmado una fecha de lanzamiento oficial.",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "Plataformas y estado del lanzamiento",
-          "description": "Mortal Shell II está confirmado para PC, Console. Todavía no hay una fecha de lanzamiento confirmada — esta página se actualizará en cuanto se anuncie una. Consulta los enlaces oficiales de abajo para las últimas novedades."
-        }
-      ],
-      "sources": []
-    },
-    "zh": {
-      "summary": "Mortal Shell II 是一款即将发行的Soulslike RPG游戏，登陆 PC、Console。官方发行日期暂未确认。",
-      "faq": [],
-      "guideSections": [
-        {
-          "title": "平台与发行进度",
-          "description": "Mortal Shell II 目前确认登陆 PC、Console。官方还没有锁定具体发行日期，这里会在确认后第一时间更新。想看最新的第一手消息，可以点开下方官方链接。"
-        }
-      ],
-      "sources": []
-    }
+    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
+    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
   }
 }

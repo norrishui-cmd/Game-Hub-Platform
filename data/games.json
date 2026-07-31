@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T11:03:08.943Z",
+  "generatedAt": "2026-07-31T11:07:28.338Z",
   "count": 105,
   "games": [
     {
@@ -982,12 +982,13 @@
       "publisher": "",
       "platforms": [
         "PC",
-        "Console"
+        "PS5",
+        "Xbox Series"
       ],
       "genres": [
         "Soulslike RPG"
       ],
-      "release": "TBA",
+      "release": "2026-08-20",
       "hype": 65,
       "status": "upcoming",
       "trending": false,
@@ -2233,7 +2234,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/wind-runners-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#8a3d2f",
