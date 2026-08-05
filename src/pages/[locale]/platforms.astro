@@ -3,7 +3,8 @@ import Base from "../../layouts/Base.astro";
 import gamesData from "../../../data/games.json";
 import { LOCALES } from "../../i18n/locales.js";
 import { t } from "../../i18n/ui.js";
-import { collectTaxonomy } from "../../lib/games.js";
+import { P2 } from "../../i18n/p2.js";
+import { collectTaxonomy, buildBreadcrumbJsonLd, buildCollectionJsonLd } from "../../lib/games.js";
 
 export function getStaticPaths() {
   return LOCALES.map((locale) => ({ params: { locale } }));
@@ -11,11 +12,19 @@ export function getStaticPaths() {
 
 const { locale } = Astro.params;
 const platforms = collectTaxonomy(gamesData.games, "platforms");
+const copy = P2[locale] || P2.en;
+const site = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
+const pageUrl = `${site}/${locale}/platforms/`;
+const jsonLd = locale === "en" ? [
+  buildBreadcrumbJsonLd([{ name:"GameRadar", url:`${site}/${locale}/` }, { name:t(locale, "platformsPageTitle"), url:pageUrl }]),
+  buildCollectionJsonLd({ name:t(locale, "platformsPageTitle"), description:copy.platformsIntro, url:pageUrl, locale, items:platforms.map((platform) => ({ name:platform.label, url:`${site}/${locale}/platform/${platform.slug}/` })) }),
+] : [];
 ---
-<Base locale={locale} title={`${t(locale, "platformsPageTitle")} | GameRadar`} pathSuffix="/platforms/" noindex={locale !== "en"} indexableLocales={["en"]}>
+<Base locale={locale} title={`${t(locale, "platformsPageTitle")} | GameRadar`} description={copy.platformsIntro} pathSuffix="/platforms/" noindex={locale !== "en"} indexableLocales={["en"]} jsonLd={jsonLd}>
   <main class="wrap" style="padding-top:28px">
     <div class="crumb"><a href={`/${locale}/`}>{t(locale, "breadcrumbBack")}</a></div>
     <div class="rail-head"><h1><span class="bar" style="background:var(--teal)"></span>{t(locale, "platformsPageTitle")}</h1></div>
+    <p style="max-width:76ch;color:var(--muted);margin:-6px 0 22px">{copy.platformsIntro}</p>
     <div class="tabs" role="list">
       {platforms.map((p) => (
         <a class="tab" role="listitem" href={`/${locale}/platform/${p.slug}/`}>{p.label}<span style="opacity:.6"> · {p.count}</span></a>

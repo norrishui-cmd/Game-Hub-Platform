@@ -2,6 +2,8 @@ import { readFile, readdir } from "node:fs/promises";
 import path from "node:path";
 import { auditWiki, readJson } from "./wiki-quality.mjs";
 import { UI } from "../src/i18n/ui.js";
+import { PRODUCT } from "../src/i18n/product.js";
+import { P2 } from "../src/i18n/p2.js";
 import { LOCALES } from "../src/i18n/locales.js";
 import { SITE } from "../src/config/site.js";
 
@@ -33,6 +35,16 @@ for (const locale of LOCALES) {
   if (missing.length) failures.push(`UI ${locale}: missing keys ${missing.join(", ")}`);
   if (extra.length) failures.push(`UI ${locale}: unexpected keys ${extra.join(", ")}`);
 }
+for (const [label, dictionary] of [["PRODUCT", PRODUCT], ["P2", P2]]) {
+  const keys = Object.keys(dictionary.en).sort();
+  for (const locale of LOCALES) {
+    const localized = Object.keys(dictionary[locale] || {});
+    const missing = keys.filter((key) => !localized.includes(key));
+    const extra = localized.filter((key) => !keys.includes(key));
+    if (missing.length) failures.push(`${label} ${locale}: missing keys ${missing.join(", ")}`);
+    if (extra.length) failures.push(`${label} ${locale}: unexpected keys ${extra.join(", ")}`);
+  }
+}
 const wikiDir = path.resolve("data/wiki");
 for (const file of await walk(wikiDir)) {
   if (!file.endsWith(".json")) continue;
@@ -45,6 +57,7 @@ for (const file of await walk(wikiDir)) {
 for (const file of files) {
   const html = await readFile(file, "utf8");
   const rel = path.relative(root, file);
+  const route = rel.split(path.sep).join("/");
   const noindex = /<meta name="robots" content="noindex/.test(html);
   const required = [
     [/<title>[^<]{8,}<\/title>/, "title"],
@@ -62,6 +75,16 @@ for (const file of files) {
   }
   for (const [pattern, label] of required) if (!pattern.test(html)) failures.push(`${rel}: missing ${label}`);
   if (!noindex && rel.includes(`${path.sep}games${path.sep}`) && !/application\/ld\+json/.test(html)) failures.push(`${rel}: missing structured data`);
+  if (/^(en|de|ja|es|zh)\/compare\/index\.html$/.test(route)) {
+    if (noindex) failures.push(`${rel}: comparison tool must remain indexable`);
+    if (!html.includes('"@type":"WebApplication"')) failures.push(`${rel}: missing WebApplication schema`);
+    if (!html.includes('"@type":"BreadcrumbList"')) failures.push(`${rel}: missing comparison breadcrumb schema`);
+  }
+  if (/^(en|de|ja|es|zh)\/watchlist\/index\.html$/.test(route) && !noindex) failures.push(`${rel}: personalized watchlist must be noindex`);
+  if (!noindex && /^en\/(genres|platforms|genre\/[^/]+|platform\/[^/]+)\/index\.html$/.test(route)) {
+    if (!html.includes('"@type":"CollectionPage"')) failures.push(`${rel}: missing CollectionPage schema`);
+    if (!html.includes('"@type":"BreadcrumbList"')) failures.push(`${rel}: missing taxonomy breadcrumb schema`);
+  }
 }
 
 const robots = await readFile(path.join(root, "robots.txt"), "utf8");

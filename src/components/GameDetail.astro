@@ -2,6 +2,7 @@
 import { fmtDate, relText, availableLinks, buildJsonLd, slugify, displayTitle, translateGenres, buildFaqItems, effectiveStatus, isGameFaqIndexable, isGameReleaseIndexable, isGameNewsIndexable, listSeparator } from "../lib/games.js";
 import { t } from "../i18n/ui.js";
 import { PRODUCT } from "../i18n/product.js";
+import { P2 } from "../i18n/p2.js";
 import gamesData from "../../data/games.json";
 import newsData from "../../data/news.json";
 import GameCard from "./GameCard.astro";
@@ -35,6 +36,7 @@ const faqIndexable = isGameFaqIndexable(game, locale);
 const releaseIndexable = isGameReleaseIndexable(game, locale);
 const separator = listSeparator(locale);
 const product = PRODUCT[locale] || PRODUCT.en;
+const p2 = P2[locale] || P2.en;
 const dataUpdated = fmtDate(String(gamesData.generatedAt).slice(0, 10), locale);
 const releaseRelative = (status === "upcoming" && game.release !== "TBA")
   ? ((locale === "zh" || locale === "ja") ? `（${relText(game, locale)}）` : ` (${relText(game, locale)})`)
@@ -103,7 +105,7 @@ const faqJsonLd = {
 
   <div class="detail-title-row">
     <h1 class="detail-title">{title}</h1>
-    {!isDraft && <button class="game-watch-btn" type="button" data-game-watch aria-pressed="false">{product.saveGame}</button>}
+    {!isDraft && <div class="detail-actions"><a class="game-compare-link" href={`/${locale}/compare/?games=${game.slug}`}>{p2.addToCompare}</a><button class="game-watch-btn" type="button" data-game-watch aria-pressed="false">{product.saveGame}</button></div>}
   </div>
   {locale === "zh" && game.titleEn && game.titleEn !== title && <div class="detail-en">{game.titleEn}</div>}
 
@@ -240,6 +242,7 @@ const faqJsonLd = {
         ? watchlist.filter((slug) => slug !== watchSlug)
         : [...watchlist, watchSlug];
       localStorage.setItem(storageKey, JSON.stringify(next));
+      window.dispatchEvent(new CustomEvent("gr-watchlist-change"));
       renderWatchButton();
     });
     renderWatchButton();
@@ -251,6 +254,9 @@ const faqJsonLd = {
   .detail-title-row .detail-title { margin-bottom:0; }
   .game-watch-btn { flex:0 0 auto; border:1px solid var(--indigo); background:transparent; color:var(--indigo); border-radius:999px; padding:9px 14px; font:700 12px var(--fb); cursor:pointer; }
   .game-watch-btn[aria-pressed="true"] { background:var(--indigo); color:white; }
+  .detail-actions { display:flex;align-items:center;gap:8px;flex:0 0 auto; }
+  .game-compare-link { border:1px solid var(--line);color:var(--muted);border-radius:999px;padding:9px 14px;font:700 12px var(--fb);text-decoration:none; }
+  .game-compare-link:hover { color:var(--ink);border-color:var(--faint); }
   .platform-matrix-wrap { overflow-x:auto; border:1px solid var(--line-soft); border-radius:var(--r-sm); }
   .platform-matrix { width:100%; min-width:520px; border-collapse:collapse; font-size:13px; }
   .platform-matrix th,.platform-matrix td { text-align:left; padding:12px 14px; border-bottom:1px solid var(--line-soft); }
@@ -262,5 +268,5 @@ const faqJsonLd = {
   .tracked-update-link { display:inline-block; line-height:1.5; }
   .tracked-update > p:last-child,.source-summary { color:var(--muted); font-size:13px; }
   .source-section ol { padding-left:20px; }
-  @media(max-width:640px){.detail-title-row{align-items:flex-start;flex-direction:column}.game-watch-btn{margin-bottom:4px}}
+  @media(max-width:640px){.detail-title-row{align-items:flex-start;flex-direction:column}.detail-actions{width:100%;flex-wrap:wrap}.game-watch-btn,.game-compare-link{flex:1;text-align:center;margin-bottom:4px}}
 </style>

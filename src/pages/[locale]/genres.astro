@@ -3,7 +3,8 @@ import Base from "../../layouts/Base.astro";
 import gamesData from "../../../data/games.json";
 import { LOCALES } from "../../i18n/locales.js";
 import { t } from "../../i18n/ui.js";
-import { collectTaxonomy, translateGenre } from "../../lib/games.js";
+import { P2 } from "../../i18n/p2.js";
+import { collectTaxonomy, translateGenre, buildBreadcrumbJsonLd, buildCollectionJsonLd } from "../../lib/games.js";
 
 export function getStaticPaths() {
   return LOCALES.map((locale) => ({ params: { locale } }));
@@ -11,11 +12,19 @@ export function getStaticPaths() {
 
 const { locale } = Astro.params;
 const genres = collectTaxonomy(gamesData.games, "genres");
+const copy = P2[locale] || P2.en;
+const site = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
+const pageUrl = `${site}/${locale}/genres/`;
+const jsonLd = locale === "en" ? [
+  buildBreadcrumbJsonLd([{ name:"GameRadar", url:`${site}/${locale}/` }, { name:t(locale, "genresPageTitle"), url:pageUrl }]),
+  buildCollectionJsonLd({ name:t(locale, "genresPageTitle"), description:copy.genresIntro, url:pageUrl, locale, items:genres.map((genre) => ({ name:translateGenre(genre.label, locale), url:`${site}/${locale}/genre/${genre.slug}/` })) }),
+] : [];
 ---
-<Base locale={locale} title={`${t(locale, "genresPageTitle")} | GameRadar`} pathSuffix="/genres/" noindex={locale !== "en"} indexableLocales={["en"]}>
+<Base locale={locale} title={`${t(locale, "genresPageTitle")} | GameRadar`} description={copy.genresIntro} pathSuffix="/genres/" noindex={locale !== "en"} indexableLocales={["en"]} jsonLd={jsonLd}>
   <main class="wrap" style="padding-top:28px">
     <div class="crumb"><a href={`/${locale}/`}>{t(locale, "breadcrumbBack")}</a></div>
     <div class="rail-head"><h1><span class="bar" style="background:var(--indigo)"></span>{t(locale, "genresPageTitle")}</h1></div>
+    <p style="max-width:76ch;color:var(--muted);margin:-6px 0 22px">{copy.genresIntro}</p>
     <div class="tabs" role="list">
       {genres.map((g) => (
         <a class="tab" role="listitem" href={`/${locale}/genre/${g.slug}/`}>{translateGenre(g.label, locale)}<span style="opacity:.6"> · {g.count}</span></a>

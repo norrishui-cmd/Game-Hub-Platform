@@ -1,0 +1,122 @@
+---
+import Base from "../../layouts/Base.astro";
+import gamesData from "../../../data/games.json";
+import { LOCALES } from "../../i18n/locales.js";
+import { P2 } from "../../i18n/p2.js";
+import { displayTitle, effectiveStatus, translateGenres, buildBreadcrumbJsonLd, pageTitle } from "../../lib/games.js";
+
+export function getStaticPaths() { return LOCALES.map((locale) => ({ params: { locale } })); }
+
+const { locale } = Astro.params;
+const copy = P2[locale] || P2.en;
+const site = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
+const pageUrl = `${site}/${locale}/compare/`;
+const games = gamesData.games.map((game) => ({
+  slug: game.slug,
+  title: displayTitle(game, locale),
+  release: game.release || "TBA",
+  status: effectiveStatus(game),
+  developer: game.developer || "—",
+  publisher: game.publisher || "—",
+  platforms: game.platforms || [],
+  genres: translateGenres(game.genres || [], locale),
+  coverage: game.coverage === "owned" ? "owned" : "reference",
+  cover: game.cover || "",
+  href: `/${locale}/games/${game.slug}/`,
+}));
+const jsonLd = [
+  buildBreadcrumbJsonLd([{ name: "GameRadar", url: `${site}/${locale}/` }, { name: copy.compareTitle, url: pageUrl }]),
+  { "@context":"https://schema.org", "@type":"WebApplication", name:copy.compareTitle, description:copy.compareIntro, url:pageUrl, inLanguage:locale, applicationCategory:"GameApplication", operatingSystem:"Any", offers:{ "@type":"Offer", price:"0", priceCurrency:"USD" } },
+];
+---
+<Base locale={locale} title={pageTitle(copy.compareTitle)} description={copy.compareIntro} pathSuffix="/compare/" jsonLd={jsonLd}>
+  <main class="wrap compare-page">
+    <div class="crumb"><a href={`/${locale}/`}>← GameRadar</a></div>
+    <header class="compare-head"><h1>{copy.compareTitle}</h1><p>{copy.compareIntro}</p></header>
+
+    <section class="compare-tool" aria-labelledby="compare-controls-title">
+      <h2 id="compare-controls-title" class="sr-only">{copy.selectGame}</h2>
+      <div class="compare-selects">
+        {[0,1,2].map((index) => <label><span>{copy.gameSlot} {index + 1}</span><select class="compare-select" data-slot={index} aria-label={`${copy.gameSlot} ${index + 1}`}><option value="">{copy.selectGame}</option>{games.map((game) => <option value={game.slug}>{game.title}</option>)}</select></label>)}
+      </div>
+      <div class="compare-actions"><button id="compare-share" class="btn btn-ghost" type="button">{copy.shareComparison}</button><span id="compare-copy-status" role="status" aria-live="polite"></span></div>
+      <p id="compare-prompt" class="note">{copy.chooseTwo}</p>
+      <div id="compare-output" hidden>
+        <section class="compare-summary" aria-labelledby="compare-summary-title"><h2 id="compare-summary-title">{copy.comparisonSummary}</h2><p><strong>{copy.sharedPlatforms}:</strong> <span id="shared-platforms"></span></p></section>
+        <div class="compare-table-wrap"><table class="compare-table"><caption>{copy.comparisonTable}</caption><thead id="compare-head-row"></thead><tbody id="compare-body"></tbody></table></div>
+      </div>
+    </section>
+
+    <section class="compare-how" aria-labelledby="compare-how-title">
+      <h2 id="compare-how-title">{copy.howTitle}</h2>
+      <div><article><span>01</span><h3>{copy.howRelease}</h3><p>{copy.howReleaseText}</p></article><article><span>02</span><h3>{copy.howPlatform}</h3><p>{copy.howPlatformText}</p></article><article><span>03</span><h3>{copy.howCoverage}</h3><p>{copy.howCoverageText}</p></article></div>
+    </section>
+  </main>
+</Base>
+
+<script define:vars={{ games, locale, labels: { field:copy.field, releaseDate:copy.releaseDate, status:copy.status, developer:copy.developer, publisher:copy.publisher, platforms:copy.platforms, genres:copy.genres, coverage:copy.coverage, deepGuide:copy.deepGuide, reference:copy.reference, upcoming:copy.upcoming, released:copy.released, tba:copy.tba, noShared:copy.noSharedPlatforms, copied:copy.linkCopied } }}>
+  const gameMap = new Map(games.map((game) => [game.slug, game]));
+  const selects = [...document.querySelectorAll(".compare-select")];
+  const prompt = document.querySelector("#compare-prompt");
+  const output = document.querySelector("#compare-output");
+  const head = document.querySelector("#compare-head-row");
+  const body = document.querySelector("#compare-body");
+  const shared = document.querySelector("#shared-platforms");
+  const copyStatus = document.querySelector("#compare-copy-status");
+  const dateFormatter = new Intl.DateTimeFormat(locale, { year:"numeric", month:"short", day:"numeric", timeZone:"UTC" });
+  const formatDate = (iso) => iso === "TBA" ? labels.tba : dateFormatter.format(new Date(`${iso}T00:00:00Z`));
+  const selectedGames = () => selects.map((select) => gameMap.get(select.value)).filter(Boolean);
+
+  function syncDisabled() {
+    const chosen = new Set(selects.map((select) => select.value).filter(Boolean));
+    for (const select of selects) for (const option of select.options) option.disabled = Boolean(option.value && chosen.has(option.value) && option.value !== select.value);
+  }
+  function syncUrl() {
+    const slugs = selectedGames().map((game) => game.slug);
+    const params = new URLSearchParams(); if (slugs.length) params.set("games", slugs.join(","));
+    history.replaceState(null, "", location.pathname + (slugs.length ? `?${params}` : ""));
+  }
+  function textCell(value) { const cell = document.createElement("td"); cell.textContent = value || "—"; return cell; }
+  function render() {
+    syncDisabled(); copyStatus.textContent = "";
+    const chosen = selectedGames(); const ready = chosen.length >= 2;
+    prompt.hidden = ready; output.hidden = !ready;
+    if (!ready) return;
+    head.replaceChildren(); body.replaceChildren();
+    const headerRow = document.createElement("tr"); const fieldHead = document.createElement("th"); fieldHead.scope = "col"; fieldHead.textContent = labels.field; headerRow.append(fieldHead);
+    for (const game of chosen) {
+      const cell = document.createElement("th"); cell.scope = "col";
+      const link = document.createElement("a"); link.href = game.href;
+      if (game.cover) { const image = document.createElement("img"); image.src = game.cover; image.alt = ""; image.loading = "lazy"; link.append(image); }
+      const title = document.createElement("span"); title.textContent = game.title; link.append(title); cell.append(link); headerRow.append(cell);
+    }
+    head.append(headerRow);
+    const rows = [
+      [labels.releaseDate, (game) => formatDate(game.release)], [labels.status, (game) => game.status === "live" ? labels.released : labels.upcoming],
+      [labels.developer, (game) => game.developer], [labels.publisher, (game) => game.publisher], [labels.platforms, (game) => game.platforms.join(" · ") || "—"],
+      [labels.genres, (game) => game.genres.join(" · ") || "—"], [labels.coverage, (game) => game.coverage === "owned" ? labels.deepGuide : labels.reference],
+    ];
+    for (const [label, getter] of rows) { const row = document.createElement("tr"); const rowHead = document.createElement("th"); rowHead.scope = "row"; rowHead.textContent = label; row.append(rowHead, ...chosen.map((game) => textCell(getter(game)))); body.append(row); }
+    const overlap = chosen.slice(1).reduce((set, game) => new Set([...set].filter((platform) => game.platforms.includes(platform))), new Set(chosen[0].platforms));
+    shared.textContent = overlap.size ? [...overlap].join(" · ") : labels.noShared;
+  }
+  function applyQuery() {
+    const raw = new URLSearchParams(location.search).get("games") || "";
+    const slugs = [...new Set(raw.split(",").map((slug) => slug.trim()).filter((slug) => gameMap.has(slug)))].slice(0, 3);
+    if (!slugs.length) slugs.push(...games.slice(0, 2).map((game) => game.slug));
+    selects.forEach((select, index) => { select.value = slugs[index] || ""; }); render();
+  }
+  selects.forEach((select) => select.addEventListener("change", () => { syncUrl(); render(); }));
+  document.querySelector("#compare-share").addEventListener("click", async () => {
+    const slugs = selectedGames().map((game) => game.slug); const url = new URL(location.href); if (slugs.length) url.searchParams.set("games", slugs.join(","));
+    try { await navigator.clipboard.writeText(url.toString()); }
+    catch { const area = document.createElement("textarea"); area.value = url.toString(); area.style.position = "fixed"; area.style.opacity = "0"; document.body.append(area); area.select(); document.execCommand("copy"); area.remove(); }
+    copyStatus.textContent = labels.copied;
+  });
+  applyQuery();
+</script>
+
+<style>
+  .compare-page{padding-top:34px}.compare-head{margin:20px 0 24px}.compare-head h1{font:700 clamp(30px,5vw,46px) var(--fd);margin:0 0 8px}.compare-head p{color:var(--muted);max-width:76ch;margin:0}.compare-tool{padding:20px;background:var(--panel);border:1px solid var(--line);border-radius:var(--r)}.compare-selects{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.compare-selects label{display:flex;flex-direction:column;gap:6px}.compare-selects span{font-size:11px;color:var(--faint);font-weight:700}.compare-selects select{width:100%;padding:11px;border:1px solid var(--line);border-radius:9px;background:var(--bg-2);color:var(--ink)}.compare-actions{display:flex;align-items:center;gap:12px;margin:14px 0}.compare-actions .btn{font-size:12px}.compare-actions span{font-size:12px;color:var(--teal)}.compare-summary{padding:14px 16px;margin:18px 0;background:var(--panel-2);border-radius:var(--r-sm)}.compare-summary h2{font:700 17px var(--fd);margin:0 0 5px}.compare-summary p{margin:0;color:var(--muted);font-size:13px}.compare-table-wrap{overflow-x:auto}.compare-table{width:100%;min-width:720px;border-collapse:collapse}.compare-table caption{text-align:left;font:700 18px var(--fd);padding:0 0 12px}.compare-table th,.compare-table td{text-align:left;vertical-align:top;padding:12px;border-bottom:1px solid var(--line-soft);font-size:12.5px}.compare-table th[scope="row"],.compare-table thead>tr>th:first-child{width:140px;color:var(--faint)}.compare-table thead th{font-size:14px}.compare-table thead a{display:flex;align-items:center;gap:9px;color:var(--ink)}.compare-table thead img{width:64px;height:42px;object-fit:cover;border-radius:6px}.compare-how{margin:34px 0}.compare-how h2{font:700 24px var(--fd)}.compare-how>div{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.compare-how article{padding:18px;background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--r-sm)}.compare-how article>span{font:700 11px var(--fd);color:var(--indigo)}.compare-how h3{font:700 16px var(--fd);margin:8px 0}.compare-how p{color:var(--muted);font-size:13px;line-height:1.6;margin:0}
+  @media(max-width:700px){.compare-selects,.compare-how>div{grid-template-columns:1fr}.compare-tool{padding:15px}.compare-actions{align-items:stretch;flex-direction:column}.compare-actions .btn{width:100%}}
+</style>

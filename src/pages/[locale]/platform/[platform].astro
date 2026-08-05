@@ -4,7 +4,8 @@ import GameCard from "../../../components/GameCard.astro";
 import gamesData from "../../../../data/games.json";
 import { LOCALES } from "../../../i18n/locales.js";
 import { t } from "../../../i18n/ui.js";
-import { slugify, collectTaxonomy } from "../../../lib/games.js";
+import { p2Text } from "../../../i18n/p2.js";
+import { slugify, collectTaxonomy, displayTitle, buildBreadcrumbJsonLd, buildCollectionJsonLd } from "../../../lib/games.js";
 
 export function getStaticPaths() {
   const platforms = collectTaxonomy(gamesData.games, "platforms");
@@ -19,6 +20,13 @@ export function getStaticPaths() {
 const { locale } = Astro.params;
 const { label, games } = Astro.props;
 const indexable = locale === "en" && games.length >= 3;
+const intro = p2Text(locale, "platformCollectionIntro", { label });
+const site = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
+const pageUrl = `${site}/${locale}/platform/${slugify(label)}/`;
+const jsonLd = indexable ? [
+  buildBreadcrumbJsonLd([{ name:"GameRadar", url:`${site}/${locale}/` }, { name:t(locale, "platformsPageTitle"), url:`${site}/${locale}/platforms/` }, { name:label, url:pageUrl }]),
+  buildCollectionJsonLd({ name:label, description:intro, url:pageUrl, locale, items:games.map((game) => ({ name:displayTitle(game, locale), url:`${site}/${locale}/games/${game.slug}/`, image:game.cover ? (game.cover.startsWith("/") ? `${site}${game.cover}` : game.cover) : undefined })) }),
+] : [];
 ---
 <Base
   locale={locale}
@@ -27,13 +35,15 @@ const indexable = locale === "en" && games.length >= 3;
   pathSuffix={`/platform/${slugify(label)}/`}
   noindex={!indexable}
   indexableLocales={indexable ? ["en"] : []}
+  jsonLd={jsonLd}
 >
   <main class="wrap" style="padding-top:28px">
-    <div class="crumb"><a href={`/${locale}/`}>{t(locale, "breadcrumbBack")}</a></div>
+    <div class="crumb"><a href={`/${locale}/`}>{t(locale, "breadcrumbBack")}</a><span aria-hidden="true">/</span><a href={`/${locale}/platforms/`}>{t(locale, "platformsPageTitle")}</a></div>
     <div class="rail-head">
       <h1><span class="bar" style="background:var(--teal)"></span>{label}</h1>
       <span class="count">{games.length} {t(locale, "countSuffix")}</span>
     </div>
+    <p style="max-width:76ch;color:var(--muted);margin:-6px 0 22px">{intro}</p>
     <div class="grid">{games.map((g) => <GameCard game={g} locale={locale} />)}</div>
   </main>
 </Base>

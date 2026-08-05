@@ -342,6 +342,28 @@ export function buildBreadcrumbJsonLd(items) {
   };
 }
 
+export function buildCollectionJsonLd({ name, description, url, locale = DEFAULT_LOCALE, items = [] }) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name,
+    description,
+    url,
+    inLanguage: locale,
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: items.length,
+      itemListElement: items.slice(0, 100).map((item, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        name: item.name,
+        url: item.url,
+        ...(item.image ? { image: item.image } : {}),
+      })),
+    },
+  };
+}
+
 export function buildJsonLd(game, pageUrl, locale = DEFAULT_LOCALE) {
   const jsonLd = {
     "@context": "https://schema.org",

@@ -515,6 +515,6 @@ google.com, pub-9505220977121599, DIRECT, f08c47fec0942fa0
 
 - `category = 0`（只要主游戏）用的是 IGDB 已标记 deprecated 但目前仍可用的字段，
   失效的话需要换成新字段 `game_type`。
-- 类型/平台专题页目前还没有各自的 JSON-LD（CollectionPage 之类）。
+- 类型/平台专题页已在 P2 补齐 CollectionPage、ItemList 与 BreadcrumbList JSON-LD，并继续遵守最低内容数量和语言审核门槛。
 - `src/i18n/genres.js` 目前覆盖了约 22 个 IGDB 标准类型，真实抓取跑起来后如果出现没覆盖到的
   新类型，会自动 fallback 显示英文，不会报错，但可以顺手来这个文件补一条翻译。

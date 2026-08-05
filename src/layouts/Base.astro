@@ -4,6 +4,7 @@ import { LOCALES, LOCALE_META, DEFAULT_LOCALE, buildAlternates } from "../i18n/l
 import { t } from "../i18n/ui.js";
 import { TRUST } from "../i18n/trust.js";
 import { PRODUCT } from "../i18n/product.js";
+import { P2 } from "../i18n/p2.js";
 import { SITE } from "../config/site.js";
 import gamesData from "../../data/games.json";
 import { displayTitle, translateGenres } from "../lib/games.js";
@@ -28,6 +29,7 @@ const ogImage = new URL(image || "/images/og-default.jpg", Astro.site).toString(
 const fullTitle = title || "GameRadar · Game Guide Radar";
 const trust = TRUST[locale] || TRUST.en;
 const product = PRODUCT[locale] || PRODUCT.en;
+const p2 = P2[locale] || P2.en;
 const searchIndex = gamesData.games.map((game) => ({
   slug: game.slug,
   title: displayTitle(game, locale),
@@ -118,6 +120,10 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
       <a href={`/${locale}/monthly-chart/`}>{t(locale, "navMonthlyChart")}</a>
       <a href={`/${locale}/releases/`}>{t(locale, "navReleases")}</a>
       <a href={`/${locale}/news/`}>{t(locale, "navNews")}</a>
+      <details class="nav-tools">
+        <summary>{p2.tools}</summary>
+        <div><a href={`/${locale}/watchlist/`}>{p2.myRadar}<span id="nav-radar-count" class="nav-radar-count" hidden></span></a><a href={`/${locale}/compare/`}>{p2.compareGames}</a></div>
+      </details>
     </nav>
     <label class="lang-switch"><span class="sr-only">{product.language}</span><select id="language-select" aria-label={product.language}>{LOCALES.map((l) => <option value={alternates[l]} selected={l === locale}>{LOCALE_META[l].label}</option>)}</select></label>
   </header>
@@ -139,6 +145,8 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
           <a href={`/${locale}/monthly-chart/`}>{t(locale, "navMonthlyChart")}</a>
           <a href={`/${locale}/releases/`}>{t(locale, "navReleases")}</a>
           <a href={`/${locale}/news/`}>{t(locale, "navNews")}</a>
+          <a href={`/${locale}/watchlist/`}>{p2.myRadar}</a>
+          <a href={`/${locale}/compare/`}>{p2.compareGames}</a>
           <a href={`/${locale}/faq/`}>{t(locale, "navFaq")}</a>
           <a href={`/${locale}/genres/`}>{t(locale, "footerGenres")}</a>
           <a href={`/${locale}/platforms/`}>{t(locale, "footerPlatforms")}</a>
@@ -182,6 +190,18 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
     });
     nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => { header.classList.remove("nav-open"); navToggle?.setAttribute("aria-expanded", "false"); }));
     document.querySelector("#language-select")?.addEventListener("change", (event) => { window.location.href = event.target.value; });
+    const radarCount = document.querySelector("#nav-radar-count");
+    const updateRadarCount = () => {
+      if (!radarCount) return;
+      try {
+        const saved = JSON.parse(localStorage.getItem("gr_watchlist") || "[]");
+        const count = Array.isArray(saved) ? new Set(saved.filter((value) => typeof value === "string")).size : 0;
+        radarCount.textContent = String(count); radarCount.hidden = count === 0;
+      } catch { radarCount.hidden = true; }
+    };
+    window.addEventListener("storage", (event) => { if (event.key === "gr_watchlist") updateRadarCount(); });
+    window.addEventListener("gr-watchlist-change", updateRadarCount);
+    updateRadarCount();
 
     const q = document.querySelector("#q");
     const suggest = document.querySelector("#search-suggest");

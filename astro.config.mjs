@@ -93,6 +93,7 @@ export default defineConfig({
       serialize(item) {
         const path = new URL(item.url).pathname;
         if (path.includes("/games/draft/")) return undefined;
+        if (/^\/(en|de|ja|es|zh)\/watchlist\/$/.test(path)) return undefined;
         // 裸域名 "/" 本身是 noindex 的语言探测跳转页（详见 src/pages/index.astro 里的说明），
         // 不该出现在 sitemap 里——sitemap 应该只列真正想被收录的网址，不然自相矛盾。
         if (path === "/") return undefined;
@@ -128,6 +129,10 @@ export default defineConfig({
         // 发行日历页（/releases/、/releases/2026/、/releases/2026-08/、/releases/tba/）
         // 内容完全由 games.json 派生，用它的生成时间当 lastmod 最准确。
         if (/^\/(en|de|ja|es|zh)\/(games|releases)\/([^/]+\/)?$/.test(path)) {
+          item.lastmod = new Date(gamesData.generatedAt);
+          return item;
+        }
+        if (/^\/(en|de|ja|es|zh)\/compare\/$/.test(path)) {
           item.lastmod = new Date(gamesData.generatedAt);
           return item;
         }

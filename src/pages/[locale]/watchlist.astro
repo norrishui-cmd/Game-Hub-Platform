@@ -1,0 +1,116 @@
+---
+import Base from "../../layouts/Base.astro";
+import gamesData from "../../../data/games.json";
+import { LOCALES } from "../../i18n/locales.js";
+import { P2 } from "../../i18n/p2.js";
+import { PRODUCT } from "../../i18n/product.js";
+import { displayTitle, effectiveStatus, translateGenres, pageTitle } from "../../lib/games.js";
+
+export function getStaticPaths() { return LOCALES.map((locale) => ({ params: { locale } })); }
+
+const { locale } = Astro.params;
+const copy = P2[locale] || P2.en;
+const product = PRODUCT[locale] || PRODUCT.en;
+const games = gamesData.games.map((game) => ({
+  slug: game.slug,
+  title: displayTitle(game, locale),
+  release: game.release || "TBA",
+  platforms: game.platforms || [],
+  genres: translateGenres(game.genres || [], locale),
+  developer: game.developer || "",
+  cover: game.cover || "",
+  grad: game.grad,
+  status: effectiveStatus(game),
+  href: `/${locale}/games/${game.slug}/`,
+}));
+---
+<Base locale={locale} title={pageTitle(copy.radarTitle)} description={copy.radarIntro} pathSuffix="/watchlist/" noindex={true} indexableLocales={[]}>
+  <main class="wrap radar-page">
+    <div class="crumb"><a href={`/${locale}/`}>← GameRadar</a></div>
+    <header class="radar-head">
+      <div><p class="section-kicker">{copy.localOnly}</p><h1>{copy.radarTitle}</h1><p>{copy.radarIntro}</p></div>
+      <div class="radar-actions"><button id="radar-export" class="btn btn-ghost" type="button">{copy.exportCalendar}</button><button id="radar-clear" class="btn btn-ghost danger" type="button">{copy.clearAll}</button></div>
+    </header>
+
+    <section class="radar-summary" aria-label={copy.radarTitle}>
+      <article><span>{copy.savedGames}</span><strong id="radar-total">0</strong></article>
+      <article><span>{copy.nextRelease}</span><strong id="radar-next">—</strong></article>
+      <article><span>{copy.datedGames}</span><strong id="radar-dated">0</strong></article>
+    </section>
+
+    <section id="radar-empty" class="radar-empty" hidden>
+      <h2>{copy.noSaved}</h2><p>{copy.noSavedIntro}</p>
+      <div><a class="btn btn-primary" href={`/${locale}/games/`}>{copy.browseGames}</a><a class="btn btn-ghost" href={`/${locale}/releases/`}>{copy.releasePlanner}</a></div>
+    </section>
+    <section id="radar-list" class="radar-list" aria-live="polite" aria-label={copy.savedGames}></section>
+  </main>
+</Base>
+
+<script define:vars={{ games, locale, labels: { remove: copy.remove, compare: copy.compareGames, confirmClear: copy.confirmClear, calendarEmpty: product.calendarEmpty, tba: copy.tba } }}>
+  const storageKey = "gr_watchlist";
+  const gameMap = new Map(games.map((game) => [game.slug, game]));
+  const list = document.querySelector("#radar-list");
+  const empty = document.querySelector("#radar-empty");
+  const total = document.querySelector("#radar-total");
+  const dated = document.querySelector("#radar-dated");
+  const next = document.querySelector("#radar-next");
+  const clearButton = document.querySelector("#radar-clear");
+  const exportButton = document.querySelector("#radar-export");
+  const dateFormatter = new Intl.DateTimeFormat(locale, { year:"numeric", month:"short", day:"numeric", timeZone:"UTC" });
+
+  function readSlugs() {
+    try {
+      const value = JSON.parse(localStorage.getItem(storageKey) || "[]");
+      return Array.isArray(value) ? [...new Set(value.filter((slug) => gameMap.has(slug)))] : [];
+    } catch { return []; }
+  }
+  function saveSlugs(slugs) { try { localStorage.setItem(storageKey, JSON.stringify(slugs)); window.dispatchEvent(new CustomEvent("gr-watchlist-change")); } catch {} }
+  function formatDate(iso) { return iso === "TBA" ? labels.tba : dateFormatter.format(new Date(`${iso}T00:00:00Z`)); }
+
+  function gameCard(game) {
+    const article = document.createElement("article"); article.className = "radar-card";
+    const visual = document.createElement("a"); visual.className = "radar-cover"; visual.href = game.href; visual.style.background = `linear-gradient(135deg, ${game.grad[0]}, ${game.grad[1]})`;
+    if (game.cover) { const image = document.createElement("img"); image.src = game.cover; image.alt = ""; image.loading = "lazy"; image.decoding = "async"; visual.append(image); }
+    const body = document.createElement("div"); body.className = "radar-card-body";
+    const title = document.createElement("a"); title.className = "radar-card-title"; title.href = game.href; title.textContent = game.title;
+    const meta = document.createElement("p"); meta.textContent = [formatDate(game.release), game.platforms.join(" · "), game.developer].filter(Boolean).join(" · ");
+    const tags = document.createElement("div"); tags.className = "radar-tags";
+    for (const genre of game.genres.slice(0, 3)) { const tag = document.createElement("span"); tag.textContent = genre; tags.append(tag); }
+    body.append(title, meta, tags);
+    const actions = document.createElement("div"); actions.className = "radar-card-actions";
+    const compare = document.createElement("a"); compare.className = "btn btn-ghost"; compare.href = `/${locale}/compare/?games=${encodeURIComponent(game.slug)}`; compare.textContent = labels.compare;
+    const remove = document.createElement("button"); remove.className = "btn btn-ghost danger"; remove.type = "button"; remove.textContent = labels.remove; remove.addEventListener("click", () => { saveSlugs(readSlugs().filter((slug) => slug !== game.slug)); render(); });
+    actions.append(compare, remove); article.append(visual, body, actions); return article;
+  }
+
+  function render() {
+    const saved = readSlugs().map((slug) => gameMap.get(slug)).filter(Boolean).sort((a, b) => {
+      if (a.release === "TBA") return 1; if (b.release === "TBA") return -1; return a.release.localeCompare(b.release);
+    });
+    const datedGames = saved.filter((game) => game.release !== "TBA");
+    const today = new Date(); today.setUTCHours(0,0,0,0);
+    const nextGame = datedGames.find((game) => new Date(`${game.release}T00:00:00Z`) >= today);
+    total.textContent = String(saved.length); dated.textContent = String(datedGames.length); next.textContent = nextGame ? `${nextGame.title} · ${formatDate(nextGame.release)}` : "—";
+    clearButton.disabled = saved.length === 0; exportButton.disabled = datedGames.length === 0;
+    empty.hidden = saved.length !== 0; list.replaceChildren(...saved.map(gameCard));
+  }
+
+  clearButton.addEventListener("click", () => { if (confirm(labels.confirmClear)) { saveSlugs([]); render(); } });
+  exportButton.addEventListener("click", () => {
+    const selected = readSlugs().map((slug) => gameMap.get(slug)).filter((game) => game?.release !== "TBA");
+    if (!selected.length) { alert(labels.calendarEmpty); return; }
+    const escape = (value) => String(value).replace(/([,;\\])/g, "\\$1").replace(/\n/g, "\\n");
+    const events = selected.map((game) => { const day = game.release.replaceAll("-", ""); return ["BEGIN:VEVENT", `UID:${game.slug}-${day}@gameradar.wiki`, `DTSTART;VALUE=DATE:${day}`, `SUMMARY:${escape(game.title)}`, `URL:https://gameradar.wiki${game.href}`, "END:VEVENT"].join("\r\n"); }).join("\r\n");
+    const blob = new Blob([`BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//GameRadar//My Radar//EN\r\n${events}\r\nEND:VCALENDAR\r\n`], { type:"text/calendar" });
+    const url = URL.createObjectURL(blob); const anchor = document.createElement("a"); anchor.href = url; anchor.download = "gameradar-my-radar.ics"; anchor.click(); setTimeout(() => URL.revokeObjectURL(url), 0);
+  });
+  window.addEventListener("storage", (event) => { if (event.key === storageKey) render(); });
+  render();
+</script>
+
+<style>
+  .radar-page{padding-top:34px}.radar-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin:20px 0 24px}.radar-head h1{font:700 clamp(30px,5vw,46px) var(--fd);margin:2px 0 8px}.radar-head p{max-width:72ch;color:var(--muted);margin:0}.radar-actions{display:flex;gap:9px;flex:0 0 auto}.radar-actions .btn{font-size:12px}.danger{color:#e77b75!important;border-color:rgba(231,123,117,.35)!important}.btn:disabled{opacity:.4;cursor:not-allowed}
+  .radar-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:24px}.radar-summary article{padding:16px 18px;background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--r-sm);display:flex;flex-direction:column;gap:6px}.radar-summary span{font-size:11px;color:var(--faint);font-weight:700}.radar-summary strong{font:700 18px var(--fd);line-height:1.35}.radar-empty{text-align:center;padding:54px 20px;background:var(--panel);border:1px dashed var(--line);border-radius:var(--r)}.radar-empty h2{font:700 24px var(--fd);margin:0}.radar-empty p{color:var(--muted);max-width:58ch;margin:10px auto 20px}.radar-empty>div{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}
+  .radar-list{display:flex;flex-direction:column;gap:10px}.radar-card{display:grid;grid-template-columns:150px 1fr auto;align-items:center;gap:18px;padding:12px;background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--r-sm)}.radar-cover{height:82px;border-radius:9px;overflow:hidden}.radar-cover img{width:100%;height:100%;object-fit:cover}.radar-card-title{font:700 17px var(--fd);color:var(--ink)}.radar-card-body p{margin:5px 0;color:var(--faint);font-size:12px}.radar-tags{display:flex;gap:5px;flex-wrap:wrap}.radar-tags span{padding:3px 7px;border-radius:999px;background:var(--panel-2);color:var(--muted);font-size:10px}.radar-card-actions{display:flex;gap:7px}.radar-card-actions .btn{font-size:11px;padding:8px 10px;white-space:nowrap}
+  @media(max-width:760px){.radar-head{align-items:stretch;flex-direction:column}.radar-actions .btn{flex:1}.radar-summary{grid-template-columns:1fr}.radar-card{grid-template-columns:92px 1fr}.radar-cover{height:76px}.radar-card-actions{grid-column:1/-1}.radar-card-actions .btn{flex:1;text-align:center}}
+</style>
