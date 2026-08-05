@@ -4,12 +4,14 @@ import NewsList from "../../components/NewsList.astro";
 import newsData from "../../../data/news.json";
 import { LOCALES } from "../../i18n/locales.js";
 import { t } from "../../i18n/ui.js";
+import { PRODUCT } from "../../i18n/product.js";
 
 export function getStaticPaths() {
   return LOCALES.map((locale) => ({ params: { locale } }));
 }
 
 const { locale } = Astro.params;
+const copy = PRODUCT[locale] || PRODUCT.en;
 const DATE_TAG = { zh: "zh-CN", en: "en-US", es: "es-ES", de: "de-DE", ja: "ja-JP" };
 const updatedLabel = new Date(newsData.generatedAt).toLocaleDateString(DATE_TAG[locale] || "en-US", {
   year: "numeric", month: "long", day: "numeric",
@@ -20,8 +22,8 @@ const updatedLabel = new Date(newsData.generatedAt).toLocaleDateString(DATE_TAG[
   title={`${t(locale, "newsHeading")} | GameRadar`}
   description={t(locale, "newsSubtitle")}
   pathSuffix="/news/"
-  noindex={locale !== "en"}
-  indexableLocales={["en"]}
+  noindex={true}
+  indexableLocales={[]}
 >
   <main class="wrap" style="padding-top:28px; max-width:760px">
     <div class="crumb"><a href={`/${locale}/`}>{t(locale, "breadcrumbBack")}</a></div>
@@ -30,6 +32,7 @@ const updatedLabel = new Date(newsData.generatedAt).toLocaleDateString(DATE_TAG[
       <p style="margin:0; color:var(--muted); font-size:15px">{t(locale, "newsSubtitle")}</p>
     </div>
     <p style="color:var(--faint); font-size:13px; margin:0 0 22px">{t(locale, "newsUpdatedLabel")} {updatedLabel}</p>
+    <aside class="note" style="margin:0 0 22px">{copy.feedNotice}</aside>
 
     {newsData.items.length > 0
       ? <NewsList items={newsData.items} locale={locale} />

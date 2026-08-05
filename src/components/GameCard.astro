@@ -17,7 +17,11 @@ const status = effectiveStatus(game);
   data-trending={String(!!game.trending)}
   data-coverage={game.coverage}
   data-genres={genreSlugs}
+  data-platforms={(game.platforms || []).map((p) => slugify(p)).join(" ")}
   data-search={searchBlob(game, locale)}
+  data-title={title.toLocaleLowerCase()}
+  data-release={game.release || "TBA"}
+  data-rank={game.hype ?? 0}
 >
   <div class="cover" style={`background:linear-gradient(135deg, ${game.grad[0]}, ${game.grad[1]})`}>
     {owned

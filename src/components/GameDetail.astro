@@ -1,6 +1,7 @@
 ---
-import { fmtDate, relText, availableLinks, buildJsonLd, slugify, displayTitle, translateGenres, buildFaqItems, effectiveStatus, isGameFaqIndexable, isGameReleaseIndexable, listSeparator } from "../lib/games.js";
+import { fmtDate, relText, availableLinks, buildJsonLd, slugify, displayTitle, translateGenres, buildFaqItems, effectiveStatus, isGameFaqIndexable, isGameReleaseIndexable, isGameNewsIndexable, listSeparator } from "../lib/games.js";
 import { t } from "../i18n/ui.js";
+import { PRODUCT } from "../i18n/product.js";
 import gamesData from "../../data/games.json";
 import newsData from "../../data/news.json";
 import GameCard from "./GameCard.astro";
@@ -23,12 +24,21 @@ const relatedGames = (gameGenreSlugs.size
       .sort((a, b) => (b.hype ?? 0) - (a.hype ?? 0))
   : []
 ).slice(0, 4);
-const hasGameNews = newsData.items.some((item) => item.relatedSlug === game.slug);
+const gameNews = newsData.items
+  .filter((item) => item.relatedSlug === game.slug)
+  .sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt)));
+const latestUpdate = gameNews[0];
+const hasGameNews = isGameNewsIndexable(game, locale, gameNews);
 const editorial = game.content?.[locale] || {};
 const status = effectiveStatus(game);
 const faqIndexable = isGameFaqIndexable(game, locale);
 const releaseIndexable = isGameReleaseIndexable(game, locale);
 const separator = listSeparator(locale);
+const product = PRODUCT[locale] || PRODUCT.en;
+const dataUpdated = fmtDate(String(gamesData.generatedAt).slice(0, 10), locale);
+const releaseRelative = (status === "upcoming" && game.release !== "TBA")
+  ? ((locale === "zh" || locale === "ja") ? `（${relText(game, locale)}）` : ` (${relText(game, locale)})`)
+  : "";
 const copy = {
   en: {
     overview: "Game overview", overviewText: `${title} is ${status === "upcoming" ? "an upcoming" : "a released"} ${genresLocalized.join(" and ") || "video game"}${game.developer ? ` developed by ${game.developer}` : ""}. This hub tracks confirmed release information, platforms, official resources, and new player guides as reliable details become available.`,
@@ -91,12 +101,15 @@ const faqJsonLd = {
       : <div class="mono">{game.mono}</div>}
   </div>
 
-  <h1 class="detail-title">{title}</h1>
+  <div class="detail-title-row">
+    <h1 class="detail-title">{title}</h1>
+    {!isDraft && <button class="game-watch-btn" type="button" data-game-watch aria-pressed="false">{product.saveGame}</button>}
+  </div>
   {locale === "zh" && game.titleEn && game.titleEn !== title && <div class="detail-en">{game.titleEn}</div>}
 
   <dl class="facts">
     <dt>{t(locale, "factReleaseDate")}</dt>
-    <dd>{fmtDate(game.release, locale)}{(status === "upcoming" && game.release !== "TBA") ? `（${relText(game, locale)}）` : ""}</dd>
+    <dd>{fmtDate(game.release, locale)}{releaseRelative}</dd>
     {game.developer && <><dt>{t(locale, "factDeveloper")}</dt><dd>{game.developer}</dd></>}
     {game.publisher && <><dt>{t(locale, "factPublisher")}</dt><dd>{game.publisher}</dd></>}
     <dt>{t(locale, "factPlatforms")}</dt>
@@ -108,6 +121,26 @@ const faqJsonLd = {
       ? (isDraft ? genresLocalized.join(separator) : game.genres.map((g, i) => <>{i > 0 && separator}<a href={`/${locale}/genre/${slugify(g)}/`} style="color:inherit; text-decoration:underline; text-underline-offset:2px;">{genresLocalized[i]}</a></>))
       : "—"}</dd>
   </dl>
+
+  {game.platforms?.length > 0 && (
+    <section class="wiki-section" aria-labelledby="platform-matrix-title">
+      <h2 id="platform-matrix-title">{product.platformMatrix}</h2>
+      <div class="platform-matrix-wrap">
+        <table class="platform-matrix">
+          <thead><tr><th>{product.platform}</th><th>{product.availability}</th><th>{product.releaseDate}</th></tr></thead>
+          <tbody>
+            {game.platforms.map((platform) => (
+              <tr>
+                <td>{isDraft ? platform : <a href={`/${locale}/platform/${slugify(platform)}/`}>{platform}</a>}</td>
+                <td><span class={`availability ${status}`}>{status === "live" ? product.availableNow : product.planned}</span></td>
+                <td>{fmtDate(game.release, locale)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )}
 
   <section class="wiki-section" aria-labelledby="overview-title">
     <p class="section-kicker">{copy.verified}</p>
@@ -145,12 +178,20 @@ const faqJsonLd = {
     ) : <p>{copy.guidesText}</p>}
   </section>
 
-  {editorial.sources?.length > 0 && (
-    <section class="wiki-section source-section">
-      <h2>{copy.sources}</h2>
-      <ul>{editorial.sources.map((source) => <li><a href={source.url} target="_blank" rel="noopener">{source.label}</a></li>)}</ul>
+  {latestUpdate && (
+    <section class="wiki-section tracked-update" aria-labelledby="tracked-update-title">
+      <p class="section-kicker">{product.externalUpdate}</p>
+      <h2 id="tracked-update-title">{product.latestUpdate}</h2>
+      <a class="tracked-update-link" href={latestUpdate.url} target="_blank" rel="noopener noreferrer">{latestUpdate.title} ↗</a>
+      <p>{latestUpdate.source} · <time datetime={latestUpdate.publishedAt}>{fmtDate(latestUpdate.publishedAt, locale)}</time></p>
     </section>
   )}
+
+  <section class="wiki-section source-section">
+    <h2>{copy.sources}</h2>
+    <p class="source-summary"><strong>{product.sourceTransparency}:</strong> {editorial.sources?.length || 0} {product.sourceCount} · {product.dataAsOf}: {dataUpdated}</p>
+    {editorial.sources?.length > 0 && <ol>{editorial.sources.map((source) => <li><a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a></li>)}</ol>}
+  </section>
 
   {relatedGames.length > 0 && (
     <section class="wiki-section" aria-labelledby="related-games-title">
@@ -176,3 +217,50 @@ const faqJsonLd = {
 
   <div class="note">{copy.updated}</div>
 </div>
+
+{!isDraft && (
+  <script define:vars={{ watchSlug: game.slug, watchLabel: product.saveGame, watchedLabel: product.savedGame }}>
+    const watchButton = document.querySelector("[data-game-watch]");
+    const storageKey = "gr_watchlist";
+    const readWatchlist = () => {
+      try {
+        const value = JSON.parse(localStorage.getItem(storageKey) || "[]");
+        return Array.isArray(value) ? value.filter((item) => typeof item === "string") : [];
+      } catch { return []; }
+    };
+    const renderWatchButton = () => {
+      if (!watchButton) return;
+      const saved = readWatchlist().includes(watchSlug);
+      watchButton.textContent = saved ? watchedLabel : watchLabel;
+      watchButton.setAttribute("aria-pressed", String(saved));
+    };
+    watchButton?.addEventListener("click", () => {
+      const watchlist = readWatchlist();
+      const next = watchlist.includes(watchSlug)
+        ? watchlist.filter((slug) => slug !== watchSlug)
+        : [...watchlist, watchSlug];
+      localStorage.setItem(storageKey, JSON.stringify(next));
+      renderWatchButton();
+    });
+    renderWatchButton();
+  </script>
+)}
+
+<style>
+  .detail-title-row { display:flex; align-items:flex-end; justify-content:space-between; gap:18px; }
+  .detail-title-row .detail-title { margin-bottom:0; }
+  .game-watch-btn { flex:0 0 auto; border:1px solid var(--indigo); background:transparent; color:var(--indigo); border-radius:999px; padding:9px 14px; font:700 12px var(--fb); cursor:pointer; }
+  .game-watch-btn[aria-pressed="true"] { background:var(--indigo); color:white; }
+  .platform-matrix-wrap { overflow-x:auto; border:1px solid var(--line-soft); border-radius:var(--r-sm); }
+  .platform-matrix { width:100%; min-width:520px; border-collapse:collapse; font-size:13px; }
+  .platform-matrix th,.platform-matrix td { text-align:left; padding:12px 14px; border-bottom:1px solid var(--line-soft); }
+  .platform-matrix tr:last-child td { border-bottom:0; }
+  .platform-matrix th { color:var(--faint); font-size:11px; text-transform:uppercase; letter-spacing:.04em; background:var(--panel-2); }
+  .platform-matrix a,.tracked-update-link,.source-section a { color:var(--indigo); font-weight:700; text-decoration:none; }
+  .availability { display:inline-flex; border-radius:999px; padding:4px 8px; background:color-mix(in srgb,var(--amber) 15%,transparent); color:var(--amber); font-size:11px; font-weight:800; }
+  .availability.live { background:color-mix(in srgb,var(--teal) 14%,transparent); color:var(--teal); }
+  .tracked-update-link { display:inline-block; line-height:1.5; }
+  .tracked-update > p:last-child,.source-summary { color:var(--muted); font-size:13px; }
+  .source-section ol { padding-left:20px; }
+  @media(max-width:640px){.detail-title-row{align-items:flex-start;flex-direction:column}.game-watch-btn{margin-bottom:4px}}
+</style>

@@ -32,8 +32,8 @@ const site = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
 const title = displayTitle(game, locale);
 const pageUrl = `${site}/${locale}/games/${game.slug}/news/`;
 const gameNews = newsData.items.filter((item) => item.relatedSlug === game.slug);
-const indexable = isGameNewsIndexable(game, locale, gameNews.length);
-const indexableLocales = LOCALES.filter((l) => isGameNewsIndexable(game, l, gameNews.length));
+const indexable = isGameNewsIndexable(game, locale, gameNews);
+const indexableLocales = LOCALES.filter((l) => isGameNewsIndexable(game, l, gameNews));
 
 const breadcrumbJsonLd = buildBreadcrumbJsonLd([
   { name: "GameRadar", url: `${site}/${locale}/` },

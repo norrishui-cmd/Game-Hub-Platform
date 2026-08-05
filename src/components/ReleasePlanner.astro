@@ -1,0 +1,76 @@
+---
+import { PRODUCT } from "../i18n/product.js";
+import { displayTitle, effectiveStatus } from "../lib/games.js";
+
+const { games, locale } = Astro.props;
+const copy = PRODUCT[locale] || PRODUCT.en;
+const releases = games.map((game) => ({ slug: game.slug, title: displayTitle(game, locale), release: game.release || "TBA", platforms: game.platforms || [], status: effectiveStatus(game), href: `/${locale}/games/${game.slug}/` }));
+const platforms = [...new Set(games.flatMap((game) => game.platforms || []))].sort();
+---
+<section class="release-planner" aria-labelledby="release-planner-title">
+  <div class="planner-head"><div><h2 id="release-planner-title">{copy.plannerTitle}</h2><p>{copy.plannerIntro}</p></div><button id="calendar-export" class="btn btn-ghost" type="button">{copy.exportCalendar}</button></div>
+  <div class="planner-controls">
+    <div class="planner-tabs" role="group" aria-label={copy.plannerTitle}>
+      <button type="button" data-view="today" aria-pressed="false">{copy.today}</button><button type="button" data-view="week" aria-pressed="false">{copy.next7}</button><button type="button" class="on" data-view="month" aria-pressed="true">{copy.thisMonth}</button><button type="button" data-view="dated" aria-pressed="false">{copy.allDates}</button><button type="button" data-view="tba" aria-pressed="false">{copy.tba}</button>
+    </div>
+    <label><span class="sr-only">{copy.platform}</span><select id="planner-platform"><option value="all">{copy.allPlatforms}</option>{platforms.map((platform) => <option value={platform}>{platform}</option>)}</select></label>
+  </div>
+  <div id="release-list" class="release-list" aria-live="polite"></div>
+  <p id="release-empty" class="empty" hidden>{copy.noReleases}</p>
+</section>
+
+<script define:vars={{ releases, locale, labels: { watch: copy.watch, watched: copy.watched, availableNow: copy.availableNow, planned: copy.planned, calendarEmpty: copy.calendarEmpty } }}>
+  const list = document.querySelector("#release-list");
+  const empty = document.querySelector("#release-empty");
+  const platform = document.querySelector("#planner-platform");
+  const tabs = [...document.querySelectorAll(".planner-tabs button")];
+  let view = "month";
+  let watchlist;
+  try { watchlist = new Set(JSON.parse(localStorage.getItem("gr_watchlist") || "[]")); } catch { watchlist = new Set(); }
+  const today = new Date(); today.setUTCHours(0,0,0,0);
+  const parseDate = (iso) => iso === "TBA" ? null : new Date(`${iso}T00:00:00Z`);
+  const fmt = (iso) => new Intl.DateTimeFormat(locale, { year:"numeric", month:"short", day:"numeric", timeZone:"UTC" }).format(parseDate(iso));
+
+  function inView(game) {
+    const date = parseDate(game.release);
+    if (view === "tba") return !date;
+    if (!date) return false;
+    const days = Math.floor((date - today) / 86400000);
+    if (view === "today") return days === 0;
+    if (view === "week") return days >= 0 && days <= 7;
+    if (view === "month") return date.getUTCFullYear() === today.getUTCFullYear() && date.getUTCMonth() === today.getUTCMonth();
+    return true;
+  }
+  function save() { try { localStorage.setItem("gr_watchlist", JSON.stringify([...watchlist])); } catch {} }
+  function toggle(slug) { watchlist.has(slug) ? watchlist.delete(slug) : watchlist.add(slug); save(); render(); }
+  function render() {
+    list.replaceChildren();
+    const filtered = releases.filter((game) => inView(game) && (platform.value === "all" || game.platforms.includes(platform.value))).sort((a,b) => a.release.localeCompare(b.release));
+    empty.hidden = filtered.length > 0;
+    for (const game of filtered) {
+      const row = document.createElement("article"); row.className = "release-row";
+      const main = document.createElement("div"); main.className = "release-main";
+      const link = document.createElement("a"); link.href = game.href; link.textContent = game.title;
+      const meta = document.createElement("span"); meta.textContent = `${game.release === "TBA" ? "TBA" : fmt(game.release)} · ${game.platforms.join(" · ")} · ${game.status === "live" ? labels.availableNow : labels.planned}`;
+      main.append(link, meta);
+      const button = document.createElement("button"); button.type = "button"; button.className = "watch-btn"; button.setAttribute("aria-pressed", String(watchlist.has(game.slug))); button.textContent = watchlist.has(game.slug) ? `✓ ${labels.watched}` : `＋ ${labels.watch}`; button.addEventListener("click", () => toggle(game.slug));
+      row.append(main, button); list.append(row);
+    }
+  }
+  tabs.forEach((button) => button.addEventListener("click", () => { tabs.forEach((item) => { item.classList.remove("on"); item.setAttribute("aria-pressed", "false"); }); button.classList.add("on"); button.setAttribute("aria-pressed", "true"); view = button.dataset.view; render(); }));
+  platform.addEventListener("change", render);
+  document.querySelector("#calendar-export").addEventListener("click", () => {
+    const selected = releases.filter((game) => watchlist.has(game.slug) && game.release !== "TBA");
+    if (!selected.length) { alert(labels.calendarEmpty); return; }
+    const escape = (value) => String(value).replace(/([,;\\])/g, "\\$1").replace(/\n/g, "\\n");
+    const events = selected.map((game) => { const day = game.release.replaceAll("-", ""); return ["BEGIN:VEVENT", `UID:${game.slug}-${day}@gameradar.wiki`, `DTSTART;VALUE=DATE:${day}`, `SUMMARY:${escape(game.title)} release`, `URL:https://gameradar.wiki${game.href}`, "END:VEVENT"].join("\r\n"); }).join("\r\n");
+    const blob = new Blob([`BEGIN:VCALENDAR\r\nVERSION:2.0\r\nPRODID:-//GameRadar//Release Watchlist//EN\r\n${events}\r\nEND:VCALENDAR\r\n`], {type:"text/calendar"});
+    const url = URL.createObjectURL(blob); const anchor = document.createElement("a"); anchor.href = url; anchor.download = "gameradar-release-watchlist.ics"; anchor.click(); URL.revokeObjectURL(url);
+  });
+  render();
+</script>
+
+<style>
+  .release-planner{margin:28px 0 34px;padding:20px;border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(135deg,var(--panel-2),var(--panel))}.planner-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}.planner-head h2{font:700 22px var(--fd);margin:0}.planner-head p{color:var(--muted);font-size:13.5px;margin:6px 0 0}.planner-head .btn{font-size:12px;padding:9px 13px;white-space:nowrap}.planner-controls{display:flex;justify-content:space-between;gap:14px;margin:18px 0}.planner-tabs{display:flex;gap:6px;flex-wrap:wrap}.planner-tabs button,.watch-btn{padding:8px 11px;border:1px solid var(--line);border-radius:8px;background:var(--bg-2);color:var(--muted);font:700 12px var(--fb);cursor:pointer}.planner-tabs button.on{background:var(--indigo);border-color:var(--indigo);color:#fff}.planner-controls select{padding:9px 12px;border-radius:8px;background:var(--bg-2);border:1px solid var(--line);color:var(--ink)}.release-list{display:flex;flex-direction:column;gap:7px}.release-row{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 14px;background:var(--bg-2);border:1px solid var(--line-soft);border-radius:9px}.release-main{display:flex;flex-direction:column;min-width:0}.release-main a{font-weight:700}.release-main span{color:var(--faint);font-size:11.5px;margin-top:3px}.watch-btn[aria-pressed="true"]{color:var(--teal);border-color:var(--teal-dim)}
+  @media(max-width:640px){.planner-head,.planner-controls,.release-row{align-items:stretch;flex-direction:column}.planner-head .btn,.planner-controls select,.watch-btn{width:100%}.planner-tabs{display:grid;grid-template-columns:repeat(2,1fr)}.planner-tabs button:last-child{grid-column:span 2}}
+</style>

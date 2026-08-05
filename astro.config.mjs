@@ -42,10 +42,11 @@ try {
   // data/wiki 目录不存在也不报错，这种情况下所有游戏都当作没有 wiki 内容处理
 }
 const gamesBySlug = new Map(gamesData.games.map((g) => [g.slug, g]));
-const newsCountsBySlug = new Map();
+const newsItemsBySlug = new Map();
 for (const item of newsData.items || []) {
   if (!item.relatedSlug) continue;
-  newsCountsBySlug.set(item.relatedSlug, (newsCountsBySlug.get(item.relatedSlug) || 0) + 1);
+  if (!newsItemsBySlug.has(item.relatedSlug)) newsItemsBySlug.set(item.relatedSlug, []);
+  newsItemsBySlug.get(item.relatedSlug).push(item);
 }
 
 // sitemap 里一直没有 lastmod，Google 没法据此判断哪些页面是新鲜的、该优先重新抓取。
@@ -63,7 +64,7 @@ function isGamePathIndexable(locale, slug, pageType) {
   const game = { ...base, publishStatus: wiki.publishStatus, content: wiki.content };
   if (pageType === "faq") return isGameFaqIndexable(game, locale);
   if (pageType === "release-date") return isGameReleaseIndexable(game, locale);
-  if (pageType === "news") return isGameNewsIndexable(game, locale, newsCountsBySlug.get(slug) || 0);
+  if (pageType === "news") return isGameNewsIndexable(game, locale, newsItemsBySlug.get(slug) || []);
   return isGameIndexable(game, locale);
 }
 
@@ -99,8 +100,8 @@ export default defineConfig({
         // The global FAQ remains a discovery aid, but its generated answers are
         // not an independent search destination. Localized news/chart pages are
         // also noindex until their translated editorial content is reviewed.
-        if (/^\/(en|de|ja|es|zh)\/faq\/$/.test(path)) return undefined;
-        if (/^\/(de|ja|es|zh)\/(monthly-chart|news)\/$/.test(path)) return undefined;
+        if (/^\/(en|de|ja|es|zh)\/(faq|news)\/$/.test(path)) return undefined;
+        if (/^\/(de|ja|es|zh)\/monthly-chart\/$/.test(path)) return undefined;
 
         // 游戏主页、FAQ 长尾页、发行日期长尾页，三种路径都走同一套收录判定。
         const gameMatch = path.match(/^\/(en|de|ja|es|zh)\/games\/([^/]+)\/(?:(faq|release-date|news)\/)?$/);
@@ -126,7 +127,7 @@ export default defineConfig({
         }
         // 发行日历页（/releases/、/releases/2026/、/releases/2026-08/、/releases/tba/）
         // 内容完全由 games.json 派生，用它的生成时间当 lastmod 最准确。
-        if (/^\/(en|de|ja|es|zh)\/releases\/([^/]+\/)?$/.test(path)) {
+        if (/^\/(en|de|ja|es|zh)\/(games|releases)\/([^/]+\/)?$/.test(path)) {
           item.lastmod = new Date(gamesData.generatedAt);
           return item;
         }

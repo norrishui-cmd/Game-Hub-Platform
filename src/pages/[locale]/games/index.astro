@@ -1,0 +1,114 @@
+---
+import Base from "../../../layouts/Base.astro";
+import GameCard from "../../../components/GameCard.astro";
+import gamesData from "../../../../data/games.json";
+import { LOCALES } from "../../../i18n/locales.js";
+import { PRODUCT } from "../../../i18n/product.js";
+import { collectTaxonomy, translateGenre, buildBreadcrumbJsonLd, pageTitle, displayTitle } from "../../../lib/games.js";
+
+export function getStaticPaths() { return LOCALES.map((locale) => ({ params: { locale } })); }
+
+const { locale } = Astro.params;
+const copy = PRODUCT[locale] || PRODUCT.en;
+const games = gamesData.games;
+const genres = collectTaxonomy(games, "genres");
+const platforms = collectTaxonomy(games, "platforms");
+const site = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
+const jsonLd = [
+  buildBreadcrumbJsonLd([{ name: "GameRadar", url: `${site}/${locale}/` }, { name: copy.gamesTitle, url: `${site}/${locale}/games/` }]),
+  { "@context": "https://schema.org", "@type": "ItemList", name: copy.gamesTitle, numberOfItems: games.length, itemListElement: games.slice(0, 50).map((game, i) => ({ "@type": "ListItem", position: i + 1, name: displayTitle(game, locale), url: `${site}/${locale}/games/${game.slug}/` })) },
+];
+---
+<Base locale={locale} title={pageTitle(copy.gamesTitle)} description={copy.gamesIntro} pathSuffix="/games/" jsonLd={jsonLd}>
+  <main class="wrap browse-page">
+    <div class="crumb"><a href={`/${locale}/`}>← GameRadar</a></div>
+    <div class="browse-head"><h1>{copy.gamesTitle}</h1><p>{copy.gamesIntro}</p></div>
+
+    <section class="browse-controls" aria-labelledby="filter-title">
+      <h2 id="filter-title">{copy.filters}</h2>
+      <div class="filter-grid">
+        <label class="filter-search"><span>{copy.searchGames}</span><input id="game-filter-q" type="search" placeholder={copy.searchGames} /></label>
+        <label><span>{copy.allStatuses}</span><select id="game-status"><option value="all">{copy.allStatuses}</option><option value="upcoming">{copy.upcoming}</option><option value="live">{copy.released}</option></select></label>
+        <label><span>{copy.allPlatforms}</span><select id="game-platform"><option value="all">{copy.allPlatforms}</option>{platforms.map((p) => <option value={p.slug}>{p.label} · {p.count}</option>)}</select></label>
+        <label><span>{copy.allGenres}</span><select id="game-genre"><option value="all">{copy.allGenres}</option>{genres.map((g) => <option value={g.slug}>{translateGenre(g.label, locale)} · {g.count}</option>)}</select></label>
+        <label><span>{copy.allCoverage}</span><select id="game-coverage"><option value="all">{copy.allCoverage}</option><option value="owned">{copy.deepGuides}</option><option value="reference">{copy.referencePages}</option></select></label>
+        <label><span>{copy.sort}</span><select id="game-sort"><option value="featured">{copy.sortFeatured}</option><option value="release">{copy.sortRelease}</option><option value="title">{copy.sortTitle}</option></select></label>
+      </div>
+      <div class="filter-actions"><button id="game-clear" class="btn btn-ghost" type="button">{copy.clear}</button><span id="game-result-count" role="status" aria-live="polite"></span></div>
+    </section>
+
+    <div class="grid browse-grid" id="games-grid">{games.map((game) => <GameCard game={game} locale={locale} />)}</div>
+    <div id="games-empty" class="empty" hidden>{copy.noResults}</div>
+    <div class="browse-more"><button id="game-load-more" class="btn btn-ghost" type="button">{copy.loadMore}</button></div>
+  </main>
+</Base>
+
+<script define:vars={{ labels: { results: copy.results }, locale }}>
+  const grid = document.querySelector("#games-grid");
+  const cards = [...grid.querySelectorAll(".card")];
+  const controls = {
+    q: document.querySelector("#game-filter-q"), status: document.querySelector("#game-status"), platform: document.querySelector("#game-platform"),
+    genre: document.querySelector("#game-genre"), coverage: document.querySelector("#game-coverage"), sort: document.querySelector("#game-sort"),
+  };
+  const count = document.querySelector("#game-result-count");
+  const empty = document.querySelector("#games-empty");
+  const more = document.querySelector("#game-load-more");
+  let limit = 24;
+  const norm = (value) => String(value || "").toLocaleLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+
+  function matches(card) {
+    const q = norm(controls.q.value.trim());
+    if (q && !norm(card.dataset.search).includes(q)) return false;
+    if (controls.status.value !== "all" && card.dataset.status !== controls.status.value) return false;
+    if (controls.platform.value !== "all" && !(card.dataset.platforms || "").split(" ").includes(controls.platform.value)) return false;
+    if (controls.genre.value !== "all" && !(card.dataset.genres || "").split(" ").includes(controls.genre.value)) return false;
+    if (controls.coverage.value === "owned" && card.dataset.coverage !== "owned") return false;
+    if (controls.coverage.value === "reference" && card.dataset.coverage === "owned") return false;
+    return true;
+  }
+
+  function sortCards(list) {
+    const mode = controls.sort.value;
+    return list.sort((a, b) => {
+      if (mode === "title") return (a.dataset.title || "").localeCompare(b.dataset.title || "", locale);
+      if (mode === "release") {
+        const ar = a.dataset.release === "TBA" ? "9999-99-99" : a.dataset.release;
+        const br = b.dataset.release === "TBA" ? "9999-99-99" : b.dataset.release;
+        return ar.localeCompare(br);
+      }
+      return Number(b.dataset.rank || 0) - Number(a.dataset.rank || 0);
+    });
+  }
+
+  function syncUrl() {
+    const params = new URLSearchParams();
+    if (controls.q.value.trim()) params.set("q", controls.q.value.trim());
+    for (const key of ["status", "platform", "genre", "coverage", "sort"]) if (controls[key].value !== "all" && !(key === "sort" && controls[key].value === "featured")) params.set(key, controls[key].value);
+    history.replaceState(null, "", location.pathname + (params.size ? `?${params}` : ""));
+  }
+
+  function apply() {
+    const matched = sortCards(cards.filter(matches));
+    cards.forEach((card) => { card.hidden = true; });
+    matched.forEach((card, index) => { grid.appendChild(card); card.hidden = index >= limit; });
+    count.textContent = `${matched.length} ${labels.results}`;
+    empty.hidden = matched.length !== 0;
+    more.hidden = matched.length <= limit;
+    syncUrl();
+  }
+
+  const params = new URLSearchParams(location.search);
+  if (params.get("q")) controls.q.value = params.get("q");
+  for (const key of ["status", "platform", "genre", "coverage", "sort"]) if (params.get(key) && [...controls[key].options].some((o) => o.value === params.get(key))) controls[key].value = params.get(key);
+  Object.values(controls).forEach((control) => control.addEventListener(control === controls.q ? "input" : "change", () => { limit = 24; apply(); }));
+  more.addEventListener("click", () => { limit += 24; apply(); });
+  document.querySelector("#game-clear").addEventListener("click", () => { controls.q.value = ""; controls.status.value = "all"; controls.platform.value = "all"; controls.genre.value = "all"; controls.coverage.value = "all"; controls.sort.value = "featured"; limit = 24; apply(); });
+  apply();
+</script>
+
+<style>
+  .browse-page{padding-top:34px}.browse-head{margin:18px 0 24px}.browse-head h1{font-family:var(--fd);font-size:clamp(30px,5vw,46px);margin:0 0 8px}.browse-head p{color:var(--muted);max-width:72ch;margin:0}
+  .browse-controls{background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--r);padding:18px;margin-bottom:24px}.browse-controls h2{font:700 15px var(--fd);margin:0 0 14px}.filter-grid{display:grid;grid-template-columns:2fr repeat(5,minmax(130px,1fr));gap:10px}.filter-grid label{display:flex;flex-direction:column;gap:6px}.filter-grid label span{font-size:10.5px;color:var(--faint);font-weight:700}.filter-grid input,.filter-grid select{width:100%;min-width:0;padding:10px 12px;border-radius:9px;background:var(--bg-2);border:1px solid var(--line);color:var(--ink);font:13px var(--fb)}.filter-actions{display:flex;align-items:center;justify-content:space-between;gap:16px;margin-top:14px}.filter-actions .btn{padding:8px 13px;font-size:12px}.filter-actions span{font-size:12px;color:var(--muted)}.browse-more{text-align:center;margin:24px 0}.browse-grid .card[hidden]{display:none}
+  @media(max-width:1000px){.filter-grid{grid-template-columns:repeat(3,1fr)}.filter-search{grid-column:span 3}}
+  @media(max-width:640px){.filter-grid{grid-template-columns:1fr 1fr}.filter-search{grid-column:span 2}.browse-page{padding-top:22px}}
+</style>

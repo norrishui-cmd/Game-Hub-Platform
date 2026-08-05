@@ -3,8 +3,10 @@ import "../styles/global.css";
 import { LOCALES, LOCALE_META, DEFAULT_LOCALE, buildAlternates } from "../i18n/locales.js";
 import { t } from "../i18n/ui.js";
 import { TRUST } from "../i18n/trust.js";
+import { PRODUCT } from "../i18n/product.js";
 import { SITE } from "../config/site.js";
 import gamesData from "../../data/games.json";
+import { displayTitle, translateGenres } from "../lib/games.js";
 
 const {
   locale = DEFAULT_LOCALE,
@@ -25,6 +27,14 @@ const canonical = new URL(alternates[locale], Astro.site).toString();
 const ogImage = new URL(image || "/images/og-default.jpg", Astro.site).toString();
 const fullTitle = title || "GameRadar · Game Guide Radar";
 const trust = TRUST[locale] || TRUST.en;
+const product = PRODUCT[locale] || PRODUCT.en;
+const searchIndex = gamesData.games.map((game) => ({
+  slug: game.slug,
+  title: displayTitle(game, locale),
+  subtitle: [game.developer, ...(translateGenres(game.genres || [], locale).slice(0, 2))].filter(Boolean).join(" · "),
+  text: [displayTitle(game, locale), game.titleEn, game.developer, ...(game.genres || []), ...(game.platforms || [])].filter(Boolean).join(" "),
+  href: `/${locale}/games/${game.slug}/`,
+}));
 const dataUpdated = new Date(gamesData.generatedAt).toLocaleString(LOCALE_META[locale]?.htmlLang || "en", {
   year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "UTC", timeZoneName: "short",
 });
@@ -41,7 +51,7 @@ const siteJsonLd = [
     url: new URL(`/${locale}/`, Astro.site).toString(),
     potentialAction: {
       "@type": "SearchAction",
-      target: `${new URL(`/${locale}/`, Astro.site).toString()}?q={search_term_string}`,
+      target: `${new URL(`/${locale}/games/`, Astro.site).toString()}?q={search_term_string}`,
       "query-input": "required name=search_term_string",
     },
   },
@@ -97,25 +107,19 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
     </a>
     <div class="search" role="search">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg>
-      <input id="q" type="search" placeholder={t(locale, "searchPlaceholder")} aria-label={t(locale, "searchAria")} />
+      <input id="q" type="search" placeholder={t(locale, "searchPlaceholder")} aria-label={t(locale, "searchAria")} aria-autocomplete="list" aria-controls="search-suggest" aria-expanded="false" autocomplete="off" />
+      <div id="search-suggest" class="search-suggest" role="listbox" hidden></div>
     </div>
-    <nav class="nav">
+    <button id="nav-toggle" class="nav-toggle" type="button" aria-controls="main-nav" aria-expanded="false"><span class="sr-only">{product.menu}</span><span></span><span></span><span></span></button>
+    <nav class="nav" id="main-nav">
+      <a href={`/${locale}/games/`}>{product.allGames}</a>
       <a href={`/${locale}/#upcoming`}>{t(locale, "navUpcoming")}</a>
       <a href={`/${locale}/#trending`}>{t(locale, "navTrending")}</a>
       <a href={`/${locale}/monthly-chart/`}>{t(locale, "navMonthlyChart")}</a>
       <a href={`/${locale}/releases/`}>{t(locale, "navReleases")}</a>
       <a href={`/${locale}/news/`}>{t(locale, "navNews")}</a>
-      <a href={`/${locale}/faq/`}>{t(locale, "navFaq")}</a>
     </nav>
-    <div class="lang-switch" role="group" aria-label="Language">
-      {LOCALES.map((l) => (
-        <a
-          href={alternates[l]}
-          class:list={["lang-opt", { on: l === locale }]}
-          hreflang={LOCALE_META[l].htmlLang}
-        >{l.toUpperCase()}</a>
-      ))}
-    </div>
+    <label class="lang-switch"><span class="sr-only">{product.language}</span><select id="language-select" aria-label={product.language}>{LOCALES.map((l) => <option value={alternates[l]} selected={l === locale}>{LOCALE_META[l].label}</option>)}</select></label>
   </header>
 
   <slot />
@@ -129,6 +133,7 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
       <div class="foot-cols">
         <div class="foot-col">
           <b>{t(locale, "footerBrowse")}</b>
+          <a href={`/${locale}/games/`}>{product.allGames}</a>
           <a href={`/${locale}/#upcoming`}>{t(locale, "navUpcoming")}</a>
           <a href={`/${locale}/#trending`}>{t(locale, "navTrending")}</a>
           <a href={`/${locale}/monthly-chart/`}>{t(locale, "navMonthlyChart")}</a>
@@ -162,26 +167,74 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
     </div>
   </footer>
 
-  <script define:vars={{ locale }}>
+  <script define:vars={{ locale, searchIndex, searchLabels: { all: product.searchAll } }}>
     // 记住这次访问用的是哪个语言——根路径的自动跳转脚本会优先读这个，
     // 而不是每次都重新猜浏览器语言。这样手动切换过语言的人不会被"猜"回去。
     try { localStorage.setItem("gr_locale", locale); } catch (e) {}
-  </script>
-  <script>
-    // 非首页时，在搜索框按 Enter 会带着关键词跳转回当前语言的首页并触发筛选。
-    // 首页自己的脚本会接管 #q 的实时输入事件，这里只在「不是首页」时生效。
+
+    const header = document.querySelector(".hdr");
+    const navToggle = document.querySelector("#nav-toggle");
+    const nav = document.querySelector("#main-nav");
+    navToggle?.addEventListener("click", () => {
+      const open = !header.classList.contains("nav-open");
+      header.classList.toggle("nav-open", open);
+      navToggle.setAttribute("aria-expanded", String(open));
+    });
+    nav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => { header.classList.remove("nav-open"); navToggle?.setAttribute("aria-expanded", "false"); }));
+    document.querySelector("#language-select")?.addEventListener("change", (event) => { window.location.href = event.target.value; });
+
     const q = document.querySelector("#q");
-    if (q && !document.querySelector("#rail-all")) {
-      const params = new URLSearchParams(location.search);
-      const preset = params.get("q");
-      if (preset) q.value = preset;
-      q.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" && q.value.trim()) {
-          const locale = location.pathname.split("/")[1] || "en";
-          window.location.href = `/${locale}/?q=` + encodeURIComponent(q.value.trim());
-        }
-      });
+    const suggest = document.querySelector("#search-suggest");
+    let matches = [];
+    let active = -1;
+    const norm = (value) => String(value || "").toLocaleLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    function editDistance(a, b) {
+      if (Math.abs(a.length - b.length) > 2) return 3;
+      const row = Array.from({length:b.length + 1}, (_, i) => i);
+      for (let i = 1; i <= a.length; i++) { let prev = row[0]; row[0] = i; for (let j = 1; j <= b.length; j++) { const old = row[j]; row[j] = Math.min(row[j] + 1, row[j - 1] + 1, prev + (a[i - 1] === b[j - 1] ? 0 : 1)); prev = old; } }
+      return row[b.length];
     }
+    function score(item, needle) {
+      const title = norm(item.title); const text = norm(item.text); const words = title.split(/\s+/);
+      if (title === needle) return 120;
+      if (title.startsWith(needle)) return 100;
+      if (words.some((word) => word.startsWith(needle))) return 85;
+      if (title.includes(needle)) return 75;
+      if (text.includes(needle)) return 55;
+      if (needle.length >= 4 && words.some((word) => editDistance(word, needle) <= 2)) return 35;
+      return 0;
+    }
+    function closeSearch() { suggest.hidden = true; q.setAttribute("aria-expanded", "false"); q.removeAttribute("aria-activedescendant"); active = -1; }
+    function setActive(index) {
+      const options = [...suggest.querySelectorAll('[role="option"]')];
+      active = Math.max(-1, Math.min(index, options.length - 1));
+      options.forEach((option, i) => { option.classList.toggle("active", i === active); option.setAttribute("aria-selected", String(i === active)); });
+      if (active >= 0) { q.setAttribute("aria-activedescendant", options[active].id); options[active].scrollIntoView({block:"nearest"}); }
+      else q.removeAttribute("aria-activedescendant");
+    }
+    function renderSearch() {
+      const needle = norm(q.value.trim()); suggest.replaceChildren(); active = -1;
+      if (needle.length < 2) { closeSearch(); return; }
+      matches = searchIndex.map((item) => ({item, score:score(item, needle)})).filter((entry) => entry.score > 0).sort((a,b) => b.score - a.score).slice(0, 6).map((entry) => entry.item);
+      for (const [index, item] of matches.entries()) {
+        const link = document.createElement("a"); link.href = item.href; link.id = `search-option-${index}`; link.setAttribute("role", "option"); link.setAttribute("aria-selected", "false");
+        const title = document.createElement("b"); title.textContent = item.title; const sub = document.createElement("span"); sub.textContent = item.subtitle;
+        link.append(title, sub); suggest.append(link);
+      }
+      const all = document.createElement("a"); all.href = `/${locale}/games/?q=${encodeURIComponent(q.value.trim())}`; all.id = "search-option-all"; all.className = "search-all"; all.setAttribute("role", "option"); all.setAttribute("aria-selected", "false"); all.textContent = `${searchLabels.all} →`; suggest.append(all);
+      suggest.hidden = false; q.setAttribute("aria-expanded", "true");
+    }
+    const preset = new URLSearchParams(location.search).get("q"); if (preset) q.value = preset;
+    q?.addEventListener("input", renderSearch);
+    q?.addEventListener("focus", () => { if (q.value.trim().length >= 2) renderSearch(); });
+    q?.addEventListener("keydown", (event) => {
+      const options = [...suggest.querySelectorAll('[role="option"]')];
+      if (event.key === "ArrowDown") { event.preventDefault(); if (suggest.hidden) renderSearch(); setActive(active + 1); }
+      else if (event.key === "ArrowUp") { event.preventDefault(); if (suggest.hidden) renderSearch(); setActive(active < 0 ? [...suggest.querySelectorAll('[role="option"]')].length - 1 : active - 1); }
+      else if (event.key === "Escape") closeSearch();
+      else if (event.key === "Enter" && q.value.trim()) { event.preventDefault(); if (active >= 0 && options[active]) options[active].click(); else window.location.href = `/${locale}/games/?q=${encodeURIComponent(q.value.trim())}`; }
+    });
+    document.addEventListener("pointerdown", (event) => { if (!event.target.closest(".search")) closeSearch(); });
   </script>
 </body>
 </html>

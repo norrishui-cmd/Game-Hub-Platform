@@ -94,8 +94,20 @@ export function isGameReleaseIndexable(game, locale = DEFAULT_LOCALE) {
   return Boolean(summary?.trim().length >= 120);
 }
 
-export function isGameNewsIndexable(game, locale = DEFAULT_LOCALE, newsCount = 0) {
-  return locale === DEFAULT_LOCALE && isGameIndexable(game, locale) && newsCount >= 3;
+export function isGameNewsIndexable(game, locale = DEFAULT_LOCALE, newsItems = []) {
+  // A list of outbound headlines is useful for monitoring, but it is not an
+  // original editorial destination. Only expose a game-news URL to search when
+  // at least two items carry a substantial, source-backed summary *and* an
+  // explicit explanation of what the update changes for players.
+  const editorialItems = Array.isArray(newsItems)
+    ? newsItems.filter((item) =>
+        item?.editorialSummary?.trim().length >= 80
+        && item?.playerImpact?.trim().length >= 80
+      )
+    : [];
+  return locale === DEFAULT_LOCALE
+    && isGameIndexable(game, locale)
+    && editorialItems.length >= 2;
 }
 
 // 中文有自己的中文名（titleZh，主要给 owned-wikis 手动配置用）；

@@ -1,8 +1,10 @@
 ---
 import { t } from "../i18n/ui.js";
+import { PRODUCT } from "../i18n/product.js";
 
 const { items, locale, limit } = Astro.props;
 const list = limit ? items.slice(0, limit) : items;
+const copy = PRODUCT[locale] || PRODUCT.en;
 
 const DATE_TAG = { zh: "zh-CN", en: "en-US", es: "es-ES", de: "de-DE", ja: "ja-JP" };
 function fmt(iso) {
@@ -23,6 +25,12 @@ function fmt(iso) {
         </div>
         <svg class="news-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M7 7h10v10"/></svg>
       </a>
+      {(item.editorialSummary || item.playerImpact) && (
+        <div class="news-editorial">
+          {item.editorialSummary && <p>{item.editorialSummary}</p>}
+          {item.playerImpact && <p><strong>{copy.externalUpdate}:</strong> {item.playerImpact}</p>}
+        </div>
+      )}
       {item.relatedSlug && (
         <a class="news-related" href={`/${locale}/games/${item.relatedSlug}/`}>
           {t(locale, "newsRelatedGame")}
@@ -52,4 +60,7 @@ function fmt(iso) {
     color: var(--indigo); text-decoration: none; display: inline-flex; align-items: center; gap: 4px;
   }
   .news-related svg { width: 13px; height: 13px; }
+  .news-editorial { margin:-2px 0 6px; padding:12px 16px; border:1px solid var(--line-soft); border-top:0; border-radius:0 0 var(--r-sm) var(--r-sm); background:var(--panel); }
+  .news-editorial p { margin:0; color:var(--muted); font-size:13px; line-height:1.6; }
+  .news-editorial p + p { margin-top:8px; }
 </style>
