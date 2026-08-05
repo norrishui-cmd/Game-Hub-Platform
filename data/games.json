@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-31T11:20:00.281Z",
+  "generatedAt": "2026-08-05T15:03:50.814Z",
   "count": 105,
   "games": [
     {
@@ -636,7 +636,7 @@
       "status": "live",
       "trending": false,
       "coverage": "nav",
-      "cover": null,
+      "cover": "/images/games/poe-2-banner.webp",
       "links": {
         "official": "https://www.pathofexile2.com",
         "steam": "https://store.steampowered.com",
@@ -647,7 +647,8 @@
         "#8a3d2f",
         "#c25a3a"
       ],
-      "mono": "E"
+      "mono": "E",
+      "coverPosition": "center"
     },
     {
       "slug": "lou-s-lagoon",
@@ -914,7 +915,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/digimon-story-time-stranger-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#8a3d2f",
@@ -1046,7 +1047,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/echoes-of-aincrad-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#3a6d8c",
@@ -1074,7 +1075,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/assassin-s-creed-black-flag-resynced-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#8a3d2f",
@@ -1214,7 +1215,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/halo-campaign-evolved-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#b0453f",
@@ -1372,7 +1373,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/the-mound-omen-of-cthulhu-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#b0453f",
@@ -1426,7 +1427,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/nte-neverness-to-everness-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#1f8a7a",
@@ -1452,7 +1453,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/dragonsword-awakening-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#8a3d2f",
@@ -1478,7 +1479,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/zerospace-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#8a3d2f",
@@ -1558,7 +1559,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/cat-mail-co-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#b0453f",
@@ -1584,7 +1585,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/forensics-crime-scene-detective-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#3a6d8c",
@@ -1614,7 +1615,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/denshattack-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#e8624a",
@@ -1641,7 +1642,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/splatoon-raiders-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#b0453f",
@@ -2735,7 +2736,7 @@
       "trending": false,
       "coverage": "atlas",
       "links": {},
-      "cover": null,
+      "cover": "/images/games/olga-doesn-t-die-banner.webp",
       "coverPosition": "center",
       "grad": [
         "#1fa87a",

@@ -61,5 +61,19 @@
   "tides-of-annihilation": { "cover": "/images/games/tides-of-annihilation-banner.webp", "coverPosition": "center" },
   "trails-in-the-sky-2nd-chapter": { "cover": "/images/games/trails-in-the-sky-2nd-chapter-banner.webp", "coverPosition": "center" },
   "halloween": { "cover": "/images/games/halloween-banner.webp", "coverPosition": "center" },
-  "wind-runners": { "cover": "/images/games/wind-runners-banner.webp", "coverPosition": "center" }
+  "wind-runners": { "cover": "/images/games/wind-runners-banner.webp", "coverPosition": "center" },
+  "poe-2": { "cover": "/images/games/poe-2-banner.webp", "coverPosition": "center" },
+  "digimon-story-time-stranger": { "cover": "/images/games/digimon-story-time-stranger-banner.webp", "coverPosition": "center" },
+  "echoes-of-aincrad": { "cover": "/images/games/echoes-of-aincrad-banner.webp", "coverPosition": "center" },
+  "assassin-s-creed-black-flag-resynced": { "cover": "/images/games/assassin-s-creed-black-flag-resynced-banner.webp", "coverPosition": "center" },
+  "halo-campaign-evolved": { "cover": "/images/games/halo-campaign-evolved-banner.webp", "coverPosition": "center" },
+  "the-mound-omen-of-cthulhu": { "cover": "/images/games/the-mound-omen-of-cthulhu-banner.webp", "coverPosition": "center" },
+  "nte-neverness-to-everness": { "cover": "/images/games/nte-neverness-to-everness-banner.webp", "coverPosition": "center" },
+  "dragonsword-awakening": { "cover": "/images/games/dragonsword-awakening-banner.webp", "coverPosition": "center" },
+  "zerospace": { "cover": "/images/games/zerospace-banner.webp", "coverPosition": "center" },
+  "cat-mail-co": { "cover": "/images/games/cat-mail-co-banner.webp", "coverPosition": "center" },
+  "forensics-crime-scene-detective": { "cover": "/images/games/forensics-crime-scene-detective-banner.webp", "coverPosition": "center" },
+  "denshattack": { "cover": "/images/games/denshattack-banner.webp", "coverPosition": "center" },
+  "splatoon-raiders": { "cover": "/images/games/splatoon-raiders-banner.webp", "coverPosition": "center" },
+  "olga-doesn-t-die": { "cover": "/images/games/olga-doesn-t-die-banner.webp", "coverPosition": "center" }
 }
