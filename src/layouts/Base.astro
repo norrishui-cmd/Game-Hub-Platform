@@ -5,6 +5,7 @@ import { t } from "../i18n/ui.js";
 import { TRUST } from "../i18n/trust.js";
 import { PRODUCT } from "../i18n/product.js";
 import { P2 } from "../i18n/p2.js";
+import { P3 } from "../i18n/p3.js";
 import { SITE } from "../config/site.js";
 import gamesData from "../../data/games.json";
 import { displayTitle, translateGenres } from "../lib/games.js";
@@ -30,6 +31,7 @@ const fullTitle = title || "GameRadar · Game Guide Radar";
 const trust = TRUST[locale] || TRUST.en;
 const product = PRODUCT[locale] || PRODUCT.en;
 const p2 = P2[locale] || P2.en;
+const p3 = P3[locale] || P3.en;
 const searchIndex = gamesData.games.map((game) => ({
   slug: game.slug,
   title: displayTitle(game, locale),
@@ -122,7 +124,7 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
       <a href={`/${locale}/news/`}>{t(locale, "navNews")}</a>
       <details class="nav-tools">
         <summary>{p2.tools}</summary>
-        <div><a href={`/${locale}/watchlist/`}>{p2.myRadar}<span id="nav-radar-count" class="nav-radar-count" hidden></span></a><a href={`/${locale}/compare/`}>{p2.compareGames}</a></div>
+        <div><a href={`/${locale}/discover/`}>{p3.discoverGames}</a><a href={`/${locale}/watchlist/`}>{p2.myRadar}<span id="nav-radar-count" class="nav-radar-count" hidden></span></a><a href={`/${locale}/compare/`}>{p2.compareGames}</a></div>
       </details>
     </nav>
     <label class="lang-switch"><span class="sr-only">{product.language}</span><select id="language-select" aria-label={product.language}>{LOCALES.map((l) => <option value={alternates[l]} selected={l === locale}>{LOCALE_META[l].label}</option>)}</select></label>
@@ -145,6 +147,7 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
           <a href={`/${locale}/monthly-chart/`}>{t(locale, "navMonthlyChart")}</a>
           <a href={`/${locale}/releases/`}>{t(locale, "navReleases")}</a>
           <a href={`/${locale}/news/`}>{t(locale, "navNews")}</a>
+          <a href={`/${locale}/discover/`}>{p3.discoverGames}</a>
           <a href={`/${locale}/watchlist/`}>{p2.myRadar}</a>
           <a href={`/${locale}/compare/`}>{p2.compareGames}</a>
           <a href={`/${locale}/faq/`}>{t(locale, "navFaq")}</a>

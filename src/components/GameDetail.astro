@@ -1,8 +1,9 @@
 ---
-import { fmtDate, relText, availableLinks, buildJsonLd, slugify, displayTitle, translateGenres, buildFaqItems, effectiveStatus, isGameFaqIndexable, isGameReleaseIndexable, isGameNewsIndexable, listSeparator } from "../lib/games.js";
+import { fmtDate, relText, availableLinks, buildJsonLd, slugify, displayTitle, translateGenres, buildFaqItems, effectiveStatus, isGameFaqIndexable, isGameReleaseIndexable, isGameNewsIndexable, listSeparator, findSimilarGames } from "../lib/games.js";
 import { t } from "../i18n/ui.js";
 import { PRODUCT } from "../i18n/product.js";
 import { P2 } from "../i18n/p2.js";
+import { P3, p3Text } from "../i18n/p3.js";
 import gamesData from "../../data/games.json";
 import newsData from "../../data/news.json";
 import GameCard from "./GameCard.astro";
@@ -13,18 +14,9 @@ const jsonLd = buildJsonLd(game, pageUrl, locale);
 const title = displayTitle(game, locale);
 const genresLocalized = translateGenres(game.genres, locale);
 
-// 同类型游戏：跟当前游戏共享至少一个类型标签、排除自己、按热度排序，取前 4 个。
-// 类型标签是从 Excel 选题库来的自由文本，同一个类型不同游戏之间大小写、措辞可能有细微差异
-// （比如 "RPG" 和 "rpg"），比较之前先用 slugify 归一化，不然会漏掉本来该算相关的游戏。
-// 这是真实存在的内部链接（不是硬凑的相关推荐），能帮用户继续在站内逛，也给搜索引擎
-// 多一条从这款游戏爬到其他游戏页面的路径。
-const gameGenreSlugs = new Set((game.genres || []).map((g) => slugify(g)));
-const relatedGames = (gameGenreSlugs.size
-  ? gamesData.games
-      .filter((g) => g.slug !== game.slug && g.genres?.some((genre) => gameGenreSlugs.has(slugify(genre))))
-      .sort((a, b) => (b.hype ?? 0) - (a.hype ?? 0))
-  : []
-).slice(0, 4);
+// P3 把“同类型 + 热度”升级为可解释的加权关联：完整类型 > 类型词元 > 平台，
+// 并把平台兜底排在所有真实类型匹配之后。算法与发现工具共用同一数据口径。
+const relatedMatches = findSimilarGames(gamesData.games, game, { limit: 4 });
 const gameNews = newsData.items
   .filter((item) => item.relatedSlug === game.slug)
   .sort((a, b) => String(b.publishedAt).localeCompare(String(a.publishedAt)));
@@ -37,6 +29,12 @@ const releaseIndexable = isGameReleaseIndexable(game, locale);
 const separator = listSeparator(locale);
 const product = PRODUCT[locale] || PRODUCT.en;
 const p2 = P2[locale] || P2.en;
+const p3 = P3[locale] || P3.en;
+const relatedReason = ({ game: candidate, signals }) => {
+  if (signals.exactGenres.length) return p3Text(locale, "sameGenre", { value: translateGenres(signals.exactGenres, locale).slice(0, 2).join(separator) });
+  if (!signals.fallback && candidate.genres?.length) return p3Text(locale, "relatedTags", { value: translateGenres(candidate.genres, locale).slice(0, 2).join(separator) });
+  return p3Text(locale, "sharedPlatforms", { value: signals.platforms.slice(0, 2).join(separator) });
+};
 const dataUpdated = fmtDate(String(gamesData.generatedAt).slice(0, 10), locale);
 const releaseRelative = (status === "upcoming" && game.release !== "TBA")
   ? ((locale === "zh" || locale === "ja") ? `（${relText(game, locale)}）` : ` (${relText(game, locale)})`)
@@ -105,7 +103,7 @@ const faqJsonLd = {
 
   <div class="detail-title-row">
     <h1 class="detail-title">{title}</h1>
-    {!isDraft && <div class="detail-actions"><a class="game-compare-link" href={`/${locale}/compare/?games=${game.slug}`}>{p2.addToCompare}</a><button class="game-watch-btn" type="button" data-game-watch aria-pressed="false">{product.saveGame}</button></div>}
+    {!isDraft && <div class="detail-actions"><a class="game-compare-link" href={`/${locale}/discover/?game=${game.slug}`}>{p3.discoverGames}</a><a class="game-compare-link" href={`/${locale}/compare/?games=${game.slug}`}>{p2.addToCompare}</a><button class="game-watch-btn" type="button" data-game-watch aria-pressed="false">{product.saveGame}</button></div>}
   </div>
   {locale === "zh" && game.titleEn && game.titleEn !== title && <div class="detail-en">{game.titleEn}</div>}
 
@@ -195,11 +193,12 @@ const faqJsonLd = {
     {editorial.sources?.length > 0 && <ol>{editorial.sources.map((source) => <li><a href={source.url} target="_blank" rel="noopener noreferrer">{source.label}</a></li>)}</ol>}
   </section>
 
-  {relatedGames.length > 0 && (
+  {relatedMatches.length > 0 && (
     <section class="wiki-section" aria-labelledby="related-games-title">
       <h2 id="related-games-title">{t(locale, "relatedGames")}</h2>
-      <div class="grid" style="margin-top:14px">
-        {relatedGames.map((g) => <GameCard game={g} locale={locale} />)}
+      <p class="related-discover-cta"><a href={`/${locale}/discover/?game=${game.slug}`}>{p3Text(locale, "detailCta", { title })} →</a></p>
+      <div class="grid related-match-grid" style="margin-top:14px">
+        {relatedMatches.map((match) => <div class="related-match"><GameCard game={match.game} locale={locale} /><p>{relatedReason(match)}</p></div>)}
       </div>
     </section>
   )}
@@ -268,5 +267,6 @@ const faqJsonLd = {
   .tracked-update-link { display:inline-block; line-height:1.5; }
   .tracked-update > p:last-child,.source-summary { color:var(--muted); font-size:13px; }
   .source-section ol { padding-left:20px; }
+  .related-discover-cta{margin:6px 0 0}.related-discover-cta a{color:var(--indigo);font-size:13px;font-weight:800;text-decoration:none}.related-match{display:flex;flex-direction:column;min-width:0}.related-match>p{margin:8px 4px 0;color:var(--muted);font-size:11px;line-height:1.45}.related-match :global(.card){height:100%}
   @media(max-width:640px){.detail-title-row{align-items:flex-start;flex-direction:column}.detail-actions{width:100%;flex-wrap:wrap}.game-watch-btn,.game-compare-link{flex:1;text-align:center;margin-bottom:4px}}
 </style>

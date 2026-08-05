@@ -328,6 +328,62 @@ export function collectTaxonomy(games, field) {
   return [...map.values()].sort((a, b) => b.count - a.count);
 }
 
+// ---------------------------------------------------------------------------
+// P3 可解释相似度：只用站内已经确认的类型、平台与发行状态做匹配。
+// 不引入评分、销量或“玩家都喜欢”之类无法由当前数据证明的信号。
+// 完整类型相同的权重最高；复合类型（如 "Action RPG"）还会拆成稳定词元，
+// 这样 "Action RPG" 与 "Open-world RPG" 仍能因为 RPG 产生真实关联。
+// ---------------------------------------------------------------------------
+const GENRE_TOKEN_STOPWORDS = new Set([
+  "and", "the", "game", "games", "video", "co", "op", "role", "playing",
+]);
+
+function normalizedSet(values = []) {
+  return new Set(values.map((value) => slugify(value)).filter(Boolean));
+}
+
+export function genreTokens(genres = []) {
+  return new Set(genres.flatMap((genre) =>
+    String(genre).toLowerCase().match(/[\p{L}\p{N}]+/gu) || []
+  ).filter((token) => !GENRE_TOKEN_STOPWORDS.has(token)));
+}
+
+export function similaritySignals(anchor, candidate) {
+  if (!anchor || !candidate || anchor.slug === candidate.slug) {
+    return { score: -1, exactGenres: [], genreTokens: [], platforms: [], sameStatus: false, fallback: false };
+  }
+  const anchorGenreSlugs = normalizedSet(anchor.genres);
+  const candidateGenreSlugs = normalizedSet(candidate.genres);
+  const exactGenres = (anchor.genres || []).filter((genre) => candidateGenreSlugs.has(slugify(genre)));
+  const anchorTokens = genreTokens(anchor.genres);
+  const candidateTokens = genreTokens(candidate.genres);
+  const sharedGenreTokens = [...anchorTokens].filter((token) => candidateTokens.has(token));
+  const candidatePlatforms = normalizedSet(candidate.platforms);
+  const platforms = (anchor.platforms || []).filter((platform) => candidatePlatforms.has(slugify(platform)));
+  const sameStatus = effectiveStatus(anchor) === effectiveStatus(candidate);
+  const hasGenreMatch = exactGenres.length > 0 || sharedGenreTokens.length > 0;
+  const fallback = !hasGenreMatch && platforms.length > 0;
+  const score = exactGenres.length * 12
+    + sharedGenreTokens.length * 4
+    + platforms.length * (hasGenreMatch ? 1.5 : 0.5)
+    + (sameStatus && hasGenreMatch ? 1 : 0);
+  return { score, exactGenres, genreTokens: sharedGenreTokens, platforms, sameStatus, fallback };
+}
+
+export function findSimilarGames(games, anchor, { limit = 4, allowPlatformFallback = true } = {}) {
+  const ranked = (games || [])
+    .filter((candidate) => candidate?.slug && candidate.slug !== anchor?.slug)
+    .map((game) => ({ game, signals: similaritySignals(anchor, game) }))
+    .filter(({ signals }) => signals.score > 0 && (allowPlatformFallback || !signals.fallback))
+    .sort((a, b) => b.signals.score - a.signals.score
+      || (b.game.hype ?? 0) - (a.game.hype ?? 0)
+      || String(a.game.slug).localeCompare(String(b.game.slug)));
+
+  const genreMatches = ranked.filter(({ signals }) => !signals.fallback);
+  const fallbacks = ranked.filter(({ signals }) => signals.fallback);
+  return [...genreMatches, ...fallbacks].slice(0, limit);
+}
+
 export function buildBreadcrumbJsonLd(items) {
   // items: [{ name, url }, ...]，第一项一般是首页
   return {

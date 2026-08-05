@@ -4,6 +4,7 @@ import { auditWiki, readJson } from "./wiki-quality.mjs";
 import { UI } from "../src/i18n/ui.js";
 import { PRODUCT } from "../src/i18n/product.js";
 import { P2 } from "../src/i18n/p2.js";
+import { P3 } from "../src/i18n/p3.js";
 import { LOCALES } from "../src/i18n/locales.js";
 import { SITE } from "../src/config/site.js";
 
@@ -35,7 +36,7 @@ for (const locale of LOCALES) {
   if (missing.length) failures.push(`UI ${locale}: missing keys ${missing.join(", ")}`);
   if (extra.length) failures.push(`UI ${locale}: unexpected keys ${extra.join(", ")}`);
 }
-for (const [label, dictionary] of [["PRODUCT", PRODUCT], ["P2", P2]]) {
+for (const [label, dictionary] of [["PRODUCT", PRODUCT], ["P2", P2], ["P3", P3]]) {
   const keys = Object.keys(dictionary.en).sort();
   for (const locale of LOCALES) {
     const localized = Object.keys(dictionary[locale] || {});
@@ -79,6 +80,12 @@ for (const file of files) {
     if (noindex) failures.push(`${rel}: comparison tool must remain indexable`);
     if (!html.includes('"@type":"WebApplication"')) failures.push(`${rel}: missing WebApplication schema`);
     if (!html.includes('"@type":"BreadcrumbList"')) failures.push(`${rel}: missing comparison breadcrumb schema`);
+  }
+  if (/^(en|de|ja|es|zh)\/discover\/index\.html$/.test(route)) {
+    if (noindex) failures.push(`${rel}: discovery tool must remain indexable`);
+    if (!html.includes('"@type":"WebApplication"')) failures.push(`${rel}: missing discovery WebApplication schema`);
+    if (!html.includes('"@type":"BreadcrumbList"')) failures.push(`${rel}: missing discovery breadcrumb schema`);
+    if (!html.includes('id="discover-game"')) failures.push(`${rel}: missing discovery anchor control`);
   }
   if (/^(en|de|ja|es|zh)\/watchlist\/index\.html$/.test(route) && !noindex) failures.push(`${rel}: personalized watchlist must be noindex`);
   if (!noindex && /^en\/(genres|platforms|genre\/[^/]+|platform\/[^/]+)\/index\.html$/.test(route)) {

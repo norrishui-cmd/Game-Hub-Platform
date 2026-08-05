@@ -1,0 +1,250 @@
+---
+import Base from "../../layouts/Base.astro";
+import gamesData from "../../../data/games.json";
+import { LOCALES } from "../../i18n/locales.js";
+import { P3 } from "../../i18n/p3.js";
+import { buildBreadcrumbJsonLd, collectTaxonomy, displayTitle, effectiveStatus, pageTitle, translateGenres } from "../../lib/games.js";
+
+export function getStaticPaths() { return LOCALES.map((locale) => ({ params: { locale } })); }
+
+const { locale } = Astro.params;
+const copy = P3[locale] || P3.en;
+const site = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
+const pageUrl = `${site}/${locale}/discover/`;
+const games = gamesData.games
+  .filter((game) => game.slug)
+  .map((game) => ({
+    slug: game.slug,
+    title: displayTitle(game, locale),
+    genres: translateGenres(game.genres || [], locale),
+    genresRaw: game.genres || [],
+    platforms: game.platforms || [],
+    status: effectiveStatus(game),
+    coverage: game.coverage === "owned" ? "owned" : "reference",
+    hype: game.hype || 0,
+    cover: game.cover || "",
+    href: `/${locale}/games/${game.slug}/`,
+  }))
+  .sort((a, b) => b.hype - a.hype || a.title.localeCompare(b.title));
+const platforms = collectTaxonomy(gamesData.games, "platforms");
+const jsonLd = [
+  buildBreadcrumbJsonLd([
+    { name: "GameRadar", url: `${site}/${locale}/` },
+    { name: copy.discoverTitle, url: pageUrl },
+  ]),
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    name: copy.discoverTitle,
+    description: copy.discoverIntro,
+    url: pageUrl,
+    inLanguage: locale,
+    applicationCategory: "GameApplication",
+    operatingSystem: "Any",
+    offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+  },
+];
+---
+<Base locale={locale} title={pageTitle(copy.discoverTitle)} description={copy.discoverIntro} pathSuffix="/discover/" jsonLd={jsonLd}>
+  <main class="wrap discover-page">
+    <div class="crumb"><a href={`/${locale}/`}>← GameRadar</a></div>
+    <header class="discover-head">
+      <p class="section-kicker">GameRadar Match Lab</p>
+      <h1>{copy.discoverTitle}</h1>
+      <p>{copy.discoverIntro}</p>
+    </header>
+
+    <section class="discover-tool" aria-labelledby="discover-controls-title">
+      <h2 id="discover-controls-title" class="sr-only">{copy.discoverGames}</h2>
+      <div class="discover-controls">
+        <label class="anchor-control"><span>{copy.anchorLabel}</span><select id="discover-game">{games.map((game) => <option value={game.slug}>{game.title}</option>)}</select></label>
+        <label><span>{copy.platformLabel}</span><select id="discover-platform"><option value="">{copy.anyPlatform}</option>{platforms.map((platform) => <option value={platform.label}>{platform.label} ({platform.count})</option>)}</select></label>
+        <label><span>{copy.statusLabel}</span><select id="discover-status"><option value="">{copy.anyStatus}</option><option value="upcoming">{copy.upcoming}</option><option value="live">{copy.released}</option></select></label>
+        <label><span>{copy.coverageLabel}</span><select id="discover-coverage"><option value="">{copy.anyCoverage}</option><option value="owned">{copy.deepWiki}</option><option value="reference">{copy.referenceHub}</option></select></label>
+      </div>
+      <div class="discover-actions">
+        <button id="discover-reset" class="btn btn-ghost" type="button">{copy.resetFilters}</button>
+        <button id="discover-share" class="btn btn-ghost" type="button">{copy.shareResults}</button>
+        <button id="discover-random" class="btn" type="button">{copy.surpriseMe}</button>
+        <span id="discover-copy-status" role="status" aria-live="polite"></span>
+      </div>
+    </section>
+
+    <section class="discover-results" aria-labelledby="discover-results-title">
+      <div class="discover-results-head"><div><h2 id="discover-results-title"></h2><p id="discover-result-count"></p></div></div>
+      <div id="discover-grid" class="discover-grid"></div>
+      <div id="discover-empty" class="discover-empty" hidden><h3>{copy.emptyTitle}</h3><p>{copy.emptyText}</p></div>
+    </section>
+
+    <section class="discover-how" aria-labelledby="discover-how-title">
+      <h2 id="discover-how-title">{copy.howTitle}</h2>
+      <div>
+        <article><span>01</span><h3>{copy.howExplainable}</h3><p>{copy.howExplainableText}</p></article>
+        <article><span>02</span><h3>{copy.howFilter}</h3><p>{copy.howFilterText}</p></article>
+        <article><span>03</span><h3>{copy.howNoRatings}</h3><p>{copy.howNoRatingsText}</p></article>
+      </div>
+    </section>
+  </main>
+
+  <script define:vars={{ games, labels: copy }}>
+    const gameSelect = document.querySelector("#discover-game");
+    const platformSelect = document.querySelector("#discover-platform");
+    const statusSelect = document.querySelector("#discover-status");
+    const coverageSelect = document.querySelector("#discover-coverage");
+    const resultsTitle = document.querySelector("#discover-results-title");
+    const resultCount = document.querySelector("#discover-result-count");
+    const grid = document.querySelector("#discover-grid");
+    const empty = document.querySelector("#discover-empty");
+    const shareStatus = document.querySelector("#discover-copy-status");
+    const randomButton = document.querySelector("#discover-random");
+    const gameMap = new Map(games.map((game) => [game.slug, game]));
+    const stopwords = new Set(["and", "the", "game", "games", "video", "co", "op", "role", "playing"]);
+    const slug = (value) => String(value || "").trim().toLocaleLowerCase().replace(/[^\p{L}\p{N}]+/gu, "-").replace(/^-+|-+$/g, "");
+    const tokenSet = (genres) => new Set((genres || []).flatMap((genre) => String(genre).toLocaleLowerCase().match(/[\p{L}\p{N}]+/gu) || []).filter((token) => !stopwords.has(token)));
+    const intersection = (values, set, normalizer = (value) => value) => (values || []).filter((value) => set.has(normalizer(value)));
+    const phrase = (template, value) => template.replaceAll("{value}", value);
+    const titled = (template, title) => template.replaceAll("{title}", title);
+    const counted = (template, count) => template.replaceAll("{count}", String(count));
+
+    function signals(anchor, candidate) {
+      const candidateGenreSlugs = new Set(candidate.genresRaw.map(slug));
+      const exactRaw = intersection(anchor.genresRaw, candidateGenreSlugs, slug);
+      const exactIndexes = exactRaw.map((genre) => anchor.genresRaw.findIndex((value) => slug(value) === slug(genre))).filter((index) => index >= 0);
+      const exactLocalized = exactIndexes.map((index) => anchor.genres[index] || anchor.genresRaw[index]);
+      const anchorTokens = tokenSet(anchor.genresRaw);
+      const candidateTokens = tokenSet(candidate.genresRaw);
+      const relatedTokens = [...anchorTokens].filter((token) => candidateTokens.has(token));
+      const relatedGenres = candidate.genres.filter((genre, index) => {
+        const rawTokens = tokenSet([candidate.genresRaw[index]]);
+        return relatedTokens.some((token) => rawTokens.has(token));
+      });
+      const candidatePlatforms = new Set(candidate.platforms.map(slug));
+      const sharedPlatforms = intersection(anchor.platforms, candidatePlatforms, slug);
+      const sameStatus = anchor.status === candidate.status;
+      const hasGenreMatch = exactRaw.length > 0 || relatedTokens.length > 0;
+      const fallback = !hasGenreMatch && sharedPlatforms.length > 0;
+      const score = exactRaw.length * 12 + relatedTokens.length * 4 + sharedPlatforms.length * (hasGenreMatch ? 1.5 : .5) + (sameStatus && hasGenreMatch ? 1 : 0);
+      return { score, exactLocalized, relatedGenres, sharedPlatforms, sameStatus, fallback };
+    }
+
+    function matchesFilters(game) {
+      return (!platformSelect.value || game.platforms.includes(platformSelect.value))
+        && (!statusSelect.value || game.status === statusSelect.value)
+        && (!coverageSelect.value || game.coverage === coverageSelect.value);
+    }
+
+    function rankedResults(anchor) {
+      const ranked = games
+        .filter((candidate) => candidate.slug !== anchor.slug && matchesFilters(candidate))
+        .map((game) => ({ game, match: signals(anchor, game) }))
+        .filter(({ match }) => match.score > 0)
+        .sort((a, b) => Number(a.match.fallback) - Number(b.match.fallback) || b.match.score - a.match.score || b.game.hype - a.game.hype || a.game.title.localeCompare(b.game.title));
+      return ranked;
+    }
+
+    function addReason(container, text, weak = false) {
+      const item = document.createElement("span");
+      item.className = weak ? "match-reason weak" : "match-reason";
+      item.textContent = text;
+      container.append(item);
+    }
+
+    function gameCard({ game, match }) {
+      const article = document.createElement("article");
+      article.className = "discover-card";
+      const link = document.createElement("a");
+      link.className = "discover-card-cover";
+      link.href = game.href;
+      if (game.cover) {
+        const image = document.createElement("img");
+        image.src = game.cover;
+        image.alt = game.title;
+        image.loading = "lazy";
+        image.decoding = "async";
+        link.append(image);
+      } else {
+        const monogram = document.createElement("span");
+        monogram.className = "discover-card-mono";
+        monogram.textContent = game.title.trim().charAt(0).toLocaleUpperCase() || "G";
+        link.append(monogram);
+      }
+      const body = document.createElement("div");
+      body.className = "discover-card-body";
+      const title = document.createElement("h3");
+      const titleLink = document.createElement("a");
+      titleLink.href = game.href;
+      titleLink.textContent = game.title;
+      title.append(titleLink);
+      const meta = document.createElement("p");
+      meta.textContent = [...game.genres.slice(0, 2), ...game.platforms.slice(0, 2)].join(" · ") || "—";
+      const reasons = document.createElement("div");
+      reasons.className = "match-reasons";
+      if (match.exactLocalized.length) addReason(reasons, phrase(labels.sameGenre, match.exactLocalized.slice(0, 2).join(" · ")));
+      else if (match.relatedGenres.length) addReason(reasons, phrase(labels.relatedTags, match.relatedGenres.slice(0, 2).join(" · ")));
+      if (match.sharedPlatforms.length) addReason(reasons, phrase(labels.sharedPlatforms, match.sharedPlatforms.slice(0, 2).join(" · ")), match.fallback);
+      if (match.sameStatus && !match.fallback) addReason(reasons, labels.sameStage, true);
+      if (match.fallback) addReason(reasons, labels.fallbackMatch, true);
+      const cta = document.createElement("a");
+      cta.className = "discover-card-cta";
+      cta.href = game.href;
+      cta.textContent = `${labels.viewGame} →`;
+      body.append(title, meta, reasons, cta);
+      article.append(link, body);
+      return article;
+    }
+
+    let currentResults = [];
+    function syncUrl() {
+      const params = new URLSearchParams();
+      if (gameSelect.value) params.set("game", gameSelect.value);
+      if (platformSelect.value) params.set("platform", platformSelect.value);
+      if (statusSelect.value) params.set("status", statusSelect.value);
+      if (coverageSelect.value) params.set("coverage", coverageSelect.value);
+      history.replaceState(null, "", `${location.pathname}${params.size ? `?${params}` : ""}`);
+    }
+
+    function render() {
+      shareStatus.textContent = "";
+      const anchor = gameMap.get(gameSelect.value) || games[0];
+      currentResults = rankedResults(anchor).slice(0, 8);
+      resultsTitle.textContent = titled(labels.resultsFor, anchor.title);
+      resultCount.textContent = counted(labels.resultCount, currentResults.length);
+      grid.replaceChildren(...currentResults.map(gameCard));
+      empty.hidden = currentResults.length > 0;
+      grid.hidden = currentResults.length === 0;
+      randomButton.disabled = currentResults.length === 0;
+    }
+
+    function applyQuery() {
+      const params = new URLSearchParams(location.search);
+      const requestedGame = params.get("game");
+      gameSelect.value = gameMap.has(requestedGame) ? requestedGame : games[0].slug;
+      const requestedPlatform = params.get("platform") || "";
+      platformSelect.value = [...platformSelect.options].some((option) => option.value === requestedPlatform) ? requestedPlatform : "";
+      statusSelect.value = ["upcoming", "live"].includes(params.get("status")) ? params.get("status") : "";
+      coverageSelect.value = ["owned", "reference"].includes(params.get("coverage")) ? params.get("coverage") : "";
+      syncUrl();
+      render();
+    }
+
+    [gameSelect, platformSelect, statusSelect, coverageSelect].forEach((select) => select.addEventListener("change", () => { syncUrl(); render(); }));
+    document.querySelector("#discover-reset").addEventListener("click", () => { platformSelect.value = ""; statusSelect.value = ""; coverageSelect.value = ""; syncUrl(); render(); });
+    document.querySelector("#discover-share").addEventListener("click", async () => {
+      try { await navigator.clipboard.writeText(location.href); }
+      catch { const area = document.createElement("textarea"); area.value = location.href; area.style.position = "fixed"; area.style.opacity = "0"; document.body.append(area); area.select(); document.execCommand("copy"); area.remove(); }
+      shareStatus.textContent = labels.linkCopied;
+    });
+    randomButton.addEventListener("click", () => {
+      const shortlist = currentResults;
+      const pick = shortlist[Math.floor(Math.random() * shortlist.length)];
+      if (pick) location.href = pick.game.href;
+    });
+    applyQuery();
+  </script>
+</Base>
+
+<style>
+  .discover-page{padding-top:34px}.discover-head{margin:20px 0 24px}.discover-head h1{font:700 clamp(30px,5vw,48px) var(--fd);margin:5px 0 10px;max-width:850px}.discover-head>p:last-child{color:var(--muted);max-width:80ch;margin:0;line-height:1.7}.discover-tool{padding:20px;background:linear-gradient(135deg,var(--panel),var(--panel-2));border:1px solid var(--line);border-radius:var(--r)}.discover-controls{display:grid;grid-template-columns:1.6fr repeat(3,1fr);gap:10px}.discover-controls label{display:flex;flex-direction:column;gap:6px}.discover-controls label>span{font-size:11px;color:var(--faint);font-weight:800;text-transform:uppercase;letter-spacing:.04em}.discover-controls select{width:100%;padding:12px;border:1px solid var(--line);border-radius:9px;background:var(--bg-2);color:var(--ink)}.discover-controls .anchor-control select{border-color:color-mix(in srgb,var(--indigo) 55%,var(--line))}.discover-actions{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-top:15px}.discover-actions .btn{font-size:12px}.discover-actions span{font-size:12px;color:var(--teal)}.discover-actions button:disabled{opacity:.45;cursor:not-allowed}.discover-results{margin:36px 0}.discover-results-head{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:15px}.discover-results-head h2{font:700 clamp(22px,3vw,30px) var(--fd);margin:0 0 5px}.discover-results-head p{color:var(--muted);font-size:13px;margin:0}.discover-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}.discover-card{display:grid;grid-template-columns:160px 1fr;min-height:190px;overflow:hidden;background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--r-sm)}.discover-card-cover{display:grid;place-items:center;background:linear-gradient(135deg,color-mix(in srgb,var(--indigo) 25%,var(--panel-2)),var(--panel-2))}.discover-card-cover img{width:100%;height:100%;object-fit:cover;display:block}.discover-card-mono{font:700 46px var(--fd);color:color-mix(in srgb,var(--indigo) 65%,white)}.discover-card-body{display:flex;flex-direction:column;align-items:flex-start;padding:16px;min-width:0}.discover-card h3{font:700 18px var(--fd);margin:0 0 6px}.discover-card h3 a{color:var(--ink);text-decoration:none}.discover-card p{color:var(--muted);font-size:12px;line-height:1.5;margin:0 0 11px}.match-reasons{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:12px}.match-reason{display:inline-flex;padding:5px 7px;border-radius:999px;background:color-mix(in srgb,var(--indigo) 12%,transparent);color:var(--indigo);font-size:10.5px;font-weight:700}.match-reason.weak{background:var(--panel-2);color:var(--faint)}.discover-card-cta{color:var(--indigo);font-size:12px;font-weight:800;text-decoration:none;margin-top:auto}.discover-empty{text-align:center;padding:45px 20px;border:1px dashed var(--line);border-radius:var(--r);background:var(--panel)}.discover-empty h3{font:700 20px var(--fd);margin:0 0 8px}.discover-empty p{color:var(--muted);margin:0}.discover-how{margin:40px 0}.discover-how>h2{font:700 25px var(--fd)}.discover-how>div{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.discover-how article{padding:18px;background:var(--panel);border:1px solid var(--line-soft);border-radius:var(--r-sm)}.discover-how article>span{font:700 11px var(--fd);color:var(--teal)}.discover-how h3{font:700 16px var(--fd);margin:8px 0}.discover-how p{color:var(--muted);font-size:13px;line-height:1.6;margin:0}
+  @media(max-width:900px){.discover-controls{grid-template-columns:repeat(2,1fr)}.discover-card{grid-template-columns:125px 1fr}}
+  @media(max-width:680px){.discover-controls,.discover-grid,.discover-how>div{grid-template-columns:1fr}.discover-tool{padding:15px}.discover-actions{align-items:stretch;flex-direction:column}.discover-actions .btn{width:100%}.discover-card{grid-template-columns:105px 1fr;min-height:210px}.discover-card-body{padding:13px}.discover-card h3{font-size:16px}}
+</style>

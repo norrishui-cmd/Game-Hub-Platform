@@ -132,7 +132,7 @@ export default defineConfig({
           item.lastmod = new Date(gamesData.generatedAt);
           return item;
         }
-        if (/^\/(en|de|ja|es|zh)\/compare\/$/.test(path)) {
+        if (/^\/(en|de|ja|es|zh)\/(compare|discover)\/$/.test(path)) {
           item.lastmod = new Date(gamesData.generatedAt);
           return item;
         }

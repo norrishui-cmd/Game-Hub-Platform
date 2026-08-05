@@ -511,6 +511,13 @@ google.com, pub-9505220977121599, DIRECT, f08c47fec0942fa0
 本地Banner覆盖IGDB封面；即使IGDB暂时搜索不到游戏，也会保留本地配置的游戏卡片。
 `npm run seo:audit` 会检查每个本地图片路径是否真实存在。
 
+## 2026-08-05 P3：可解释发现与内容排期
+
+- `/{locale}/discover/` 是五语言相似游戏发现器。它只使用 `data/games.json` 里已经确认的类型、平台、发行状态与攻略覆盖，不生成评分，也不把推测写成玩家偏好。筛选状态保存在查询参数中，可直接分享；查询参数使用同一 canonical，不产生重复索引页。
+- 游戏详情页与发现器共用 `src/lib/games.js` 的 `findSimilarGames()`：完整类型匹配优先，其次是复合类型的共同词元，再按共同平台弱兜底。平台兜底永远排在真正的类型关联之后。
+- 内容团队可运行 `npm run content:backlog` 查看尚未发布的 Wiki 优先队列；加 `-- --json` 可供自动化读取，加 `-- --limit=50` 可扩大列表。这里的 priority 是编辑排期分，不是游戏评分，发布仍必须通过 `game:audit` 与全站 SEO 审计。
+- P3 只新增五个有完整本地化说明和 WebApplication/Breadcrumb 结构化数据的工具页，没有为每组相似关系批量生成薄 URL。
+
 ## 已知的下一步
 
 - `category = 0`（只要主游戏）用的是 IGDB 已标记 deprecated 但目前仍可用的字段，

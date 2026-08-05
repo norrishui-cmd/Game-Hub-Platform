@@ -10,6 +10,7 @@
     "seo:audit": "node scripts/seo-audit.mjs",
     "data:health": "node scripts/data-health.mjs",
     "data:health:strict": "node scripts/data-health.mjs --strict",
+    "content:backlog": "node scripts/content-backlog.mjs",
     "game:create": "node scripts/game-create.mjs",
     "game:audit": "node scripts/game-audit.mjs",
     "game:publish": "node scripts/game-publish.mjs"
