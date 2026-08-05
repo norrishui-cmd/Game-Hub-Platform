@@ -1,21 +1,54 @@
 {
+  "slug": "nivalis-nights",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Nivalis Nights is a cozy cyberpunk slice-of-life sim from ION LANDS (the studio behind Cloudpunk), published by 505 Games and set for release September 29, 2026. Set in the vertical neon city of Nivalis, players arrive with almost nothing and build a life from the ground up — running restaurants, ramen stands, or nightclubs, fishing and exploring the city by boat, decorating an apartment, and navigating relationships with the city's residents under the pressure of CorpSec curfews.",
       "faq": [],
       "guideSections": [
-        { "title": "Business, Boats & Curfew Risk", "description": "The core loop mixes business management (growing a noodle stand into a top restaurant or nightclub) with free-form city exploration by boat and fishing, while operating under curfew — sabotaging rivals or growing ingredients illegally carries real risk of the same tactics being used against you." },
-        { "title": "Languages & Ties to Cloudpunk", "description": "Nivalis Nights ships with 11 languages at launch (including English, Simplified and Traditional Chinese, and Japanese) and is set in the same city, Nivalis, previously explored in ION LANDS' earlier game Cloudpunk, though it can be played and enjoyed without having played that title." }
+        {
+          "title": "Business, Boats & Curfew Risk",
+          "description": "The core loop mixes business management (growing a noodle stand into a top restaurant or nightclub) with free-form city exploration by boat and fishing, while operating under curfew — sabotaging rivals or growing ingredients illegally carries real risk of the same tactics being used against you."
+        },
+        {
+          "title": "Languages & Ties to Cloudpunk",
+          "description": "Nivalis Nights ships with 11 languages at launch (including English, Simplified and Traditional Chinese, and Japanese) and is set in the same city, Nivalis, previously explored in ION LANDS' earlier game Cloudpunk, though it can be played and enjoyed without having played that title."
+        }
       ],
       "sources": [
-        { "label": "505 Games — official Nivalis Nights game page", "url": "https://505games.com/games/nivalisnights/" },
-        { "label": "Nivalis Nights official site — ION LANDS / Cloudpunk connection, languages, requirements", "url": "https://nivalisnights.org/" }
+        {
+          "label": "505 Games — official Nivalis Nights game page",
+          "url": "https://505games.com/games/nivalisnights/"
+        },
+        {
+          "label": "Nivalis Nights official site — ION LANDS / Cloudpunk connection, languages, requirements",
+          "url": "https://nivalisnights.org/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

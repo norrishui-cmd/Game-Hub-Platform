@@ -9,7 +9,7 @@ import trendingData from "../../../data/monthly-trending.json";
 import newsData from "../../../data/news.json";
 import { LOCALES } from "../../i18n/locales.js";
 import { t } from "../../i18n/ui.js";
-import { fmtDate, fmtMonth, cardHref, displayTitle, translateGenres, translateGenre, collectTaxonomy } from "../../lib/games.js";
+import { fmtDate, fmtMonth, cardHref, displayTitle, translateGenres, translateGenre, collectTaxonomy, effectiveStatus } from "../../lib/games.js";
 
 export function getStaticPaths() {
   return LOCALES.map((locale) => ({ params: { locale } }));
@@ -18,7 +18,7 @@ export function getStaticPaths() {
 const { locale } = Astro.params;
 const games = gamesData.games;
 const featured = games.find((g) => g.featured) || games[0];
-const upcoming = games.filter((g) => g.status === "upcoming");
+const upcoming = games.filter((g) => effectiveStatus(g) === "upcoming");
 const trending = games.filter((g) => g.trending);
 const genreOptions = collectTaxonomy(games, "genres");
 
@@ -38,7 +38,7 @@ const faqPreviewGames = [...games].sort((a, b) => (b.hype ?? 0) - (a.hype ?? 0))
           <h1>{heroTitle}</h1>
           {locale === "zh" && featured.titleEn && featured.titleEn !== heroTitle && <div class="sub">{featured.titleEn}</div>}
           <div class="meta">
-            <span class="chip">{featured.developer || "—"}</span>
+            {featured.developer && <span class="chip">{featured.developer}</span>}
             {heroGenres.map((g) => <span class="chip">{g}</span>)}
             {featured.platforms?.length > 0 && <span class="chip">{featured.platforms.join(" · ")}</span>}
           </div>

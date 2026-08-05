@@ -1,22 +1,58 @@
 {
+  "slug": "zerospace",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "ZeroSpace is a cinematic sci-fi real-time strategy game from Starlance Studios in collaboration with Ironward, which entered Steam Early Access on July 20, 2026 as a PC-exclusive, buy-to-play title. Set in the Orion Arm of the Milky Way in the year 2700, it casts players as a commander of the Protectorate as humanity's fragile peace with ten alien civilisations begins to collapse, combining traditional base-building and unit management with hero-driven tactics and branching, RPG-style story choices.",
       "faq": [],
       "guideSections": [
-        { "title": "Army Building: Races, Heroes & Mercenaries", "description": "ZeroSpace's army system layers four core races, six legendary heroes, and 14 mercenary factions, letting players mix units and tactics across all three. The developers have emphasised streamlining classic RTS systems for responsiveness without cutting strategic depth, alongside advanced group simulation and pathfinding built for large armies." },
-        { "title": "Campaign, Galactic War & Development Team", "description": "Beyond the story-driven campaign with Mass Effect-style dialogue trees where choices affect diplomacy, story routes and endings, ZeroSpace includes large asynchronous multiplayer warfronts, co-op PvE with resource sharing, plus ranked and casual play. Art direction comes from Aaron Kambeitz — Relic Entertainment co-founder and lead artist on the Homeworld series. Starlance plans roughly a year in Early Access, adjusting based on player feedback." }
+        {
+          "title": "Army Building: Races, Heroes & Mercenaries",
+          "description": "ZeroSpace's army system layers four core races, six legendary heroes, and 14 mercenary factions, letting players mix units and tactics across all three. The developers have emphasised streamlining classic RTS systems for responsiveness without cutting strategic depth, alongside advanced group simulation and pathfinding built for large armies."
+        },
+        {
+          "title": "Campaign, Galactic War & Development Team",
+          "description": "Beyond the story-driven campaign with Mass Effect-style dialogue trees where choices affect diplomacy, story routes and endings, ZeroSpace includes large asynchronous multiplayer warfronts, co-op PvE with resource sharing, plus ranked and casual play. Art direction comes from Aaron Kambeitz — Relic Entertainment co-founder and lead artist on the Homeworld series. Starlance plans roughly a year in Early Access, adjusting based on player feedback."
+        }
       ],
       "sources": [
-        { "label": "Games Press — official Early Access launch announcement", "url": "https://www.gamespress.com/ZeroSpace-Launches-in-Early-Access-on-Steam" },
-        { "label": "Steam — official store page and Early Access statement", "url": "https://store.steampowered.com/app/1605850/ZeroSpace/" },
-        { "label": "NewsGlobeNow — army systems, art direction and director interview", "url": "https://www.newsglobenow.com/new381972.html" }
+        {
+          "label": "Games Press — official Early Access launch announcement",
+          "url": "https://www.gamespress.com/ZeroSpace-Launches-in-Early-Access-on-Steam"
+        },
+        {
+          "label": "Steam — official store page and Early Access statement",
+          "url": "https://store.steampowered.com/app/1605850/ZeroSpace/"
+        },
+        {
+          "label": "NewsGlobeNow — army systems, art direction and director interview",
+          "url": "https://www.newsglobenow.com/new381972.html"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

@@ -1,5 +1,5 @@
 ---
-import { cardHref, searchBlob, relText, displayTitle, translateGenres, slugify } from "../lib/games.js";
+import { cardHref, searchBlob, relText, displayTitle, translateGenres, slugify, effectiveStatus } from "../lib/games.js";
 import { t } from "../i18n/ui.js";
 
 const { game, locale } = Astro.props;
@@ -8,11 +8,12 @@ const owned = game.coverage === "owned";
 const title = displayTitle(game, locale);
 const genresLocalized = translateGenres(game.genres, locale);
 const genreSlugs = (game.genres || []).map((g) => slugify(g)).join(" ");
+const status = effectiveStatus(game);
 ---
 <a
   class="card"
   href={href}
-  data-status={game.status}
+  data-status={status}
   data-trending={String(!!game.trending)}
   data-coverage={game.coverage}
   data-genres={genreSlugs}
@@ -22,16 +23,15 @@ const genreSlugs = (game.genres || []).map((g) => slugify(g)).join(" ");
     {owned
       ? <span class="pill owned"><span class="d"></span>{t(locale, "pillOwned")}</span>
       : <span class="pill nav"><span class="d"></span>{t(locale, "pillNav")}</span>}
-    {game.status === "live" && <span class="pill live"><span class="d"></span>{t(locale, "pillLive")}</span>}
+    {status === "live" && <span class="pill live"><span class="d"></span>{t(locale, "pillLive")}</span>}
     {game.cover
       ? <img class="cover-img" src={game.cover} alt={`${title} banner`} loading="lazy" decoding="async" style={`object-position:${game.coverPosition || "center"}`} />
       : <div class="mono">{game.mono}</div>}
-    <span class="hype">🔥 {game.hype}</span>
   </div>
   <div class="card-body">
     <div class="ti">{title}</div>
     {locale === "zh" && game.titleEn && game.titleEn !== title && <div class="en">{game.titleEn}</div>}
-    <div class="dv">{game.developer || "—"}</div>
+    <div class="dv">{game.developer || genresLocalized.slice(0, 2).join(" · ")}</div>
     <div class="card-foot">
       <span class="rel-tag">
         <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>

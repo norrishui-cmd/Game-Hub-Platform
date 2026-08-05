@@ -1,21 +1,54 @@
 {
+  "slug": "warhammer-40-000-dawn-of-war-iv",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Warhammer 40,000: Dawn of War IV is a real-time strategy game developed by KING Art Games (the studio behind Iron Harvest) and published by Deep Silver, announced at Gamescom 2025 and scheduled for a 2026 release on PC via Steam. After Dawn of War III's divisive shift toward MOBA-influenced gameplay in 2017, the series moves to a new developer for the first time and returns to classic Dawn of War roots, with base-building, large squad-based armies, and deep strategic combat set on the planet Kronus roughly 200 years after the events of Dawn of War: Dark Crusade.",
       "faq": [],
       "guideSections": [
-        { "title": "Four Factions, 70+ Missions", "description": "Dawn of War IV features four mechanically distinct playable factions — Space Marines, Orks, Necrons, and the Adeptus Mechanicus, making their series debut — each with its own campaign feeding into a single overarching narrative, totaling more than 70 campaign missions." },
-        { "title": "Modes Beyond the Campaign", "description": "Alongside solo or co-op campaign play, Dawn of War IV ships with competitive multiplayer, Skirmish, and the fan-favorite cooperative horde mode Last Stand, continuing the series' tradition of supporting both narrative and replayable competitive content at launch." }
+        {
+          "title": "Four Factions, 70+ Missions",
+          "description": "Dawn of War IV features four mechanically distinct playable factions — Space Marines, Orks, Necrons, and the Adeptus Mechanicus, making their series debut — each with its own campaign feeding into a single overarching narrative, totaling more than 70 campaign missions."
+        },
+        {
+          "title": "Modes Beyond the Campaign",
+          "description": "Alongside solo or co-op campaign play, Dawn of War IV ships with competitive multiplayer, Skirmish, and the fan-favorite cooperative horde mode Last Stand, continuing the series' tradition of supporting both narrative and replayable competitive content at launch."
+        }
       ],
       "sources": [
-        { "label": "Deep Silver — official Dawn of War IV game page", "url": "https://www.deepsilver.com/games/dawn-of-war-iv" },
-        { "label": "NME — release window, factions, and gameplay details", "url": "https://www.nme.com/guides/gaming-guides/warhammer-40000-dawn-of-war-iv-release-date-3887278" }
+        {
+          "label": "Deep Silver — official Dawn of War IV game page",
+          "url": "https://www.deepsilver.com/games/dawn-of-war-iv"
+        },
+        {
+          "label": "NME — release window, factions, and gameplay details",
+          "url": "https://www.nme.com/guides/gaming-guides/warhammer-40000-dawn-of-war-iv-release-date-3887278"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

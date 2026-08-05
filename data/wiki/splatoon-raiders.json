@@ -1,22 +1,58 @@
 {
+  "slug": "splatoon-raiders",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Splatoon Raiders is a single-player-focused spin-off in Nintendo's Splatoon series, developed by Nintendo EPD and released July 23, 2026 exclusively on Nintendo Switch 2. Players create an Inkling or Octoling cast as a mechanic, joining Deep Cut — Shiver, Frye and Big Man from Splatoon 3 — to explore the Spirhalite Islands, hunting treasure and battling Salmonids. It drops Turf War entirely in favour of a story-driven loot chase, with four-player co-op (local or online) that scales difficulty by player count.",
       "faq": [],
       "guideSections": [
-        { "title": "A Structural Departure from Mainline Splatoon", "description": "Raiders replaces Splatoon's competitive multiplayer core with exploration, puzzle-solving, combat and resource gathering across the Spirhalite Islands, built around a weapon upgrade system, a home base, and extensive player customisation. Reviews landed at 81 on Metacritic and 80 on OpenCritic — level with the three mainline entries — with IGN and Nintendo Life both scoring it 9/10, though critics noted boss fights lean more on damage sponges than puzzle design." },
-        { "title": "Pricing, amiibo & No Extra Editions", "description": "Digital is $49.99 and physical $59.99, with no Deluxe edition, no Collector's Edition and no season pass — notably unusual for a 2026 first-party release. Three Raiders-specific Deep Cut amiibo (Shiver, Frye, Big Man) launched alongside the game, each unlocking outfit options for the Mechanic, plus a themed Joy-Con 2 pair at $99.99." }
+        {
+          "title": "A Structural Departure from Mainline Splatoon",
+          "description": "Raiders replaces Splatoon's competitive multiplayer core with exploration, puzzle-solving, combat and resource gathering across the Spirhalite Islands, built around a weapon upgrade system, a home base, and extensive player customisation. Reviews landed at 81 on Metacritic and 80 on OpenCritic — level with the three mainline entries — with IGN and Nintendo Life both scoring it 9/10, though critics noted boss fights lean more on damage sponges than puzzle design."
+        },
+        {
+          "title": "Pricing, amiibo & No Extra Editions",
+          "description": "Digital is $49.99 and physical $59.99, with no Deluxe edition, no Collector's Edition and no season pass — notably unusual for a 2026 first-party release. Three Raiders-specific Deep Cut amiibo (Shiver, Frye, Big Man) launched alongside the game, each unlocking outfit options for the Mechanic, plus a themed Joy-Con 2 pair at $99.99."
+        }
       ],
       "sources": [
-        { "label": "Nintendo — official Splatoon Raiders game page", "url": "https://www.nintendo.com/my/games/switch2/aadla/index.html" },
-        { "label": "Inkipedia — announcement history, setting and characters", "url": "https://splatoonwiki.org/wiki/Splatoon_Raiders" },
-        { "label": "Forbes — pricing, amiibo and review score roundup", "url": "https://www.forbes.com/sites/brianmazique/2026/07/22/splatoon-raiders-release-time-when-can-you-start-playing/" }
+        {
+          "label": "Nintendo — official Splatoon Raiders game page",
+          "url": "https://www.nintendo.com/my/games/switch2/aadla/index.html"
+        },
+        {
+          "label": "Inkipedia — announcement history, setting and characters",
+          "url": "https://splatoonwiki.org/wiki/Splatoon_Raiders"
+        },
+        {
+          "label": "Forbes — pricing, amiibo and review score roundup",
+          "url": "https://www.forbes.com/sites/brianmazique/2026/07/22/splatoon-raiders-release-time-when-can-you-start-playing/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

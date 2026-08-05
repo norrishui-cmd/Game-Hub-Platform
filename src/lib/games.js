@@ -49,21 +49,53 @@ export function dataScore(game) {
     Object.keys(game.links || {}).length, game.developer].filter(Boolean).length;
 }
 
+function validSources(content) {
+  return (content?.sources || []).filter((source) =>
+    source?.label?.trim() && /^https:\/\//.test(source?.url || "")
+  );
+}
+
+function validGuideSections(content) {
+  return (content?.guideSections || []).filter((section) =>
+    section?.title?.trim().length >= 4 && section?.description?.trim().length >= 80
+  );
+}
+
 export function contentScore(game, locale = DEFAULT_LOCALE) {
   const content = game.content?.[locale];
   let score = 0;
-  if (content?.summary?.trim()) score += 2;
-  if (content?.faq?.length) score += Math.min(2, content.faq.length);
-  if (content?.guideSections?.length) score += 2;
-  if (content?.sources?.length) score += 1;
-  // English fact hubs are the reviewed fallback in phase one. Translated pages
-  // require explicit localized content before they can be indexed.
-  if (locale === DEFAULT_LOCALE && dataScore(game) >= 3) score += 3;
+  if (content?.summary?.trim().length >= 120) score += 3;
+  score += Math.min(2, validGuideSections(content).length);
+  score += Math.min(2, validSources(content).length);
   return score;
 }
 
 export function isGameIndexable(game, locale = DEFAULT_LOCALE) {
-  return game.publishStatus !== "draft" && contentScore(game, locale) >= 3;
+  const content = game.content?.[locale];
+  return game.publishStatus === "published"
+    && contentScore(game, locale) >= 7
+    && Boolean(game.titleEn || game.titleZh)
+    && validSources(content).length >= 2
+    && validGuideSections(content).length >= 2;
+}
+
+export function isGameFaqIndexable(game, locale = DEFAULT_LOCALE) {
+  if (!isGameIndexable(game, locale)) return false;
+  const faqs = game.content?.[locale]?.faq || [];
+  return faqs.length >= 3 && faqs.every((faq) =>
+    faq?.question?.trim().length >= 12 && faq?.answer?.trim().length >= 80
+  );
+}
+
+export function isGameReleaseIndexable(game, locale = DEFAULT_LOCALE) {
+  if (!isGameIndexable(game, locale) || !hasRealDate(game)) return false;
+  const details = game.content?.[locale]?.releaseDetails;
+  const summary = typeof details === "string" ? details : details?.summary;
+  return Boolean(summary?.trim().length >= 120);
+}
+
+export function isGameNewsIndexable(game, locale = DEFAULT_LOCALE, newsCount = 0) {
+  return locale === DEFAULT_LOCALE && isGameIndexable(game, locale) && newsCount >= 3;
 }
 
 // 中文有自己的中文名（titleZh，主要给 owned-wikis 手动配置用）；
@@ -107,12 +139,26 @@ export function fmtMonth(monthIso, locale = DEFAULT_LOCALE) {
 }
 
 export function relText(game, locale = DEFAULT_LOCALE) {
-  if (game.status === "live") return t(locale, "relLive");
+  if (effectiveStatus(game) === "live") return t(locale, "relLive");
   const d = daysUntil(game.release);
   if (d === null) return t(locale, "relTBA");
   if (d < 0) return t(locale, "relReleased");
   if (d === 0) return t(locale, "relToday");
   return t(locale, "relDaysUntil", d);
+}
+
+export function effectiveStatus(game, now = Date.now()) {
+  if (game?.release && game.release !== "TBA") {
+    const releaseAt = new Date(`${game.release}T00:00:00Z`).getTime();
+    if (Number.isFinite(releaseAt) && releaseAt <= now) return "live";
+  }
+  return game?.status === "live" ? "live" : "upcoming";
+}
+
+export function listSeparator(locale = DEFAULT_LOCALE) {
+  if (locale === "zh") return "、";
+  if (locale === "ja") return "・";
+  return ", ";
 }
 
 // 图标是语言无关的，文案通过 t() 按 key 拼出来（linkOfficial/linkOfficialSub 之类，见 i18n/ui.js）

@@ -1,22 +1,58 @@
 {
+  "slug": "marvel-s-wolverine",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Marvel's Wolverine is a single-player action-adventure game from Insomniac Games (the studio behind Marvel's Spider-Man), published by Sony Interactive Entertainment and releasing September 15, 2026 exclusively on PlayStation 5. Built from the ground up for PS5 with no PS4 or PC version planned, it tells an original story following Logan as he searches for answers about his past, wielding adamantium claws and berserker rage in what Insomniac describes as a deliberately brutal, violent take on the character.",
       "faq": [],
       "guideSections": [
-        { "title": "Combat & Story Direction", "description": "Rather than an open world, Marvel's Wolverine is a narrative-driven action-adventure built around fast, fluid claw combat and a berserker rage meter that builds momentum in battle. The June 2026 State of Play trailer confirmed appearances from Jean Grey, Sabretooth, Mystique and Omega Red, with a story involving mutants captured by a group known as the Reavers." },
-        { "title": "Development History & Accessibility", "description": "First revealed at the 2021 PlayStation Showcase, the game was among the projects exposed in the December 2023 ransomware attack on Insomniac; directors Marcus Smith and Mike Daly took over by October 2024. Insomniac has confirmed a comprehensive accessibility feature set at launch, covering cognitive, visual, auditory and motor assistance, plus PS5 Pro enhancements." }
+        {
+          "title": "Combat & Story Direction",
+          "description": "Rather than an open world, Marvel's Wolverine is a narrative-driven action-adventure built around fast, fluid claw combat and a berserker rage meter that builds momentum in battle. The June 2026 State of Play trailer confirmed appearances from Jean Grey, Sabretooth, Mystique and Omega Red, with a story involving mutants captured by a group known as the Reavers."
+        },
+        {
+          "title": "Development History & Accessibility",
+          "description": "First revealed at the 2021 PlayStation Showcase, the game was among the projects exposed in the December 2023 ransomware attack on Insomniac; directors Marcus Smith and Mike Daly took over by October 2024. Insomniac has confirmed a comprehensive accessibility feature set at launch, covering cognitive, visual, auditory and motor assistance, plus PS5 Pro enhancements."
+        }
       ],
       "sources": [
-        { "label": "PlayStation Blog — State of Play gameplay and story details", "url": "https://blog.playstation.com/2026/06/02/marvels-wolverine-new-gameplay-story-details-from-state-of-play/" },
-        { "label": "Marvel — official release date announcement", "url": "https://www.marvel.com/articles/games/marvels-wolverine-gameplay-trailer-playstation-state-of-play-2025" },
-        { "label": "GamesRadar+ — comprehensive preview roundup", "url": "https://www.gamesradar.com/marvels-wolverine-guide/" }
+        {
+          "label": "PlayStation Blog — State of Play gameplay and story details",
+          "url": "https://blog.playstation.com/2026/06/02/marvels-wolverine-new-gameplay-story-details-from-state-of-play/"
+        },
+        {
+          "label": "Marvel — official release date announcement",
+          "url": "https://www.marvel.com/articles/games/marvels-wolverine-gameplay-trailer-playstation-state-of-play-2025"
+        },
+        {
+          "label": "GamesRadar+ — comprehensive preview roundup",
+          "url": "https://www.gamesradar.com/marvels-wolverine-guide/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

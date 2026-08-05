@@ -1,22 +1,58 @@
 {
+  "slug": "fire-emblem-fortune-s-weave",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Fire Emblem: Fortune's Weave is the eighteenth mainline entry in Nintendo's tactical RPG series, developed by Intelligent Systems and releasing September 17, 2026 exclusively on Nintendo Switch 2 — with no original Switch version planned. Set on the continent of Dagda in the Dagdan Empire, a land ruled by gods for 1,500 years, it centres on the Heroic Games: a gladiatorial tournament held in the capital Dagsion whose winner is granted a single wish.",
       "faq": [],
       "guideSections": [
-        { "title": "Four Protagonists, Four Routes", "description": "Like Three Houses, Fortune's Weave uses a multi-route structure where you pick one of four leads and follow their version of events: Cai, a boy fighting to free his imprisoned father; Dietrich, a swordsman chasing stronger opponents; Theodora, a queen pursuing her homeland's long-held dream; and Leda, a musician seeking revenge." },
-        { "title": "Between Matches & the Three Houses Connection", "description": "Between tournament matches you can train at the training grounds, strengthen bonds to recruit allies, and travel beyond Dagsion's walls for extra battles and dungeons. The game shares a world with the Fódlan setting of Three Houses in a different era — an aged Sothis appears in trailers, and Three Houses character designer Chinatsu Kurahana returns, though Koei Tecmo was not involved this time." }
+        {
+          "title": "Four Protagonists, Four Routes",
+          "description": "Like Three Houses, Fortune's Weave uses a multi-route structure where you pick one of four leads and follow their version of events: Cai, a boy fighting to free his imprisoned father; Dietrich, a swordsman chasing stronger opponents; Theodora, a queen pursuing her homeland's long-held dream; and Leda, a musician seeking revenge."
+        },
+        {
+          "title": "Between Matches & the Three Houses Connection",
+          "description": "Between tournament matches you can train at the training grounds, strengthen bonds to recruit allies, and travel beyond Dagsion's walls for extra battles and dungeons. The game shares a world with the Fódlan setting of Three Houses in a different era — an aged Sothis appears in trailers, and Three Houses character designer Chinatsu Kurahana returns, though Koei Tecmo was not involved this time."
+        }
       ],
       "sources": [
-        { "label": "Nintendo — official Fortune's Weave game page", "url": "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Fire-Emblem-Fortune-s-Weave-2915498.html" },
-        { "label": "Fire Emblem Wiki — setting, route structure and Three Houses links", "url": "https://fireemblem.fandom.com/wiki/Fire_Emblem:_Fortune's_Weave" },
-        { "label": "Dot Esports — release date, editions and pricing", "url": "https://dotesports.com/nintendo/guides/fire-emblem-fortunes-weave-release-date-editions" }
+        {
+          "label": "Nintendo — official Fortune's Weave game page",
+          "url": "https://www.nintendo.com/en-gb/Games/Nintendo-Switch-2-games/Fire-Emblem-Fortune-s-Weave-2915498.html"
+        },
+        {
+          "label": "Fire Emblem Wiki — setting, route structure and Three Houses links",
+          "url": "https://fireemblem.fandom.com/wiki/Fire_Emblem:_Fortune's_Weave"
+        },
+        {
+          "label": "Dot Esports — release date, editions and pricing",
+          "url": "https://dotesports.com/nintendo/guides/fire-emblem-fortunes-weave-release-date-editions"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

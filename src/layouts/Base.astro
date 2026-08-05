@@ -2,6 +2,9 @@
 import "../styles/global.css";
 import { LOCALES, LOCALE_META, DEFAULT_LOCALE, buildAlternates } from "../i18n/locales.js";
 import { t } from "../i18n/ui.js";
+import { TRUST } from "../i18n/trust.js";
+import { SITE } from "../config/site.js";
+import gamesData from "../../data/games.json";
 
 const {
   locale = DEFAULT_LOCALE,
@@ -21,6 +24,10 @@ const visibleAlternates = LOCALES.filter((l) => indexableLocales.includes(l));
 const canonical = new URL(alternates[locale], Astro.site).toString();
 const ogImage = new URL(image || "/images/og-default.jpg", Astro.site).toString();
 const fullTitle = title || "GameRadar · Game Guide Radar";
+const trust = TRUST[locale] || TRUST.en;
+const dataUpdated = new Date(gamesData.generatedAt).toLocaleString(LOCALE_META[locale]?.htmlLang || "en", {
+  year: "numeric", month: "short", day: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "UTC", timeZoneName: "short",
+});
 
 // 全站通用的两块结构化数据：WebSite（带 SearchAction，方便 Google 识别站内搜索、
 // 有机会拿到搜索结果里的 Sitelinks 搜索框）和 Organization（品牌实体信息）。
@@ -30,7 +37,7 @@ const siteJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    name: "GameRadar",
+    name: SITE.name,
     url: new URL(`/${locale}/`, Astro.site).toString(),
     potentialAction: {
       "@type": "SearchAction",
@@ -41,7 +48,7 @@ const siteJsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "GameRadar",
+    name: SITE.name,
     url: new URL("/", Astro.site).toString(),
     logo: new URL("/images/og-default.jpg", Astro.site).toString(),
   },
@@ -54,13 +61,13 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-adsense-account" content="ca-pub-9505220977121599" />
-  <script is:inline async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9505220977121599" crossorigin="anonymous"></script>
+  {!noindex && <script is:inline async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9505220977121599" crossorigin="anonymous"></script>}
   <title>{title}</title>
   <meta name="description" content={desc} />
   {noindex && <meta name="robots" content="noindex,follow" />}
   <link rel="canonical" href={canonical} />
 
-  <meta property="og:site_name" content="GameRadar" />
+  <meta property="og:site_name" content={SITE.name} />
   <meta property="og:type" content={ogType} />
   <meta property="og:title" content={fullTitle} />
   <meta property="og:description" content={desc} />
@@ -86,7 +93,7 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
   <header class="hdr">
     <a class="brand" href={`/${locale}/`} aria-label={t(locale, "tagline")}>
       <span class="glyph"><b>◈</b></span>
-      <span class="t"><b>GameRadar</b><span>{t(locale, "tagline")}</span></span>
+      <span class="t"><b>{SITE.name}</b><span>{t(locale, "tagline")}</span></span>
     </a>
     <div class="search" role="search">
       <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m21 21-4-4"/></svg>
@@ -116,7 +123,7 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
   <footer id="foot">
     <div class="foot-in">
       <div>
-        <a class="brand" href={`/${locale}/`}><span class="glyph"><b>◈</b></span><span class="t"><b>GameRadar</b><span>{t(locale, "tagline")}</span></span></a>
+        <a class="brand" href={`/${locale}/`}><span class="glyph"><b>◈</b></span><span class="t"><b>{SITE.name}</b><span>{t(locale, "tagline")}</span></span></a>
         <p>{t(locale, "footerDesc")}</p>
       </div>
       <div class="foot-cols">
@@ -133,17 +140,25 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
         </div>
         <div class="foot-col">
           <b>{t(locale, "footerRules")}</b>
-          <a href="https://github.com" target="_blank" rel="noopener">{t(locale, "footerDataSource")}</a>
-          <span>{t(locale, "footerDataSource")}</span>
+          <a href={`/${locale}/about/#editorial`}>{t(locale, "footerRules")}</a>
+          <a href={`/${locale}/about/#sources`}>{t(locale, "footerDataSource")}</a>
+          <a href={`/${locale}/about/#corrections`}>{trust.correctionsNav}</a>
         </div>
         <div class="foot-col">
           <b>{t(locale, "footerMyWikis")}</b>
           <a href="https://starwarszerocompany.cc" target="_blank" rel="noopener">Star Wars: Zero Company</a>
         </div>
+        <div class="foot-col">
+          <b>{trust.companyNav}</b>
+          <a href={`/${locale}/about/`}>{trust.aboutNav}</a>
+          <a href={`/${locale}/privacy/`}>{trust.privacyNav}</a>
+          <a href={`/${locale}/terms/`}>{trust.termsNav}</a>
+        </div>
       </div>
     </div>
     <div class="foot-legal">
-      <span>© 2026 GameRadar · {t(locale, "footerLegal")}</span>
+      <span>© 2026 {SITE.name} · {t(locale, "footerLegal")}</span>
+      <span>{trust.dataUpdated}: {dataUpdated}</span>
     </div>
   </footer>
 

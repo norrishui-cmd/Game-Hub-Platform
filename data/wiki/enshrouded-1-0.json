@@ -1,21 +1,54 @@
 {
+  "slug": "enshrouded-1-0",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Enshrouded 1.0 is Keen Games' full launch of its co-op survival action RPG, leaving Steam Early Access on October 15, 2026 for PC and PlayStation 5 (including PS5 Pro) after more than two years and eight major content updates since its January 2024 debut. Players awaken as the Flameborn in the ruined world of Embervale, gathering resources, fighting corrupted enemies, building voxel-based bases, and pushing back a deadly fog called the Shroud, with an Xbox Series X/S version following separately in spring 2027.",
       "faq": [],
       "guideSections": [
-        { "title": "Why Xbox Is Delayed", "description": "Keen Games has said Enshrouded's large-scale voxel building, fully terraformable worlds, and advanced multiplayer systems proved more technically demanding to bring to Xbox Series X/S at the studio's target quality bar, leading to the decision to launch PC and PS5 together on October 15 and hold the Xbox version until spring 2027 rather than compromise." },
-        { "title": "Pre-1.0 Content: Forging the Path", "description": "The final Early Access update, Forging the Path (April 21, 2026), added Adventure Sharing (uploading and downloading other players' worlds and builds), a combat overhaul with heavy attacks and a focus-resource system, and a reworked skill tree with over 20 new nodes — laying the groundwork for what 1.0 builds on." }
+        {
+          "title": "Why Xbox Is Delayed",
+          "description": "Keen Games has said Enshrouded's large-scale voxel building, fully terraformable worlds, and advanced multiplayer systems proved more technically demanding to bring to Xbox Series X/S at the studio's target quality bar, leading to the decision to launch PC and PS5 together on October 15 and hold the Xbox version until spring 2027 rather than compromise."
+        },
+        {
+          "title": "Pre-1.0 Content: Forging the Path",
+          "description": "The final Early Access update, Forging the Path (April 21, 2026), added Adventure Sharing (uploading and downloading other players' worlds and builds), a combat overhaul with heavy attacks and a focus-resource system, and a reworked skill tree with over 20 new nodes — laying the groundwork for what 1.0 builds on."
+        }
       ],
       "sources": [
-        { "label": "GameSpot — 1.0 launch window and pre-launch roadmap", "url": "https://www.gamespot.com/articles/enshrouded-update-coming-in-spring-full-release-scheduled-for-fall-2026/1100-6537528/" },
-        { "label": "Niche Gamer — official October 15 date and Xbox delay explanation", "url": "https://nichegamer.com/enshrouded-full-release-set-for-october/" }
+        {
+          "label": "GameSpot — 1.0 launch window and pre-launch roadmap",
+          "url": "https://www.gamespot.com/articles/enshrouded-update-coming-in-spring-full-release-scheduled-for-fall-2026/1100-6537528/"
+        },
+        {
+          "label": "Niche Gamer — official October 15 date and Xbox delay explanation",
+          "url": "https://nichegamer.com/enshrouded-full-release-set-for-october/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

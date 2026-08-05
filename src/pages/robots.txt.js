@@ -1,6 +1,7 @@
-import { SITE } from "../../site.config.mjs";
+import { SITE } from "../config/site.js";
 
-export function GET() {
-  const body = `User-agent: *\nAllow: /\n\nSitemap: ${new URL("/sitemap-index.xml", SITE.url).toString()}\n`;
+export function GET({ site }) {
+  const base = site || new URL(SITE.url);
+  const body = `User-agent: *\nAllow: /\n\nSitemap: ${new URL("/sitemap-index.xml", base).toString()}\n`;
   return new Response(body, { headers: { "Content-Type": "text/plain" } });
 }

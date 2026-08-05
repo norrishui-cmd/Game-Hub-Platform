@@ -1,22 +1,58 @@
 {
+  "slug": "call-of-duty-modern-warfare-4",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Call of Duty: Modern Warfare 4 is the twenty-third installment in the Call of Duty franchise and the fourth entry in the rebooted Modern Warfare sub-series, developed by Infinity Ward and published by Activision. Releasing October 23, 2026 on PlayStation 5, Xbox Series X/S, PC (Battle.net, Steam, Xbox on PC) and — for the first time in the series — Nintendo Switch 2, its campaign follows Private Park, a young South Korean soldier caught in a full-scale North Korean invasion, while a wanted Captain Price wages an off-book war from the shadows.",
       "faq": [],
       "guideSections": [
-        { "title": "Campaign: A New \"Big War\" Setting", "description": "The campaign spans trench warfare in Korea, close-quarters combat in New York, chases through Paris, and SAS night raids in Mumbai, introducing Park and his squad of South Korean Marines alongside returning series characters. Activision has framed it as a return to large-scale army-versus-army conflict, grounded in the military authenticity the Modern Warfare name is known for." },
-        { "title": "Multiplayer Changes & DMZ's Return", "description": "The headline multiplayer change is the removal of hip-fire weapon bloom, so shots always land where you aim. Black Ops 7's Omnimovement does not return; instead new mantling, hanging, climbing and jumping options aim for fluid traversal, and Create-a-Class has been redesigned for per-loadout customisation. DMZ also returns as a dedicated extraction mode set in Hajin, an Exclusion Zone formed after the campaign's events." }
+        {
+          "title": "Campaign: A New \"Big War\" Setting",
+          "description": "The campaign spans trench warfare in Korea, close-quarters combat in New York, chases through Paris, and SAS night raids in Mumbai, introducing Park and his squad of South Korean Marines alongside returning series characters. Activision has framed it as a return to large-scale army-versus-army conflict, grounded in the military authenticity the Modern Warfare name is known for."
+        },
+        {
+          "title": "Multiplayer Changes & DMZ's Return",
+          "description": "The headline multiplayer change is the removal of hip-fire weapon bloom, so shots always land where you aim. Black Ops 7's Omnimovement does not return; instead new mantling, hanging, climbing and jumping options aim for fluid traversal, and Create-a-Class has been redesigned for per-loadout customisation. DMZ also returns as a dedicated extraction mode set in Hajin, an Exclusion Zone formed after the campaign's events."
+        }
       ],
       "sources": [
-        { "label": "Call of Duty — official announcement blog", "url": "https://www.callofduty.com/blog/2026/05/call-of-duty-modern-warfare-4-announcement" },
-        { "label": "Xbox Wire — campaign details and platform breakdown", "url": "https://news.xbox.com/en-us/2026/05/28/call-of-duty-modern-warfare-4-first-details-campaign/" },
-        { "label": "Call of Duty Wiki — multiplayer changes and character roster", "url": "https://callofduty.fandom.com/wiki/Call_of_Duty:_Modern_Warfare_4" }
+        {
+          "label": "Call of Duty — official announcement blog",
+          "url": "https://www.callofduty.com/blog/2026/05/call-of-duty-modern-warfare-4-announcement"
+        },
+        {
+          "label": "Xbox Wire — campaign details and platform breakdown",
+          "url": "https://news.xbox.com/en-us/2026/05/28/call-of-duty-modern-warfare-4-first-details-campaign/"
+        },
+        {
+          "label": "Call of Duty Wiki — multiplayer changes and character roster",
+          "url": "https://callofduty.fandom.com/wiki/Call_of_Duty:_Modern_Warfare_4"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

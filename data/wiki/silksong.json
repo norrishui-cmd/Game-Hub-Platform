@@ -1,21 +1,54 @@
 {
+  "slug": "silksong",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Hollow Knight: Silksong is Team Cherry's sequel to 2017's Hollow Knight, released September 4, 2025 on PC, Nintendo Switch, Switch 2, Xbox (Game Pass), PS4, and PS5 after more than six years of anticipation since its 2019 announcement. The Metroidvania follows Hornet, the princess-protector of Hallownest from the first game, as she explores the new haunted kingdom of Pharloom, ruled by silk and song, across a map Team Cherry has said is bigger than the original with roughly 200 enemy types and 40 boss encounters.",
       "faq": [],
       "guideSections": [
-        { "title": "Post-Launch: Sea of Sorrow Expansion", "description": "Team Cherry has confirmed a free first major expansion, Hollow Knight: Silksong – Sea of Sorrow, adding new areas, bosses, and tools, alongside a Nintendo Switch 2 Edition of the original Hollow Knight bringing higher frame rates and resolution — both announced for 2026." },
-        { "title": "Physical Edition", "description": "A physical release of Silksong (32-page manual, 9x12 poster) arrives October 16, 2026 for PS5, Xbox One, Xbox Series X/S, and Nintendo Switch, alongside a physical edition of the original Hollow Knight for PS5 and Switch 2." }
+        {
+          "title": "Post-Launch: Sea of Sorrow Expansion",
+          "description": "Team Cherry has confirmed a free first major expansion, Hollow Knight: Silksong – Sea of Sorrow, adding new areas, bosses, and tools, alongside a Nintendo Switch 2 Edition of the original Hollow Knight bringing higher frame rates and resolution — both announced for 2026."
+        },
+        {
+          "title": "Physical Edition",
+          "description": "A physical release of Silksong (32-page manual, 9x12 poster) arrives October 16, 2026 for PS5, Xbox One, Xbox Series X/S, and Nintendo Switch, alongside a physical edition of the original Hollow Knight for PS5 and Switch 2."
+        }
       ],
       "sources": [
-        { "label": "Team Cherry — official 2026 roadmap blog post", "url": "https://www.teamcherry.com.au/blog/holiday2025" },
-        { "label": "Nintendo Life — Sea of Sorrow expansion and Switch 2 Edition announcement", "url": "https://www.nintendolife.com/news/2025/12/hollow-knight-silksong-expansion-coming-2026-hollow-knight-switch-2-edition-also-announced" }
+        {
+          "label": "Team Cherry — official 2026 roadmap blog post",
+          "url": "https://www.teamcherry.com.au/blog/holiday2025"
+        },
+        {
+          "label": "Nintendo Life — Sea of Sorrow expansion and Switch 2 Edition announcement",
+          "url": "https://www.nintendolife.com/news/2025/12/hollow-knight-silksong-expansion-coming-2026-hollow-knight-switch-2-edition-also-announced"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

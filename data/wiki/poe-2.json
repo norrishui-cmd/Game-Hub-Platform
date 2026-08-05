@@ -1,21 +1,54 @@
 {
+  "slug": "poe-2",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Path of Exile 2 is Grinding Gear Games' sequel to 2013's Path of Exile, launched as a paid Early Access title on December 6, 2024 for PC, PlayStation 5, and Xbox Series X/S, with its full 1.0 release targeted for later in 2026. The action RPG has spent roughly a year and a half in Early Access, with Grinding Gear Games shipping progressively larger content updates and an overhauled endgame ahead of leaving Early Access.",
       "faq": [],
       "guideSections": [
-        { "title": "Return of the Ancients & the Road to 1.0", "description": "The Return of the Ancients update (patch 0.5.0, May 29, 2026) delivered a complete endgame overhaul — a reworked Atlas Tree and Waystone progression, plus nearly 200 new skill gems — and was positioned by Grinding Gear Games as the last major Early Access update, serving as a direct bridge into the 1.0 launch." },
-        { "title": "ExileCon 2026 & 1.0 Timing", "description": "Grinding Gear Games has said the full 1.0 release is targeted for 2026 following ExileCon 2026 (November 7–8 in Auckland), though the studio has not committed to an exact date and has previously slipped its own internal targets, so any specific month should be treated as unconfirmed until officially announced." }
+        {
+          "title": "Return of the Ancients & the Road to 1.0",
+          "description": "The Return of the Ancients update (patch 0.5.0, May 29, 2026) delivered a complete endgame overhaul — a reworked Atlas Tree and Waystone progression, plus nearly 200 new skill gems — and was positioned by Grinding Gear Games as the last major Early Access update, serving as a direct bridge into the 1.0 launch."
+        },
+        {
+          "title": "ExileCon 2026 & 1.0 Timing",
+          "description": "Grinding Gear Games has said the full 1.0 release is targeted for 2026 following ExileCon 2026 (November 7–8 in Auckland), though the studio has not committed to an exact date and has previously slipped its own internal targets, so any specific month should be treated as unconfirmed until officially announced."
+        }
       ],
       "sources": [
-        { "label": "PC Gamer — Return of the Ancients coverage and road to 1.0", "url": "https://www.pcgamer.com/games/rpg/a-series-of-surprise-updates-has-polished-path-of-exile-2-into-a-juggernaut-thats-about-to-shake-up-the-action-rpg-genre-later-this-year/" },
-        { "label": "SeasonTimer — full league history and 0.5.0 details", "url": "https://seasontimer.live/blog/path-of-exile-2-all-leagues-dates/" }
+        {
+          "label": "PC Gamer — Return of the Ancients coverage and road to 1.0",
+          "url": "https://www.pcgamer.com/games/rpg/a-series-of-surprise-updates-has-polished-path-of-exile-2-into-a-juggernaut-thats-about-to-shake-up-the-action-rpg-genre-later-this-year/"
+        },
+        {
+          "label": "SeasonTimer — full league history and 0.5.0 details",
+          "url": "https://seasontimer.live/blog/path-of-exile-2-all-leagues-dates/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

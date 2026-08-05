@@ -1,21 +1,54 @@
 {
+  "slug": "elder-scrolls-6",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "The Elder Scrolls VI is Bethesda Game Studios' next mainline entry in the long-running RPG series, first teased with a brief cinematic in 2018 and still without a confirmed release date or window as of mid-2026. Bethesda has repeatedly confirmed the game is in active development and is now the majority focus of the studio, but has released almost no concrete details on its setting, story, or gameplay systems, and industry observers broadly agree it will not arrive before 2028 at the earliest.",
       "faq": [],
       "guideSections": [
-        { "title": "Development Status & Creation Engine 3", "description": "In a July 2026 update, Bethesda confirmed The Elder Scrolls VI and Fallout 5 are both being built on Creation Engine 3, a shared technology platform developed since Starfield's launch that Bethesda says lets its teams support multiple projects. Todd Howard has stated the team is \"where we planned to be\" and playing the game daily, though no gameplay footage has been shown publicly." },
-        { "title": "What's Still Unconfirmed", "description": "As of mid-2026, Bethesda has not confirmed the game's setting, story, release window, or platforms beyond it being a Microsoft platform priority. Reports of Xbox/Bethesda layoffs and studio restructuring in July 2026 add uncertainty to the timeline, though Bethesda maintains The Elder Scrolls VI remains its primary development focus." }
+        {
+          "title": "Development Status & Creation Engine 3",
+          "description": "In a July 2026 update, Bethesda confirmed The Elder Scrolls VI and Fallout 5 are both being built on Creation Engine 3, a shared technology platform developed since Starfield's launch that Bethesda says lets its teams support multiple projects. Todd Howard has stated the team is \"where we planned to be\" and playing the game daily, though no gameplay footage has been shown publicly."
+        },
+        {
+          "title": "What's Still Unconfirmed",
+          "description": "As of mid-2026, Bethesda has not confirmed the game's setting, story, release window, or platforms beyond it being a Microsoft platform priority. Reports of Xbox/Bethesda layoffs and studio restructuring in July 2026 add uncertainty to the timeline, though Bethesda maintains The Elder Scrolls VI remains its primary development focus."
+        }
       ],
       "sources": [
-        { "label": "Variety — Creation Engine 3 confirmation for Elder Scrolls VI and Fallout 5", "url": "https://variety.com/2026/gaming/news/fallout-5-elder-scrolls-6-game-updates-bethesda-todd-howard-1236814611/" },
-        { "label": "GamesRadar+ — comprehensive status roundup, July 2026", "url": "https://www.gamesradar.com/elder-scrolls-6-release-date-location-news-races/" }
+        {
+          "label": "Variety — Creation Engine 3 confirmation for Elder Scrolls VI and Fallout 5",
+          "url": "https://variety.com/2026/gaming/news/fallout-5-elder-scrolls-6-game-updates-bethesda-todd-howard-1236814611/"
+        },
+        {
+          "label": "GamesRadar+ — comprehensive status roundup, July 2026",
+          "url": "https://www.gamesradar.com/elder-scrolls-6-release-date-location-news-races/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

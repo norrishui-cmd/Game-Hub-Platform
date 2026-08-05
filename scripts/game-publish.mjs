@@ -6,13 +6,14 @@ const slug = process.argv[2];
 if (!slug) throw new Error("Usage: npm run game:publish -- <game-slug>");
 const file = path.resolve(`data/wiki/${slug}.json`);
 const wiki = await readJson(file);
-const errors = auditWiki(wiki);
+const errors = auditWiki(wiki, slug);
 if (errors.length) {
   console.error("Publish blocked by quality gate:");
   errors.forEach((error) => console.error(`- ${error}`));
   process.exit(1);
 }
 wiki.publishStatus = "published";
+wiki.slug = slug;
 wiki.updatedAt = new Date().toISOString();
 await writeFile(file, JSON.stringify(wiki, null, 2) + "\n");
 console.log(`Published: ${slug}`);

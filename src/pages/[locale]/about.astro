@@ -1,0 +1,25 @@
+---
+import Base from "../../layouts/Base.astro";
+import { LOCALES } from "../../i18n/locales.js";
+import { TRUST } from "../../i18n/trust.js";
+import { SITE } from "../../config/site.js";
+
+export function getStaticPaths() {
+  return LOCALES.map((locale) => ({ params: { locale } }));
+}
+
+const { locale } = Astro.params;
+const copy = TRUST[locale] || TRUST.en;
+---
+<Base locale={locale} title={`${copy.aboutTitle} | ${SITE.name}`} description={copy.aboutMeta} pathSuffix="/about/">
+  <main class="policy-wrap">
+    <h1>{copy.aboutTitle}</h1>
+    <p class="policy-lead">{copy.aboutIntro}</p>
+
+    <section id="editorial"><h2>{copy.editorialTitle}</h2><p>{copy.editorialBody}</p><ul>{copy.editorialPoints.map((item) => <li>{item}</li>)}</ul></section>
+    <section id="sources"><h2>{copy.sourcesTitle}</h2><p>{copy.sourcesBody}</p></section>
+    <section id="corrections"><h2>{copy.correctionsTitle}</h2><p>{copy.correctionsBody}</p></section>
+    <section><h2>{copy.fundingTitle}</h2><p>{copy.fundingBody}</p></section>
+    <section id="contact"><h2>{copy.contactTitle}</h2><p>{copy.contactBody} <a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a></p></section>
+  </main>
+</Base>

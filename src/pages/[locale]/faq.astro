@@ -32,8 +32,8 @@ const jsonLd = {
   title={`${t(locale, "faqHeading")} | GameRadar`}
   description={t(locale, "faqSubtitle")}
   pathSuffix="/faq/"
-  noindex={locale !== "en"}
-  indexableLocales={["en"]}
+  noindex={true}
+  indexableLocales={[]}
 >
   <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   <main class="wrap" style="padding-top:28px; max-width:760px">

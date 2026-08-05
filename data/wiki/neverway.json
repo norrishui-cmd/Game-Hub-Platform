@@ -1,21 +1,54 @@
 {
+  "slug": "neverway",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Neverway is the debut game from Vancouver studio Coldblood Inc., a horror life-sim RPG releasing October 2026 on PC (Windows/macOS/Linux) and Nintendo Switch. Players control Fiona, a woman who quits her dead-end job to start over on a remote island farm, only to become the immortal herald of a dead god as a nightmare reality called Neverway begins leaking into the world around her.",
       "faq": [],
       "guideSections": [
-        { "title": "Farming by Day, Horror by Night", "description": "Neverway deliberately refuses to treat its life-sim and horror halves as separate modes: farming, fishing, and building friendships with the island's residents sit alongside fast-paced action-RPG combat and a slow-burn psychological horror story, with the two systems feeding into each other rather than being switched between." },
-        { "title": "Art & Music Pedigree", "description": "The pixel art comes from Pedro Medeiros (Celeste, TowerFall) and the score from Disasterpeace (Fez, Hyper Light Drifter); a free prologue is already available on Steam ahead of the full release, giving players a first look at the game's tone before launch." }
+        {
+          "title": "Farming by Day, Horror by Night",
+          "description": "Neverway deliberately refuses to treat its life-sim and horror halves as separate modes: farming, fishing, and building friendships with the island's residents sit alongside fast-paced action-RPG combat and a slow-burn psychological horror story, with the two systems feeding into each other rather than being switched between."
+        },
+        {
+          "title": "Art & Music Pedigree",
+          "description": "The pixel art comes from Pedro Medeiros (Celeste, TowerFall) and the score from Disasterpeace (Fez, Hyper Light Drifter); a free prologue is already available on Steam ahead of the full release, giving players a first look at the game's tone before launch."
+        }
       ],
       "sources": [
-        { "label": "Engadget — release window and developer background", "url": "https://www.engadget.com/gaming/indie-game-neverway-will-launch-this-october-just-in-time-for-spooky-season-170000669.html" },
-        { "label": "KeenGamer — gameplay and premise breakdown", "url": "https://www.keengamer.com/games/neverway/" }
+        {
+          "label": "Engadget — release window and developer background",
+          "url": "https://www.engadget.com/gaming/indie-game-neverway-will-launch-this-october-just-in-time-for-spooky-season-170000669.html"
+        },
+        {
+          "label": "KeenGamer — gameplay and premise breakdown",
+          "url": "https://www.keengamer.com/games/neverway/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

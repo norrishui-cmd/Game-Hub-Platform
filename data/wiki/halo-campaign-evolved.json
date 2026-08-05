@@ -1,22 +1,58 @@
 {
+  "slug": "halo-campaign-evolved",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Halo: Campaign Evolved is a ground-up remake of 2001's Halo: Combat Evolved campaign, developed in Unreal Engine 5 by Halo Studios and released July 28, 2026 — 25 years after the original. It marks the first time a mainline Halo game has launched on PlayStation 5, alongside Xbox Series X/S, PC (Steam and Windows Store), cloud, and day-one Game Pass, with cross-play and cross-progression across every platform.",
       "faq": [],
       "guideSections": [
-        { "title": "Operation: METEORITE — The New Missions", "description": "Included with every edition, Operation: METEORITE is a new three-mission story arc set one year before the events of Combat Evolved, featuring Master Chief and Sgt. Johnson infiltrating a Covenant research vessel. It adds new locations, enemy variants, and weapons drawn from across the wider Halo series." },
-        { "title": "What's In and What's Out", "description": "Campaign Evolved is campaign-only — the original competitive multiplayer is not included. It does support four-player online co-op and two-player split-screen on consoles, plus gameplay-modifying Skulls for replayability. Premium and Collector's Edition owners received up to five days of early access starting July 23, 2026." }
+        {
+          "title": "Operation: METEORITE — The New Missions",
+          "description": "Included with every edition, Operation: METEORITE is a new three-mission story arc set one year before the events of Combat Evolved, featuring Master Chief and Sgt. Johnson infiltrating a Covenant research vessel. It adds new locations, enemy variants, and weapons drawn from across the wider Halo series."
+        },
+        {
+          "title": "What's In and What's Out",
+          "description": "Campaign Evolved is campaign-only — the original competitive multiplayer is not included. It does support four-player online co-op and two-player split-screen on consoles, plus gameplay-modifying Skulls for replayability. Premium and Collector's Edition owners received up to five days of early access starting July 23, 2026."
+        }
       ],
       "sources": [
-        { "label": "Xbox Wire — official launch and feature breakdown", "url": "https://news.xbox.com/en-us/2026/07/23/halo-campaign-evolved-early-access-launch-xbox/" },
-        { "label": "Halopedia — platforms, remake scope and release details", "url": "https://www.halopedia.org/Halo:_Campaign_Evolved" },
-        { "label": "Space.com — release date, editions and trailer roundup", "url": "https://www.space.com/entertainment/space-games/halo-campaign-evolved-release-date-rumors-platforms-and-everything-else-we-know-about-the-halo-remake" }
+        {
+          "label": "Xbox Wire — official launch and feature breakdown",
+          "url": "https://news.xbox.com/en-us/2026/07/23/halo-campaign-evolved-early-access-launch-xbox/"
+        },
+        {
+          "label": "Halopedia — platforms, remake scope and release details",
+          "url": "https://www.halopedia.org/Halo:_Campaign_Evolved"
+        },
+        {
+          "label": "Space.com — release date, editions and trailer roundup",
+          "url": "https://www.space.com/entertainment/space-games/halo-campaign-evolved-release-date-rumors-platforms-and-everything-else-we-know-about-the-halo-remake"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

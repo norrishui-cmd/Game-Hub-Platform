@@ -1,22 +1,58 @@
 {
+  "slug": "the-bustling-world",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "The Bustling World (烽火与炊烟) is an ambitious open-world sandbox RPG from Chengdu-based indie studio FireWo Games, published by Lightning Games, set in a fictional ancient China and in development for PC via Steam and the Epic Games Store. First announced in December 2023, it still has no confirmed release date. The pitch is near-total freedom: settle down and run a shop, workshop, inn or pharmacy; farm quietly; go adventuring; turn to crime; or raise an army, stabilise a regime and found your own kingdom.",
       "faq": [],
       "guideSections": [
-        { "title": "Systems: Life Sim Meets Strategy", "description": "The Bustling World blends isometric RPG exploration with life-sim and strategy layers — farming, crafting, building, business management, diplomacy and warfare all coexist in one open world of cities, settlements and countryside. Every resident is an individually simulated character, and player choices are designed to ripple through the world rather than following a single fixed path." },
-        { "title": "Art Direction & Development Status", "description": "To land its stylised look, the team studied over ten thousand ancient Chinese paintings and texts. FireWo Games has grown past 50 members and showcased the project at GDC, but has not committed to a release window — anyone tracking this one should treat any specific date circulating online as unconfirmed until the studio announces it." }
+        {
+          "title": "Systems: Life Sim Meets Strategy",
+          "description": "The Bustling World blends isometric RPG exploration with life-sim and strategy layers — farming, crafting, building, business management, diplomacy and warfare all coexist in one open world of cities, settlements and countryside. Every resident is an individually simulated character, and player choices are designed to ripple through the world rather than following a single fixed path."
+        },
+        {
+          "title": "Art Direction & Development Status",
+          "description": "To land its stylised look, the team studied over ten thousand ancient Chinese paintings and texts. FireWo Games has grown past 50 members and showcased the project at GDC, but has not committed to a release window — anyone tracking this one should treat any specific date circulating online as unconfirmed until the studio announces it."
+        }
       ],
       "sources": [
-        { "label": "Steam — official store page and feature description", "url": "https://store.steampowered.com/app/2724650/The_Bustling_World/" },
-        { "label": "Gamepressure — systems and setting breakdown", "url": "https://www.gamepressure.com/games/the-bustling-world/zb687f" },
-        { "label": "Steam Community — developer update diaries and studio status", "url": "https://steamcommunity.com/app/2724650" }
+        {
+          "label": "Steam — official store page and feature description",
+          "url": "https://store.steampowered.com/app/2724650/The_Bustling_World/"
+        },
+        {
+          "label": "Gamepressure — systems and setting breakdown",
+          "url": "https://www.gamepressure.com/games/the-bustling-world/zb687f"
+        },
+        {
+          "label": "Steam Community — developer update diaries and studio status",
+          "url": "https://steamcommunity.com/app/2724650"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

@@ -1,21 +1,54 @@
 {
+  "slug": "mistfall-hunter",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Mistfall Hunter is a third-person PvPvE extraction ARPG from Bellring Games, published by Skystone Games and launching July 29, 2026 on PC, PlayStation 5, and Xbox Series X/S (day one on Xbox Game Pass). Set in Weavereach after the gods have fallen and the corrupting Gyldenmist consumes the world, players take on the role of a Gyldhunter revived by a mysterious girl named Dew, venturing solo or in three-player squads to harvest Gyldenblood and extract before death strips them of everything.",
       "faq": [],
       "guideSections": [
-        { "title": "The Extraction Loop", "description": "Runs revolve around scavenging Gyldenblood and relics, fighting corrupted creatures and rival Gyldhunter squads, then reaching a Returner Woodling to secure a Soul of Return and extract safely — death costs you everything you were carrying, keeping every run tense." },
-        { "title": "Classes & No Pay-to-Win Design", "description": "Mistfall Hunter ships with six classes, seasonal content, and a stated no-pay-to-win approach; an Open Beta ran June 14–22, 2026 across Steam, Xbox Series X/S, and PlayStation ahead of launch." }
+        {
+          "title": "The Extraction Loop",
+          "description": "Runs revolve around scavenging Gyldenblood and relics, fighting corrupted creatures and rival Gyldhunter squads, then reaching a Returner Woodling to secure a Soul of Return and extract safely — death costs you everything you were carrying, keeping every run tense."
+        },
+        {
+          "title": "Classes & No Pay-to-Win Design",
+          "description": "Mistfall Hunter ships with six classes, seasonal content, and a stated no-pay-to-win approach; an Open Beta ran June 14–22, 2026 across Steam, Xbox Series X/S, and PlayStation ahead of launch."
+        }
       ],
       "sources": [
-        { "label": "Bleeding Cool — final gameplay trailer and launch details", "url": "https://bleedingcool.com/games/mistfall-hunter-releases-new-gameplay-trailer-ahead-of-launch/" },
-        { "label": "Backyard Drunkard — release date, platforms, Game Pass confirmation", "url": "https://backyarddrunkard.com/game-news/mistfall-hunter-release-date-platforms-and-gameplay-details/" }
+        {
+          "label": "Bleeding Cool — final gameplay trailer and launch details",
+          "url": "https://bleedingcool.com/games/mistfall-hunter-releases-new-gameplay-trailer-ahead-of-launch/"
+        },
+        {
+          "label": "Backyard Drunkard — release date, platforms, Game Pass confirmation",
+          "url": "https://backyarddrunkard.com/game-news/mistfall-hunter-release-date-platforms-and-gameplay-details/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

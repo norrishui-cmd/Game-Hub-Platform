@@ -1,22 +1,58 @@
 {
+  "slug": "gta-6",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Grand Theft Auto VI is Rockstar Games' long-awaited next entry in the Grand Theft Auto series, releasing November 19, 2026 exclusively on PlayStation 5 (including PS5 Pro) and Xbox Series X/S — with no PC version at launch and no Nintendo Switch 2 release planned. Set in the fictional state of Leonida and its Vice City, it follows criminal duo Lucia Caminos and Jason Duval in what Take-Two has built its entire Fiscal 2027 guidance around.",
       "faq": [],
       "guideSections": [
-        { "title": "Two Delays and the Current Date", "description": "GTA 6 was originally targeted for a Fall 2025 window, pushed to May 26, 2026, then moved again to November 19, 2026 — a six-month slip Rockstar attributed to securing \"the level of polish you have come to expect.\" Take-Two reaffirmed the November date at its May 21, 2026 earnings call, and no further delay has been announced." },
-        { "title": "Editions, Pricing & Preload", "description": "Rockstar opened pre-orders on June 25, 2026 with a Standard Edition at $79.99 and an Ultimate Edition at $99.99 (adding premium in-game vehicles). Standard buyers can upgrade to Ultimate after launch, digital preload begins November 12 (one week before release), and Rockstar has confirmed the single-player campaign is playable offline. Retail copies contain a download code rather than a disc." }
+        {
+          "title": "Two Delays and the Current Date",
+          "description": "GTA 6 was originally targeted for a Fall 2025 window, pushed to May 26, 2026, then moved again to November 19, 2026 — a six-month slip Rockstar attributed to securing \"the level of polish you have come to expect.\" Take-Two reaffirmed the November date at its May 21, 2026 earnings call, and no further delay has been announced."
+        },
+        {
+          "title": "Editions, Pricing & Preload",
+          "description": "Rockstar opened pre-orders on June 25, 2026 with a Standard Edition at $79.99 and an Ultimate Edition at $99.99 (adding premium in-game vehicles). Standard buyers can upgrade to Ultimate after launch, digital preload begins November 12 (one week before release), and Rockstar has confirmed the single-player campaign is playable offline. Retail copies contain a download code rather than a disc."
+        }
       ],
       "sources": [
-        { "label": "Forbes — release date and delay history", "url": "https://www.forbes.com/sites/brianmazique/2026/05/12/grand-theft-auto-6-release-date-and-everything-confirmed/" },
-        { "label": "GTA Boss — date verification against Rockstar/Take-Two announcements", "url": "https://www.gtaboss.gg/gta-6/guides/gta-6-release-date" },
-        { "label": "ThePCEnthusiast — editions, pricing and preload details", "url": "https://thepcenthusiast.com/gta-6-release-date-confirmed/" }
+        {
+          "label": "Forbes — release date and delay history",
+          "url": "https://www.forbes.com/sites/brianmazique/2026/05/12/grand-theft-auto-6-release-date-and-everything-confirmed/"
+        },
+        {
+          "label": "GTA Boss — date verification against Rockstar/Take-Two announcements",
+          "url": "https://www.gtaboss.gg/gta-6/guides/gta-6-release-date"
+        },
+        {
+          "label": "ThePCEnthusiast — editions, pricing and preload details",
+          "url": "https://thepcenthusiast.com/gta-6-release-date-confirmed/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

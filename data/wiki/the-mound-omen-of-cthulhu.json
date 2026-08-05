@@ -1,22 +1,58 @@
 {
+  "slug": "the-mound-omen-of-cthulhu",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "The Mound: Omen of Cthulhu is a first-person cooperative horror game from ACE Team (Zeno Clash, Clash: Artifacts of Chaos), published by Nacon and released July 15, 2026 on PC (Steam and Epic Games Store), PlayStation 5 and Xbox Series X/S with full cross-play. Loosely inspired by H.P. Lovecraft's novella The Mound, it casts 1–4 players as Conquistador-era treasure hunters exploring a cursed 16th-century South American jungle in search of a legendary underground city.",
       "faq": [],
       "guideSections": [
-        { "title": "The Sanity System — Your Squad Is the Threat", "description": "The Mound's defining mechanic is a sanity meter that degrades over each expedition and warps each player's perception independently, producing visual and auditory hallucinations. Because corruption is per-player, teammates can become genuinely indistinguishable from monsters — not through hidden-role rules, but because you can no longer trust what you see and hear. Fallen adventurers can also become corrupted and turn on the party." },
-        { "title": "Expedition Loop & Proximity Voice", "description": "Runs start aboard your galleon, where the team selects a contract and loads out weapons and equipment before heading into the jungle. Proximity voice chat is central to the design — staying close, moving quietly and conserving resources are the keys to completing contracts and extracting alive. Eight playable characters are planned, with four available at launch." }
+        {
+          "title": "The Sanity System — Your Squad Is the Threat",
+          "description": "The Mound's defining mechanic is a sanity meter that degrades over each expedition and warps each player's perception independently, producing visual and auditory hallucinations. Because corruption is per-player, teammates can become genuinely indistinguishable from monsters — not through hidden-role rules, but because you can no longer trust what you see and hear. Fallen adventurers can also become corrupted and turn on the party."
+        },
+        {
+          "title": "Expedition Loop & Proximity Voice",
+          "description": "Runs start aboard your galleon, where the team selects a contract and loads out weapons and equipment before heading into the jungle. Proximity voice chat is central to the design — staying close, moving quietly and conserving resources are the keys to completing contracts and extracting alive. Eight playable characters are planned, with four available at launch."
+        }
       ],
       "sources": [
-        { "label": "Nacon / Games Press — official launch announcement", "url": "https://www.gamespress.com/en-US/THE-MOUND-OMEN-OF-CTHULHU-CALLS-UPON-ADVENTURERS-NOW-AVAILABLE-ON-PC-A" },
-        { "label": "Dread Central — launch coverage and mechanics breakdown", "url": "https://www.dreadcentral.com/gaming/580592/the-mound-omen-of-cthulhu-brings-lovecraftian-co-op-horror-to-pc-and-consoles-today-trailer/" },
-        { "label": "TechTimes — sanity system analysis and launch details", "url": "https://www.techtimes.com/articles/320568/20260715/mound-launches-today-co-op-horror-where-sanity-makes-your-squad-enemy.htm" }
+        {
+          "label": "Nacon / Games Press — official launch announcement",
+          "url": "https://www.gamespress.com/en-US/THE-MOUND-OMEN-OF-CTHULHU-CALLS-UPON-ADVENTURERS-NOW-AVAILABLE-ON-PC-A"
+        },
+        {
+          "label": "Dread Central — launch coverage and mechanics breakdown",
+          "url": "https://www.dreadcentral.com/gaming/580592/the-mound-omen-of-cthulhu-brings-lovecraftian-co-op-horror-to-pc-and-consoles-today-trailer/"
+        },
+        {
+          "label": "TechTimes — sanity system analysis and launch details",
+          "url": "https://www.techtimes.com/articles/320568/20260715/mound-launches-today-co-op-horror-where-sanity-makes-your-squad-enemy.htm"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

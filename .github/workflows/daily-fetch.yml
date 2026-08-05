@@ -23,14 +23,20 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
+          cache: npm
+
+      - name: 安装依赖
+        run: npm ci
 
       - name: 运行游戏数据抓取脚本
+        id: games
         env:
           IGDB_CLIENT_ID: ${{ secrets.IGDB_CLIENT_ID }}
           IGDB_CLIENT_SECRET: ${{ secrets.IGDB_CLIENT_SECRET }}
         run: node scripts/fetch-games.mjs
 
       - name: 运行本月热门榜单抓取脚本
+        id: trending
         env:
           IGDB_CLIENT_ID: ${{ secrets.IGDB_CLIENT_ID }}
           IGDB_CLIENT_SECRET: ${{ secrets.IGDB_CLIENT_SECRET }}
@@ -40,9 +46,21 @@ jobs:
         run: node scripts/fetch-trending.mjs
 
       - name: 运行最新资讯抓取脚本
+        id: news
         # 纯 RSS 公开源，不需要任何密钥。同样单独失败不影响其他两步。
         continue-on-error: true
         run: node scripts/fetch-news.mjs
+
+      - name: 检查数据新鲜度和发行状态
+        id: data_health
+        continue-on-error: true
+        run: npm run data:health:strict
+
+      - name: 构建网站
+        run: npm run build
+
+      - name: 运行 SEO 审计
+        run: npm run seo:audit
 
       - name: 提交更新后的数据（如果有变化）
         run: |
@@ -51,3 +69,13 @@ jobs:
           git add data/games.json data/drafts.json data/monthly-trending.json data/trending-history/ data/news.json
           git diff --staged --quiet || git commit -m "chore: 自动更新游戏数据 $(date -u +'%Y-%m-%d')"
           git push
+
+      - name: 汇总外部数据任务状态
+        if: always()
+        run: |
+          failed=0
+          if [ "${{ steps.games.outcome }}" != "success" ]; then echo "::error::游戏数据抓取失败"; failed=1; fi
+          if [ "${{ steps.trending.outcome }}" != "success" ]; then echo "::error::趋势榜抓取失败"; failed=1; fi
+          if [ "${{ steps.news.outcome }}" != "success" ]; then echo "::error::新闻抓取失败"; failed=1; fi
+          if [ "${{ steps.data_health.outcome }}" != "success" ]; then echo "::error::数据新鲜度检查失败"; failed=1; fi
+          exit "$failed"

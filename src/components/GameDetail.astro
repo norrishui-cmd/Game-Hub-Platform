@@ -1,5 +1,5 @@
 ---
-import { fmtDate, relText, availableLinks, buildJsonLd, slugify, displayTitle, translateGenres, buildFaqItems } from "../lib/games.js";
+import { fmtDate, relText, availableLinks, buildJsonLd, slugify, displayTitle, translateGenres, buildFaqItems, effectiveStatus, isGameFaqIndexable, isGameReleaseIndexable, listSeparator } from "../lib/games.js";
 import { t } from "../i18n/ui.js";
 import gamesData from "../../data/games.json";
 import newsData from "../../data/news.json";
@@ -25,9 +25,13 @@ const relatedGames = (gameGenreSlugs.size
 ).slice(0, 4);
 const hasGameNews = newsData.items.some((item) => item.relatedSlug === game.slug);
 const editorial = game.content?.[locale] || {};
+const status = effectiveStatus(game);
+const faqIndexable = isGameFaqIndexable(game, locale);
+const releaseIndexable = isGameReleaseIndexable(game, locale);
+const separator = listSeparator(locale);
 const copy = {
   en: {
-    overview: "Game overview", overviewText: `${title} is ${game.status === "upcoming" ? "an upcoming" : "a released"} ${genresLocalized.join(" and ") || "video game"}${game.developer ? ` developed by ${game.developer}` : ""}. This hub tracks confirmed release information, platforms, official resources, and new player guides as reliable details become available.`,
+    overview: "Game overview", overviewText: `${title} is ${status === "upcoming" ? "an upcoming" : "a released"} ${genresLocalized.join(" and ") || "video game"}${game.developer ? ` developed by ${game.developer}` : ""}. This hub tracks confirmed release information, platforms, official resources, and new player guides as reliable details become available.`,
     quick: "Quick answers", guides: "Guide coverage", guidesText: "Guide sections are published only when they contain a concrete, source-supported answer. Planned coverage may include beginner help, quests, characters, items, builds, locations, and troubleshooting where relevant to this game.",
     releaseQ: `When does ${title} release?`, platformQ: `What platforms is ${title} on?`, developerQ: `Who is making ${title}?`,
     fullWiki: "Open the complete independent wiki", fullWikiSub: "Walkthroughs, databases, builds, and deeper player help", verified: "Confirmed information", updated: "This page is refreshed from structured game data and reviewed resources. Unconfirmed details are not presented as facts.", sources: "Sources", guidesCta: "View guides"
@@ -45,7 +49,7 @@ const copy = {
     fullWiki: "进入完整独立攻略 Wiki", fullWikiSub: "查看任务、数据库、Build 与深度攻略", verified: "已确认信息", updated: "页面根据结构化游戏资料和可靠来源更新，不把未确认消息当作事实。", sources: "信息来源", guidesCta: "查看攻略"
   },
   de: {
-    overview: "Spielübersicht", overviewText: `${title} ist ${game.status === "upcoming" ? "ein kommendes" : "ein veröffentlichtes"} ${genresLocalized.join("- und ") || "Videospiel"}${game.developer ? ` von ${game.developer}` : ""}. Dieser Hub bündelt bestätigte Angaben zu Veröffentlichung, Plattformen, offiziellen Quellen und Spielerhilfen.`,
+    overview: "Spielübersicht", overviewText: `${title} ist ${status === "upcoming" ? "ein kommendes" : "ein veröffentlichtes"} ${genresLocalized.join("- und ") || "Videospiel"}${game.developer ? ` von ${game.developer}` : ""}. Dieser Hub bündelt bestätigte Angaben zu Veröffentlichung, Plattformen, offiziellen Quellen und Spielerhilfen.`,
     quick: "Kurzantworten", guides: "Guide-Abdeckung", guidesText: "Guides werden nur veröffentlicht, wenn sie eine konkrete und durch Quellen belegte Antwort liefern. Je nach Spiel folgen Einsteigerhilfen, Quests, Charaktere, Gegenstände, Builds, Orte und Fehlerbehebung.",
     releaseQ: `Wann erscheint ${title}?`, platformQ: `Für welche Plattformen erscheint ${title}?`, developerQ: `Wer entwickelt ${title}?`,
     fullWiki: "Vollständiges unabhängiges Wiki öffnen", fullWikiSub: "Walkthroughs, Datenbanken, Builds und ausführliche Spielerhilfen", verified: "Bestätigte Informationen", updated: "Diese Seite wird anhand strukturierter Spieldaten und geprüfter Quellen aktualisiert. Unbestätigte Angaben werden nicht als Tatsachen dargestellt.", sources: "Quellen", guidesCta: "Guides ansehen"
@@ -92,18 +96,17 @@ const faqJsonLd = {
 
   <dl class="facts">
     <dt>{t(locale, "factReleaseDate")}</dt>
-    <dd>{fmtDate(game.release, locale)}{(game.status === "upcoming" && game.release !== "TBA") ? `（${relText(game, locale)}）` : ""}</dd>
-    <dt>{t(locale, "factDeveloper")}</dt><dd>{game.developer || "—"}</dd>
-    <dt>{t(locale, "factPublisher")}</dt><dd>{game.publisher || "—"}</dd>
+    <dd>{fmtDate(game.release, locale)}{(status === "upcoming" && game.release !== "TBA") ? `（${relText(game, locale)}）` : ""}</dd>
+    {game.developer && <><dt>{t(locale, "factDeveloper")}</dt><dd>{game.developer}</dd></>}
+    {game.publisher && <><dt>{t(locale, "factPublisher")}</dt><dd>{game.publisher}</dd></>}
     <dt>{t(locale, "factPlatforms")}</dt>
     <dd>{game.platforms?.length
-      ? (isDraft ? game.platforms.join("、") : game.platforms.map((p, i) => <>{i > 0 && "、"}<a href={`/${locale}/platform/${slugify(p)}/`} style="color:inherit; text-decoration:underline; text-underline-offset:2px;">{p}</a></>))
+      ? (isDraft ? game.platforms.join(separator) : game.platforms.map((p, i) => <>{i > 0 && separator}<a href={`/${locale}/platform/${slugify(p)}/`} style="color:inherit; text-decoration:underline; text-underline-offset:2px;">{p}</a></>))
       : "—"}</dd>
     <dt>{t(locale, "factGenres")}</dt>
     <dd>{game.genres?.length
-      ? (isDraft ? genresLocalized.join("、") : game.genres.map((g, i) => <>{i > 0 && "、"}<a href={`/${locale}/genre/${slugify(g)}/`} style="color:inherit; text-decoration:underline; text-underline-offset:2px;">{genresLocalized[i]}</a></>))
+      ? (isDraft ? genresLocalized.join(separator) : game.genres.map((g, i) => <>{i > 0 && separator}<a href={`/${locale}/genre/${slugify(g)}/`} style="color:inherit; text-decoration:underline; text-underline-offset:2px;">{genresLocalized[i]}</a></>))
       : "—"}</dd>
-    <dt>{t(locale, "factHype")}</dt><dd>🔥 {game.hype} / 100</dd>
   </dl>
 
   <section class="wiki-section" aria-labelledby="overview-title">
@@ -125,8 +128,8 @@ const faqJsonLd = {
       {faqItems.map((item) => <article><h3>{item.question}</h3><p>{item.answer}</p></article>)}
     </div>
     <p style="margin-top:16px; display:flex; gap:20px; flex-wrap:wrap">
-      <a href={`/${locale}/games/${game.slug}/faq/`} style="color:var(--indigo); font-weight:700; text-decoration:none; font-size:14px">{t(locale, "viewFullFaqCta")}</a>
-      <a href={`/${locale}/games/${game.slug}/release-date/`} style="color:var(--indigo); font-weight:700; text-decoration:none; font-size:14px">{t(locale, "viewReleaseDateCta")}</a>
+      {faqIndexable && <a href={`/${locale}/games/${game.slug}/faq/`} style="color:var(--indigo); font-weight:700; text-decoration:none; font-size:14px">{t(locale, "viewFullFaqCta")}</a>}
+      {releaseIndexable && <a href={`/${locale}/games/${game.slug}/release-date/`} style="color:var(--indigo); font-weight:700; text-decoration:none; font-size:14px">{t(locale, "viewReleaseDateCta")}</a>}
       {hasGameNews && <a href={`/${locale}/games/${game.slug}/news/`} style="color:var(--indigo); font-weight:700; text-decoration:none; font-size:14px">{t(locale, "viewGameNewsCta")}</a>}
     </p>
   </section>

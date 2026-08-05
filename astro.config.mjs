@@ -4,7 +4,13 @@ import { readFileSync, readdirSync, statSync } from "node:fs";
 import gamesData from "./data/games.json";
 import newsData from "./data/news.json";
 import trendingData from "./data/monthly-trending.json";
-import { isGameIndexable } from "./src/lib/games.js";
+import { SITE } from "./src/config/site.js";
+import {
+  isGameIndexable,
+  isGameFaqIndexable,
+  isGameReleaseIndexable,
+  isGameNewsIndexable,
+} from "./src/lib/games.js";
 
 const taxonomyCounts = (field) => {
   const counts = new Map();
@@ -36,6 +42,11 @@ try {
   // data/wiki 目录不存在也不报错，这种情况下所有游戏都当作没有 wiki 内容处理
 }
 const gamesBySlug = new Map(gamesData.games.map((g) => [g.slug, g]));
+const newsCountsBySlug = new Map();
+for (const item of newsData.items || []) {
+  if (!item.relatedSlug) continue;
+  newsCountsBySlug.set(item.relatedSlug, (newsCountsBySlug.get(item.relatedSlug) || 0) + 1);
+}
 
 // sitemap 里一直没有 lastmod，Google 没法据此判断哪些页面是新鲜的、该优先重新抓取。
 // 游戏详情/FAQ/发行日期三个长尾页优先用对应 data/wiki/<slug>.json 文件的实际修改时间——
@@ -45,17 +56,20 @@ function lastmodForSlug(slug) {
   return wikiMtimeBySlug.get(slug) || new Date(gamesData.generatedAt);
 }
 
-function isGamePathIndexable(locale, slug) {
+function isGamePathIndexable(locale, slug, pageType) {
   const base = gamesBySlug.get(slug);
   if (!base) return false;
   const wiki = wikiBySlug.get(slug) || {};
   const game = { ...base, publishStatus: wiki.publishStatus, content: wiki.content };
+  if (pageType === "faq") return isGameFaqIndexable(game, locale);
+  if (pageType === "release-date") return isGameReleaseIndexable(game, locale);
+  if (pageType === "news") return isGameNewsIndexable(game, locale, newsCountsBySlug.get(slug) || 0);
   return isGameIndexable(game, locale);
 }
 
 export default defineConfig({
   // sitemap、hreflang、JSON-LD 里的绝对链接都靠这个字段拼出来。
-  site: "https://gameradar.wiki",
+  site: SITE.url,
 
   // 三语路由：全部带前缀（/en/ /es/ /zh/），没有不带前缀的默认语言。
   // redirectToDefaultLocale:false 很关键——不加这个，Astro 会用它自己生成的跳转页
@@ -82,11 +96,17 @@ export default defineConfig({
         // 不该出现在 sitemap 里——sitemap 应该只列真正想被收录的网址，不然自相矛盾。
         if (path === "/") return undefined;
 
+        // The global FAQ remains a discovery aid, but its generated answers are
+        // not an independent search destination. Localized news/chart pages are
+        // also noindex until their translated editorial content is reviewed.
+        if (/^\/(en|de|ja|es|zh)\/faq\/$/.test(path)) return undefined;
+        if (/^\/(de|ja|es|zh)\/(monthly-chart|news)\/$/.test(path)) return undefined;
+
         // 游戏主页、FAQ 长尾页、发行日期长尾页，三种路径都走同一套收录判定。
         const gameMatch = path.match(/^\/(en|de|ja|es|zh)\/games\/([^/]+)\/(?:(faq|release-date|news)\/)?$/);
         if (gameMatch) {
-          const [, locale, slug] = gameMatch;
-          if (!isGamePathIndexable(locale, slug)) return undefined;
+          const [, locale, slug, pageType] = gameMatch;
+          if (!isGamePathIndexable(locale, slug, pageType)) return undefined;
           item.lastmod = lastmodForSlug(slug);
           return item;
         }

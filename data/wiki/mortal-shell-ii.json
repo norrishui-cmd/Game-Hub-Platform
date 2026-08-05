@@ -1,22 +1,58 @@
 {
+  "slug": "mortal-shell-ii",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Mortal Shell II is a standalone Soulslike action RPG sequel from Cold Symmetry, published by Playstack and releasing August 20, 2026 on PC (Steam), PlayStation 5 and Xbox Series X/S — with no PS4 or Xbox One version. Players return as the Harbinger, possessing the bodies of fallen warriors known as Shells to inherit their combat abilities, this time across a much larger interconnected open world set in a redesigned, swampy and cold reimagining of Fallgrim.",
       "faq": [],
       "guideSections": [
-        { "title": "Eight Shells & Faster Combat", "description": "The sequel ships with eight playable Shells (up from the original's four), including Tiel the Acolyte, Eredrim the Venerable, and Proxima the Broodseeker — each offering a distinct fighting style. Combat is deliberately faster and more aggressive than the original's patience-and-timing focus, with deeper weapon upgrade options and the addition of firearms and ranged combat." },
-        { "title": "World Design & Post-Launch Plans", "description": "Cold Symmetry has said the interconnected world is designed to stay deliberately compact — high content density with minimal wasted travel — with over 60 dungeons to explore. Confirmed post-launch content includes New Game Plus, a Boss Rush mode, additional Shells, and story DLC. The Steam Open Beta drew more than 500,000 players in under two weeks and held a 93% positive rating." }
+        {
+          "title": "Eight Shells & Faster Combat",
+          "description": "The sequel ships with eight playable Shells (up from the original's four), including Tiel the Acolyte, Eredrim the Venerable, and Proxima the Broodseeker — each offering a distinct fighting style. Combat is deliberately faster and more aggressive than the original's patience-and-timing focus, with deeper weapon upgrade options and the addition of firearms and ranged combat."
+        },
+        {
+          "title": "World Design & Post-Launch Plans",
+          "description": "Cold Symmetry has said the interconnected world is designed to stay deliberately compact — high content density with minimal wasted travel — with over 60 dungeons to explore. Confirmed post-launch content includes New Game Plus, a Boss Rush mode, additional Shells, and story DLC. The Steam Open Beta drew more than 500,000 players in under two weeks and held a 93% positive rating."
+        }
       ],
       "sources": [
-        { "label": "Gematsu — gameplay reveal and physical edition details", "url": "https://www.gematsu.com/2026/04/mortal-shell-ii-gameplay-reveal-trailer" },
-        { "label": "Game Rant — release date confirmation and content scope", "url": "https://gamerant.com/mortal-shell-2-soulslike-sequel-august-20-release-date/" },
-        { "label": "Sortiraparis — editions, world design and beta figures", "url": "https://www.sortiraparis.com/en/what-to-do-in-paris/gaming/articles/349183-mortal-shell-ii-release-date-gameplay-trailer-preorder-all-you-need-to-know-about-the-dark-fantasy-rpg" }
+        {
+          "label": "Gematsu — gameplay reveal and physical edition details",
+          "url": "https://www.gematsu.com/2026/04/mortal-shell-ii-gameplay-reveal-trailer"
+        },
+        {
+          "label": "Game Rant — release date confirmation and content scope",
+          "url": "https://gamerant.com/mortal-shell-2-soulslike-sequel-august-20-release-date/"
+        },
+        {
+          "label": "Sortiraparis — editions, world design and beta figures",
+          "url": "https://www.sortiraparis.com/en/what-to-do-in-paris/gaming/articles/349183-mortal-shell-ii-release-date-gameplay-trailer-preorder-all-you-need-to-know-about-the-dark-fantasy-rpg"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

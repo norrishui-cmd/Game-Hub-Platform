@@ -1,21 +1,54 @@
 {
+  "slug": "echoes-of-aincrad",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Echoes of Aincrad is a Sword Art Online action RPG developed by Game Studio Inc. and published by Bandai Namco, released July 9–10, 2026 on PlayStation 5, Xbox Series X/S, and PC. Unlike most prior Sword Art Online games, it drops the player into the original death-game premise as a fully customizable, original protagonist rather than Kirito, tasked with surviving a permanent Death Game mode as they climb the floating castle of Aincrad's first two floors alongside returning characters like Argo, Kirito, and Asuna.",
       "faq": [],
       "guideSections": [
-        { "title": "Real-Time Combat & Weapon Builds", "description": "Combat is a real-time action RPG system built around timing, positioning, and resource management, with different weapon types pushing players toward different playstyles — fast, precise builds versus heavier, more defensive setups — and progression driven by gear upgrades and skill growth as Aincrad's floors get harder." },
-        { "title": "Post-Launch Expansion", "description": "An expansion DLC adding a side story and new companions is planned for release between October and December 2026, included with the Deluxe, Ultimate, and Aincrad Editions or purchasable separately." }
+        {
+          "title": "Real-Time Combat & Weapon Builds",
+          "description": "Combat is a real-time action RPG system built around timing, positioning, and resource management, with different weapon types pushing players toward different playstyles — fast, precise builds versus heavier, more defensive setups — and progression driven by gear upgrades and skill growth as Aincrad's floors get harder."
+        },
+        {
+          "title": "Post-Launch Expansion",
+          "description": "An expansion DLC adding a side story and new companions is planned for release between October and December 2026, included with the Deluxe, Ultimate, and Aincrad Editions or purchasable separately."
+        }
       ],
       "sources": [
-        { "label": "Bandai Namco America — official announcement and release date", "url": "https://www.bandainamcoent.com/news/echoes-of-aincrad-launching-this-july" },
-        { "label": "Game Informer — reveal coverage and gameplay overview", "url": "https://gameinformer.com/2026/03/06/bandai-namco-reveals-echoes-of-aincrad-a-new-sword-art-online-rpg" }
+        {
+          "label": "Bandai Namco America — official announcement and release date",
+          "url": "https://www.bandainamcoent.com/news/echoes-of-aincrad-launching-this-july"
+        },
+        {
+          "label": "Game Informer — reveal coverage and gameplay overview",
+          "url": "https://gameinformer.com/2026/03/06/bandai-namco-reveals-echoes-of-aincrad-a-new-sword-art-online-rpg"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

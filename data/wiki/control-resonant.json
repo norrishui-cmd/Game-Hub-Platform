@@ -1,21 +1,54 @@
 {
+  "slug": "control-resonant",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "CONTROL Resonant is Remedy Entertainment's sequel to 2019's Control, releasing September 24, 2026. It swaps protagonists and genres: instead of Jesse Faden's gunplay-focused adventure through the claustrophobic Oldest House, players now control her brother Dylan Faden in a fast-paced action-RPG set across an open-ended, warped reimagining of Manhattan, wielding a shapeshifting melee weapon called the Aberrant.",
       "faq": [],
       "guideSections": [
-        { "title": "Dylan Faden & the Aberrant", "description": "Dylan fights primarily with melee combat and supernatural abilities rather than Jesse's guns, centered on the Aberrant — a shapeshifting weapon — and traversal through Gravity Anomalies, zones where normal physics no longer apply." },
-        { "title": "New Game Plus", "description": "Remedy has confirmed New Game Plus carries over Aberrant upgrades, health and resource improvements, unlocked combat abilities, talents, and artifacts — though traversal abilities stay tied to story progression and do not carry over, since a fresh playthrough is built around re-discovering how the world behaves." }
+        {
+          "title": "Dylan Faden & the Aberrant",
+          "description": "Dylan fights primarily with melee combat and supernatural abilities rather than Jesse's guns, centered on the Aberrant — a shapeshifting weapon — and traversal through Gravity Anomalies, zones where normal physics no longer apply."
+        },
+        {
+          "title": "New Game Plus",
+          "description": "Remedy has confirmed New Game Plus carries over Aberrant upgrades, health and resource improvements, unlocked combat abilities, talents, and artifacts — though traversal abilities stay tied to story progression and do not carry over, since a fresh playthrough is built around re-discovering how the world behaves."
+        }
       ],
       "sources": [
-        { "label": "Remedy Entertainment — official CONTROL Resonant gameplay reveal", "url": "https://www.remedygames.com/article/remedy-entertainment-unveils-new-gameplay-details-for-control-resonant" },
-        { "label": "PlayStation Blog — New Game Plus details", "url": "https://blog.playstation.com/2026/04/30/control-resonant-remedy-shares-first-details-on-new-game-plus/" }
+        {
+          "label": "Remedy Entertainment — official CONTROL Resonant gameplay reveal",
+          "url": "https://www.remedygames.com/article/remedy-entertainment-unveils-new-gameplay-details-for-control-resonant"
+        },
+        {
+          "label": "PlayStation Blog — New Game Plus details",
+          "url": "https://blog.playstation.com/2026/04/30/control-resonant-remedy-shares-first-details-on-new-game-plus/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

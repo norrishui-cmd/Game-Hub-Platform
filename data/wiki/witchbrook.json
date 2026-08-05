@@ -1,21 +1,54 @@
 {
+  "slug": "witchbrook",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Witchbrook is a life-sim and social RPG co-developed by Chucklefish and Robotality, published by Chucklefish, casting players as a new student at Witchbrook College — a magical academy in the pixel-art seaside city of Mossport. Originally slated for winter 2025, the game has been delayed multiple times and is now targeting a 2026 release on PC (Steam), Xbox, Nintendo Switch, and Nintendo Switch 2, with players attending classes, mastering spells and potion-making, and building relationships with fellow students and townsfolk who follow their own daily schedules through the changing seasons.",
       "faq": [],
       "guideSections": [
-        { "title": "School Life & Beyond", "description": "Gameplay balances magical study (classes, assignments, spellcasting, potion-making, divination) with everyday town life in Mossport — running a business, renovating a home, foraging, fishing, and forming friendships or romances with residents who have fully fleshed-out schedules across a full school year." },
-        { "title": "Delays & Platform Expansion", "description": "Chucklefish, a self-described zero-crunch studio, has pushed the release from winter 2025 into 2026 to polish the game, using the extra time to confirm Nintendo Switch and Switch 2 support alongside the originally planned PC and Xbox versions and to explore additional language support." }
+        {
+          "title": "School Life & Beyond",
+          "description": "Gameplay balances magical study (classes, assignments, spellcasting, potion-making, divination) with everyday town life in Mossport — running a business, renovating a home, foraging, fishing, and forming friendships or romances with residents who have fully fleshed-out schedules across a full school year."
+        },
+        {
+          "title": "Delays & Platform Expansion",
+          "description": "Chucklefish, a self-described zero-crunch studio, has pushed the release from winter 2025 into 2026 to polish the game, using the extra time to confirm Nintendo Switch and Switch 2 support alongside the originally planned PC and Xbox versions and to explore additional language support."
+        }
       ],
       "sources": [
-        { "label": "Game Informer — delay announcement and world map reveal", "url": "https://gameinformer.com/2025/10/15/wizarding-life-sim-witchbrook-delayed-to-2026" },
-        { "label": "GamesRadar+ — comprehensive status roundup", "url": "https://www.gamesradar.com/games/simulation/witchbrook-guide/" }
+        {
+          "label": "Game Informer — delay announcement and world map reveal",
+          "url": "https://gameinformer.com/2025/10/15/wizarding-life-sim-witchbrook-delayed-to-2026"
+        },
+        {
+          "label": "GamesRadar+ — comprehensive status roundup",
+          "url": "https://www.gamesradar.com/games/simulation/witchbrook-guide/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

@@ -1,22 +1,58 @@
 {
+  "slug": "assassin-s-creed-black-flag-resynced",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Assassin's Creed Black Flag Resynced is a ground-up remake of 2013's Assassin's Creed IV: Black Flag, developed primarily by Ubisoft Singapore and released July 9, 2026 on PlayStation 5, Xbox Series X/S, and PC (Ubisoft Store, Steam, Epic Games Store), with Steam Deck verification. Rebuilt on the latest Anvil engine, it returns players to the Golden Age of Piracy as Edward Kenway — with Matt Ryan reprising the role — and also serves as the fifteenth main installment in the series, continuing the modern-day arc begun in Assassin's Creed Shadows.",
       "faq": [],
       "guideSections": [
-        { "title": "Action-Adventure, Not an RPG", "description": "Ubisoft has been explicit that Resynced is a faithful remake rather than a reinvention: it deliberately steps away from the RPG systems of recent Assassin's Creed entries. Improvements include parry-driven combat closer to Assassin's Creed Shadows, refined stealth and parkour, deeper naval mechanics, enhanced lighting, high-resolution textures, a dynamic weather system, and a fully customisable HUD with presets." },
-        { "title": "What's Not Included", "description": "Resynced omits the original Black Flag's multiplayer mode and DLC, focusing entirely on the single-player campaign plus new narrative content and a reworked Animus framing. Ubisoft Singapore, which was one of Ubisoft Montreal's main collaborators on the 2013 original, led development with many original Black Flag developers returning; 15 Ubisoft studios contributed in total." }
+        {
+          "title": "Action-Adventure, Not an RPG",
+          "description": "Ubisoft has been explicit that Resynced is a faithful remake rather than a reinvention: it deliberately steps away from the RPG systems of recent Assassin's Creed entries. Improvements include parry-driven combat closer to Assassin's Creed Shadows, refined stealth and parkour, deeper naval mechanics, enhanced lighting, high-resolution textures, a dynamic weather system, and a fully customisable HUD with presets."
+        },
+        {
+          "title": "What's Not Included",
+          "description": "Resynced omits the original Black Flag's multiplayer mode and DLC, focusing entirely on the single-player campaign plus new narrative content and a reworked Animus framing. Ubisoft Singapore, which was one of Ubisoft Montreal's main collaborators on the 2013 original, led development with many original Black Flag developers returning; 15 Ubisoft studios contributed in total."
+        }
       ],
       "sources": [
-        { "label": "Ubisoft — official game page and FAQ", "url": "https://www.ubisoft.com/en-us/game/assassins-creed/black-flag-resynced" },
-        { "label": "Wikipedia — development history, release and studio credits", "url": "https://en.wikipedia.org/wiki/Assassin's_Creed_Black_Flag_Resynced" },
-        { "label": "MobileSyrup — reveal showcase details and director quotes", "url": "https://mobilesyrup.com/2026/04/23/ubisoft-assassins-creed-black-flag-resynced-details/" }
+        {
+          "label": "Ubisoft — official game page and FAQ",
+          "url": "https://www.ubisoft.com/en-us/game/assassins-creed/black-flag-resynced"
+        },
+        {
+          "label": "Wikipedia — development history, release and studio credits",
+          "url": "https://en.wikipedia.org/wiki/Assassin's_Creed_Black_Flag_Resynced"
+        },
+        {
+          "label": "MobileSyrup — reveal showcase details and director quotes",
+          "url": "https://mobilesyrup.com/2026/04/23/ubisoft-assassins-creed-black-flag-resynced-details/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

@@ -4,7 +4,7 @@ import { auditWiki, readJson } from "./wiki-quality.mjs";
 const slug = process.argv[2];
 if (!slug) throw new Error("Usage: npm run game:audit -- <game-slug>");
 const file = path.resolve(`data/wiki/${slug}.json`);
-const errors = auditWiki(await readJson(file));
+const errors = auditWiki(await readJson(file), slug);
 if (errors.length) {
   console.error(`Wiki audit failed: ${slug}`);
   errors.forEach((error) => console.error(`- ${error}`));

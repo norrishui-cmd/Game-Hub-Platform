@@ -1,21 +1,54 @@
 {
+  "slug": "silent-hill-townfall",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Silent Hill: Townfall is a new entry in Konami's horror series developed by Screen Burn (formerly No Code, the studio behind Stories Untold and Observation) and published by Konami and Annapurna Interactive, releasing September 24, 2026 on PC and PlayStation 5. Set in 1996 in the fictional Scottish coastal town of St. Amelia, it follows Simon Ordell, who repeatedly wakes up in the water near the docks with no memory of how he got there, exploring a first-person nightmare shaped by the series' recurring themes of guilt.",
       "faq": [],
       "guideSections": [
-        { "title": "First-Person Perspective & the CRTV", "description": "Townfall marks a shift for the series to a first-person perspective, with Simon defending himself using melee weapons like planks and pipes, using stealth to run, distract, or hide from monsters, and relying on a handheld device called the CRTV to detect nearby threats and pick up signals that reveal plot information." },
-        { "title": "No Xbox Version", "description": "Unlike some other recent Silent Hill releases, Townfall has been confirmed for PC and PlayStation 5 only, with no Xbox version announced as of its 2026 marketing push." }
+        {
+          "title": "First-Person Perspective & the CRTV",
+          "description": "Townfall marks a shift for the series to a first-person perspective, with Simon defending himself using melee weapons like planks and pipes, using stealth to run, distract, or hide from monsters, and relying on a handheld device called the CRTV to detect nearby threats and pick up signals that reveal plot information."
+        },
+        {
+          "title": "No Xbox Version",
+          "description": "Unlike some other recent Silent Hill releases, Townfall has been confirmed for PC and PlayStation 5 only, with no Xbox version announced as of its 2026 marketing push."
+        }
       ],
       "sources": [
-        { "label": "Wikipedia — confirmed release date, setting, and gameplay systems", "url": "https://en.wikipedia.org/wiki/Silent_Hill:_Townfall" },
-        { "label": "GamesRadar+ — comprehensive guide to story, setting, and development", "url": "https://www.gamesradar.com/games/silent-hill-townfall-guide/" }
+        {
+          "label": "Wikipedia — confirmed release date, setting, and gameplay systems",
+          "url": "https://en.wikipedia.org/wiki/Silent_Hill:_Townfall"
+        },
+        {
+          "label": "GamesRadar+ — comprehensive guide to story, setting, and development",
+          "url": "https://www.gamesradar.com/games/silent-hill-townfall-guide/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

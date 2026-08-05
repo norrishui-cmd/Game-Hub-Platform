@@ -26,6 +26,8 @@ const title = displayTitle(game, locale);
 const pageUrl = `${site}/${locale}/games/${game.slug}/`;
 const indexable = isGameIndexable(game, locale);
 const indexableLocales = LOCALES.filter((l) => isGameIndexable(game, l));
+const metaDescription = game.content?.[locale]?.summary
+  || t(locale, "gameMetaDesc", title, game.developer, game.publisher);
 
 // 面包屑：首页 → 主类型分类页 → 游戏名。有类型信息的话多一层，
 // 既方便用户从游戏页反向逛到同类型的其他游戏，也是真实存在的可点击链路
@@ -43,7 +45,7 @@ breadcrumbItems.push({ name: title, url: pageUrl });
 <Base
   locale={locale}
   title={pageTitle(t(locale, "gameMetaTitle", title))}
-  description={t(locale, "gameMetaDesc", title, game.developer || "—", game.publisher)}
+  description={metaDescription}
   pathSuffix={`/games/${game.slug}/`}
   noindex={!indexable}
   indexableLocales={indexableLocales}

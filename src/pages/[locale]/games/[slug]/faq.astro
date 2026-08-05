@@ -3,7 +3,7 @@ import Base from "../../../../layouts/Base.astro";
 import gamesData from "../../../../../data/games.json";
 import { LOCALES } from "../../../../i18n/locales.js";
 import { t } from "../../../../i18n/ui.js";
-import { hasOwnPage, displayTitle, isGameIndexable, buildExtendedFaqItems, buildBreadcrumbJsonLd, pageTitle } from "../../../../lib/games.js";
+import { hasOwnPage, displayTitle, isGameFaqIndexable, buildExtendedFaqItems, buildBreadcrumbJsonLd, pageTitle } from "../../../../lib/games.js";
 
 export async function getStaticPaths() {
   const wikiModules = import.meta.glob("../../../../../data/wiki/*.json", { eager: true, import: "default" });
@@ -24,8 +24,8 @@ const site = Astro.site ? Astro.site.toString().replace(/\/$/, "") : "";
 const title = displayTitle(game, locale);
 const pageUrl = `${site}/${locale}/games/${game.slug}/faq/`;
 // 长尾 FAQ 页跟主详情页共用同一套收录判定——内容深度来自同一份数据，没道理分开评估。
-const indexable = isGameIndexable(game, locale);
-const indexableLocales = LOCALES.filter((l) => isGameIndexable(game, l));
+const indexable = isGameFaqIndexable(game, locale);
+const indexableLocales = LOCALES.filter((l) => isGameFaqIndexable(game, l));
 const faqItems = buildExtendedFaqItems(game, locale);
 
 const faqJsonLd = {

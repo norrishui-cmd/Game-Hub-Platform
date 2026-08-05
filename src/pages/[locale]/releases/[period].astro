@@ -54,6 +54,7 @@ const intro =
 
 // 年度页按月分组展示，比一长串平铺好读；月度页和待定页直接平铺。
 const monthGroups = kind === "year" ? groupByMonth(games) : [];
+const availableMonths = new Set(collectReleaseMonths(gamesData.games).map((entry) => entry.month));
 
 const pageUrl = `${site}/${locale}/releases/${period}/`;
 const jsonLd = [
@@ -101,9 +102,9 @@ const jsonLd = [
         <section style="margin-top:32px">
           <div class="rail-head">
             <h2 style="font-size:20px"><span class="bar" style="background:var(--indigo)"></span>{fmtMonth(mg.month, locale)}</h2>
-            <a class="count" href={`/${locale}/releases/${mg.month}/`} style="text-decoration:underline; text-underline-offset:2px">
-              {t(locale, "releaseCountThisMonth", mg.games.length)}
-            </a>
+            {availableMonths.has(mg.month)
+              ? <a class="count" href={`/${locale}/releases/${mg.month}/`} style="text-decoration:underline; text-underline-offset:2px">{t(locale, "releaseCountThisMonth", mg.games.length)}</a>
+              : <span class="count">{t(locale, "releaseCountThisMonth", mg.games.length)}</span>}
           </div>
           <div class="grid">{mg.games.map((g) => <GameCard game={g} locale={locale} />)}</div>
         </section>

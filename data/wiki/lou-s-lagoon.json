@@ -1,21 +1,54 @@
 {
+  "slug": "lou-s-lagoon",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Lou's Lagoon is a cozy exploration-and-crafting adventure from developer Tiny Roar, published by Megabit, releasing August 27, 2026 on PC, PlayStation 5, Xbox Series X/S, Nintendo Switch, and Nintendo Switch 2. Players arrive on the tropical Limbo archipelago to find their Uncle Lou missing after a storm, inheriting his seaplane delivery service and setting out island to island to gather resources, rebuild communities, and piece together clues to solve the mystery of his disappearance.",
       "faq": [],
       "guideSections": [
-        { "title": "Seaplane Travel & Gadgets", "description": "Getting around Limbo means piloting a customizable, upgradable seaplane between islands and mastering ring challenges in open skies, alongside an upgradable gadget called the Swirler 2000 used for scooping, building, gliding, and fishing." },
-        { "title": "Base Building & Character Customization", "description": "Beyond the central mystery, players build and decorate their own island base and fully customize their avatar's hairstyle, outfits, and accessories, with a Deluxe Edition at launch adding bubble-themed cosmetics." }
+        {
+          "title": "Seaplane Travel & Gadgets",
+          "description": "Getting around Limbo means piloting a customizable, upgradable seaplane between islands and mastering ring challenges in open skies, alongside an upgradable gadget called the Swirler 2000 used for scooping, building, gliding, and fishing."
+        },
+        {
+          "title": "Base Building & Character Customization",
+          "description": "Beyond the central mystery, players build and decorate their own island base and fully customize their avatar's hairstyle, outfits, and accessories, with a Deluxe Edition at launch adding bubble-themed cosmetics."
+        }
       ],
       "sources": [
-        { "label": "Gematsu — Switch 2 version announcement and gameplay overview", "url": "https://www.gematsu.com/2026/07/lous-lagoon-adds-switch-2-version" },
-        { "label": "Megabit Publishing — official news and devlog archive", "url": "https://megabit-publishing.com/games/lous-lagoon" }
+        {
+          "label": "Gematsu — Switch 2 version announcement and gameplay overview",
+          "url": "https://www.gematsu.com/2026/07/lous-lagoon-adds-switch-2-version"
+        },
+        {
+          "label": "Megabit Publishing — official news and devlog archive",
+          "url": "https://megabit-publishing.com/games/lous-lagoon"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

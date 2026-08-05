@@ -1,21 +1,54 @@
 {
+  "slug": "dragon-s-dogma-2-dark-arisen",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Dragon's Dogma 2: Dark Arisen is Capcom's first major expansion for 2024's Dragon's Dogma 2, releasing October 9, 2026 as paid DLC for existing PC, PlayStation 5, and Xbox Series X/S owners, and as a standalone bundle with the base game for the series' Nintendo Switch 2 debut. Directed by Kento Kinoshita — who also directed the original Dragon's Dogma's own Dark Arisen expansion — it adds a new story set in the frozen, long-abandoned northern region of Norgan, built specifically in response to player feedback on the base game.",
       "faq": [],
       "guideSections": [
-        { "title": "Norgan & the Relic Expedition Cycle", "description": "The expansion's new region centers on a Relic Expedition Cycle: players explore Norgan to discover relics, then appraise them to unlock powerful new weapons and skills, alongside 12 new challenge dungeons called the Lost Rites that reward gear once wielded by past Arisen." },
-        { "title": "Base Game Improvements Ahead of Launch", "description": "Capcom shipped a free update in August 2026 ahead of Dark Arisen's release, improving performance across all platforms, adding extra save slots, adjusting the Dragonsplague mechanic, and increasing active weapon skill slots from four to six — changes aimed partly at addressing feedback from the base game's launch." }
+        {
+          "title": "Norgan & the Relic Expedition Cycle",
+          "description": "The expansion's new region centers on a Relic Expedition Cycle: players explore Norgan to discover relics, then appraise them to unlock powerful new weapons and skills, alongside 12 new challenge dungeons called the Lost Rites that reward gear once wielded by past Arisen."
+        },
+        {
+          "title": "Base Game Improvements Ahead of Launch",
+          "description": "Capcom shipped a free update in August 2026 ahead of Dark Arisen's release, improving performance across all platforms, adding extra save slots, adjusting the Dragonsplague mechanic, and increasing active weapon skill slots from four to six — changes aimed partly at addressing feedback from the base game's launch."
+        }
       ],
       "sources": [
-        { "label": "VGC — official expansion details from Capcom", "url": "https://www.videogameschronicle.com/news/capcom-details-dragons-dogma-2-dark-arisen-including-dungeon-challenges-and-new-region/" },
-        { "label": "GamesRadar+ — development background and director interview", "url": "https://www.gamesradar.com/games/rpg/dragons-dogma-2-fans-had-given-up-but-capcom-says-work-on-the-rpgs-dark-arisen-expansion-started-six-months-after-launch-to-answer-incredibly-passionate-feedback/" }
+        {
+          "label": "VGC — official expansion details from Capcom",
+          "url": "https://www.videogameschronicle.com/news/capcom-details-dragons-dogma-2-dark-arisen-including-dungeon-challenges-and-new-region/"
+        },
+        {
+          "label": "GamesRadar+ — development background and director interview",
+          "url": "https://www.gamesradar.com/games/rpg/dragons-dogma-2-fans-had-given-up-but-capcom-says-work-on-the-rpgs-dark-arisen-expansion-started-six-months-after-launch-to-answer-incredibly-passionate-feedback/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

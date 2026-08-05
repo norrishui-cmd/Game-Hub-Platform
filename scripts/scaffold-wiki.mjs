@@ -29,16 +29,10 @@ function emptyLocaleContent() {
   return { summary: "", faq: [], guideSections: [], sources: [] };
 }
 
-function emptyScaffold() {
+function emptyScaffold(slug) {
   const content = {};
   for (const locale of LOCALES) content[locale] = emptyLocaleContent();
-  // 注意：这里故意不写 publishStatus 字段。isGameIndexable() 只在 publishStatus === "draft"
-  // 时才会强制拦掉这个语言页面；不写这个字段 == 之前根本没有 wiki 文件时的行为，索引情况完全不变。
-  // 现在有 20 款游戏的英文页是靠 dataScore（封面/平台/类型/链接/开发商凑够 3 项）拿到的英文事实页
-  // 豁免在收录，如果这里默认写 "draft"，会把这 20 款已经在收录的英文页也一起打回不可索引——
-  // 千万不要在这个脚手架里加 publishStatus:"draft" 默认值。真的还没写完、不想被搜索引擎看到的
-  // 页面，自己手动加这个字段就行（见 SETUP.md）。
-  return { content };
+  return { slug, publishStatus: "draft", content };
 }
 
 async function fileExists(p) {
@@ -78,7 +72,7 @@ async function main() {
       skipped++;
       continue;
     }
-    await writeFile(filePath, JSON.stringify(emptyScaffold(), null, 2));
+    await writeFile(filePath, JSON.stringify(emptyScaffold(g.slug), null, 2));
     created++;
     console.log(`  + 已建立 data/wiki/${g.slug}.json（${g.titleEn}）`);
   }

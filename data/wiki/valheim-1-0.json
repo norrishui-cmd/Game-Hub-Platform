@@ -1,21 +1,54 @@
 {
+  "slug": "valheim-1-0",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Valheim 1.0 is Iron Gate's full launch of its Viking survival-building hit, leaving Steam Early Access on September 9, 2026 after more than five years — almost exactly five years after its February 2021 debut. The 1.0 build ships with the Deep North, the game's final planned biome, and marks the first time Valheim comes to PlayStation 5 and Nintendo Switch 2, joining PC, Mac, Linux, Xbox One, and Xbox Series X/S with full crossplay across every platform.",
       "faq": [],
       "guideSections": [
-        { "title": "Deep North: The Final Biome", "description": "An icy region of glacial peaks, frozen tundra, and snow-buried Viking villages, home to new enemies including the Gammeltrolls — ancient trolls that migrated north as they aged. Deep North is confirmed as Valheim's last major biome, closing out the roadmap that began with Early Access in 2021." },
-        { "title": "Crossplay & New Platforms", "description": "1.0 is as much a platform launch as a content update: PS5 and Switch 2 join the lineup for the first time, and Iron Gate has confirmed full crossplay across PC, PlayStation, Xbox, and Switch 2 so friends can share a world regardless of hardware. One trade-off: crossplay and BepInEx mods are mutually exclusive, and only PC can host its own dedicated servers." }
+        {
+          "title": "Deep North: The Final Biome",
+          "description": "An icy region of glacial peaks, frozen tundra, and snow-buried Viking villages, home to new enemies including the Gammeltrolls — ancient trolls that migrated north as they aged. Deep North is confirmed as Valheim's last major biome, closing out the roadmap that began with Early Access in 2021."
+        },
+        {
+          "title": "Crossplay & New Platforms",
+          "description": "1.0 is as much a platform launch as a content update: PS5 and Switch 2 join the lineup for the first time, and Iron Gate has confirmed full crossplay across PC, PlayStation, Xbox, and Switch 2 so friends can share a world regardless of hardware. One trade-off: crossplay and BepInEx mods are mutually exclusive, and only PC can host its own dedicated servers."
+        }
       ],
       "sources": [
-        { "label": "GameSpot — official 1.0 release date announcement", "url": "https://www.gamespot.com/articles/valheim-finally-has-a-1-0-release-date/" },
-        { "label": "XGamingServer — Deep North, PS5 & Switch 2 crossplay breakdown", "url": "https://xgamingserver.com/blog/valheim-1-0-release-date-deep-north/" }
+        {
+          "label": "GameSpot — official 1.0 release date announcement",
+          "url": "https://www.gamespot.com/articles/valheim-finally-has-a-1-0-release-date/"
+        },
+        {
+          "label": "XGamingServer — Deep North, PS5 & Switch 2 crossplay breakdown",
+          "url": "https://xgamingserver.com/blog/valheim-1-0-release-date-deep-north/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

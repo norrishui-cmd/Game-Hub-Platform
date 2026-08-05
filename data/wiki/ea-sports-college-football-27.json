@@ -1,22 +1,58 @@
 {
+  "slug": "ea-sports-college-football-27",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "EA Sports College Football 27 is the third entry in EA's revived college football series, released July 9, 2026 on PlayStation 5, Xbox Series X/S and — for the first time in the franchise's history — PC via the EA app, Steam and the Epic Games Store. It features 138 playable teams, including North Dakota State and Sacramento State, both newly promoted to the Football Bowl Subdivision in 2026, and supports cross-play.",
       "faq": [],
       "guideSections": [
-        { "title": "Modes: Dynasty Blueprint, Road to Glory & Mascot Mashup", "description": "College Football 27's headline additions are Dynasty Blueprint (a deeper program-building layer within Dynasty mode), expanded position options and customisation in Road to Glory, and Mascot Mashup, a mode letting players compete as school mascots. Gameplay changes focus on smarter route running and coverage, WR-versus-DB physicality battles, and streamlined pre-play adjustments." },
-        { "title": "Cover Athletes & Early Access Tiers", "description": "Oregon quarterback Dante Moore, Ole Miss running back Kewan Lacy, and Miami wide receiver Malachi Toney feature on the standard cover; the Deluxe Edition adds Indiana head coach Curt Cignetti alongside USC's Jayden Maiava, Notre Dame's Leonard Moore, and Texas' Colin Simmons. Deluxe and MVP Bundle buyers got early access from July 6, while MVP+ Members played from July 2 — a full week before global launch." }
+        {
+          "title": "Modes: Dynasty Blueprint, Road to Glory & Mascot Mashup",
+          "description": "College Football 27's headline additions are Dynasty Blueprint (a deeper program-building layer within Dynasty mode), expanded position options and customisation in Road to Glory, and Mascot Mashup, a mode letting players compete as school mascots. Gameplay changes focus on smarter route running and coverage, WR-versus-DB physicality battles, and streamlined pre-play adjustments."
+        },
+        {
+          "title": "Cover Athletes & Early Access Tiers",
+          "description": "Oregon quarterback Dante Moore, Ole Miss running back Kewan Lacy, and Miami wide receiver Malachi Toney feature on the standard cover; the Deluxe Edition adds Indiana head coach Curt Cignetti alongside USC's Jayden Maiava, Notre Dame's Leonard Moore, and Texas' Colin Simmons. Deluxe and MVP Bundle buyers got early access from July 6, while MVP+ Members played from July 2 — a full week before global launch."
+        }
       ],
       "sources": [
-        { "label": "Electronic Arts — official FAQ, platforms and modes", "url": "https://www.ea.com/games/ea-sports-college-football/college-football-27/faq" },
-        { "label": "Wikipedia — release details, team count and cover athletes", "url": "https://en.wikipedia.org/wiki/EA_Sports_College_Football_27" },
-        { "label": "Electronic Arts — feature reveal blog", "url": "https://www.ea.com/games/ea-sports-college-football/college-football-27/news/welcome-to-college-football-27" }
+        {
+          "label": "Electronic Arts — official FAQ, platforms and modes",
+          "url": "https://www.ea.com/games/ea-sports-college-football/college-football-27/faq"
+        },
+        {
+          "label": "Wikipedia — release details, team count and cover athletes",
+          "url": "https://en.wikipedia.org/wiki/EA_Sports_College_Football_27"
+        },
+        {
+          "label": "Electronic Arts — feature reveal blog",
+          "url": "https://www.ea.com/games/ea-sports-college-football/college-football-27/news/welcome-to-college-football-27"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

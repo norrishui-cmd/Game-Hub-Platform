@@ -1,21 +1,54 @@
 {
+  "slug": "dune-awakening-console",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Dune: Awakening's console edition brings Funcom's open-world survival MMO to PlayStation 5 and Xbox Series X/S on September 22, 2026, more than a year after its June 2025 PC debut, arriving day one on Xbox Game Pass Ultimate and PC Game Pass with full Xbox Play Anywhere cross-progression. The console release bundles every content update and improvement shipped on PC to date, alongside a major simultaneous update completing the finale of the game's Book One story across all platforms.",
       "faq": [],
       "guideSections": [
-        { "title": "Built for Controllers", "description": "Rather than a straight port, Funcom rebuilt Dune: Awakening's controls and UI specifically for console play, offering a Performance mode targeting 60fps on PS5 and Xbox Series X and a Quality mode that prioritizes visuals, alongside a physical PlayStation 5 edition." },
-        { "title": "A New Single-Player Mode", "description": "The September 2026 update adds a full single-player mode with scalable difficulty on top of the existing multiplayer survival experience, letting players experience the complete Book One cinematic story — spanning Acts 1 through 4 — solo from start to finish for the first time." }
+        {
+          "title": "Built for Controllers",
+          "description": "Rather than a straight port, Funcom rebuilt Dune: Awakening's controls and UI specifically for console play, offering a Performance mode targeting 60fps on PS5 and Xbox Series X and a Quality mode that prioritizes visuals, alongside a physical PlayStation 5 edition."
+        },
+        {
+          "title": "A New Single-Player Mode",
+          "description": "The September 2026 update adds a full single-player mode with scalable difficulty on top of the existing multiplayer survival experience, letting players experience the complete Book One cinematic story — spanning Acts 1 through 4 — solo from start to finish for the first time."
+        }
       ],
       "sources": [
-        { "label": "Gematsu — official console release date and platform details", "url": "https://www.gematsu.com/2026/06/dune-awakening-for-ps5-xbox-series-launches-september-22" },
-        { "label": "Dune: Awakening official site — console date and single-player announcement", "url": "https://duneawakening.com/news/console-date-and-single-player-announced/" }
+        {
+          "label": "Gematsu — official console release date and platform details",
+          "url": "https://www.gematsu.com/2026/06/dune-awakening-for-ps5-xbox-series-launches-september-22"
+        },
+        {
+          "label": "Dune: Awakening official site — console date and single-player announcement",
+          "url": "https://duneawakening.com/news/console-date-and-single-player-announced/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

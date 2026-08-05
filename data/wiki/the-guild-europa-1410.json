@@ -1,22 +1,58 @@
 {
+  "slug": "the-guild-europa-1410",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "The Guild – Europa 1410 is a medieval life, economic and political simulation from Czech studio Ashborne Games, published by THQ Nordic and built in Unreal Engine 5 for PC via Steam. It returns the series to the roots of the original Europa 1400: The Guild, starting players at the head of a fledgling merchant dynasty in the Holy Roman Empire and letting them grow it into a house with influence far beyond a single city. Console versions may follow later.",
       "faq": [],
       "guideSections": [
-        { "title": "Four Cities, 11 Professions, Eight Social Titles", "description": "Early Access launches with four playable cities — Kuttenberg, Nuremberg, Graz and Wroclaw — each with its own districts and quarters to develop. Players pick from 11 professions including Smith, Stone Mason, Tailor, Perfumer, Alchemist, Preacher, Innkeeper, Thief, Guard and Robber, each with unique buildings, upgrades and interiors. Alongside industry sits a full political system of offices, votes and privileges, letting players climb eight social titles from Burgher to Prince of the Empire — and found a bloodline via marriage and children." },
-        { "title": "Delayed Following Demo Feedback", "description": "Early Access was originally announced for July 16, 2026, with a demo released June 15 during Steam Next Fest. After that demo drew mixed user reviews on Steam, THQ Nordic and Ashborne Games postponed the Early Access launch to act on player feedback, and no new date has been announced as of late July 2026 — so treat any specific date circulating online as unconfirmed. Additional language support and multiplayer are planned to arrive during the Early Access phase." }
+        {
+          "title": "Four Cities, 11 Professions, Eight Social Titles",
+          "description": "Early Access launches with four playable cities — Kuttenberg, Nuremberg, Graz and Wroclaw — each with its own districts and quarters to develop. Players pick from 11 professions including Smith, Stone Mason, Tailor, Perfumer, Alchemist, Preacher, Innkeeper, Thief, Guard and Robber, each with unique buildings, upgrades and interiors. Alongside industry sits a full political system of offices, votes and privileges, letting players climb eight social titles from Burgher to Prince of the Empire — and found a bloodline via marriage and children."
+        },
+        {
+          "title": "Delayed Following Demo Feedback",
+          "description": "Early Access was originally announced for July 16, 2026, with a demo released June 15 during Steam Next Fest. After that demo drew mixed user reviews on Steam, THQ Nordic and Ashborne Games postponed the Early Access launch to act on player feedback, and no new date has been announced as of late July 2026 — so treat any specific date circulating online as unconfirmed. Additional language support and multiplayer are planned to arrive during the Early Access phase."
+        }
       ],
       "sources": [
-        { "label": "Games Press — official demo and Early Access announcement", "url": "https://www.gamespress.com/en-US/Experience-Medieval-Life-in-The-Guild-Europa-1410-Demo-Available-Now-a" },
-        { "label": "Saving Content — cities, professions and political system breakdown", "url": "https://www.savingcontent.com/2026/06/03/the-guild-europa-1410-the-anticipated-economic-sim-enters-early-access-on-july-16th/" },
-        { "label": "Aroged — coverage of the Early Access delay", "url": "https://www.aroged.com/2026/07/09/ambitious-medieval-simulator-the-guild-europa-1410-will-not-be-released-on-july-16th-in-steam-early-access-due-to-reviews-of-the-demo" }
+        {
+          "label": "Games Press — official demo and Early Access announcement",
+          "url": "https://www.gamespress.com/en-US/Experience-Medieval-Life-in-The-Guild-Europa-1410-Demo-Available-Now-a"
+        },
+        {
+          "label": "Saving Content — cities, professions and political system breakdown",
+          "url": "https://www.savingcontent.com/2026/06/03/the-guild-europa-1410-the-anticipated-economic-sim-enters-early-access-on-july-16th/"
+        },
+        {
+          "label": "Aroged — coverage of the Early Access delay",
+          "url": "https://www.aroged.com/2026/07/09/ambitious-medieval-simulator-the-guild-europa-1410-will-not-be-released-on-july-16th-in-steam-early-access-due-to-reviews-of-the-demo"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

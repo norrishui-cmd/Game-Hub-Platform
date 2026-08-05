@@ -1,0 +1,13 @@
+---
+import Base from "../../layouts/Base.astro";
+import { LOCALES } from "../../i18n/locales.js";
+import { TRUST } from "../../i18n/trust.js";
+import { SITE } from "../../config/site.js";
+
+export function getStaticPaths() { return LOCALES.map((locale) => ({ params: { locale } })); }
+const { locale } = Astro.params;
+const copy = TRUST[locale] || TRUST.en;
+---
+<Base locale={locale} title={`${copy.privacyTitle} | ${SITE.name}`} description={copy.privacyMeta} pathSuffix="/privacy/">
+  <main class="policy-wrap"><h1>{copy.privacyTitle}</h1><p class="policy-date">{copy.privacyUpdated}</p>{copy.privacySections.map(([title, body]) => <section><h2>{title}</h2><p>{body}</p></section>)}<section><h2>{copy.contactTitle}</h2><p><a href={`mailto:${SITE.contactEmail}`}>{SITE.contactEmail}</a></p></section></main>
+</Base>

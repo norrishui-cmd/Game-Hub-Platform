@@ -1,21 +1,54 @@
 {
+  "slug": "digimon-story-time-stranger",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Digimon Story: Time Stranger is the seventh entry in the Digimon Story subseries, developed by Media.Vision and published by Bandai Namco, which launched on PS5, Xbox Series X/S, and PC on October 3, 2025 before arriving on Nintendo Switch and Switch 2 on July 10, 2026. Following an agent of the organization ADAMAS investigating a catastrophic event that destroys Tokyo and sends the protagonist eight years into the past, it became Bandai Namco's biggest PC JRPG launch, surpassing every Persona and single-player Final Fantasy title's concurrent player count on Steam.",
       "faq": [],
       "guideSections": [
-        { "title": "3-on-3 Turn-Based Combat & the DigiFarm", "description": "The game retains the series' signature 3-on-3 turn-based combat and Digivolving/De-Digivolving mechanics, adding new \"Digimon Personalities\" and \"Agent Skills\" systems, alongside a DigiFarm feature where Digimon not in active battle can passively train, gather resources, and craft items on their own." },
-        { "title": "A Standalone Story, 450+ Digimon", "description": "Time Stranger is fully standalone and requires no knowledge of Digimon Story: Cyber Sleuth, featuring a new cast of characters and over 450 collectible Digimon; a story expansion DLC was subsequently announced for a 2027 release." }
+        {
+          "title": "3-on-3 Turn-Based Combat & the DigiFarm",
+          "description": "The game retains the series' signature 3-on-3 turn-based combat and Digivolving/De-Digivolving mechanics, adding new \"Digimon Personalities\" and \"Agent Skills\" systems, alongside a DigiFarm feature where Digimon not in active battle can passively train, gather resources, and craft items on their own."
+        },
+        {
+          "title": "A Standalone Story, 450+ Digimon",
+          "description": "Time Stranger is fully standalone and requires no knowledge of Digimon Story: Cyber Sleuth, featuring a new cast of characters and over 450 collectible Digimon; a story expansion DLC was subsequently announced for a 2027 release."
+        }
       ],
       "sources": [
-        { "label": "GamesRadar+ — official review with developer/publisher details and Steam performance", "url": "https://www.gamesradar.com/games/jrpg/digimon-story-time-stranger-review/" },
-        { "label": "Wikipedia — release dates across all platforms", "url": "https://en.wikipedia.org/wiki/Digimon_Story:_Time_Stranger" }
+        {
+          "label": "GamesRadar+ — official review with developer/publisher details and Steam performance",
+          "url": "https://www.gamesradar.com/games/jrpg/digimon-story-time-stranger-review/"
+        },
+        {
+          "label": "Wikipedia — release dates across all platforms",
+          "url": "https://en.wikipedia.org/wiki/Digimon_Story:_Time_Stranger"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

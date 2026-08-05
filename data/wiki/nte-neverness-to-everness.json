@@ -1,22 +1,58 @@
 {
+  "slug": "nte-neverness-to-everness",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "NTE: Neverness to Everness (异环) is a free-to-play supernatural urban open-world action RPG developed by Hotta Studio — the Suzhou-based team behind Tower of Fantasy — and published by Perfect World Games. Built in Unreal Engine 5, it launched in China on April 23, 2026 and worldwide on April 29, 2026 across PC, PlayStation 5, iOS, Android, macOS and HarmonyOS. Players arrive in the neon metropolis of Hethereau as its first unlicensed Anomaly Hunter, using Esper abilities to investigate reality-bending phenomena called Anomalies.",
       "faq": [],
       "guideSections": [
-        { "title": "Hethereau: City, Vehicles & Law Enforcement", "description": "Beyond combat, NTE leans hard into urban life sim: more than 10 customisable vehicles for getting around, housing, and business management sit alongside the main story. Unusually for the genre, there's a working law-enforcement system — cause enough chaos and the city's authorities will actually pursue you, potentially landing your character in a detention centre." },
-        { "title": "Launch Content & Reception", "description": "The global launch shipped with 15 playable characters and over 40 Anomaly Commissions. Reception has been broadly positive — Steam user reviews sit around 85% positive — with reviewers noting the game genuinely breaks from the standard anime-gacha template, though with some acknowledged launch-window rough edges. Hotta Studio has published a public roadmap covering character detail improvements, new main story episodes and multiplayer fixes." }
+        {
+          "title": "Hethereau: City, Vehicles & Law Enforcement",
+          "description": "Beyond combat, NTE leans hard into urban life sim: more than 10 customisable vehicles for getting around, housing, and business management sit alongside the main story. Unusually for the genre, there's a working law-enforcement system — cause enough chaos and the city's authorities will actually pursue you, potentially landing your character in a detention centre."
+        },
+        {
+          "title": "Launch Content & Reception",
+          "description": "The global launch shipped with 15 playable characters and over 40 Anomaly Commissions. Reception has been broadly positive — Steam user reviews sit around 85% positive — with reviewers noting the game genuinely breaks from the standard anime-gacha template, though with some acknowledged launch-window rough edges. Hotta Studio has published a public roadmap covering character detail improvements, new main story episodes and multiplayer fixes."
+        }
       ],
       "sources": [
-        { "label": "Wikipedia — developer, engine, platforms and release dates", "url": "https://en.wikipedia.org/wiki/Neverness_to_Everness" },
-        { "label": "MMORPG.com — launch coverage and content roster", "url": "https://www.mmorpg.com/news/supernatural-urban-rpg-neverness-to-everness-is-live-and-hotta-studio-is-being-very-generous-about-it-2000137941" },
-        { "label": "Steam — official store page and feature list", "url": "https://store.steampowered.com/app/4508340/NTE_Neverness_to_Everness/" }
+        {
+          "label": "Wikipedia — developer, engine, platforms and release dates",
+          "url": "https://en.wikipedia.org/wiki/Neverness_to_Everness"
+        },
+        {
+          "label": "MMORPG.com — launch coverage and content roster",
+          "url": "https://www.mmorpg.com/news/supernatural-urban-rpg-neverness-to-everness-is-live-and-hotta-studio-is-being-very-generous-about-it-2000137941"
+        },
+        {
+          "label": "Steam — official store page and feature list",
+          "url": "https://store.steampowered.com/app/4508340/NTE_Neverness_to_Everness/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

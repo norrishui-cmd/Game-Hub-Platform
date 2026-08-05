@@ -1,21 +1,54 @@
 {
+  "slug": "onimusha-way-of-the-sword",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Onimusha: Way of the Sword is Capcom's revival of the Onimusha series, its first new mainline entry in over 20 years, releasing September 4, 2026 (moved up from an initially announced September 25) for PlayStation 5, Xbox Series X/S, Nintendo Switch 2, and PC. Set in an Edo-era Kyoto twisted by clouds of supernatural Malice, it casts the legendary swordsman Miyamoto Musashi as protagonist, wielding the powers of the Oni to battle demonic Genma with sword-based action and magical abilities.",
       "faq": [],
       "guideSections": [
-        { "title": "The Oni Gauntlet & Sword Combat", "description": "Musashi fights using intense, duel-focused melee combat centered on a special Oni Gauntlet that grants superhuman attacks and blocks; the demo showcased a boss fight against rival swordsman Sasaki Ganryu, one of Musashi's real historical rivals reimagined within the game's dark fantasy setting." },
-        { "title": "Release Date Moved Up", "description": "Capcom originally set the release for September 25, 2026, then moved it up to September 4, 2026 in response to positive feedback from the public demo, though the Windows version was noted to arrive slightly later than the console releases." }
+        {
+          "title": "The Oni Gauntlet & Sword Combat",
+          "description": "Musashi fights using intense, duel-focused melee combat centered on a special Oni Gauntlet that grants superhuman attacks and blocks; the demo showcased a boss fight against rival swordsman Sasaki Ganryu, one of Musashi's real historical rivals reimagined within the game's dark fantasy setting."
+        },
+        {
+          "title": "Release Date Moved Up",
+          "description": "Capcom originally set the release for September 25, 2026, then moved it up to September 4, 2026 in response to positive feedback from the public demo, though the Windows version was noted to arrive slightly later than the console releases."
+        }
       ],
       "sources": [
-        { "label": "Capcom — official press release confirming the moved-up release date", "url": "https://www.capcom.co.jp/ir/english/news/html/e260702.html" },
-        { "label": "Engadget — demo and story context coverage", "url": "https://www.engadget.com/2186239/onimusha-way-of-the-sword-arrives-september-25-but-there-s-a-demo-today/" }
+        {
+          "label": "Capcom — official press release confirming the moved-up release date",
+          "url": "https://www.capcom.co.jp/ir/english/news/html/e260702.html"
+        },
+        {
+          "label": "Engadget — demo and story context coverage",
+          "url": "https://www.engadget.com/2186239/onimusha-way-of-the-sword-arrives-september-25-but-there-s-a-demo-today/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }

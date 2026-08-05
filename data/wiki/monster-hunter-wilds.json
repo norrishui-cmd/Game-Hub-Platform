@@ -1,21 +1,54 @@
 {
+  "slug": "monster-hunter-wilds",
   "publishStatus": "published",
   "content": {
     "en": {
       "summary": "Monster Hunter Wilds is Capcom's mainline entry in the Monster Hunter series, released February 28, 2025 on PC, PlayStation 5, and Xbox Series X/S, casting players in the Research Commission as it explores the Forbidden Lands and investigates a threat called the White Wraith. Since launch, Capcom has kept the game updated with regular free Title Updates adding monsters, difficulty tiers, and quality-of-life improvements, alongside cross-promotional events with other Monster Hunter titles.",
       "faq": [],
       "guideSections": [
-        { "title": "Ascendance: The Paid Expansion", "description": "Announced in June 2026, Monster Hunter Wilds: Ascendance is a large-scale paid expansion planned for 2027, comparable in scope to Monster Hunter World's Iceborne or Rise's Sunbreak. It adds the Skybound Eyrie, a new region of floating sky islands, a Master Rank progression tier, returning Elder Dragons, and a new Boost Bracer combat mechanic." },
-        { "title": "Free Title Updates & Nintendo Switch 2 Port", "description": "Beyond Ascendance, Capcom has continued shipping free Title Updates with new and returning monsters (including the fan-favorite Lagiacrus) and Arch-Tempered variants for endgame hunters, and has confirmed a Nintendo Switch 2 version of Monster Hunter Wilds is in development." }
+        {
+          "title": "Ascendance: The Paid Expansion",
+          "description": "Announced in June 2026, Monster Hunter Wilds: Ascendance is a large-scale paid expansion planned for 2027, comparable in scope to Monster Hunter World's Iceborne or Rise's Sunbreak. It adds the Skybound Eyrie, a new region of floating sky islands, a Master Rank progression tier, returning Elder Dragons, and a new Boost Bracer combat mechanic."
+        },
+        {
+          "title": "Free Title Updates & Nintendo Switch 2 Port",
+          "description": "Beyond Ascendance, Capcom has continued shipping free Title Updates with new and returning monsters (including the fan-favorite Lagiacrus) and Arch-Tempered variants for endgame hunters, and has confirmed a Nintendo Switch 2 version of Monster Hunter Wilds is in development."
+        }
       ],
       "sources": [
-        { "label": "Gematsu — official Ascendance expansion announcement", "url": "https://www.gematsu.com/2026/06/monster-hunter-wilds-expansion-ascendance-announced" },
-        { "label": "RPGamer — Ascendance details and Switch 2 port confirmation", "url": "https://rpgamer.com/2026/06/monster-hunter-wilds-ascendance-expansion-announced/" }
+        {
+          "label": "Gematsu — official Ascendance expansion announcement",
+          "url": "https://www.gematsu.com/2026/06/monster-hunter-wilds-expansion-ascendance-announced"
+        },
+        {
+          "label": "RPGamer — Ascendance details and Switch 2 port confirmation",
+          "url": "https://rpgamer.com/2026/06/monster-hunter-wilds-ascendance-expansion-announced/"
+        }
       ]
     },
-    "de": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "ja": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "es": { "summary": "", "faq": [], "guideSections": [], "sources": [] },
-    "zh": { "summary": "", "faq": [], "guideSections": [], "sources": [] }
+    "de": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "ja": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "es": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    },
+    "zh": {
+      "summary": "",
+      "faq": [],
+      "guideSections": [],
+      "sources": []
+    }
   }
 }
