@@ -129,7 +129,7 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
       <a href={`/${locale}/about/`}>{trust.companyNav}</a>
     </nav>
     <label class="lang-switch"><span class="sr-only">{product.language}</span><select id="language-select" aria-label={product.language}>{LOCALES.map((l) => <option value={alternates[l]} selected={l === locale}>{LOCALE_META[l].label}</option>)}</select></label>
-    <button class="auth-trigger" id="auth-trigger" type="button">Sign in</button>
+    <button class="auth-trigger" id="auth-trigger" type="button"><span id="auth-label">Sign in</span><img id="auth-avatar" alt="" hidden /></button>
   </header>
 
   <slot />
@@ -266,10 +266,11 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
     import { createClient } from "@supabase/supabase-js";
     const dialog=document.querySelector('#auth-dialog'), button=document.querySelector('#auth-trigger'), status=document.querySelector('#auth-status');
     const {supabaseUrl:url,supabaseKey:key}=document.body.dataset; const client=url&&key?createClient(url,key):null;
-    button?.addEventListener('click',()=>dialog?.showModal());
     document.querySelector('#google-signin')?.addEventListener('click',async()=>{if(!client){status.textContent='Authentication is being configured.';return;}const {error}=await client.auth.signInWithOAuth({provider:'google',options:{redirectTo:location.href}});if(error)status.textContent=error.message;});
     document.querySelector('#email-signin')?.addEventListener('click',async()=>{const email=document.querySelector('#auth-email').value;if(!email){status.textContent='Enter your email first.';return;}if(!client){status.textContent='Authentication is being configured.';return;}const {error}=await client.auth.signInWithOtp({email,options:{emailRedirectTo:location.href}});status.textContent=error?error.message:'Check your inbox for the sign-in link.';});
-    client?.auth.getUser().then(({data})=>{if(data.user)button.textContent=data.user.user_metadata?.full_name||data.user.email||'Account';});
+    function showUser(user){const label=document.querySelector('#auth-label'),avatar=document.querySelector('#auth-avatar');if(!user){label.textContent='Sign in';avatar.hidden=true;button.dataset.signedIn='';return;}label.textContent=user.user_metadata?.full_name||user.email||'Account';const src=user.user_metadata?.avatar_url||user.user_metadata?.picture;if(src){avatar.src=src;avatar.hidden=false;}else avatar.hidden=true;button.dataset.signedIn='true';}
+    button?.addEventListener('click',async()=>{if(button.dataset.signedIn&&client){await client.auth.signOut();showUser(null);return;}dialog?.showModal();});
+    client?.auth.getUser().then(({data})=>showUser(data.user)); client?.auth.onAuthStateChange((_event,session)=>showUser(session?.user||null));
   </script>
 </body>
 </html>
