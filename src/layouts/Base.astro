@@ -122,11 +122,11 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
       <a href={`/${locale}/monthly-chart/`}>{t(locale, "navMonthlyChart")}</a>
       <a href={`/${locale}/releases/`}>{t(locale, "navReleases")}</a>
       <a href={`/${locale}/news/`}>{t(locale, "navNews")}</a>
-      <a href={`/${locale}/about/`}>{trust.companyNav}</a>
       <details class="nav-tools">
         <summary>{p2.tools}</summary>
         <div><a href={`/${locale}/discover/`}>{p3.discoverGames}</a><a href={`/${locale}/watchlist/`}>{p2.myRadar}<span id="nav-radar-count" class="nav-radar-count" hidden></span></a><a href={`/${locale}/compare/`}>{p2.compareGames}</a></div>
       </details>
+      <a href={`/${locale}/about/`}>{trust.companyNav}</a>
     </nav>
     <label class="lang-switch"><span class="sr-only">{product.language}</span><select id="language-select" aria-label={product.language}>{LOCALES.map((l) => <option value={alternates[l]} selected={l === locale}>{LOCALE_META[l].label}</option>)}</select></label>
   </header>
