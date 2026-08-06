@@ -103,7 +103,7 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
 </head>
-<body>
+<body data-supabase-url={import.meta.env.PUBLIC_SUPABASE_URL || ""} data-supabase-key={import.meta.env.PUBLIC_SUPABASE_ANON_KEY || ""}>
   <header class="hdr">
     <a class="brand" href={`/${locale}/`} aria-label={t(locale, "tagline")}>
       <span class="glyph"><b>◈</b></span>
@@ -181,14 +181,7 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
     </div>
   </footer>
 
-  <script define:vars={{ locale, searchIndex, searchLabels: { all: product.searchAll }, supabaseUrl: import.meta.env.PUBLIC_SUPABASE_URL || "", supabaseKey: import.meta.env.PUBLIC_SUPABASE_ANON_KEY || "" }}>
-    import { createClient } from "@supabase/supabase-js";
-    const authDialog=document.querySelector('#auth-dialog'), authButton=document.querySelector('#auth-trigger'), authStatus=document.querySelector('#auth-status');
-    const supabase=supabaseUrl&&supabaseKey?createClient(supabaseUrl,supabaseKey):null;
-    authButton?.addEventListener('click',()=>authDialog?.showModal());
-    document.querySelector('#google-signin')?.addEventListener('click',async()=>{if(!supabase){authStatus.textContent='Authentication is being configured.';return;} await supabase.auth.signInWithOAuth({provider:'google',options:{redirectTo:location.href}})});
-    document.querySelector('#email-signin')?.addEventListener('click',async()=>{const email=document.querySelector('#auth-email').value;if(!email){authStatus.textContent='Enter your email first.';return;}if(!supabase){authStatus.textContent='Authentication is being configured.';return;}const {error}=await supabase.auth.signInWithOtp({email,options:{emailRedirectTo:location.href}});authStatus.textContent=error?error.message:'Check your inbox for the sign-in link.'});
-    supabase?.auth.getUser().then(({data})=>{if(data.user)authButton.textContent=data.user.user_metadata?.full_name||data.user.email||'Account'});
+  <script define:vars={{ locale, searchIndex, searchLabels: { all: product.searchAll } }}>
     // 记住这次访问用的是哪个语言——根路径的自动跳转脚本会优先读这个，
     // 而不是每次都重新猜浏览器语言。这样手动切换过语言的人不会被"猜"回去。
     try { localStorage.setItem("gr_locale", locale); } catch (e) {}
@@ -268,6 +261,15 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
       else if (event.key === "Enter" && q.value.trim()) { event.preventDefault(); if (active >= 0 && options[active]) options[active].click(); else window.location.href = `/${locale}/games/?q=${encodeURIComponent(q.value.trim())}`; }
     });
     document.addEventListener("pointerdown", (event) => { if (!event.target.closest(".search")) closeSearch(); });
+  </script>
+  <script>
+    import { createClient } from "@supabase/supabase-js";
+    const dialog=document.querySelector('#auth-dialog'), button=document.querySelector('#auth-trigger'), status=document.querySelector('#auth-status');
+    const {supabaseUrl:url,supabaseKey:key}=document.body.dataset; const client=url&&key?createClient(url,key):null;
+    button?.addEventListener('click',()=>dialog?.showModal());
+    document.querySelector('#google-signin')?.addEventListener('click',async()=>{if(!client){status.textContent='Authentication is being configured.';return;}const {error}=await client.auth.signInWithOAuth({provider:'google',options:{redirectTo:location.href}});if(error)status.textContent=error.message;});
+    document.querySelector('#email-signin')?.addEventListener('click',async()=>{const email=document.querySelector('#auth-email').value;if(!email){status.textContent='Enter your email first.';return;}if(!client){status.textContent='Authentication is being configured.';return;}const {error}=await client.auth.signInWithOtp({email,options:{emailRedirectTo:location.href}});status.textContent=error?error.message:'Check your inbox for the sign-in link.';});
+    client?.auth.getUser().then(({data})=>{if(data.user)button.textContent=data.user.user_metadata?.full_name||data.user.email||'Account';});
   </script>
 </body>
 </html>
