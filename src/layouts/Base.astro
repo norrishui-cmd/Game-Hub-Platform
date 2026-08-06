@@ -270,7 +270,8 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
     document.querySelector('#email-signin')?.addEventListener('click',async()=>{const email=document.querySelector('#auth-email').value;if(!email){status.textContent='Enter your email first.';return;}if(!client){status.textContent='Authentication is being configured.';return;}const {error}=await client.auth.signInWithOtp({email,options:{emailRedirectTo:location.href}});status.textContent=error?error.message:'Check your inbox for the sign-in link.';});
     function showUser(user){const label=document.querySelector('#auth-label'),avatar=document.querySelector('#auth-avatar');if(!user){label.textContent='Sign in';avatar.hidden=true;button.dataset.signedIn='';return;}label.textContent=user.user_metadata?.full_name||user.email||'Account';const src=user.user_metadata?.avatar_url||user.user_metadata?.picture;if(src){avatar.src=src;avatar.hidden=false;}else avatar.hidden=true;button.dataset.signedIn='true';}
     button?.addEventListener('click',async()=>{if(button.dataset.signedIn&&client){await client.auth.signOut();showUser(null);return;}dialog?.showModal();});
-    client?.auth.getUser().then(({data})=>showUser(data.user)); client?.auth.onAuthStateChange((_event,session)=>showUser(session?.user||null));
+    client?.auth.getSession().then(({data})=>showUser(data.session?.user||null));
+    client?.auth.onAuthStateChange((event,session)=>{showUser(session?.user||null);if(event==='SIGNED_IN')dialog?.close();});
   </script>
 </body>
 </html>
