@@ -124,7 +124,7 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
       <a href={`/${locale}/news/`}>{t(locale, "navNews")}</a>
       <details class="nav-tools">
         <summary>{p2.tools}</summary>
-        <div><a href={`/${locale}/discover/`}>{p3.discoverGames}</a><a href={`/${locale}/watchlist/`}>{p2.myRadar}<span id="nav-radar-count" class="nav-radar-count" hidden></span></a><a href={`/${locale}/compare/`}>{p2.compareGames}</a></div>
+        <div><a href={`/${locale}/discover/`}>{p3.discoverGames}</a><a href={`/${locale}/community/`}>Community</a><a href={`/${locale}/watchlist/`}>{p2.myRadar}<span id="nav-radar-count" class="nav-radar-count" hidden></span></a><a href={`/${locale}/compare/`}>{p2.compareGames}</a></div>
       </details>
       <a href={`/${locale}/about/`}>{trust.companyNav}</a>
     </nav>
