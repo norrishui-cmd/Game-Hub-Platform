@@ -129,9 +129,11 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
       <a href={`/${locale}/about/`}>{trust.companyNav}</a>
     </nav>
     <label class="lang-switch"><span class="sr-only">{product.language}</span><select id="language-select" aria-label={product.language}>{LOCALES.map((l) => <option value={alternates[l]} selected={l === locale}>{LOCALE_META[l].label}</option>)}</select></label>
+    <button class="auth-trigger" id="auth-trigger" type="button">Sign in</button>
   </header>
 
   <slot />
+  <dialog id="auth-dialog" class="auth-dialog"><form method="dialog"><button class="auth-close" aria-label="Close">×</button><h2>Join GameRadar</h2><p>Sign in to save games, post, vote, and comment.</p><button class="btn" id="google-signin" type="button">Continue with Google</button><span>or</span><input id="auth-email" type="email" placeholder="Email address" /><button class="btn btn-ghost" id="email-signin" type="button">Email me a sign-in link</button><small id="auth-status"></small></form></dialog>
 
   <footer id="foot">
     <div class="foot-in">
@@ -179,7 +181,14 @@ const allJsonLd = [...siteJsonLd, ...(Array.isArray(jsonLd) ? jsonLd : [jsonLd])
     </div>
   </footer>
 
-  <script define:vars={{ locale, searchIndex, searchLabels: { all: product.searchAll } }}>
+  <script define:vars={{ locale, searchIndex, searchLabels: { all: product.searchAll }, supabaseUrl: import.meta.env.PUBLIC_SUPABASE_URL || "", supabaseKey: import.meta.env.PUBLIC_SUPABASE_ANON_KEY || "" }}>
+    import { createClient } from "@supabase/supabase-js";
+    const authDialog=document.querySelector('#auth-dialog'), authButton=document.querySelector('#auth-trigger'), authStatus=document.querySelector('#auth-status');
+    const supabase=supabaseUrl&&supabaseKey?createClient(supabaseUrl,supabaseKey):null;
+    authButton?.addEventListener('click',()=>authDialog?.showModal());
+    document.querySelector('#google-signin')?.addEventListener('click',async()=>{if(!supabase){authStatus.textContent='Authentication is being configured.';return;} await supabase.auth.signInWithOAuth({provider:'google',options:{redirectTo:location.href}})});
+    document.querySelector('#email-signin')?.addEventListener('click',async()=>{const email=document.querySelector('#auth-email').value;if(!email){authStatus.textContent='Enter your email first.';return;}if(!supabase){authStatus.textContent='Authentication is being configured.';return;}const {error}=await supabase.auth.signInWithOtp({email,options:{emailRedirectTo:location.href}});authStatus.textContent=error?error.message:'Check your inbox for the sign-in link.'});
+    supabase?.auth.getUser().then(({data})=>{if(data.user)authButton.textContent=data.user.user_metadata?.full_name||data.user.email||'Account'});
     // 记住这次访问用的是哪个语言——根路径的自动跳转脚本会优先读这个，
     // 而不是每次都重新猜浏览器语言。这样手动切换过语言的人不会被"猜"回去。
     try { localStorage.setItem("gr_locale", locale); } catch (e) {}

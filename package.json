@@ -16,7 +16,8 @@
     "game:publish": "node scripts/game-publish.mjs"
   },
   "dependencies": {
-    "astro": "^5.0.0",
-    "@astrojs/sitemap": "^3.0.0"
+    "@astrojs/sitemap": "^3.0.0",
+    "@supabase/supabase-js": "^2.112.1",
+    "astro": "^5.0.0"
   }
 }
